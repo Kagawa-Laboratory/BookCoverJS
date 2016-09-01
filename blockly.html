@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Blockly for BookCoverJS</title>
+<script src="3rdParty/blockly/blockly_compressed.js"></script>
+<script src="3rdParty/blockly/blocks_compressed.js"></script>
+<script src="3rdParty/blockly/javascript_compressed.js"></script>
+<script src="3rdParty/blockly/msg/js/en.js"></script>
+<script src="myblocks.js"></script>
+<!-- <script src="3rdParty/blockly/msg/js/ja.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+<xml id="toolbox" style="display: none">
+<category name="ブックカバー（基本）">
+  <block type="bookcover_frame"></block>
+  <block type="bookcover_guide_bars"></block>
+  <block type="bookcover_matrix"></block>
+  <block type="bookcover_fill"></block>
+  <block type="bookcover_no_fill"></block>
+  <block type="bookcover_fill_opacity"></block>
+  <block type="bookcover_stroke"></block>
+  <block type="bookcover_no_stroke"></block>
+  <block type="bookcover_stroke_weight"></block>
+  <block type="bookcover_stroke_opacity"></block>
+  <block type="bookcover_text_font"></block>
+  <block type="bookcover_random_seed"></block>
+  <block type="bookcover_random_in_range"></block>
+  <block type="bookcover_translate"></block>
+  <block type="bookcover_scale"></block>
+  <block type="bookcover_rotate"></block>
+</category>
+<category name="ブックカバー（基本図形）">
+  <block type="bookcover_line"></block>
+  <block type="bookcover_rect"></block>
+  <block type="bookcover_ellipse"></block>
+</category>
+<category name="ブックカバー（色・角度）">
+  <block type="bookcover_color"></block>
+  <block type="bookcover_rotate_h"></block>
+  <block type="bookcover_angle"></block>
+  <block type="bookcover_rgb255"></block>
+  <block type="bookcover_hsb360"></block>
+  <block type="bookcover_hsl360"></block>
+</category>
+<category name="タートル">
+  <block type="bookcover_pen_up"></block>
+  <block type="bookcover_pen_down"></block>
+  <block type="bookcover_forward"></block>
+  <block type="bookcover_turn"></block>
+  <block type="bookcover_direction"></block>
+  <block type="bookcover_go"></block>
+</category>
+<category name="流れ" colour="120">
+  <block type="controls_if"></block>
+  <block type="controls_repeat_ext"></block>
+</category>
+<category name="数・文字列・演算" colour="330">
+  <block type="logic_compare"></block>
+  <block type="math_number"></block>
+  <block type="math_arithmetic"></block>
+  <block type="text"></block>
+</category>
+
+</xml>
+<input type="button" id="click" value="show" /><br />
+<div id="blocklyDiv" style="height: 480px; width: 960px;"></div>
+<script>
+$(function() {
+    var workspace = Blockly.inject('blocklyDiv',
+                                   { toolbox: document.getElementById('toolbox') });
+    $("#click").click(function () {
+        var code = Blockly.JavaScript.workspaceToCode(workspace);
+        alert(code);
+    });
+});
+</script>
+</body>
+</html>

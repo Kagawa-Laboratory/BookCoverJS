@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>BookCoverJS</title>
+</head>
+<body>
+<!--
+<iframe id="myframe" sandbox="allow-same-origin" src="empty.svg"
+        width="294" height="210"></iframe>
+-->
+<h1 style="text-align:center;">BookCoverJS</h1>
+<!--
+<object id="myframe" sandbox="allow-same-origin"
+        data="empty.svg" type="image/svg+xml"
+        width="294" height="210"></object>
+-->
+<!-- todo: save button -->
+<input type="button" value="&#x1f5d6;" id="click" /><br />
+<div id='drawing' style='border-style:solid;'></div>
+<hr />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="3rdParty/svg.js"></script>
+<script src="BookCoverJS/BookCover.js"></script>
+<!--<script src="BookCoverJS/HSBGrad.js"></script> -->
+<script src="BookCoverJS/RandTest.js"></script>
+<script type="text/javascript">
+/*
+for (var i = 0; i < 100; i++) {
+  console.log(BookCover.randomInRange(0, 100));
+}
+*/
+$(function() {
+//    var drawing = $("#myframe").contents().find("#drawing")[0];
+    var draw = SVG('drawing').size('294mm', '210mm');
+//    hsbGrad(draw);
+    randTest(draw);
+    $("#click").click(function () {
+      var svgText = draw.svg();
+      var blob = new Blob([svgText], { type: "image/svg+xml" });
+      var sub = window.open(URL.createObjectURL(blob), "SVG subwindow");
+    });
+});
+</script>
+</body>
+</html>
