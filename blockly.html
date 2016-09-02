@@ -5,10 +5,24 @@
 <script src="3rdParty/blockly/blockly_compressed.js"></script>
 <script src="3rdParty/blockly/blocks_compressed.js"></script>
 <script src="3rdParty/blockly/javascript_compressed.js"></script>
-<script src="3rdParty/blockly/msg/js/en.js"></script>
+<!-- script src="3rdParty/blockly/msg/js/en.js"></script-->>
+<script src="3rdParty/blockly/msg/js/ja.js"></script>
 <script src="myblocks.js"></script>
-<!-- <script src="3rdParty/blockly/msg/js/ja.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+    table {
+      height: 100%;
+      width: 100%;
+    }
+</style>
 </head>
 <body>
 <xml id="toolbox" style="display: none">
@@ -23,7 +37,14 @@
   <block type="bookcover_no_stroke"></block>
   <block type="bookcover_stroke_weight"></block>
   <block type="bookcover_stroke_opacity"></block>
-  <block type="bookcover_text_font"></block>
+  <block type="bookcover_text_font">
+  <value name="name">
+  <block type="bookcover_font_name"></block>
+  </value>
+  <value name="size">
+  <block type="math_number"></block>
+  </value>
+  </block>
   <block type="bookcover_random_seed"></block>
   <block type="bookcover_random_in_range"></block>
   <block type="bookcover_translate"></block>
@@ -34,38 +55,139 @@
   <block type="bookcover_line"></block>
   <block type="bookcover_rect"></block>
   <block type="bookcover_ellipse"></block>
+  <block type="bookcover_text"></block>
 </category>
 <category name="ブックカバー（色・角度）">
-  <block type="bookcover_color"></block>
+  <block type="bookcover_colour"></block>
   <block type="bookcover_rotate_h"></block>
   <block type="bookcover_angle"></block>
   <block type="bookcover_rgb255"></block>
   <block type="bookcover_hsb360"></block>
   <block type="bookcover_hsl360"></block>
+  <block type="bookcover_font_name"></block>
 </category>
-<category name="タートル">
+<category name="&#128034;タートル">
   <block type="bookcover_pen_up"></block>
   <block type="bookcover_pen_down"></block>
   <block type="bookcover_forward"></block>
   <block type="bookcover_turn"></block>
   <block type="bookcover_direction"></block>
   <block type="bookcover_go"></block>
+  <block type="bookcover_say"></block>
 </category>
 <category name="流れ" colour="120">
   <block type="controls_if"></block>
   <block type="controls_repeat_ext"></block>
+  <block type="controls_whileUntil"></block>
+  <block type="controls_for"></block>
+  <block type="controls_forEach"></block>
+  <block type="controls_flow_statements"></block>
 </category>
 <category name="数・文字列・演算" colour="330">
   <block type="logic_compare"></block>
+  <block type="logic_operation"></block>
+  <block type="logic_negate"></block>
+  <block type="logic_boolean"></block>
   <block type="math_number"></block>
   <block type="math_arithmetic"></block>
+  <block type="math_single"></block>
+  <block type="math_trig"></block>
+  <block type="math_constant"></block>
+      <block type="math_number_property">
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_round">
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">3.1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_modulo">
+        <value name="DIVIDEND">
+          <shadow type="math_number">
+            <field name="NUM">64</field>
+          </shadow>
+        </value>
+        <value name="DIVISOR">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_constrain">
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+        <value name="LOW">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="HIGH">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+      </block>
   <block type="text"></block>
+  <block type="text_length"></block>
+  <block type="text_join"></block>
+  <block type="text_append"></block>
+  <block type="text_print"></block>
+  <block type="text_prompt_ext"></block>
+  <block type="text_charAt"></block>
 </category>
-
+    <category name="リスト">
+      <block type="lists_create_empty"></block>
+      <block type="lists_create_with"></block>
+      <block type="lists_repeat">
+        <value name="NUM">
+          <block type="math_number">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+      </block>
+      <block type="lists_length"></block>
+      <block type="lists_isEmpty"></block>
+      <block type="lists_indexOf"></block>
+      <block type="lists_getIndex"></block>
+      <block type="lists_setIndex"></block>
+    </category>
+    <category name="変数" custom="VARIABLE"></category>
+    <category name="関数" custom="PROCEDURE"></category>
 </xml>
-<input type="button" id="click" value="show" /><br />
-<div id="blocklyDiv" style="height: 480px; width: 960px;"></div>
+<table>
+<tr>
+<td><input type="button" id="click" value="show" /></td>
+</tr>
+<tr>
+  <td id="blocklyArea" style='height: 99%; background-color:#fff0f0;'> 
+  </td>  
+</tr>
+</table>
+<div id="blocklyDiv" style="position: absolute;"></div>
 <script>
+var area = $("#blocklyArea");
+var div  = $("#blocklyDiv");
+
+function onResize() {
+    var width = area.width();
+    div.width(width);
+    var height = area.height();
+    div.height(height);
+    var offset = area.offset();
+    div.offset(offset);
+}
+
+$(window).on('load resize', onResize); 
+
 $(function() {
     var workspace = Blockly.inject('blocklyDiv',
                                    { toolbox: document.getElementById('toolbox') });
@@ -73,6 +195,20 @@ $(function() {
         var code = Blockly.JavaScript.workspaceToCode(workspace);
         alert(code);
     });
+    onResize();
+    Blockly.svgResize(workspace);
+
+    // 無理やりフォントを変更する。
+    var cssNode = document.createElement('style');
+    document.head.appendChild(cssNode);
+    var text = ".blocklyText {"
+      	     + "  cursor: default;"
+      	     + "  fill: #fff;"
+      	     + "  font-family: 'Segoe UI Symbol';"
+      	     + "  font-size: 11pt;"
+      	     + "}";
+    var cssTextNode = document.createTextNode(text);
+    cssNode.appendChild(cssTextNode);
 });
 </script>
 </body>
