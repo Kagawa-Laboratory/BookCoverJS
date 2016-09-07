@@ -43,6 +43,8 @@ var BookCover = (function () {
     self.__cards     = [ ];
     self.__cardSpecs = { };
     self.__clipMargin = 1;
+
+    self.__regexAstralSymbols = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
   };
 
   BookCover.prototype = {
@@ -1086,7 +1088,44 @@ var BookCover = (function () {
     numCards: function() {
         if (this.__cards) return cards.length;
         return 1;   // カードなし
-    }
+    },
+
+    // https://mathiasbynens.be/notes/javascript-unicode
+    countSymbols: function(string) {
+	return string
+		// Replace every surrogate pair with a BMP symbol.
+		.replace(this.__regexAstralSymbols, '_')
+		// _and *then* get the length.
+		.length;
+    },
+
+    // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/charAt 
+    fixedCharAt: function(str, idx) {
+	  var ret = '';
+	  str += '';
+	  var end = str.length;
+
+	  var surrogatePairs = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
+	  while ((surrogatePairs.exec(str)) != null) {
+	    var li = surrogatePairs.lastIndex;
+	    if (li - 2 < idx) {
+	      idx++;
+	    } else {
+	      break;
+	    }
+	  }
+
+	  if (idx >= end || idx < 0) {
+	    return '';
+	  }
+
+	  ret += str.charAt(idx);
+
+	  if (/[\uD800-\uDBFF]/.test(ret) && /[\uDC00-\uDFFF]/.test(str.charAt(idx+1))) {
+	    ret += str.charAt(idx+1); // Go one further, since one of the "characters" is part of a surrogate pair
+	  }
+	  return ret;
+	}
   };
 
   var ret = new BookCover();

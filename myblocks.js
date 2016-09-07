@@ -188,7 +188,7 @@ Blockly.Blocks['bookcover_matrix'] = {
 
 Blockly.JavaScript['bookcover_matrix'] = function(block) {
   var statements_statements = Blockly.JavaScript.statementToCode(block, 'statements');
-  var code = 'BC.pushMatrix()\n' + statements_statements + 'BC.resetMatrix();\n';
+  var code = 'BC.pushMatrix()\n' + statements_statements + 'BC.popMatrix();\n';
   return code;
 };
 
@@ -818,7 +818,7 @@ Blockly.Blocks['bookcover_hsb360'] = {
     this.appendValueInput("hue")
         .setCheck(null)
         .appendField("色相");
-    this.appendValueInput("sturation")
+    this.appendValueInput("saturation")
         .setCheck(null)
         .appendField("彩度");
     this.appendValueInput("brightness")
@@ -847,7 +847,7 @@ Blockly.Blocks['bookcover_hsl360'] = {
     this.appendValueInput("hue")
         .setCheck(null)
         .appendField("色相");
-    this.appendValueInput("sturation")
+    this.appendValueInput("saturation")
         .setCheck(null)
         .appendField("彩度");
     this.appendValueInput("luminance")
@@ -884,7 +884,7 @@ Blockly.Blocks['bookcover_none'] = {
 
 Blockly.JavaScript['bookcover_none'] = function(block) {
   var code = 'null';
-  return [code, Blockly.JavaScript.ORDER_ATOM];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 
@@ -901,7 +901,7 @@ Blockly.Blocks['bookcover_newline'] = {
 
 Blockly.JavaScript['bookcover_newline'] = function(block) {
   var code = '"\\n"';
-  return [code, Blockly.JavaScript.ORDER_ATOM];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 
@@ -919,7 +919,7 @@ Blockly.Blocks['bookcover_font_name'] = {
 Blockly.JavaScript['bookcover_font_name'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var code = "\"" + dropdown_name + "\"";
-  return [code, Blockly.JavaScript.ORDER_ATOM];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 Blockly.Blocks['bookcover_text'] = {
@@ -1075,7 +1075,7 @@ Blockly.Blocks['bookcover_foreachcard'] = {
         .appendField("mm）");
     this.appendStatementInput("DO")
         .setCheck(null)
-        .appendField("以下を繰り返す。");
+        .appendField("以下を繰り返す: ");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
@@ -1128,48 +1128,48 @@ Blockly.JavaScript['bookcover_cardspec'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-/*
-Blockly.Blocks['bookcover_card_frame'] = {
-  init: function() {
-    this.appendValueInput("PAPER_SPEC")
-        .setCheck(null)
-        .appendField("");
-    this.appendDummyInput()
-        .appendField("の用紙情報でカードを作成する。各")
-        .appendField(new Blockly.FieldVariable("カード"), "CARD")
-        .appendField("に対して");
-    this.appendStatementInput("DO")
-        .setCheck(null)
-        .appendField("以下を繰り返す。");
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldCheckbox("TRUE"), "CLIP")
-        .appendField("クリップする。");
-    this.setInputsInline(true);
-    this.setColour(120);
-    this.setTooltip('');
-    this.setHelpUrl('http://www.example.com/');
-  }
+Blockly.JavaScript['text_length'] = function(block) {
+  var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_COMMA);
+  var code = BC.countSymbols +'(' + value_value + ')';
+  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
-Blockly.JavaScript['bookcover_card_frame'] = function(block) {
-  var value_paper_spec = Blockly.JavaScript.valueToCode(block, 'PAPER_SPEC', Blockly.JavaScript.ORDER_ATOMIC);
-  var variable_card = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('CARD'), Blockly.Variables.NAME_TYPE);
-  var statements_do = Blockly.JavaScript.statementToCode(block, 'DO');
-  var checkbox_clip = block.getFieldValue('CLIP') == 'TRUE';
-  
-  var code = 'var BC = BookCover;\n'
-           + 'BC.start(draw);\n'
-           + 'var __paperSpec = ' + value_paper_spec + ';\n';
-           + 'BC.__width = __paperSpec["width"]; BC.__height = __paperSpec["height"];\n';
-  var index = variable_card + '_index';
-  code += 'for (var ' + index + ' in __paperSpec["cards"] ) {\n';
-  code += '  var ' + variable_card + ' =  __paperSpec["cards"][' + index + '];\n';
-  code += '  pushMatrix();\n';
-  code += '  translate(' + variable_card + '["x"], ' + variable_card + '["y"]);\n';
-  code += statements_do;
-  code += '  popMatrix();\n';
-  code += '}\n';
-  code += 'BC.finish();\n'
-  return code;
+Blockly.JavaScript['text_charAt'] = function(block) {
+  // Get letter at index.
+  // Note: Until January 2013 this block did not have the WHERE input.
+  var where = block.getFieldValue('WHERE') || 'FROM_START';
+  var textOrder = (where == 'RANDOM') ? Blockly.JavaScript.ORDER_NONE :
+      Blockly.JavaScript.ORDER_MEMBER;
+  var text = Blockly.JavaScript.valueToCode(block, 'VALUE',
+      textOrder) || '\'\'';
+  switch (where) {
+    case 'FIRST':
+      var code = 'BC.fixedCharAt(' + text + ', ' +  '0)';
+      return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+    case 'LAST':
+      var code = 'BC.fixedCharAt(' + text + ', ' +  'BC.countSymbols(' + text + ') - 1)';
+      return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+    case 'FROM_START':
+      var at = Blockly.JavaScript.getAdjusted(block, 'AT');
+      // Adjust index if using one-based indices.
+      var code = 'BC.fixedCharAt(' + text + ', ' +  at + ')';
+      return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+    case 'FROM_END':
+      var at = Blockly.JavaScript.getAdjusted(block, 'AT', 1, true);
+      var code = 'BC.fixedCharAt(' + text + ', ' +  'BC.countSymbols(' + text + ') + (' + at + '))';
+      return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+    case 'RANDOM':
+      var functionName = Blockly.JavaScript.provideFunction_(
+          'textRandomLetter',
+          ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+              '(text) {',
+           '  var x = Math.floor(Math.random() * BC.countSymbols(text));',
+           '  return BC.fixedCharAt(text, x);',
+           '}']);
+      var code = functionName + '(' + text + ')';
+      return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  }
+  throw 'Unhandled option (text_charAt).';
 };
-*/
+
+

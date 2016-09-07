@@ -8,6 +8,7 @@
 <script src="3rdParty/blockly/demos/prettify.js"></script>
 <!-- script src="3rdParty/blockly/msg/js/en.js"></script-->
 <script src="3rdParty/blockly/msg/js/ja.js"></script>
+<script src="3rdParty/blockly/appengine/storage.js"></script>
 <link rel="stylesheet" type="text/css" href="3rdParty/blockly/demos/prettify.css">
 <script src="myblocks.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -258,12 +259,12 @@
   <block type="bookcover_text">
     <value name="x">
       <block type="math_number">
-        <field name="NUM">50</field>
+        <field name="NUM">10</field>
       </block>
     </value>
     <value name="y">
       <block type="math_number">
-        <field name="NUM">75</field>
+        <field name="NUM">20</field>
       </block>
     </value>
     <value name="str">
@@ -624,9 +625,16 @@
             <td class="tabmin">&nbsp;</td>
             <td id="tabXml" class="taboff" style="white-space:nowrap;">(管理者用)</td>
             <td class="tabmax">
+              <a href="#" id="saveButton" download="blocks.xml" title="保存" style="text-decoration: none;">
+                &#x1f4be;
+              </a>
+              <a href="#" id="openButton" title="開く" style="text-decoration: none;">
+              &#x1f4c2;
+              </a>
+              <input type="file" id="openButtonAux" name="openButtonAux"  style="display:none;" />
 <!--
-              <button id="printButton" class="notext primary" title="印刷用ページ">
-                &#x1f5b6;
+              <button id="openButton" class="notext primary" title="開く">
+                &#x1f4c2;
               </button>
 -->
             </td>
@@ -667,7 +675,7 @@ var workspace = null;
 function renderContent(clickedName) {
   var content = $("#content" + clickedName); 
   if (clickedName == "Xml") {
-    var xmlDom = Blockly.Xml.workspaceToDom(workspace);
+    var xmlDom  = Blockly.Xml.workspaceToDom(workspace);
     var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
     content.val(xmlText);
   } else if (clickedName == "JavaScript") {
@@ -772,7 +780,14 @@ $(window).on('load resize', onResize);
 $(function() {
     workspace = Blockly.inject('contentBlock',
                                    { toolbox: document.getElementById('toolbox') });
-    Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
+    BlocklyStorage.backupOnUnload(workspace);
+    if (location.search.indexOf("clean") > 0) { // TODO ちゃんとする
+        Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
+    } else {
+        window.setTimeout(function () { BlocklyStorage.restoreBlocks(workspace); }, 0);
+    }
+
+
 //    $("#printButton").click(function () {
 //       renderContent("SVG");
 //       var subframe = $('#svgFrame');
@@ -780,6 +795,46 @@ $(function() {
 //       var blob    = new Blob([svgText], { type: 'image/svg+xml' });
 //       var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
 //    });
+    $("#saveButton").click(function() {
+       var xmlText;
+       if ($('#tabXml').hasClass('tabon')) {
+           xmlText = $('#contentXml').val();
+       } else {
+           var xmlDom  = Blockly.Xml.workspaceToDom(workspace);
+           xmlText     = Blockly.Xml.domToPrettyText(xmlDom);
+       }
+       var blob    = new Blob([xmlText], { type: 'text/xml' });
+       $("#saveButton").attr('href', window.URL.createObjectURL(blob));
+    });
+    $("#openButton").click(function() {
+      $("#openButtonAux").click();
+    }); 
+    $("#openButtonAux").change(function(evt) {
+       var f = evt.target.files[0];
+       var reader = new FileReader();
+
+       reader.onload = function(e) {
+         var xmlText = e.target.result;
+         $("contentXml").val(xmlText);
+         if (!$('#tabXml').hasClass('tabon')) {
+           try {    
+             xmlDom = Blockly.Xml.textToDom(xmlText);
+           } catch (e) {
+             var q =
+                 window.confirm(MSG['badXml'].replace('%1', e));
+             if (!q) {
+               // Leave the user on the XML tab.
+               return;
+             }
+           }
+           if (xmlDom) {
+             workspace.clear();
+             Blockly.Xml.domToWorkspace(xmlDom, workspace);
+           }
+         }
+       };
+       reader.readAsText(f);
+    });
     onResize();
     Blockly.svgResize(workspace);
 
