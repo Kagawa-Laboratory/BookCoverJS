@@ -72,65 +72,403 @@
       border: 1px solid #ccc;
       overflow: scroll;
     }
+    div.content {
+      border: 1px solid #ccc;
+      overflow: scroll;
+    }
 </style>
 </head>
 <body>
 <xml id="toolbox" style="display: none">
-<category name="ブックカバー（基本）">
-  <block type="bookcover_frame"></block>
-  <block type="bookcover_guide_bars"></block>
-  <block type="bookcover_matrix"></block>
-  <block type="bookcover_fill"></block>
-  <block type="bookcover_no_fill"></block>
-  <block type="bookcover_fill_opacity"></block>
-  <block type="bookcover_stroke"></block>
-  <block type="bookcover_no_stroke"></block>
-  <block type="bookcover_stroke_weight"></block>
-  <block type="bookcover_stroke_opacity"></block>
-  <block type="bookcover_text_font">
-  <value name="name">
-  <block type="bookcover_font_name"></block>
-  </value>
-  <value name="size">
-  <block type="math_number"></block>
-  </value>
+<category name="ブックカバー（基本設定）">
+  <block type="bookcover_card_frame">
+    <value name="PAPER_SPEC">
+      <block type="bookcover_cardspec">
+        <field name="CARDSPEC">エーワン F8A4-5</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="bookcover_foreachcard">
+        <field name="CARD">カード</field>
+        <field name="COUNTER">カウンター</field>
+      </block>
+    </statement>
   </block>
-  <block type="bookcover_random_seed"></block>
-  <block type="bookcover_random_in_range"></block>
-  <block type="bookcover_translate"></block>
-  <block type="bookcover_scale"></block>
-  <block type="bookcover_rotate"></block>
+  <block type="bookcover_cardspec"></block>
+  <block type="bookcover_foreachcard"></block>
+  <block type="bookcover_frame"></block>
+  <block type="bookcover_guide_bars">
+    <value name="width">
+      <block type="math_number">
+        <field name="NUM">0.1</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_fill">
+    <value name="COLOUR">
+      <block type="bookcover_colour">
+        <field name="COLOUR">#ff0000</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_no_fill"></block>
+  <block type="bookcover_fill_opacity">
+    <value name="opacity">
+      <block type="math_number">
+        <field name="NUM">0.5</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_stroke">
+      <value name="COLOUR">
+      <block type="bookcover_colour">
+        <field name="COLOUR">#ff0000</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_no_stroke"></block>
+  <block type="bookcover_stroke_weight">
+    <value name="width">
+      <block type="math_number">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_stroke_opacity">
+    <value name="opacity">
+      <block type="math_number">
+        <field name="NUM">0.5</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_text_font">
+    <value name="name">
+      <block type="bookcover_font_name">
+        <field name="NAME">ＭＳ 明朝</field>
+      </block>
+    </value>
+    <value name="size">
+      <block type="math_number">
+        <field name="NUM">12</field>
+      </block>
+    </value>
+  </block>
+</category>
+<category name="ブックカバー（移動・回転）">
+  <block type="bookcover_matrix"></block>
+  <block type="bookcover_translate">
+    <value name="x">
+      <block type="math_number">
+        <field name="NUM">15</field>
+      </block>
+    </value>
+    <value name="y">
+      <block type="math_number">
+        <field name="NUM">-25</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_scale">
+    <value name="x">
+      <block type="math_number"">
+        <field name="NUM">1.5</field>
+      </block>
+    </value>
+    <value name="y">
+      <block type="math_number">
+        <field name="NUM">2.9</field>
+      </block>
+    </value>
+  </block>
+    <block type="bookcover_rotate">
+    <value name="angle">
+      <block type="bookcover_angle">
+        <field name="angle">45</field>
+      </block>
+    </value>
+  </block>
 </category>
 <category name="ブックカバー（基本図形）">
-  <block type="bookcover_line"></block>
-  <block type="bookcover_rect"></block>
-  <block type="bookcover_ellipse"></block>
-  <block type="bookcover_text"></block>
+    <block type="bookcover_line">
+    <value name="x1">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <value name="y1">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <value name="x2">
+      <block type="math_number"">
+        <field name="NUM">50</field>
+      </block>
+    </value>
+    <value name="y2">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_rect">
+    <value name="x">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="y">
+      <block type="math_number">
+        <field name="NUM">15</field>
+      </block>
+    </value>
+    <value name="w">
+      <block type="math_number">
+        <field name="NUM">120</field>
+      </block>
+    </value>
+    <value name="h">
+      <block type="math_number"">
+        <field name="NUM">230</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_ellipse">
+    <value name="x">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="y">
+      <block type="math_number">
+        <field name="NUM">15</field>
+      </block>
+    </value>
+    <value name="w">
+      <block type="math_number">
+        <field name="NUM">120</field>
+      </block>
+    </value>
+    <value name="h">
+      <block type="math_number">
+        <field name="NUM">230</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_text">
+    <value name="x">
+      <block type="math_number">
+        <field name="NUM">50</field>
+      </block>
+    </value>
+    <value name="y">
+      <block type="math_number">
+        <field name="NUM">75</field>
+      </block>
+    </value>
+    <value name="str">
+      <block type="text">
+        <field name="TEXT">こんにちは</field>
+      </block>
+    </value>
+  </block>
 </category>
 <category name="ブックカバー（色・角度）">
+  <block type="bookcover_random_seed">
+    <value name="seed">
+      <block type="math_number">
+        <field name="NUM">123456</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_random_in_range">
+    <value name="min">
+      <block type="math_number"">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <value name="max">
+      <block type="math_number">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+  </block>
   <block type="bookcover_colour"></block>
-  <block type="bookcover_rotate_h"></block>
+  <block type="bookcover_none"></block>
+  <block type="bookcover_rotate_h">
+    <value name="colour">
+      <block type="bookcover_colour">
+        <field name="COLOUR">#ff0000</field>
+      </block>
+    </value>
+    <value name="angle">
+      <block type="bookcover_angle">
+        <field name="angle">120</field>
+      </block>
+    </value>
+  </block>
   <block type="bookcover_angle"></block>
-  <block type="bookcover_rgb255"></block>
-  <block type="bookcover_hsb360"></block>
-  <block type="bookcover_hsl360"></block>
+  <block type="bookcover_rgb255">
+    <value name="red">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <value name="green">
+      <block type="math_number">
+        <field name="NUM">255</field>
+      </block>
+    </value>
+    <value name="blue">
+      <block type="math_number">
+        <field name="NUM">255</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_hsb360">
+    <value name="hue">
+      <block type="bookcover_angle">
+        <field name="angle">300</field>
+      </block>
+    </value>
+    <value name="sturation">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+    <value name="brightness">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_hsl360">
+    <value name="hue">
+      <block type="bookcover_angle">
+        <field name="angle">180</field>
+      </block>
+    </value>
+    <value name="sturation">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+    <value name="luminance">
+      <block type="math_number">
+        <field name="NUM">50</field>
+      </block>
+    </value>
+  </block>>
   <block type="bookcover_font_name"></block>
 </category>
 <category name="&#128034; タートル">
-  <block type="bookcover_pen_up"></block>
   <block type="bookcover_pen_down"></block>
-  <block type="bookcover_forward"></block>
-  <block type="bookcover_turn"></block>
-  <block type="bookcover_direction"></block>
-  <block type="bookcover_go"></block>
-  <block type="bookcover_say"></block>
+  <block type="bookcover_pen_up"></block>
+  <block type="bookcover_forward">
+    <value name="len">
+      <block type="math_number">
+        <field name="NUM">50</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_turn">
+    <value name="angle">
+      <block type="bookcover_angle">
+        <field name="angle">72</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_direction">
+    <value name="angle">
+      <block type="bookcover_angle">
+        <field name="angle">144</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_go">
+    <value name="x">
+      <block type="math_number">
+        <field name="NUM">50</field>
+      </block>
+    </value>
+    <value name="y">
+      <block type="math_number">
+        <field name="NUM">75</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_say">
+    <value name="str">
+      <block type="text">
+        <field name="TEXT">こんにちは</field>
+      </block>
+    </value>
+  </block>
 </category>
 <category name="流れ" colour="120">
-  <block type="controls_if"></block>
-  <block type="controls_repeat_ext"></block>
-  <block type="controls_whileUntil"></block>
-  <block type="controls_for"></block>
-  <block type="controls_forEach"></block>
+  <block type="controls_if">
+    <value name="IF0">
+      <block type="logic_boolean">
+        <field name="BOOL">TRUE</field>
+      </block>
+    </value>
+  </block>
+  <block type="controls_repeat_ext">
+    <value name="TIMES">
+      <block type="math_number">
+        <field name="NUM">4</field>
+      </block>
+    </value>
+  </block>[
+    <block type="controls_for">
+    <field name="VAR">i</field>
+    <value name="FROM">
+      <block type="math_number">
+        <field name="NUM">5</field>
+      </block>
+    </value>
+    <value name="TO">
+      <block type="math_number">
+        <field name="NUM">25</field>
+      </block>
+    </value>
+    <value name="BY">
+      <block type="math_number">
+        <field name="NUM">4</field>
+      </block>
+    </value>
+  </block>
+  <block type="controls_whileUntil">
+    <field name="MODE">WHILE</field>
+    <value name="BOOL">
+      <block type="logic_boolean">
+        <field name="BOOL">TRUE</field>
+      </block>
+    </value>
+  </block>
+  <block type="controls_forEach">
+    <field name="VAR">i</field>
+    <value name="LIST">
+      <block type="lists_create_with">
+        <mutation items="3"></mutation>
+        <value name="ADD0">
+          <block type="math_number">
+            <field name="NUM">2</field>
+          </block>
+        </value>
+        <value name="ADD1">
+          <block type="math_number">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+        <value name="ADD2">
+          <block type="math_number">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
   <block type="controls_flow_statements"></block>
 </category>
 <category name="数・文字列・演算" colour="330">
@@ -187,6 +525,7 @@
         </value>
       </block>
       <block type="text"></block>
+      <block type="bookcover_newline"></block>
       <block type="text_length"></block>
       <block type="text_join"></block>
       <block type="text_append"></block>
@@ -212,7 +551,66 @@
     </category>
     <category name="変数" custom="VARIABLE"></category>
     <category name="関数" custom="PROCEDURE"></category>
+    <category name="（管理者用）">
+      <block type="bookcover_generic_statement"></block>
+      <block type="bookcover_generic_expression"></block>
+    </category>
 </xml>
+
+<xml id="startBlocks" style="display: none;">
+  <block type="bookcover_frame" x="147" y="61">
+    <statement name="statements">
+      <block type="bookcover_guide_bars">
+        <value name="width">
+          <block type="math_number">
+            <field name="NUM">0.5</field>
+          </block>
+        </value>
+        <next>
+          <block type="bookcover_stroke">
+            <value name="COLOUR">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#ff0000</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_fill">
+                <value name="COLOUR">
+                  <block type="bookcover_none"></block>
+                </value>
+                <next>
+                  <block type="bookcover_ellipse">
+                    <value name="x">
+                      <block type="math_number">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="y">
+                      <block type="math_number">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="w">
+                      <block type="math_number">
+                            <field name="NUM">100</field>
+                  </block>
+                    </value>
+                    <value name="h">
+                      <block type="math_number">
+                        <field name="NUM">200</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
+
 <table>
 <tr>
     <td>
@@ -222,11 +620,15 @@
             <td class="tabmin">&nbsp;</td>
             <td id="tabJavaScript" class="taboff" style="white-space:nowrap;">JavaScript</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tabXml" class="taboff" style="white-space:nowrap;">(管理用)</td>
+            <td id="tabSVG" class="taboff" style="white-space:nowrap;">絵</td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tabXml" class="taboff" style="white-space:nowrap;">(管理者用)</td>
             <td class="tabmax">
-              <button id="runButton" class="notext primary" title="...">
-                &#x23f5;
+<!--
+              <button id="printButton" class="notext primary" title="印刷用ページ">
+                &#x1f5b6;
               </button>
+-->
             </td>
           </tr>
        </table>
@@ -239,14 +641,15 @@
 </table>
 <div id="contentBlock" style="position: absolute;"></div>
 <pre id="contentJavaScript" class="content"></pre>
-<pre id="contentXml"  class="content"></pre>
+<div id="contentSVG"  class="content" style="padding: 0ex;"></div>
+<textarea id="contentXml" class="content" wrap="off"></textarea>
 <script>
-var tabs = ["Blocks", "JavaScript", "Xml"]; 
+var tabs = ["Blocks", "JavaScript", "SVG", "Xml"]; 
 var selected = tabs[0];
 
 function onResize() {
     var area = $("#blocklyArea");
-    var divs = [ $("#contentBlock"), $("#contentJavaScript"), $("#contentXml") ];
+    var divs = [ $("#contentBlock"), $("#contentJavaScript"), $("#contentSVG"), $("#contentXml") ];
 
     var width = area.width();
     var height = area.height();
@@ -266,19 +669,78 @@ function renderContent(clickedName) {
   if (clickedName == "Xml") {
     var xmlDom = Blockly.Xml.workspaceToDom(workspace);
     var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
-    content.text(xmlText);
+    content.val(xmlText);
   } else if (clickedName == "JavaScript") {
     var code = Blockly.JavaScript.workspaceToCode(workspace);
     content.html(code);
 
-      code = content.html();
-      code = prettyPrintOne(code, 'js');
-      content.html(code);
+    // TODO: CodeMirror
+    code = content.html();
+    code = prettyPrintOne(code, 'js');
+    content.html(code);
+  } else if (clickedName == "SVG") {
+    var code = Blockly.JavaScript.workspaceToCode(workspace);
+    var href = location.href;
+    var dir  = href.substring(0, href.lastIndexOf('/'));
+    var htmlText = "<!DOCTYPE html>\n";
+    htmlText    += "<head>\n";
+    htmlText 	+= "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>\n";
+    htmlText 	+= "<title>BookCover</title>\n";
+    htmlText 	+= "</head>\n";
+    htmlText 	+= "<body style='margin: 0pt;'>\n";
+    htmlText 	+= "<div align='right'>"
+		+  "<input type='button' value='&#x1f5b6;' id='click' title='印刷用ページ' /></div>\n";
+    htmlText 	+= "<div id='drawing' style='border-style:solid; border-width: 1px;'></div>\n";
+    htmlText    += "<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'><\/script>\n";
+    htmlText    += "<script src='" + dir + "/3rdParty/svg.js'><\/script>\n";
+    htmlText    += "<script src='" + dir + "/BookCoverJS/BookCover.js'><\/script>\n";
+    htmlText  	+= "<script type='text/javascript'>\n";
+    htmlText    += "var draw;\n"; 
+    htmlText    += "function printSVG() {\n";
+    htmlText  	+= "    var svgText = draw.svg();\n";
+    htmlText  	+= "    var blob    = new Blob([svgText], { type: 'image/svg+xml' });\n";
+    htmlText  	+= "    var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');\n";
+    htmlText    += "}\n";
+    htmlText  	+= "$(function() {\n";
+    htmlText  	+= "    draw = SVG('drawing');\n";
+    htmlText    += code;
+    htmlText  	+= "    $('#click').click(printSVG);\n";
+    htmlText  	+= "});\n";
+    htmlText  	+= "<\/script>\n";
+    htmlText  	+= "</body>\n";
+    htmlText  	+= "</html>\n";
 
-  } 
+//    console.log(htmlText);
+    var blob = new Blob([htmlText], { type: "text/html" });
+    content.html("<object data='" + URL.createObjectURL(blob) + "'"
+                     + " id='svgFrame'" 
+                     + " width='" + content.width() + "'"
+                     + " height='" + content.height() + "'></object>");
+  }
 }
 
 function tabClick(clickedName) {
+  // If the XML tab was open, save and render the content.
+  if ($('#tabXml').hasClass('tabon')) {
+    var xmlTextarea = $('#contentXml');
+    var xmlText = xmlTextarea.val();
+    var xmlDom = null;
+    try {
+      xmlDom = Blockly.Xml.textToDom(xmlText);
+    } catch (e) {
+      var q =
+          window.confirm(MSG['badXml'].replace('%1', e));
+      if (!q) {
+        // Leave the user on the XML tab.
+        return;
+      }
+    }
+    if (xmlDom) {
+      workspace.clear();
+      Blockly.Xml.domToWorkspace(xmlDom, workspace);
+    }
+  }
+
   if ($("#tabBlocks").hasClass('tabon')) {
     workspace.setVisible(false);
   }
@@ -307,14 +769,17 @@ function tabClick(clickedName) {
 
 $(window).on('load resize', onResize);
 
-
 $(function() {
     workspace = Blockly.inject('contentBlock',
                                    { toolbox: document.getElementById('toolbox') });
-    $("#runButton").click(function () {
-        var code = Blockly.JavaScript.workspaceToCode(workspace);
-        alert(code);
-    });
+    Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
+//    $("#printButton").click(function () {
+//       renderContent("SVG");
+//       var subframe = $('#svgFrame');
+//       console.log("abc", subframe[0].innerHTML, "xyz");
+//       var blob    = new Blob([svgText], { type: 'image/svg+xml' });
+//       var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
+//    });
     onResize();
     Blockly.svgResize(workspace);
 

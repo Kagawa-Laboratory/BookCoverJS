@@ -111,7 +111,7 @@ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE = "この繰返しの残�
 
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING = "警告: このブロックは繰返しのなかでだけ使用できる。";
 Blockly.Msg.CONTROLS_FOREACH_HELPURL = "https://github.com/google/blockly/wiki/Loops#for-each";
-Blockly.Msg.CONTROLS_FOREACH_TITLE = "リスト %2 のなかの各項目 %1 に対して";
+Blockly.Msg.CONTROLS_FOREACH_TITLE = "リスト %2 の中の各項目 %1 に対して";
 Blockly.Msg.CONTROLS_FOREACH_INPUT_DO = "以下を繰り返す: ";
 Blockly.Msg.CONTROLS_FOREACH_TOOLTIP = "For each item in a list, set the variable '%1' to the item, and then do some statements.";
 
@@ -126,10 +126,11 @@ Blockly.Msg.CONTROLS_FOR_TOOLTIP = "変数 \"%1\"は、%4 ずつ変わりなが�
 Blockly.Blocks['bookcover_frame'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("ブックカバー作成開始する。");
+        .appendField("ブックカバーを作成開始する。（枠")
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "frame")
+        .appendField("）");
     this.appendStatementInput("statements")
         .setCheck(null);
-    this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
@@ -137,11 +138,15 @@ Blockly.Blocks['bookcover_frame'] = {
 };
 
 Blockly.JavaScript['bookcover_frame'] = function(block) {
+  var checkbox_frame = block.getFieldValue('frame') == 'TRUE';
   var statements_statements = Blockly.JavaScript.statementToCode(block, 'statements');
-  var code = "var BC = BookCover;\n" 
-           + "BC.start(draw);\n" 
-           + statements_statements 
-           + "BC.finish();\n";
+  var code = "var BC = BookCover;\n"
+           + "BC.start(draw);\n";
+  if (checkbox_frame) {
+    code += "BC.pageFrame();\n"
+  }
+  code    += statements_statements
+  code    += "BC.finish();\n";
   return code;
 };
 
@@ -149,7 +154,7 @@ Blockly.Blocks['bookcover_guide_bars'] = {
   init: function() {
     this.appendValueInput("width")
         .setCheck("Number")
-        .appendField("ガイドバーを幅: "); 
+        .appendField("ガイドバーを幅"); 
     this.appendDummyInput()
         .appendField("に設定する。");
     this.setInputsInline(true);
@@ -225,11 +230,11 @@ Blockly.JavaScript['bookcover_line'] = function(block) {
 Blockly.Blocks['bookcover_fill'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("塗りを");
+        .appendField("塗りの色を");
     this.appendValueInput("COLOUR")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("色にする。");
+        .appendField("にする。");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -249,11 +254,11 @@ Blockly.JavaScript['bookcover_fill'] = function(block) {
 Blockly.Blocks['bookcover_stroke'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("線を");
+        .appendField("線の色を");
     this.appendValueInput("COLOUR")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("色にする。");
+        .appendField("にする。");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -318,7 +323,7 @@ Blockly.JavaScript['bookcover_rect'] = function(block) {
   var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA);
   var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA);
   var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA);
-  var code = 'BC.rect(' + x + ', ' + y + ', ' + w + ', ' + h +');\n';
+  var code = 'BC.rect(' + value_x + ', ' + value_y + ', ' + value_w + ', ' + value_h +');\n';
   return code;
 };
 
@@ -353,7 +358,7 @@ Blockly.JavaScript['bookcover_ellipse'] = function(block) {
   var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA);
   var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA);
   var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA);
-  var code = 'BC.ellipse(' + x + ', ' + y + ', ' + w + ', ' + h +');\n';
+  var code = 'BC.ellipse(' + value_x + ', ' + value_y + ', ' + value_w + ', ' + value_h +');\n';
   return code;
 };
 
@@ -378,7 +383,7 @@ Blockly.Blocks['bookcover_rotate_h'] = {
 Blockly.JavaScript['bookcover_rotate_h'] = function(block) {
   var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA);
   var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA);
-  var code = 'rotateH360(' + value_colour + ', ' + value_angle + ')';
+  var code = 'BC.rotateH360(' + value_colour + ', ' + value_angle + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
@@ -546,7 +551,7 @@ Blockly.Blocks['bookcover_random_seed'] = {
 
 Blockly.JavaScript['bookcover_random_seed'] = function(block) {
   var value_seed = Blockly.JavaScript.valueToCode(block, 'seed', Blockly.JavaScript.ORDER_COMMA);
-  var code = 'randomSeed(' + value_seed + ');\n';
+  var code = 'BC.randomSeed(' + value_seed + ');\n';
   return code;
 };
 
@@ -866,6 +871,40 @@ Blockly.JavaScript['bookcover_hsl360'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.Blocks['bookcover_none'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("色なし");
+    this.setOutput(true, null);
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_none'] = function(block) {
+  var code = 'null';
+  return [code, Blockly.JavaScript.ORDER_ATOM];
+};
+
+
+Blockly.Blocks['bookcover_newline'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("改行");
+    this.setOutput(true, null);
+    this.setColour(160);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_newline'] = function(block) {
+  var code = '"\\n"';
+  return [code, Blockly.JavaScript.ORDER_ATOM];
+};
+
+
 Blockly.Blocks['bookcover_font_name'] = {
   init: function() {
     this.appendDummyInput()
@@ -950,3 +989,187 @@ Blockly.JavaScript['bookcover_say'] = function(block) {
   var code = 'BC.say(' + value_str + ');\n';
   return code;
 };
+
+Blockly.Blocks['bookcover_generic_statement'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("/* 文 */"), "STATEMENT");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_generic_statement'] = function(block) {
+  var text_statement = block.getFieldValue('STATEMENT');
+  var code = text_statement + '\n';
+  return code;
+};
+
+Blockly.Blocks['bookcover_generic_expression'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("/* 式 */"), "EXPRESSION");
+    this.setOutput(true, null);
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+
+Blockly.JavaScript['bookcover_generic_expression'] = function(block) {
+  var text_expression = block.getFieldValue('EXPRESSION');
+  var code = text_expression;
+  return [code, Blockly.JavaScript.ATOM];
+};
+
+Blockly.Blocks['bookcover_card_frame'] = {
+  init: function() {
+    this.appendValueInput("PAPER_SPEC")
+        .setCheck(null)
+        .appendField("");
+    this.appendDummyInput()
+        .appendField("の用紙情報でカードを作成開始する。");
+    this.appendStatementInput("DO")
+        .setCheck(null)
+        .appendField("");
+    this.setInputsInline(true);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_card_frame'] = function(block) {
+  var value_paper_spec = Blockly.JavaScript.valueToCode(block, 'PAPER_SPEC', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_do = Blockly.JavaScript.statementToCode(block, 'DO');
+  var code = 'var BC = BookCover;\n';
+  code    += 'BC.start(draw);\n';
+  code    += '  var __cardSpec = BC.__cardSpecs[' + value_paper_spec + '];\n';
+  code    += '  BC.__width = __cardSpec["width"]; BC.__height = __cardSpec["height"];\n';
+  code    += '  BC.__cards = __cardSpec["cards"];\n';
+  code    += statements_do;
+  code    += 'BC.finish();\n';
+  return code;
+};
+
+Blockly.Blocks['bookcover_foreachcard'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("各")
+        .appendField(new Blockly.FieldVariable("カード"), "CARD")
+        .appendField("に対して")
+        .appendField("")
+        .appendField(new Blockly.FieldVariable("カウンター"), "COUNTER")
+        .appendField("を使って");
+    this.appendDummyInput()
+        .appendField("（はみ出し防止")
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "CLIP")
+        .appendField("、枠表示")
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "FRAME")
+        .appendField("、余白")
+        .appendField(new Blockly.FieldNumber(1, 0, 30, 0.05), "MARGIN")
+        .appendField("mm）");
+    this.appendStatementInput("DO")
+        .setCheck(null)
+        .appendField("以下を繰り返す。");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_foreachcard'] = function(block) {
+  var variable_card = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('CARD'), Blockly.Variables.NAME_TYPE);
+  var variable_counter = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('COUNTER'), Blockly.Variables.NAME_TYPE);
+  var statements_do = Blockly.JavaScript.statementToCode(block, 'DO');
+  var checkbox_clip = block.getFieldValue('CLIP') == 'TRUE';
+  var checkbox_frame = block.getFieldValue('FRAME') == 'TRUE';
+  var number_margin = block.getFieldValue('MARGIN');
+  var code = 'for (var ' + variable_counter + ' in BC.__cards ) {\n';
+  code    += '  var ' + variable_card + ' =  BC.__cards[' + variable_counter + '];\n';
+  code    += '  BC.pushMatrix();\n';
+  code    += '  BC.translate(' + variable_card + '["x"], ' + variable_card + '["y"]);\n';
+  if (checkbox_clip || checkbox_frame) {
+    code  += '  BC.__clipMargin = ' + number_margin + ';\n';
+  }
+  if (checkbox_clip) {
+    code  += '  BC.clipWithCard(' + variable_card + ');\n';
+  }
+  if (checkbox_frame) {
+    code  += '  BC.cardFrame(' + variable_card + ');\n';
+  }
+  code    += statements_do;
+  code    += '  BC.popMatrix();\n';
+  code    += '}\n';
+  return code;
+};
+
+Blockly.Blocks['bookcover_cardspec'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("カード用紙")
+        .appendField(new Blockly.FieldDropdown([["エーワン F8A4-5", "エーワン F8A4-5"], ["エーワン F10A4-2", "エーワン F10A4-2"], ["エーワン F10A4-1", "エーワン F10A4-1"]]), "CARDSPEC");
+    this.setOutput(true, null);
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_cardspec'] = function(block) {
+  var dropdown_cardspec = block.getFieldValue('CARDSPEC');
+  var code = "'" + dropdown_cardspec + "'";
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+/*
+Blockly.Blocks['bookcover_card_frame'] = {
+  init: function() {
+    this.appendValueInput("PAPER_SPEC")
+        .setCheck(null)
+        .appendField("");
+    this.appendDummyInput()
+        .appendField("の用紙情報でカードを作成する。各")
+        .appendField(new Blockly.FieldVariable("カード"), "CARD")
+        .appendField("に対して");
+    this.appendStatementInput("DO")
+        .setCheck(null)
+        .appendField("以下を繰り返す。");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "CLIP")
+        .appendField("クリップする。");
+    this.setInputsInline(true);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_card_frame'] = function(block) {
+  var value_paper_spec = Blockly.JavaScript.valueToCode(block, 'PAPER_SPEC', Blockly.JavaScript.ORDER_ATOMIC);
+  var variable_card = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('CARD'), Blockly.Variables.NAME_TYPE);
+  var statements_do = Blockly.JavaScript.statementToCode(block, 'DO');
+  var checkbox_clip = block.getFieldValue('CLIP') == 'TRUE';
+  
+  var code = 'var BC = BookCover;\n'
+           + 'BC.start(draw);\n'
+           + 'var __paperSpec = ' + value_paper_spec + ';\n';
+           + 'BC.__width = __paperSpec["width"]; BC.__height = __paperSpec["height"];\n';
+  var index = variable_card + '_index';
+  code += 'for (var ' + index + ' in __paperSpec["cards"] ) {\n';
+  code += '  var ' + variable_card + ' =  __paperSpec["cards"][' + index + '];\n';
+  code += '  pushMatrix();\n';
+  code += '  translate(' + variable_card + '["x"], ' + variable_card + '["y"]);\n';
+  code += statements_do;
+  code += '  popMatrix();\n';
+  code += '}\n';
+  code += 'BC.finish();\n'
+  return code;
+};
+*/

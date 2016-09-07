@@ -11,7 +11,7 @@ var BookCover = (function () {
     self.__fontSize = 12;
 
     self.__gDepth = 0;
-    self.__gStack = [];
+    self.__gStack = [ ];
     self.__width = 297;
     self.__height = 210;
     self.__landscape = 1;
@@ -27,6 +27,7 @@ var BookCover = (function () {
     self.__currentBottomMargin = self.__bottomMargin;
 
 //    self.__currentGroup;
+//    self.__root;
 
     self.__firstVertex = true;
     self.__shapePath = "";
@@ -37,6 +38,11 @@ var BookCover = (function () {
     self.__turtleY = 105;
     self.__turtleHeading = 0;
     self.__turtleStack = [ ];
+
+    /* cards */
+    self.__cards     = [ ];
+    self.__cardSpecs = { };
+    self.__clipMargin = 1;
   };
 
   BookCover.prototype = {
@@ -118,7 +124,11 @@ var BookCover = (function () {
     },
 
     stroke: function(arg) {
+        if (arg == null || arg == "none") {
+            this.noStroke(); return;
+        }
         if (arg > 0xffffff) arg = 0xffffff;
+        else if (arg < 0) arg = 0;
         this.__stroke = "#" + this.mySprintfX(6, arg);
     },
 
@@ -131,7 +141,11 @@ var BookCover = (function () {
     },
 
     fill: function(arg) {
-        if (arg>0xffffff) arg=0xffffff;
+        if (arg == null || arg == "none") {
+            this.noFill(); return;
+        }
+        if (arg > 0xffffff) arg = 0xffffff;
+        else if (arg < 0) arg = 0;
         this.__fill = "#" + this.mySprintfX(6, arg);
     },
 
@@ -386,10 +400,8 @@ var BookCover = (function () {
     //    printf("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"\n");
     //    printf("  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n");
     //    printf("<svg version=\"1.1\" width=\"%.2fmm\" height=\"%.2fmm\"\n", width, height);
-    //    draw.size(width + 'mm', height + 'mm');
-        draw.size('100%', '100%');
     //    printf("  viewBox=\"0 0 %.2f %.2f\"\n", width, height);
-        draw.viewbox(0, 0, this.__width, this.__height);
+        draw.attr('preserveAspectRatio', 'xMidYMid');
     //    printf("  preserveAspectRatio=\"xMidYMid\"\n");
     //    printf("  fill-rule=\"evenodd\"\n");
     //    printf("  xmlns=\"http://www.w3.org/2000/svg\"\n");
@@ -397,6 +409,7 @@ var BookCover = (function () {
         this.randomizeByTime();
         this.__gDepth = 0;
         this.__currentGroup = draw;
+        this.__root         = draw;
     },
 
     resetMatrix: function() {
@@ -729,21 +742,31 @@ var BookCover = (function () {
     },
 
     rulers: function() {
-        var i;
         var tmpW = this.__strokeWeight;
-        var tmpC = [];
-        for (i = 0; i < 8; i++) {
-            tmpC[i] = this.__stroke[i];
-        }
+        var tmpC = this.__stroke;
         this.strokeWeight(0.2);
         this.stroke(this.bw1(0));
         this.line(0, 28.5, 20, 28.5);
         this.line(277, 28.5, 297, 28.5);
         this.line(0, 181.5, 20, 181.5);
         this.line(277, 181.5, 297, 181.5);
-        for(i = 0; i < 8; i++) {
-            this.__stroke[i] = tmpC[i];
-        }
+        this.__stroke = tmpC;
+        this.strokeWeight(tmpW);
+    },
+
+    pageFrame: function()  {
+        var tmpW = this.__strokeWeight;
+        var tmpO = this.__strokeOpacity;
+        var tmpC = this.__stroke;
+        var tmpF = this.__fill;
+        this.strokeWeight(0.2);
+        this.strokeOpacity(1);
+        this.stroke(this.bw1(0));
+        this.noFill();
+        this.rect(0, 0, this.__width, this.__height);
+        this.__strokeOpacity = tmpO;
+        this.__stroke = tmpC;
+        this.__fill   = tmpF;
         this.strokeWeight(tmpW);
     },
 
@@ -752,14 +775,10 @@ var BookCover = (function () {
         var tmpW = this.__strokeWeight;
         var tmpO = this.__strokeOpacity;
         var tmpQ = this.__fillOpacity;
-        var tmpC;
-        var tmpF;
-        var i;
+        var tmpC = this.__stroke;
+        var tmpF = this.__fill;
 
         this.strokeWeight(0.5);
-        for (i = 0; i < 8; i++) {
-            tmpC[i] = this.__stroke[i];
-        }
         this.stroke(this.bw1(0));
         this.strokeOpacity(1);
         if (this.__landscape) {
@@ -783,9 +802,7 @@ var BookCover = (function () {
         }
 
         this.noStroke();
-        for(i = 0; i < 8; i++) {
-            tmpF[i] = this.__fill[i];
-        }
+
         this.fill(this.bw1(0));
         this.fillOpacity(1);
         if (this.__landscape) {
@@ -794,15 +811,16 @@ var BookCover = (function () {
             this.ellipse(28 * sx, 28 * sy, 4 * sx, 4 * sy);
         }
         this.__fillOpacity = tmpQ;
-        for(i = 0; i < 8; i++) {
-            this.__fill[i] = tmpF[i];
-        }
+        this.__fill = tmpF;
+ 
         this.__strokeOpacity = tmpO;
-        for(i = 0; i < 8; i++) {
-            this.__stroke[i] = tmpC[i];
-        }
+        this.__stroke = tmpC;
         this.strokeWeight(tmpW);
     },
+
+/*
+ *  symbols (deprecated)
+ */  
 
     genericSmilieSymbol: function(callback) {
         var ret = this.__currentGroup.symbol().viewbox(0, 0, 5000, 5000);
@@ -864,6 +882,10 @@ var BookCover = (function () {
         return ret;
     },
 
+/*
+ *  turtle grphics functions
+ */
+
     pushTurtle: function() {
         this.__turtleStack.push(this.__turtleX);
         this.__turtleStack.push(this.__turtleY);
@@ -890,7 +912,10 @@ var BookCover = (function () {
     finish: function() {
         this.penUp();
         this.resetMatrix();
-    //    printf("</svg>\n");
+        var draw = this.__currentGroup; 
+//        draw.size(this.__width, this.__height);
+        draw.size('100%', '100%');
+        draw.viewbox(0, 0, this.__width, this.__height);
     },
 
     penDown: function() {
@@ -999,9 +1024,73 @@ var BookCover = (function () {
         }
         this.text.apply(null, args);
         this.popMatrix();
+    },
+
+    makeCards: function(sx, sy, dx, dy, w, h, cols, rows) {
+       	var ret = new Array(cols * rows);
+       	var n = 0;
+       	var x = sx;
+       	for (var i = 0; i < cols; i++) {
+       	    var y = sy;
+       	    for (var j = 0; j < rows; j++, n++) {
+       	        ret[n] = { 'x': x, 'y': y, 'width': w, 'height': h };
+       	        y += dy;
+       	    }
+       	    x += dx;
+       	}
+       	return ret;	
+    },
+
+    buildCardSpecs: function() {
+        this.__cardSpecs["エーワン F8A4-5"] = {
+            'width':  210,
+            'height': 297,
+            'cards':  this.makeCards(8, 10.5, 97, 69, 97, 69, 2, 4)
+        };
+        this.__cardSpecs["エーワン F10A4-2"] = {
+            'width':  210,
+            'height': 297,
+            'cards':  this.makeCards(18.6, 21.2, 86.4, 50.8, 86.4, 50.8, 2, 5)
+        };
+        this.__cardSpecs["エーワン F10A4-1"] = {
+            'width':  210,
+            'height': 297,
+            'cards':  this.makeCards(14, 11, 91, 55, 91, 55, 2, 5)
+        };
+    },
+
+    cardFrame: function(card) {
+        var tmpW = this.__strokeWeight;
+        var tmpO = this.__strokeOpacity;
+        var tmpC = this.__stroke;
+        var tmpF = this.__fill;
+        this.strokeWeight(0.2);
+        this.strokeOpacity(1);
+        this.stroke(this.bw1(0));
+        this.noFill();
+        this.rect(this.__clipMargin, this.__clipMargin, 
+                  card['width'] - 2 * this.__clipMargin, card['height'] - 2 * this.__clipMargin);
+        this.__strokeOpacity = tmpO;
+        this.__stroke = tmpC;
+        this.__fill   = tmpF;
+        this.strokeWeight(tmpW);
+    },
+
+    clipWithCard: function(card) {
+        var rect = this.__currentGroup
+                       .rect(card['width'] - 2 * this.__clipMargin, card['height'] - 2 * this.__clipMargin)
+                       .move(this.__clipMargin, this.__clipMargin);
+        this.__currentGroup.clipWith(rect);
+    },
+
+    numCards: function() {
+        if (this.__cards) return cards.length;
+        return 1;   // カードなし
     }
   };
+
   var ret = new BookCover();
 //  ret.randomizeByTime(); 
+  ret.buildCardSpecs();
   return ret; 
 })();
