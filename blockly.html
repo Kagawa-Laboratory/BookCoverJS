@@ -81,7 +81,7 @@
 </head>
 <body>
 <xml id="toolbox" style="display: none">
-<category name="ブックカバー（基本設定）">
+<category name="基本設定" colour="100">
   <block type="bookcover_card_frame">
     <value name="PAPER_SPEC">
       <block type="bookcover_cardspec">
@@ -95,8 +95,6 @@
       </block>
     </statement>
   </block>
-  <block type="bookcover_cardspec"></block>
-  <block type="bookcover_foreachcard"></block>
   <block type="bookcover_frame"></block>
   <block type="bookcover_guide_bars">
     <value name="width">
@@ -105,6 +103,26 @@
       </block>
     </value>
   </block>
+  <block type="bookcover_foreachcard"></block>
+  <block type="bookcover_cardspec"></block>
+  <block type="bookcover_pageWidth"></block>
+  <block type="bookcover_pageHeight"></block>
+  <block type="bookcover_cardWidth">
+    <value name="CARD">
+      <block type="variables_get">
+        <field name="VAR">カード</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_cardHeight">
+    <value name="CARD">
+      <block type="variables_get">
+        <field name="VAR">カード</field>
+      </block>
+    </value>
+  </block>
+</category>
+<category name="色" colour="20">
   <block type="bookcover_fill">
     <value name="COLOUR">
       <block type="bookcover_colour">
@@ -112,7 +130,6 @@
       </block>
     </value>
   </block>
-  <block type="bookcover_no_fill"></block>
   <block type="bookcover_fill_opacity">
     <value name="opacity">
       <block type="math_number">
@@ -127,7 +144,6 @@
       </block>
     </value>
   </block>
-  <block type="bookcover_no_stroke"></block>
   <block type="bookcover_stroke_weight">
     <value name="width">
       <block type="math_number">
@@ -142,6 +158,56 @@
       </block>
     </value>
   </block>
+  <block type="bookcover_colour"></block>
+  <block type="bookcover_none"></block>
+  <block type="bookcover_rotate_h">
+    <value name="colour">
+      <block type="bookcover_colour">
+        <field name="COLOUR">#ff0000</field>
+      </block>
+    </value>
+    <value name="angle">
+      <block type="bookcover_angle">
+        <field name="angle">120</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_rgb100">
+    <value name="red">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <value name="green">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+    <value name="blue">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_hsl360">
+    <value name="hue">
+      <block type="bookcover_angle">
+        <field name="angle">180</field>
+      </block>
+    </value>
+    <value name="saturation">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+    <value name="luminance">
+      <block type="math_number">
+        <field name="NUM">50</field>
+      </block>
+    </value>
+  </block>
+</category>
+<category name="文字列" colour="160">
   <block type="bookcover_text_font">
     <value name="name">
       <block type="bookcover_font_name">
@@ -154,8 +220,36 @@
       </block>
     </value>
   </block>
+  <block type="bookcover_text">
+    <value name="x">
+      <block type="math_number">
+        <field name="NUM">10</field>
+      </block>
+    </value>
+    <value name="y">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="str">
+      <block type="text">
+        <field name="TEXT">こんにちは</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_font_name"></block>
+  <block type="text">
+   <field name="TEXT">&#x1f345;&#x1f346;&#x1f347;&#x1f34a;&#x1f34d;&#x1f34e;&#x1f350;&#x1f351;</field>
+  </block>
+  <block type="bookcover_newline"></block>
+  <block type="text_length"></block>
+  <block type="text_join"></block>
+  <block type="text_append"></block>
+  <block type="text_print"></block>
+  <block type="text_prompt_ext"></block>
+  <block type="text_charAt"></block>
 </category>
-<category name="ブックカバー（移動・回転）">
+<category name="移動・拡大／縮小・回転"  colour="0">
   <block type="bookcover_matrix"></block>
   <block type="bookcover_translate">
     <value name="x">
@@ -171,7 +265,7 @@
   </block>
   <block type="bookcover_scale">
     <value name="x">
-      <block type="math_number"">
+      <block type="math_number">
         <field name="NUM">1.5</field>
       </block>
     </value>
@@ -188,8 +282,9 @@
       </block>
     </value>
   </block>
+  <block type="bookcover_angle"></block>
 </category>
-<category name="ブックカバー（基本図形）">
+<category name="基本図形" colour="130">
     <block type="bookcover_line">
     <value name="x1">
       <block type="math_number">
@@ -202,7 +297,7 @@
       </block>
     </value>
     <value name="x2">
-      <block type="math_number"">
+      <block type="math_number">
         <field name="NUM">50</field>
       </block>
     </value>
@@ -229,7 +324,7 @@
       </block>
     </value>
     <value name="h">
-      <block type="math_number"">
+      <block type="math_number">
         <field name="NUM">230</field>
       </block>
     </value>
@@ -256,25 +351,8 @@
       </block>
     </value>
   </block>
-  <block type="bookcover_text">
-    <value name="x">
-      <block type="math_number">
-        <field name="NUM">10</field>
-      </block>
-    </value>
-    <value name="y">
-      <block type="math_number">
-        <field name="NUM">20</field>
-      </block>
-    </value>
-    <value name="str">
-      <block type="text">
-        <field name="TEXT">こんにちは</field>
-      </block>
-    </value>
-  </block>
 </category>
-<category name="ブックカバー（色・角度）">
+<category name="数" colour="230">
   <block type="bookcover_random_seed">
     <value name="seed">
       <block type="math_number">
@@ -284,7 +362,7 @@
   </block>
   <block type="bookcover_random_in_range">
     <value name="min">
-      <block type="math_number"">
+      <block type="math_number">
         <field name="NUM">0</field>
       </block>
     </value>
@@ -294,75 +372,56 @@
       </block>
     </value>
   </block>
-  <block type="bookcover_colour"></block>
-  <block type="bookcover_none"></block>
-  <block type="bookcover_rotate_h">
-    <value name="colour">
-      <block type="bookcover_colour">
-        <field name="COLOUR">#ff0000</field>
-      </block>
-    </value>
-    <value name="angle">
-      <block type="bookcover_angle">
-        <field name="angle">120</field>
-      </block>
-    </value>
-  </block>
-  <block type="bookcover_angle"></block>
-  <block type="bookcover_rgb255">
-    <value name="red">
-      <block type="math_number">
+  <block type="math_number"></block>
+  <block type="math_arithmetic"></block>
+  <block type="math_single"></block>
+  <block type="math_trig"></block>
+  <block type="math_constant"></block>
+  <block type="math_number_property">
+    <value name="NUMBER_TO_CHECK">
+      <shadow type="math_number">
         <field name="NUM">0</field>
-      </block>
-    </value>
-    <value name="green">
-      <block type="math_number">
-        <field name="NUM">255</field>
-      </block>
-    </value>
-    <value name="blue">
-      <block type="math_number">
-        <field name="NUM">255</field>
-      </block>
+      </shadow>
     </value>
   </block>
-  <block type="bookcover_hsb360">
-    <value name="hue">
-      <block type="bookcover_angle">
-        <field name="angle">300</field>
-      </block>
-    </value>
-    <value name="sturation">
-      <block type="math_number">
-        <field name="NUM">100</field>
-      </block>
-    </value>
-    <value name="brightness">
-      <block type="math_number">
-        <field name="NUM">100</field>
-      </block>
+  <block type="math_round">
+    <value name="NUM">
+      <shadow type="math_number">
+        <field name="NUM">3.1</field>
+      </shadow>
     </value>
   </block>
-  <block type="bookcover_hsl360">
-    <value name="hue">
-      <block type="bookcover_angle">
-        <field name="angle">180</field>
-      </block>
+  <block type="math_modulo">
+    <value name="DIVIDEND">
+      <shadow type="math_number">
+        <field name="NUM">64</field>
+      </shadow>
     </value>
-    <value name="sturation">
-      <block type="math_number">
-        <field name="NUM">100</field>
-      </block>
+    <value name="DIVISOR">
+      <shadow type="math_number">
+        <field name="NUM">10</field>
+      </shadow>
     </value>
-    <value name="luminance">
-      <block type="math_number">
+  </block>
+  <block type="math_constrain">
+    <value name="VALUE">
+      <shadow type="math_number">
         <field name="NUM">50</field>
-      </block>
+      </shadow>
     </value>
-  </block>>
-  <block type="bookcover_font_name"></block>
+    <value name="LOW">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="HIGH">
+      <shadow type="math_number">
+        <field name="NUM">100</field>
+      </shadow>
+    </value>
+  </block>
 </category>
-<category name="&#128034; タートル">
+<category name="&#128034; かめ" colour="150">
   <block type="bookcover_pen_down"></block>
   <block type="bookcover_pen_up"></block>
   <block type="bookcover_forward">
@@ -406,7 +465,7 @@
     </value>
   </block>
 </category>
-<category name="流れ" colour="120">
+<category name="論理" colour="210">
   <block type="controls_if">
     <value name="IF0">
       <block type="logic_boolean">
@@ -414,14 +473,20 @@
       </block>
     </value>
   </block>
+  <block type="logic_compare"></block>
+  <block type="logic_operation"></block>
+  <block type="logic_negate"></block>
+  <block type="logic_boolean"></block>
+</category>
+<category name="繰り返し" colour="120">
   <block type="controls_repeat_ext">
     <value name="TIMES">
       <block type="math_number">
         <field name="NUM">4</field>
       </block>
     </value>
-  </block>[
-    <block type="controls_for">
+  </block>
+  <block type="controls_for">
     <field name="VAR">i</field>
     <value name="FROM">
       <block type="math_number">
@@ -472,90 +537,62 @@
   </block>
   <block type="controls_flow_statements"></block>
 </category>
-<category name="数・文字列・演算" colour="330">
-      <block type="logic_compare"></block>
-      <block type="logic_operation"></block>
-      <block type="logic_negate"></block>
-      <block type="logic_boolean"></block>
-      <block type="math_number"></block>
-      <block type="math_arithmetic"></block>
-      <block type="math_single"></block>
-      <block type="math_trig"></block>
-      <block type="math_constant"></block>
-      <block type="math_number_property">
-        <value name="NUMBER_TO_CHECK">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
+<category name="リスト" colour="260">
+  <block type="lists_create_empty"></block>
+  <block type="lists_create_with"></block>
+  <block type="lists_repeat">
+    <value name="NUM">
+      <block type="math_number">
+        <field name="NUM">5</field>
       </block>
-      <block type="math_round">
-        <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">3.1</field>
-          </shadow>
-        </value>
+    </value>
+  </block>
+  <block type="lists_length"></block>
+  <block type="lists_isEmpty"></block>
+  <block type="lists_indexOf"></block>
+  <block type="lists_getIndex"></block>
+  <block type="lists_setIndex"></block>
+</category>
+<category name="変数" custom="VARIABLE" colour="330"></category>
+<category name="関数" custom="PROCEDURE" colour="290"></category>
+<category name="（上級者用）">
+  <block type="bookcover_generic_statement"></block>
+  <block type="bookcover_generic_expression"></block>
+  <block type="bookcover_rgb255">
+    <value name="red">
+      <block type="math_number">
+        <field name="NUM">0</field>
       </block>
-      <block type="math_modulo">
-        <value name="DIVIDEND">
-          <shadow type="math_number">
-            <field name="NUM">64</field>
-          </shadow>
-        </value>
-        <value name="DIVISOR">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
-        </value>
+    </value>
+    <value name="green">
+      <block type="math_number">
+        <field name="NUM">255</field>
       </block>
-      <block type="math_constrain">
-        <value name="VALUE">
-          <shadow type="math_number">
-            <field name="NUM">50</field>
-          </shadow>
-        </value>
-        <value name="LOW">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <value name="HIGH">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
-          </shadow>
-        </value>
+    </value>
+    <value name="blue">
+      <block type="math_number">
+        <field name="NUM">255</field>
       </block>
-      <block type="text"></block>
-      <block type="bookcover_newline"></block>
-      <block type="text_length"></block>
-      <block type="text_join"></block>
-      <block type="text_append"></block>
-      <block type="text_print"></block>
-      <block type="text_prompt_ext"></block>
-      <block type="text_charAt"></block>
-    </category>
-    <category name="リスト">
-      <block type="lists_create_empty"></block>
-      <block type="lists_create_with"></block>
-      <block type="lists_repeat">
-        <value name="NUM">
-          <block type="math_number">
-            <field name="NUM">5</field>
-          </block>
-        </value>
+    </value>
+  </block>
+  <block type="bookcover_hsb360">
+    <value name="hue">
+      <block type="bookcover_angle">
+        <field name="angle">300</field>
       </block>
-      <block type="lists_length"></block>
-      <block type="lists_isEmpty"></block>
-      <block type="lists_indexOf"></block>
-      <block type="lists_getIndex"></block>
-      <block type="lists_setIndex"></block>
-    </category>
-    <category name="変数" custom="VARIABLE"></category>
-    <category name="関数" custom="PROCEDURE"></category>
-    <category name="（管理者用）">
-      <block type="bookcover_generic_statement"></block>
-      <block type="bookcover_generic_expression"></block>
-    </category>
+    </value>
+    <value name="saturation">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+    <value name="brightness">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+  </block>
+</category>
 </xml>
 
 <xml id="startBlocks" style="display: none;">
@@ -779,14 +816,19 @@ $(window).on('load resize', onResize);
 
 $(function() {
     workspace = Blockly.inject('contentBlock',
-                                   { toolbox: document.getElementById('toolbox') });
+       { toolbox: document.getElementById('toolbox'),
+         zoom: { controls: true, wheel: true, startScale: 1.0, maxScale: 3, minScale: 0.3, scaleSpeed: 1.2 }
+       });
+
     BlocklyStorage.backupOnUnload(workspace);
+
+    workspace.addChangeListener(Blockly.Events.disableOrphans);
+
     if (location.search.indexOf("clean") > 0) { // TODO ちゃんとする
         Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
     } else {
         window.setTimeout(function () { BlocklyStorage.restoreBlocks(workspace); }, 0);
     }
-
 
 //    $("#printButton").click(function () {
 //       renderContent("SVG");

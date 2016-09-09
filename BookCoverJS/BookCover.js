@@ -232,7 +232,7 @@ var BookCover = (function () {
             /* max = min = 0 */
             return this.hsb1(h, 0, 0);
         } else if (l <= 0.5) {
-            var diff = s * l;
+            var diff = s * l;    // 
             var max  = l + diff;
             var min  = l - diff;
             return this.hsb1(h, 1 - min / max, max);
@@ -242,6 +242,15 @@ var BookCover = (function () {
             var min  = l - diff;
             return this.hsb1(h, 1 - min / max, max);
         }
+    },
+
+    hsb1tohsl1: function(h, s, b) {
+        var max = b / 100;
+        var min = max * (1 - s / 100);
+        var diff = (max - min) / 2;
+        var luminance = max - diff;
+        var saturation = luminance <= 0.5 ? diff / luminance : diff / (luminance - 1);
+        return ([h, saturation, luminance]);
     },
 
     hsl100: function(h, s, l) {
@@ -276,7 +285,7 @@ var BookCover = (function () {
         return Math.sin(this.radians(deg));
     },
 
-    rgb2hsb360: function(rgb, ret) {
+    rgb2hsb360: function(rgb) {
         var b = rgb % 0x100;
         var g = rgb / 0x100 % 0x100;
         var r = rgb / 0x10000 % 0x100;
@@ -299,7 +308,8 @@ var BookCover = (function () {
                 max = g; min = r; sub = b - r; angle = 120;
             }
         }
-
+ 
+        ret = [0, 0, 0];
         ret[0] = 60 * (sub / (max - min)) + angle;
         if (ret[0] < 0) ret[0] += 360;
         ret[1] = 100.0 * (max - min) / max;
@@ -307,9 +317,40 @@ var BookCover = (function () {
         return ret;
     },
 
+    rgb2hsl360: function(rgb) {
+        var b = rgb % 0x100;
+        var g = rgb / 0x100 % 0x100;
+        var r = rgb / 0x10000 % 0x100;
+        var max, min, sub, angle;
+
+        if (r >= g) { // ? r ? g ?
+            if (g >= b) { // r g b
+                max = r; min = b; sub = g - b; angle = 0;
+            } else if (b >= r) { // b r g
+                max = b; min = g; sub = r - g; angle = 240;
+            } else { // r b g
+                max = r; min = g; sub = g - b; angle = 0;
+            }
+        } else { // ? g ? r ?
+            if (r >= b) { // g r b
+                max = g; min = b; sub = b - r; angle = 120;
+            } else if (b >= g) { // b g r
+                max = b; min = r; sub = r - g; angle = 240;
+            } else { // g b r
+                max = g; min = r; sub = b - r; angle = 120;
+            }
+        }
+ 
+        ret = [0, 0, 0];
+        ret[0] = 60 * (sub / (max - min)) + angle;
+        if (ret[0] < 0) ret[0] += 360;
+        ret[1] = 100.0 * (max - min) / (255 - Math.abs(max + min - 255));
+        ret[2] = (max + min) / 255.0 * 50;
+        return ret;
+    },
+
     rotateH360: function(color, a) {
-        var hsb = [0, 0, 0];
-        this.rgb2hsb360(color, hsb);
+        var hsb = this.rgb2hsb360(color);
         hsb[0] += a;
         return this.hsb360(hsb[0], hsb[1], hsb[2]);
     },
@@ -319,31 +360,51 @@ var BookCover = (function () {
     },
 
     addS100: function(color, a) {
-        var hsb = [0, 0, 0];
-        this.rgb2hsb360(color, hsb);
+        var hsb = this.rgb2hsb360(color);
         hsb[1] += a;
         return this.hsb360(hsb[0], hsb[1], hsb[2]);
     },
 
+    addS100L: function(color, a) {
+        var hsl = this.rgb2hsl360(color);
+        hsl[1] += a;
+        return this.hsl360(hsl[0], hsl[1], hsl[2]);
+    },
+
     scaleS: function(color, a) {
-        var hsb = [0, 0, 0];
-        this.rgb2hsb360(color, hsb);
+        var hsb =  this.rgb2hsb360(color);
         hsb[1] *= a;
         return this.hsb360(hsb[0], hsb[1], hsb[2]);
     },
 
+    scaleSL: function(color, a) {
+        var hsl =  this.rgb2hsl360(color);
+        hsl[1] *= a;
+        return this.hsl360(hsl[0], hsl[1], hsl[2]);
+    },
+
     addB100: function(color, a) {
-        var hsb = [0, 0, 0];
-        this.rgb2hsb360(color, hsb);
+        var hsb = this.rgb2hsb360(color);
         hsb[2] += a;
         return this.hsb360(hsb[0], hsb[1], hsb[2]);
     },
 
+    addL100: function(color, a) {
+        var hsl = this.rgb2hsl360(color);
+        hsl[2] += a;
+        return this.hsl360(hsl[0], hsl[1], hsl[2]);
+    },
+
     scaleB: function(color, a) {
-        var hsb = [0, 0, 0];
-        this.rgb2hsb360(color, hsb);
+        var hsb = this.rgb2hsb360(color);
         hsb[2] *= a;
         return this.hsb360(hsb[0], hsb[1], hsb[2]);
+    },
+
+    scaleL: function(color, a) {
+        var hsl = this.rgb2hsl360(color);
+        hsl[2] *= a;
+        return this.hsl360(hsl[0], hsl[1], hsl[2]);
     },
 
     /* ---------------------------------------------------------------------- *
@@ -649,7 +710,7 @@ var BookCover = (function () {
         var y = arguments[2];
         var as = [];
         var len = arguments.length
-        as.push(f);
+        as.push("" + f);  /* String に強制 */
         for (var k = 3; k < len; k++) {
             as.push(arguments[k]);
         }
@@ -1018,7 +1079,7 @@ var BookCover = (function () {
         this.translate(this.__turtleX, this.__turtleY);
         this.rotate360(this.__turtleHeading);
         var args = [];
-        args.push(arguments[0]);
+        args.push("" + arguments[0]);  /* String に強制 */
         args.push(0);
         args.push(0);
         for (i = 1; i < arguments.length; i++) {
