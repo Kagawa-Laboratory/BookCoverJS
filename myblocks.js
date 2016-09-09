@@ -134,12 +134,12 @@ Blockly.Msg.CONTROLS_FOR_TOOLTIP = "変数 \"%1\"は、%4 ずつ変わりなが�
 Blockly.Blocks['bookcover_frame'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("ブックカバーを作成開始する。（枠")
+        .appendField("ブックカバーを作成開始する。（枠表示")
         .appendField(new Blockly.FieldCheckbox("TRUE"), "frame")
         .appendField("）");
     this.appendStatementInput("statements")
         .setCheck(null);
-    this.setColour(120);
+    this.setColour(100);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -168,7 +168,7 @@ Blockly.Blocks['bookcover_guide_bars'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(100);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -188,7 +188,7 @@ Blockly.Blocks['bookcover_matrix'] = {
         .setCheck(null);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(0);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -246,7 +246,7 @@ Blockly.Blocks['bookcover_fill'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -270,7 +270,7 @@ Blockly.Blocks['bookcover_stroke'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -289,7 +289,7 @@ Blockly.Blocks['bookcover_colour'] = {
         .appendField(new Blockly.FieldColour("#ff0000"), "COLOUR");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -382,7 +382,7 @@ Blockly.Blocks['bookcover_rotate_h'] = {
         .appendField("回転した色");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -392,6 +392,56 @@ Blockly.JavaScript['bookcover_rotate_h'] = function(block) {
   var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA);
   var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA);
   var code = 'BC.rotateH360(' + value_colour + ', ' + value_angle + ')';
+  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Blocks['bookcover_add_s'] = {
+  init: function() {
+    this.appendValueInput("colour")
+        .setCheck(null)
+        .appendField("色");
+    this.appendValueInput("delta")
+        .setCheck(null)
+        .appendField("の彩度を");
+    this.appendDummyInput()
+        .appendField("% 増やした色");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(20);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_add_s'] = function(block) {
+  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA);
+  var value_delta = Blockly.JavaScript.valueToCode(block, 'delta', Blockly.JavaScript.ORDER_COMMA);
+  var code = 'BC.addS100L(' + value_colour + ', ' + value_delta + ')';
+  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Blocks['bookcover_add_l'] = {
+  init: function() {
+    this.appendValueInput("colour")
+        .setCheck(null)
+        .appendField("色");
+    this.appendValueInput("delta")
+        .setCheck(null)
+        .appendField("の輝度を");
+    this.appendDummyInput()
+        .appendField("% 増やした色");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(20);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_add_l'] = function(block) {
+  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA);
+  var value_delta = Blockly.JavaScript.valueToCode(block, 'delta', Blockly.JavaScript.ORDER_COMMA);
+  var code = 'BC.addL100(' + value_colour + ', ' + value_delta + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
@@ -423,7 +473,7 @@ Blockly.Blocks['bookcover_stroke_weight'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -445,7 +495,7 @@ Blockly.Blocks['bookcover_stroke_opacity'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -467,7 +517,7 @@ Blockly.Blocks['bookcover_fill_opacity'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -486,7 +536,7 @@ Blockly.Blocks['bookcover_no_stroke'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -504,7 +554,7 @@ Blockly.Blocks['bookcover_no_fill'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -576,7 +626,7 @@ Blockly.Blocks['bookcover_translate'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(0);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -602,7 +652,7 @@ Blockly.Blocks['bookcover_scale'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(0);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -625,7 +675,7 @@ Blockly.Blocks['bookcover_rotate'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(0);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -636,6 +686,7 @@ Blockly.JavaScript['bookcover_rotate'] = function(block) {
   var code = 'BC.rotate(' + value_angle + ');\n';
   return code;
 };
+
 
 Blockly.Blocks['bookcover_pen_up'] = {
   init: function() {
@@ -806,7 +857,7 @@ Blockly.Blocks['bookcover_rgb255'] = {
         .appendField("の色");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -835,7 +886,7 @@ Blockly.Blocks['bookcover_rgb100'] = {
         .appendField("% の色");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -864,7 +915,7 @@ Blockly.Blocks['bookcover_hsb360'] = {
         .appendField("% の色");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -893,7 +944,7 @@ Blockly.Blocks['bookcover_hsl360'] = {
         .appendField("% の色");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -912,7 +963,7 @@ Blockly.Blocks['bookcover_none'] = {
     this.appendDummyInput()
         .appendField("色なし");
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -1073,7 +1124,7 @@ Blockly.Blocks['bookcover_card_frame'] = {
         .setCheck(null)
         .appendField("");
     this.setInputsInline(true);
-    this.setColour(120);
+    this.setColour(100);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -1114,7 +1165,7 @@ Blockly.Blocks['bookcover_foreachcard'] = {
         .appendField("以下を繰り返す: ");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(100);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -1152,7 +1203,7 @@ Blockly.Blocks['bookcover_cardspec'] = {
         .appendField("カード用紙")
         .appendField(new Blockly.FieldDropdown([["エーワン F8A4-5", "エーワン F8A4-5"], ["エーワン F10A4-2", "エーワン F10A4-2"], ["エーワン F10A4-1", "エーワン F10A4-1"]]), "CARDSPEC");
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(100);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
@@ -1166,7 +1217,7 @@ Blockly.JavaScript['bookcover_cardspec'] = function(block) {
 
 Blockly.JavaScript['text_length'] = function(block) {
   var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_COMMA);
-  var code = BC.countSymbols +'(' + value_value + ')';
+  var code = 'BC.countSymbols(' + value_value + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
@@ -1282,4 +1333,25 @@ Blockly.JavaScript['bookcover_cardHeight'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_MEMBER];
 };
 
-// Todo console.log、彩度・輝度を %で増減 
+Blockly.Blocks['bookcover_console_log'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("console.log(");
+    this.appendValueInput("LOG")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(");");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_console_log'] = function(block) {
+  var value_log = Blockly.JavaScript.valueToCode(block, 'LOG', Blockly.JavaScript.ORDER_COMMA);
+  var code = 'console.log(' + value_log + ');\n';
+  return code;
+};

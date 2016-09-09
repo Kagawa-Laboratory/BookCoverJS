@@ -40,7 +40,7 @@ var BookCover = (function () {
     self.__turtleStack = [ ];
 
     /* cards */
-    self.__cards     = [ ];
+    self.__cards     = [ { "x": 0, "y": 0, "width": self.__width, "height": self.__height } ];
     self.__cardSpecs = { };
     self.__clipMargin = 1;
 
@@ -344,7 +344,7 @@ var BookCover = (function () {
         ret = [0, 0, 0];
         ret[0] = 60 * (sub / (max - min)) + angle;
         if (ret[0] < 0) ret[0] += 360;
-        ret[1] = 100.0 * (max - min) / (255 - Math.abs(max + min - 255));
+        ret[1] = max == min ? 0 : 100.0 * (max - min) / (255 - Math.abs(max + min - 255));
         ret[2] = (max + min) / 255.0 * 50;
         return ret;
     },
