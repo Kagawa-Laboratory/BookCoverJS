@@ -226,10 +226,10 @@ Blockly.Blocks['bookcover_line'] = {
 };
 
 Blockly.JavaScript['bookcover_line'] = function(block) {
-  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_COMMA);
-  var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_COMMA);
-  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_COMMA);
-  var value_y2 = Blockly.JavaScript.valueToCode(block, 'y2', Blockly.JavaScript.ORDER_COMMA);
+  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y2 = Blockly.JavaScript.valueToCode(block, 'y2', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.line(' + value_x1 + ',' +  value_y1 + ','  
                         + value_x2 + ',' +  value_y2 + ');\n';
   return code;
@@ -253,7 +253,7 @@ Blockly.Blocks['bookcover_fill'] = {
 };
 
 Blockly.JavaScript['bookcover_fill'] = function(block) {
-  var value_colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_COMMA);
+  var value_colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_COMMA) || 0;
 
   var code = 'BC.fill(' + value_colour + ');\n';
   return code;
@@ -277,7 +277,7 @@ Blockly.Blocks['bookcover_stroke'] = {
 };
 
 Blockly.JavaScript['bookcover_stroke'] = function(block) {
-  var value_colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_COMMA);
+  var value_colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_COMMA) || 0;
 
   var code = 'BC.stroke(' + value_colour + ');\n';
   return code;
@@ -327,14 +327,13 @@ Blockly.Blocks['bookcover_rect'] = {
 };
 
 Blockly.JavaScript['bookcover_rect'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA);
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA);
-  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA);
-  var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0 ;
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.rect(' + value_x + ', ' + value_y + ', ' + value_w + ', ' + value_h +');\n';
   return code;
 };
-
 
 Blockly.Blocks['bookcover_ellipse'] = {
   init: function() {
@@ -362,10 +361,10 @@ Blockly.Blocks['bookcover_ellipse'] = {
 };
 
 Blockly.JavaScript['bookcover_ellipse'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA);
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA);
-  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA);
-  var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.ellipse(' + value_x + ', ' + value_y + ', ' + value_w + ', ' + value_h +');\n';
   return code;
 };
@@ -389,8 +388,8 @@ Blockly.Blocks['bookcover_rotate_h'] = {
 };
 
 Blockly.JavaScript['bookcover_rotate_h'] = function(block) {
-  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA);
-  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA);
+  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.rotateH360(' + value_colour + ', ' + value_angle + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
@@ -414,8 +413,8 @@ Blockly.Blocks['bookcover_add_s'] = {
 };
 
 Blockly.JavaScript['bookcover_add_s'] = function(block) {
-  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA);
-  var value_delta = Blockly.JavaScript.valueToCode(block, 'delta', Blockly.JavaScript.ORDER_COMMA);
+  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_delta = Blockly.JavaScript.valueToCode(block, 'delta', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.addS100L(' + value_colour + ', ' + value_delta + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
@@ -439,8 +438,8 @@ Blockly.Blocks['bookcover_add_l'] = {
 };
 
 Blockly.JavaScript['bookcover_add_l'] = function(block) {
-  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA);
-  var value_delta = Blockly.JavaScript.valueToCode(block, 'delta', Blockly.JavaScript.ORDER_COMMA);
+  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_delta = Blockly.JavaScript.valueToCode(block, 'delta', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.addL100(' + value_colour + ', ' + value_delta + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
@@ -480,7 +479,7 @@ Blockly.Blocks['bookcover_stroke_weight'] = {
 };
 
 Blockly.JavaScript['bookcover_stroke_weight'] = function(block) {
-  var value_width = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_COMMA);
+  var value_width = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_COMMA) || 1;
   var code = 'BC.strokeWeight(' + value_width + ');\n';
   return code;
 };
@@ -502,7 +501,7 @@ Blockly.Blocks['bookcover_stroke_opacity'] = {
 };
 
 Blockly.JavaScript['bookcover_stroke_opacity'] = function(block) {
-  var value_opacity = Blockly.JavaScript.valueToCode(block, 'opacity', Blockly.JavaScript.ORDER_COMMA);
+  var value_opacity = Blockly.JavaScript.valueToCode(block, 'opacity', Blockly.JavaScript.ORDER_COMMA) || 1;
   var code = 'BC.strokeOpacity(' + value_opacity + ');\n';
   return code;
 };
@@ -524,7 +523,7 @@ Blockly.Blocks['bookcover_fill_opacity'] = {
 };
 
 Blockly.JavaScript['bookcover_fill_opacity'] = function(block) {
-  var value_opacity = Blockly.JavaScript.valueToCode(block, 'opacity', Blockly.JavaScript.ORDER_COMMA);
+  var value_opacity = Blockly.JavaScript.valueToCode(block, 'opacity', Blockly.JavaScript.ORDER_COMMA) || 1;
   var code = 'BC.fillOpacity(' + value_opacity + ');\n';
   return code;
 };
@@ -585,8 +584,8 @@ Blockly.Blocks['bookcover_text_font'] = {
 };
 
 Blockly.JavaScript['bookcover_text_font'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_COMMA);
-  var value_size = Blockly.JavaScript.valueToCode(block, 'size', Blockly.JavaScript.ORDER_COMMA);
+  var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_COMMA) || "\"\"";
+  var value_size = Blockly.JavaScript.valueToCode(block, 'size', Blockly.JavaScript.ORDER_COMMA) || 10;
   var code = 'BC.textFont(' + value_name + ', ' + value_size + ');\n';
   return code;
 };
@@ -608,7 +607,7 @@ Blockly.Blocks['bookcover_random_seed'] = {
 };
 
 Blockly.JavaScript['bookcover_random_seed'] = function(block) {
-  var value_seed = Blockly.JavaScript.valueToCode(block, 'seed', Blockly.JavaScript.ORDER_COMMA);
+  var value_seed = Blockly.JavaScript.valueToCode(block, 'seed', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.randomSeed(' + value_seed + ');\n';
   return code;
 };
@@ -633,8 +632,8 @@ Blockly.Blocks['bookcover_translate'] = {
 };
 
 Blockly.JavaScript['bookcover_translate'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA);
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.translate(' + value_x + ', ' + value_y + ');\n';
   return code;
 };
@@ -659,8 +658,8 @@ Blockly.Blocks['bookcover_scale'] = {
 };
 
 Blockly.JavaScript['bookcover_scale'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA);
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 1 ;
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 1;
   var code = 'BC.scale(' + value_x + ', ' + value_y + ');\n';
   return code;
 };
@@ -682,7 +681,7 @@ Blockly.Blocks['bookcover_rotate'] = {
 };
 
 Blockly.JavaScript['bookcover_rotate'] = function(block) {
-  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA);
+  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.rotate(' + value_angle + ');\n';
   return code;
 };
@@ -741,7 +740,7 @@ Blockly.Blocks['bookcover_forward'] = {
 };
 
 Blockly.JavaScript['bookcover_forward'] = function(block) {
-  var value_len = Blockly.JavaScript.valueToCode(block, 'len', Blockly.JavaScript.ORDER_COMMA);
+  var value_len = Blockly.JavaScript.valueToCode(block, 'len', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.forward(' + value_len + ');\n';
   return code;
 };
@@ -763,7 +762,7 @@ Blockly.Blocks['bookcover_turn'] = {
 };
 
 Blockly.JavaScript['bookcover_turn'] = function(block) {
-  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA);
+  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.turn(' + value_angle + ');\n';
   return code;
 };
@@ -785,7 +784,7 @@ Blockly.Blocks['bookcover_direction'] = {
 };
 
 Blockly.JavaScript['bookcover_direction'] = function(block) {
-  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA);
+  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.direction(' + value_angle + ');\n';
   return code;
 };
@@ -810,8 +809,8 @@ Blockly.Blocks['bookcover_go'] = {
 };
 
 Blockly.JavaScript['bookcover_go'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA);
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.go(' + value_x + ', ' + value_y + ');\n';
   return code;
 };
@@ -836,8 +835,8 @@ Blockly.Blocks['bookcover_random_in_range'] = {
 };
 
 Blockly.JavaScript['bookcover_random_in_range'] = function(block) {
-  var value_min = Blockly.JavaScript.valueToCode(block, 'min', Blockly.JavaScript.ORDER_COMMA);
-  var value_max = Blockly.JavaScript.valueToCode(block, 'max', Blockly.JavaScript.ORDER_COMMA);
+  var value_min = Blockly.JavaScript.valueToCode(block, 'min', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_max = Blockly.JavaScript.valueToCode(block, 'max', Blockly.JavaScript.ORDER_COMMA) || 1;
   var code = 'BC.randomInRange(' + value_min + ', ' + value_max + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
@@ -864,9 +863,9 @@ Blockly.Blocks['bookcover_rgb255'] = {
 };
 
 Blockly.JavaScript['bookcover_rgb255'] = function(block) {
-  var value_red = Blockly.JavaScript.valueToCode(block, 'red', Blockly.JavaScript.ORDER_COMMA);
-  var value_green = Blockly.JavaScript.valueToCode(block, 'green', Blockly.JavaScript.ORDER_COMMA);
-  var value_blue = Blockly.JavaScript.valueToCode(block, 'blue', Blockly.JavaScript.ORDER_COMMA);
+  var value_red = Blockly.JavaScript.valueToCode(block, 'red', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_green = Blockly.JavaScript.valueToCode(block, 'green', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_blue = Blockly.JavaScript.valueToCode(block, 'blue', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.rgb255(' + value_red +', ' + value_green + ', ' + value_blue + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
@@ -893,9 +892,9 @@ Blockly.Blocks['bookcover_rgb100'] = {
 };
 
 Blockly.JavaScript['bookcover_rgb100'] = function(block) {
-  var value_red = Blockly.JavaScript.valueToCode(block, 'red', Blockly.JavaScript.ORDER_COMMA);
-  var value_green = Blockly.JavaScript.valueToCode(block, 'green', Blockly.JavaScript.ORDER_COMMA);
-  var value_blue = Blockly.JavaScript.valueToCode(block, 'blue', Blockly.JavaScript.ORDER_COMMA);
+  var value_red = Blockly.JavaScript.valueToCode(block, 'red', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_green = Blockly.JavaScript.valueToCode(block, 'green', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_blue = Blockly.JavaScript.valueToCode(block, 'blue', Blockly.JavaScript.ORDER_COMMA) || 0;
   var code = 'BC.rgb100(' + value_red +', ' + value_green + ', ' + value_blue + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
@@ -922,9 +921,9 @@ Blockly.Blocks['bookcover_hsb360'] = {
 };
 
 Blockly.JavaScript['bookcover_hsb360'] = function(block) {
-  var value_hue = Blockly.JavaScript.valueToCode(block, 'hue', Blockly.JavaScript.ORDER_COMMA);
-  var value_saturation = Blockly.JavaScript.valueToCode(block, 'saturation', Blockly.JavaScript.ORDER_COMMA);
-  var value_brightness = Blockly.JavaScript.valueToCode(block, 'brightness', Blockly.JavaScript.ORDER_COMMA);
+  var value_hue = Blockly.JavaScript.valueToCode(block, 'hue', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_saturation = Blockly.JavaScript.valueToCode(block, 'saturation', Blockly.JavaScript.ORDER_COMMA) || 100;
+  var value_brightness = Blockly.JavaScript.valueToCode(block, 'brightness', Blockly.JavaScript.ORDER_COMMA) || 100;
   var code = 'BC.hsb360(' + value_hue +', ' + value_saturation + ', ' + value_brightness + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
@@ -951,9 +950,9 @@ Blockly.Blocks['bookcover_hsl360'] = {
 };
 
 Blockly.JavaScript['bookcover_hsl360'] = function(block) {
-  var value_hue = Blockly.JavaScript.valueToCode(block, 'hue', Blockly.JavaScript.ORDER_COMMA);
-  var value_saturation = Blockly.JavaScript.valueToCode(block, 'saturation', Blockly.JavaScript.ORDER_COMMA);
-  var value_luminance = Blockly.JavaScript.valueToCode(block, 'luminance', Blockly.JavaScript.ORDER_COMMA);
+  var value_hue = Blockly.JavaScript.valueToCode(block, 'hue', Blockly.JavaScript.ORDER_COMMA) || 0 ;
+  var value_saturation = Blockly.JavaScript.valueToCode(block, 'saturation', Blockly.JavaScript.ORDER_COMMA) || 100;
+  var value_luminance = Blockly.JavaScript.valueToCode(block, 'luminance', Blockly.JavaScript.ORDER_COMMA) || 50;
   var code = 'BC.hsl360(' + value_hue +', ' + value_saturation + ', ' + value_luminance + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
@@ -1032,9 +1031,9 @@ Blockly.Blocks['bookcover_text'] = {
 };
 
 Blockly.JavaScript['bookcover_text'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_str = Blockly.JavaScript.valueToCode(block, 'str', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  var value_str = Blockly.JavaScript.valueToCode(block, 'str', Blockly.JavaScript.ORDER_ATOMIC) || "\"\"";
   var code = 'BC.text(' + value_str + ', ' + value_x + ', ' + value_y + ');\n';
   return code;
 };
@@ -1072,7 +1071,7 @@ Blockly.Blocks['bookcover_say'] = {
 };
 
 Blockly.JavaScript['bookcover_say'] = function(block) {
-  var value_str = Blockly.JavaScript.valueToCode(block, 'str', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_str = Blockly.JavaScript.valueToCode(block, 'str', Blockly.JavaScript.ORDER_ATOMIC) || "\"\"";
   var code = 'BC.say(' + value_str + ');\n';
   return code;
 };
@@ -1090,7 +1089,7 @@ Blockly.Blocks['bookcover_generic_statement'] = {
 };
 
 Blockly.JavaScript['bookcover_generic_statement'] = function(block) {
-  var text_statement = block.getFieldValue('STATEMENT');
+  var text_statement = block.getFieldValue('STATEMENT') || "";
   var code = text_statement + '\n';
   return code;
 };
@@ -1108,7 +1107,7 @@ Blockly.Blocks['bookcover_generic_expression'] = {
 
 
 Blockly.JavaScript['bookcover_generic_expression'] = function(block) {
-  var text_expression = block.getFieldValue('EXPRESSION');
+  var text_expression = block.getFieldValue('EXPRESSION') || 0;
   var code = text_expression;
   return [code, Blockly.JavaScript.ATOM];
 };
@@ -1351,7 +1350,308 @@ Blockly.Blocks['bookcover_console_log'] = {
 };
 
 Blockly.JavaScript['bookcover_console_log'] = function(block) {
-  var value_log = Blockly.JavaScript.valueToCode(block, 'LOG', Blockly.JavaScript.ORDER_COMMA);
+  var value_log = Blockly.JavaScript.valueToCode(block, 'LOG', Blockly.JavaScript.ORDER_COMMA) || "\"\"";
   var code = 'console.log(' + value_log + ');\n';
+  return code;
+};
+
+Blockly.Blocks['bookcover_get_x'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(String.fromCodePoint(128034) + " の横位置");
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_get_x'] = function(block) {
+  var code = 'BC.getX()';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.Blocks['bookcover_get_y'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(String.fromCodePoint(128034) + " の縦位置");
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_get_y'] = function(block) {
+  var code = 'BC.getY()';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.Blocks['bookcover_get_angle'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(String.fromCodePoint(128034) + " の向き");
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_get_angle'] = function(block) {
+  var code = 'BC.getAngle()';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.Blocks['bookcover_triangle'] = {
+  init: function() {
+    this.appendValueInput("x1")
+        .setCheck(null)
+        .appendField("(");
+    this.appendValueInput("y1")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("x2")
+        .setCheck(null)
+        .appendField(") - (");
+    this.appendValueInput("y2")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("x3")
+        .setCheck(null)
+        .appendField(") - (");
+    this.appendValueInput("y3")
+        .setCheck(null)
+        .appendField(",");
+    this.appendDummyInput()
+        .appendField(") を結ぶ三角形を描く。");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_triangle'] = function(block) {
+  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y2 = Blockly.JavaScript.valueToCode(block, 'y2', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_x3 = Blockly.JavaScript.valueToCode(block, 'x3', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y3 = Blockly.JavaScript.valueToCode(block, 'y3', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var code = 'BC.triangle(' + value_x1 + ', ' + value_y1 
+                     + ', ' + value_x2 + ', ' + value_y2 
+                     + ', ' + value_x3 + ', ' + value_y3 + ');\n';
+  return code;
+};
+
+Blockly.Blocks['bookcover_quad'] = {
+  init: function() {
+    this.appendValueInput("x1")
+        .setCheck(null)
+        .appendField("(");
+    this.appendValueInput("y1")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("x2")
+        .setCheck(null)
+        .appendField(") - (");
+    this.appendValueInput("y2")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("x3")
+        .setCheck(null)
+        .appendField(") - (");
+    this.appendValueInput("y3")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("x4")
+        .setCheck(null)
+        .appendField(") - (");
+    this.appendValueInput("y4")
+        .setCheck(null)
+        .appendField(",");
+    this.appendDummyInput()
+        .appendField(") を結ぶ四角形を描く。");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_quad'] = function(block) {
+  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y2 = Blockly.JavaScript.valueToCode(block, 'y2', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_x3 = Blockly.JavaScript.valueToCode(block, 'x3', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y3 = Blockly.JavaScript.valueToCode(block, 'y3', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_x4 = Blockly.JavaScript.valueToCode(block, 'x4', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y4 = Blockly.JavaScript.valueToCode(block, 'y4', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var code = 'BC.quad(' + value_x1 + ', ' + value_y1 
+                 + ', ' + value_x2 + ', ' + value_y2 
+                 + ', ' + value_x3 + ', ' + value_y3 
+                 + ', ' + value_x4 + ', ' + value_y4  + ');\n';
+  return code;
+};
+
+Blockly.Blocks['bookcover_arc'] = {
+  init: function() {
+    this.appendValueInput("x")
+        .setCheck(null)
+        .appendField("左上(");
+    this.appendValueInput("y")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("w")
+        .setCheck(null)
+        .appendField(") サイズ");
+    this.appendValueInput("h")
+        .setCheck(null)
+        .appendField("×");
+    this.appendValueInput("start")
+        .setCheck(null)
+        .appendField("の楕円の開始角:");
+    this.appendValueInput("end")
+        .setCheck(null)
+        .appendField("終了角:");
+    this.appendDummyInput()
+        .appendField("の弧を描く。");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_arc'] = function(block) {
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_start = Blockly.JavaScript.valueToCode(block, 'start', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_end = Blockly.JavaScript.valueToCode(block, 'end', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var code = 'BC.arc360(' + value_x + ', ' + value_y 
+                   + ', ' + value_w + ', ' + value_h 
+                   + ', ' + value_start + ', ' + value_end +  ');\n';
+  return code;
+};
+
+Blockly.Blocks['bookcover_image'] = {
+  init: function() {
+    this.appendValueInput("x")
+        .setCheck(null)
+        .appendField("左上(");
+    this.appendValueInput("y")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("w")
+        .setCheck(null)
+        .appendField(") サイズ");
+    this.appendValueInput("h")
+        .setCheck(null)
+        .appendField("×");
+    this.appendValueInput("url")
+        .setCheck(null)
+        .appendField("にURL:");
+    this.appendDummyInput()
+        .appendField("の画像を描く。");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_image'] = function(block) {
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_url = Blockly.JavaScript.valueToCode(block, 'url', Blockly.JavaScript.ORDER_COMMA) || "";
+  var code = 'BC.image(' + value_url + ', ' + value_x + ', ' + value_y
+                  + ', ' + value_w + ', ' + value_h + ');\n';
+  return code;
+};
+
+Blockly.Blocks['bookcover_rulers'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["文庫本", "BUNKO"]/*, ["ライブラリー版", "LIBRARY"], ["新書・コミック", "SHINSHO"], ["B6", "B6"]'*/]), "SIZE")
+        .appendField("用の目安線を描く");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(100);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_rulers'] = function(block) {
+  var dropdown_size = block.getFieldValue('SIZE');
+  var code = 'BC.rulers();\n';
+  return code;
+};
+
+Blockly.Blocks['bookcover_bezier'] = {
+  init: function() {
+    this.appendValueInput("x1")
+        .setCheck(null)
+        .appendField("(");
+    this.appendValueInput("y1")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("x2")
+        .setCheck(null)
+        .appendField(") - (");
+    this.appendValueInput("y2")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("x3")
+        .setCheck(null)
+        .appendField(") - (");
+    this.appendValueInput("y3")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("x4")
+        .setCheck(null)
+        .appendField(") - (");
+    this.appendValueInput("y4")
+        .setCheck(null)
+        .appendField(",");
+    this.appendDummyInput()
+        .appendField(") のベジエ曲線を描く。");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_bezier'] = function(block) {
+  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y2 = Blockly.JavaScript.valueToCode(block, 'y2', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_x3 = Blockly.JavaScript.valueToCode(block, 'x3', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y3 = Blockly.JavaScript.valueToCode(block, 'y3', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_x4 = Blockly.JavaScript.valueToCode(block, 'x4', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var value_y4 = Blockly.JavaScript.valueToCode(block, 'y4', Blockly.JavaScript.ORDER_COMMA) || 0;
+  var code = 'BC.bezier(' + value_x1 + ', ' + value_y1 
+                   + ', ' + value_x2 + ', ' + value_y2 
+                   + ', ' + value_x3 + ', ' + value_y3 
+                   + ', ' + value_x4 + ', ' + value_y4  + ');\n';
   return code;
 };

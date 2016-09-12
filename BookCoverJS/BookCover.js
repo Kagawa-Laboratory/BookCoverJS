@@ -649,9 +649,11 @@ var BookCover = (function () {
             stop = start;
             start = tmp;
         }
-        x0 = x + w / 2 * cos(start), y0 = y + h / 2 * sin(start),
-            x1 = x + w / 2 * cos(stop), y1 = y + h / 2 * sin(stop);
-        large = stop - start > Math.PI;
+        x0 = x + w  / 2 + w / 2 * Math.cos(start), 
+           y0 = y + h / 2 + h / 2 * Math.sin(start),
+           x1 = x + w / 2 + w / 2 * Math.cos(stop), 
+           y1 = y + h / 2 + h / 2 * Math.sin(stop);
+        large = stop - start > Math.PI ? 1 : 0;
     //    printf("<path d=");
     //    printf("\"M%f,%f A%f,%f", x0, y0, w / 2, h / 2);
     //    printf(" 0 %d,%d %f,%f\"\n", large, 1, x1, y1);
@@ -1085,7 +1087,7 @@ var BookCover = (function () {
         for (i = 1; i < arguments.length; i++) {
             args.push(arguments(i));
         }
-        this.text.apply(null, args);
+        this.text.apply(this, args);
         this.popMatrix();
     },
 

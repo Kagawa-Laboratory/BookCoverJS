@@ -96,6 +96,7 @@
     </statement>
   </block>
   <block type="bookcover_frame"></block>
+  <block type="bookcover_rulers"></block>
   <block type="bookcover_guide_bars">
     <value name="width">
       <block type="math_number">
@@ -375,6 +376,181 @@
       </block>
     </value>
   </block>
+  <block type="bookcover_triangle">
+    <value name="x1">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="y1">
+      <block type="math_number">
+        <field name="NUM">15</field>
+      </block>
+    </value>
+    <value name="x2">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="y2">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="x3">
+      <block type="math_number">
+        <field name="NUM">25</field>
+      </block>
+    </value>
+    <value name="y3">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_quad">
+    <value name="x1">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="y1">
+      <block type="math_number">
+        <field name="NUM">15</field>
+      </block>
+    </value>
+    <value name="x2">
+      <block type="math_number">
+        <field name="NUM">25</field>
+      </block>
+    </value>
+    <value name="y2">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="x3">
+      <block type="math_number">
+        <field name="NUM">25</field>
+      </block>
+    </value>
+    <value name="y3">
+      <block type="math_number">
+        <field name="NUM">25</field>
+      </block>
+    </value>
+    <value name="x4">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="y4">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_arc">
+    <value name="x">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="y">
+      <block type="math_number">
+        <field name="NUM">15</field>
+      </block>
+    </value>
+    <value name="w">
+      <block type="math_number">
+        <field name="NUM">120</field>
+      </block>
+    </value>
+    <value name="h">
+      <block type="math_number">
+        <field name="NUM">230</field>
+      </block>
+    </value>
+    <value name="start">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <value name="end">
+      <block type="math_number">
+        <field name="NUM">60</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_image">
+    <value name="x">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="y">
+      <block type="math_number">
+        <field name="NUM">15</field>
+      </block>
+    </value>
+    <value name="w">
+      <block type="math_number">
+        <field name="NUM">16</field>
+      </block>
+    </value>
+    <value name="h">
+      <block type="math_number">
+        <field name="NUM">16</field>
+      </block>
+    </value>
+    <value name="url">
+      <block type="text">
+        <field name="TEXT">http://guppy.eng.kagawa-u.ac.jp/OpenCampus/favicon.png</field>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_bezier">
+    <value name="x1">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="y1">
+      <block type="math_number">
+        <field name="NUM">15</field>
+      </block>
+    </value>
+    <value name="x2">
+      <block type="math_number">
+        <field name="NUM">25</field>
+      </block>
+    </value>
+    <value name="y2">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="x3">
+      <block type="math_number">
+        <field name="NUM">25</field>
+      </block>
+    </value>
+    <value name="y3">
+      <block type="math_number">
+        <field name="NUM">25</field>
+      </block>
+    </value>
+    <value name="x4">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+    <value name="y4">
+      <block type="math_number">
+        <field name="NUM">20</field>
+      </block>
+    </value>
+  </block>
 </category>
 <category name="数" colour="230">
   <block type="bookcover_random_seed">
@@ -488,6 +664,9 @@
       </block>
     </value>
   </block>
+  <block type="bookcover_get_x"></block>
+  <block type="bookcover_get_y"></block>
+  <block type="bookcover_get_angle"></block>
 </category>
 <category name="論理" colour="210">
   <block type="controls_if">
