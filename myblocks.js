@@ -682,7 +682,7 @@ Blockly.Blocks['bookcover_rotate'] = {
 
 Blockly.JavaScript['bookcover_rotate'] = function(block) {
   var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var code = 'BC.rotate(' + value_angle + ');\n';
+  var code = 'BC.rotate360(' + value_angle + ');\n';
   return code;
 };
 
@@ -1177,8 +1177,8 @@ Blockly.JavaScript['bookcover_foreachcard'] = function(block) {
   var checkbox_clip = block.getFieldValue('CLIP') == 'TRUE';
   var checkbox_frame = block.getFieldValue('FRAME') == 'TRUE';
   var number_margin = block.getFieldValue('MARGIN');
-  var code = 'for (var ' + variable_counter + ' in BC.__cards ) {\n';
-  code    += '  var ' + variable_card + ' =  BC.__cards[' + variable_counter + '];\n';
+  var code = 'for (' + variable_counter + ' = 1; ' + variable_counter + ' <= BC.__cards.length; ' + variable_counter + '++ ) {\n';
+  code    += '  var ' + variable_card + ' =  BC.__cards[' + variable_counter + ' - 1];\n';
   code    += '  BC.pushMatrix();\n';
   code    += '  BC.translate(' + variable_card + '["x"], ' + variable_card + '["y"]);\n';
   if (checkbox_clip || checkbox_frame) {
@@ -1317,7 +1317,7 @@ Blockly.Blocks['bookcover_cardHeight'] = {
         .setCheck(null)
         .appendField("カード");
     this.appendDummyInput()
-        .appendField("の幅");
+        .appendField("の高さ");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(100);
@@ -1655,3 +1655,72 @@ Blockly.JavaScript['bookcover_bezier'] = function(block) {
                    + ', ' + value_x4 + ', ' + value_y4  + ');\n';
   return code;
 };
+
+Blockly.Blocks['bookcover_distance'] = {
+  init: function() {
+    this.appendValueInput("X1")
+        .setCheck(null)
+        .appendField("(");
+    this.appendValueInput("Y1")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("X2")
+        .setCheck(null)
+        .appendField(") から (");
+    this.appendValueInput("Y2")
+        .setCheck(null)
+        .appendField(",");
+    this.appendDummyInput()
+        .appendField(") の距離");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_distance'] = function(block) {
+  var value_x1 = Blockly.JavaScript.valueToCode(block, 'X1', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
+  var value_y1 = Blockly.JavaScript.valueToCode(block, 'Y1', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
+  var value_x2 = Blockly.JavaScript.valueToCode(block, 'X2', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
+  var value_y2 = Blockly.JavaScript.valueToCode(block, 'Y2', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
+  // TODO Math.hypot(...)
+  var code = 'Math.sqrt((' + value_x2 + ' - ' + value_x1 + ') * (' + value_x2 + ' - ' + value_x1 + ') + (' + value_y2 + ' - ' + value_y1 + ') * (' + value_y2 + ' - ' + value_y1 +'))';
+  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Blocks['bookcover_atan2'] = {
+  init: function() {
+    this.appendValueInput("X1")
+        .setCheck(null)
+        .appendField("(");
+    this.appendValueInput("Y1")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("X2")
+        .setCheck(null)
+        .appendField(") から (");
+    this.appendValueInput("Y2")
+        .setCheck(null)
+        .appendField(",");
+    this.appendDummyInput()
+        .appendField(") の角度");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.JavaScript['bookcover_atan2'] = function(block) {
+  var value_x1 = Blockly.JavaScript.valueToCode(block, 'X1', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
+  var value_y1 = Blockly.JavaScript.valueToCode(block, 'Y1', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
+  var value_x2 = Blockly.JavaScript.valueToCode(block, 'X2', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
+  var value_y2 = Blockly.JavaScript.valueToCode(block, 'Y2', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
+
+  var code = 'Math.atan2(' + value_y2 + ' - ' + value_y1 + ', ' + value_x2 + ' - ' + value_x1 + ') * 180 / Math.PI';
+  return [code, Blockly.JavaScript.ORDER_MULTIPLICATION];
+};
+

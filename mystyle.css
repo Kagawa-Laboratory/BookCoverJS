@@ -1,0 +1,16 @@
+body { margin: 0% 7.5% 0%; }
+h1 { text-align: center; 
+     background-color: #CCCCAA; 
+     color:#008800;
+     border-radius: 5px;
+   }
+h2 { background-color: #CCCCAA; 
+     color:#008800; 
+     border-radius: 7.5px;
+     padding-left: 10px;
+    }
+h3 { color: #008800; }
+h4 { color: #008800; }
+hr { border:1px solid #CCCCAA;}
+address { font-family:'Comic Sans MS', Impact, cursive; }
+a.mail { font-family:'Courier New', Courier, monospace; text-decoration:none; }

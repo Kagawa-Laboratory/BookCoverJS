@@ -1,0 +1,76 @@
+<!Doctype HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="shortcut icon" href="favicon.png" type="image/png"/>
+<link rel="icon" href="favicon.png" type="image/png"/>
+<title>お絵かきプログラミング（サンプル集）</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="samples.js"></script>
+<script type="text/javascript">
+var cards =  [ "Sample1"
+             , "Rotate"
+             , "Translate"
+             , "RandomDot"
+             , "RandomEmojiCard"
+             , "Turtle"
+	     , "Ferns"
+             ];
+
+var bookcovers = [ "Gradation" 
+                 , "RandomEmoji"
+                 , "Reflect"
+                 , "Uzu"
+                 , "Trains"
+                 , "Stars"
+                 ];
+
+</script>
+</head>
+<body>
+<h1>お絵かきプログラミング（サンプル集）</h1>
+<p>
+<span style='color:red'>※</span>
+このページは SVG 画像を含んでいるので、
+<a href='http://mozilla.jp/firefox/'>Firefox</a> など
+SVG を表示できるブラウザーで見て下さい。
+</p>
+<hr />
+<div id="tabs">
+    <ul>
+      <li><a href="#t-1">シール用</a></li>
+      <li><a href="#t-2">ブックカバー用</a></li>
+    </ul>
+<div id="t-1">
+<h2>シール用</h2>
+<table border='1' align='center'>
+<tbody>
+<script type="text/javascript">
+writeTable(cards, 3, true, 2);
+</script>
+</tbody>
+</table>
+</div>
+<div id="t-2">
+<h2>ブックカバー用</h2>
+<table border='1' align='center'>
+<tbody>
+<script type="text/javascript">
+writeTable(bookcovers);
+</script>
+</tbody>
+</table>
+</div>
+</div> <!-- <div id="tabs"> -->
+<hr />
+<address>香川研究室</address>
+ <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+</body>
+</html>

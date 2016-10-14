@@ -11,7 +11,13 @@
 <script src="3rdParty/blockly/appengine/storage.js"></script>
 <link rel="stylesheet" type="text/css" href="3rdParty/blockly/demos/prettify.css">
 <script src="myblocks.js"></script>
+<!--
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+-->
+<script src="3rdParty/jquery-2.2.4.min.js"></script>
+<script src="3rdParty/jquery.query.js"></script>
+<script src="3rdParty/intro.js"></script>
+<link rel="stylesheet" href="3rdParty/introjs.css"/>
 <style>
     html, body {
       height: 100%;
@@ -76,6 +82,22 @@
     div.content {
       border: 1px solid #ccc;
       overflow: scroll;
+    }
+
+    .button_like {
+      font-size: 70%;
+      font-family: 'Segoe UI Emoji';
+      padding: 3px 5px 3px 5px;
+      text-align: center;
+      text-decoration: none;
+      border: 2px solid;
+      border-color: #aaaaaa #444444 #444444 #aaaaaa;
+      background: #dddddd;
+    }
+
+    .button_like:hover{
+      background:#ccddff;
+      border-color: #aaaacc #444466 #444466 #aaaacc;
     }
 </style>
 </head>
@@ -620,6 +642,50 @@
       </shadow>
     </value>
   </block>
+  <block type="bookcover_distance">
+    <value name="X1">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="Y1">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="X2">
+      <shadow type="math_number">
+        <field name="NUM">3</field>
+      </shadow>
+    </value>
+    <value name="Y2">
+      <shadow type="math_number">
+        <field name="NUM">4</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="bookcover_atan2">
+    <value name="X1">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="Y1">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="X2">
+      <shadow type="math_number">
+        <field name="NUM">3</field>
+      </shadow>
+    </value>
+    <value name="Y2">
+      <shadow type="math_number">
+        <field name="NUM">4</field>
+      </shadow>
+    </value>
+  </block>
 </category>
 <category name="&#128034; かめ" colour="150">
   <block type="bookcover_pen_down"></block>
@@ -858,26 +924,22 @@
     <td>
        <table width='100%'>
           <tr id="tabRow" height="1em">
-            <td id="tabBlocks" class="tabon" style="white-space:nowrap;">ブロック</td>
+            <td id="tabBlocks" class="tabon" style="white-space:nowrap;" data-step="1" data-intro="このタブをクリックして、編集をはじめます。">ブロック</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tabJavaScript" class="taboff" style="white-space:nowrap;">JavaScript</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tabSVG" class="taboff" style="white-space:nowrap;">絵</td>
+            <td id="tabSVG" class="taboff" style="white-space:nowrap;" data-step="2" data-intro="このタブをクリックして、絵を確認します。">絵</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tabXml" class="taboff" style="white-space:nowrap;">(管理者用)</td>
+            <td id="tabXml" class="taboff" style="font-family:'Segoe UI Emoji'; white-space:nowrap;">(管理者用)</td>
             <td class="tabmax">
-              <a href="#" id="saveButton" download="blocks.xml" title="保存" style="text-decoration: none;">
-                &#x1f4be;
-              </a>
-              <a href="#" id="openButton" title="開く" style="text-decoration: none;">
-              &#x1f4c2;
-              </a>
+              <a href="#" id="intro" title="ヘルプ" class="button_like">&#x2753;</a>
+              <a href="#" id="openButton" title="読込み" class="button_like" data-step="5"
+                          data-intro="保存したプログラムを読み込みます。">&#x1f4c2;</a>
               <input type="file" id="openButtonAux" name="openButtonAux"  style="display:none;" />
-<!--
-              <button id="openButton" class="notext primary" title="開く">
-                &#x1f4c2;
-              </button>
--->
+              <a href="#" id="saveButton" download="blocks.xml" title="保存" class="button_like" data-step="4"
+                          data-intro="プログラムを保存します。">&#x1f4be;</a>
+              <a href="#" id="resetButton" title="リセット" class="button_like" data-step="6"
+                          data-intro="これまでの変更を捨てて、最初のプログラムに戻します。">&#x21bb;</a>
             </td>
           </tr>
        </table>
@@ -935,10 +997,29 @@ function renderContent(clickedName) {
     htmlText    += "<head>\n";
     htmlText 	+= "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>\n";
     htmlText 	+= "<title>BookCover</title>\n";
+    htmlText    += "<style>\n";
+    htmlText    += "    .button_like {\n";
+    htmlText    += "      font-size: 70%;\n";
+    htmlText    += "      font-family: 'Segoe UI Emoji';\n";
+    htmlText    += "      padding: 3px 5px 3px 5px;\n";
+    htmlText    += "      text-align: center;\n";
+    htmlText    += "      text-decoration: none;\n";
+    htmlText    += "      border: 2px solid;\n";
+    htmlText    += "      border-color: #aaaaaa #444444 #444444 #aaaaaa;\n";
+    htmlText    += "      background: #dddddd;\n";
+    htmlText    += "    }\n";
+    htmlText    += "\n";
+    htmlText    += "    .button_like:hover{\n";
+    htmlText    += "      background:#ccddff;\n";
+    htmlText    += "      border-color: #aaaacc #444466 #444466 #aaaacc;\n";
+    htmlText    += "    }\n";
+    htmlText    += "</style>\n";
     htmlText 	+= "</head>\n";
     htmlText 	+= "<body style='margin: 0pt;'>\n";
-    htmlText 	+= "<div align='right'>"
-		+  "<input type='button' value='&#x1f5b6;' id='click' title='印刷用ページ' /></div>\n";
+    htmlText 	+= "<div align='right'>";
+//		+  "<input type='button' value='&#x1f5a8;' id='click' title='印刷用ページ' /></div>\n";
+    htmlText    += "<a href='#' id='click' title='印刷用ページ' class='button_like'>&#x1f5a8;</a>";
+    htmlText    += "</div>\n";
     htmlText 	+= "<div id='drawing' style='border-style:solid; border-width: 1px;'></div>\n";
     htmlText    += "<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'><\/script>\n";
     htmlText    += "<script src='" + dir + "/3rdParty/svg.js'><\/script>\n";
@@ -949,6 +1030,7 @@ function renderContent(clickedName) {
     htmlText  	+= "    var svgText = draw.svg();\n";
     htmlText  	+= "    var blob    = new Blob([svgText], { type: 'image/svg+xml' });\n";
     htmlText  	+= "    var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');\n";
+    htmlText    += "    return false;\n";
     htmlText    += "}\n";
     htmlText  	+= "$(function() {\n";
     htmlText  	+= "    draw = SVG('drawing');\n";
@@ -1028,10 +1110,31 @@ $(function() {
 
     workspace.addChangeListener(Blockly.Events.disableOrphans);
 
-    if (location.search.indexOf("clean") > 0) { // TODO ちゃんとする
+
+    var clean = $.query.get("clean");
+    if (clean != null && (clean.toLowerCase() == "true" || clean.toLowerCase() == "yes")) {
         Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
     } else {
-        window.setTimeout(function () { BlocklyStorage.restoreBlocks(workspace); }, 0);
+        window.setTimeout(function () { 
+//            BlocklyStorage.restoreBlocks(workspace);
+              var url = window.location.href.split('#')[0];
+              if ('localStorage' in window) {
+                var memo = window.localStorage[url];
+                if (memo) { 
+                    var xml = Blockly.Xml.textToDom(memo);
+                    if (xml.hasChildNodes()) {
+                        Blockly.Xml.domToWorkspace(xml, workspace);
+                        return;  
+                    } 
+                    // xml が空だったら続行する
+                } 
+              }
+               var xmlUrl = $.query.get("url");
+               $.ajax({ url: xmlUrl, dataType: "text" }).done(function(data) {
+                   var xml = Blockly.Xml.textToDom(data);
+                   Blockly.Xml.domToWorkspace(xml, workspace);
+               });
+        }, 0);
     }
 
 //    $("#printButton").click(function () {
@@ -1041,6 +1144,15 @@ $(function() {
 //       var blob    = new Blob([svgText], { type: 'image/svg+xml' });
 //       var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
 //    });
+
+    $("#intro").click(function() {
+//      alert("intro");
+      var tour = introJs();
+      tour.setOption('tooltipPosition', 'auto');
+      tour.start();
+      return false;
+    });
+
     $("#saveButton").click(function() {
        var xmlText;
        if ($('#tabXml').hasClass('tabon')) {
@@ -1054,6 +1166,7 @@ $(function() {
     });
     $("#openButton").click(function() {
       $("#openButtonAux").click();
+      return false;
     }); 
     $("#openButtonAux").change(function(evt) {
        var f = evt.target.files[0];
@@ -1080,6 +1193,17 @@ $(function() {
          }
        };
        reader.readAsText(f);
+   
+    });
+    $("#resetButton").click(function () {
+        var q = window.confirm("編集したプログラムを捨てて、最初の内容に戻します。よろしいですか？");
+        if (!q) return;
+        var xmlUrl = $.query.get("url");
+        $.ajax({ url: xmlUrl, dataType: "text" }).done(function(data) {
+            workspace.clear();
+            var xml = Blockly.Xml.textToDom(data);
+            Blockly.Xml.domToWorkspace(xml, workspace);
+        });
     });
     onResize();
     Blockly.svgResize(workspace);
