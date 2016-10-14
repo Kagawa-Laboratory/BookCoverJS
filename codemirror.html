@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>BookCoverJS (CodeMirror)</title>
+<script src="3rdParty/codemirror/lib/codemirror.js"></script>
+<link rel="stylesheet" href="3rdParty/codemirror/lib/codemirror.css" />
+<script src="3rdParty/codemirror/mode/javascript/javascript.js"></script>
+<script src="3rdParty/jquery-2.2.4.min.js"></script>
+<script src="3rdParty/jquery.query.js"></script>
+<script src="3rdParty/intro.js"></script>
+<link rel="stylesheet" href="3rdParty/introjs.css" />
+<script src="3rdParty/svg.js"></script>
+<script src="BookCoverJS/BookCover.js"></script>
+<style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+    table {
+      height: 100%;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    /* Tabs */
+    #tabRow>td {
+      border: 1px solid #ccc;
+      border-bottom: none;
+    }
+    td.tabon {
+      border-bottom-color: #ddd !important;
+      background-color: #ddd;
+      padding: 5px 19px;
+    }
+    td.taboff {
+      cursor: pointer;
+      padding: 5px 19px;
+    }
+    td.taboff:hover {
+      background-color: #eee;
+    }
+    td.tabmin {
+      border-top-style: none !important;
+      border-left-style: none !important;
+      border-right-style: none !important;
+    }
+    td.tabmax {
+      border-top-style: none !important;
+      border-left-style: none !important;
+      border-right-style: none !important;
+      width: 99%;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: right;
+    }
+
+    .content {
+      visibility: hidden;
+      margin: 0;
+      padding: 1ex;
+      position: absolute;
+      direction: ltr;
+    }
+    pre.content {
+      border: 1px solid #ccc;
+      overflow: scroll;
+    }
+    div.content {
+      border: 1px solid #ccc;
+      overflow: scroll;
+    }
+
+    .button_like {
+      font-size: 70%;
+      font-family: 'Segoe UI Emoji';
+      padding: 3px 5px 3px 5px;
+      text-align: center;
+      text-decoration: none;
+      border: 2px solid;
+      border-color: #aaaaaa #444444 #444444 #aaaaaa;
+      background: #dddddd;
+    }
+
+    .button_like:hover{
+      background:#ccddff;
+      border-color: #aaaacc #444466 #444466 #aaaacc;
+    }
+</style>
+</head>
+<body>
+
+
+<table>
+<tr>
+    <td>
+       <table width='100%'>
+          <tr id="tabRow" height="1em">
+            <td id="tabJavaScript" class="taboff" style="white-space:nowrap;">JavaScript</td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tabSVG" class="taboff" style="white-space:nowrap;" data-step="2" data-intro="このタブをクリックして、絵を確認します。">絵</td>
+            <td class="tabmax">
+              <a href="#" id="intro" title="ヘルプ" class="button_like">&#x2753;</a>
+              <a href="#" id="openButton" title="読込み" class="button_like" data-step="5"
+                          data-intro="保存したプログラムを読み込みます。">&#x1f4c2;</a>
+              <input type="file" id="openButtonAux" name="openButtonAux"  style="display:none;" />
+              <a href="#" id="saveButton" download="blocks.xml" title="保存" class="button_like" data-step="4"
+                          data-intro="プログラムを保存します。">&#x1f4be;</a>
+              <a href="#" id="resetButton" title="リセット" class="button_like" data-step="6"
+                          data-intro="これまでの変更を捨てて、最初のプログラムに戻します。">&#x21bb;</a>
+            </td>
+          </tr>
+       </table>
+    </td>
+</tr>
+<tr>
+  <td id="blocklyArea" style='border: 0pt; height: 99%;'> 
+  </td>  
+</tr>
+</table>
+<div id="contentJavaScript" class="content">
+</div>
+<div id="contentSVG"  class="content" style="padding: 0ex;"></div>
+<script>
+var tabs = ["JavaScript", "SVG"]; 
+var selected = tabs[0];
+var myCodeMirror;
+
+function onResize() {
+    var area = $("#blocklyArea");
+    var divs = [$("#contentJavaScript"), $("#contentSVG") ];
+
+    var width = area.width();
+    var height = area.height();
+    var offset = area.offset();
+    for (var i = 0; i < divs.length ; i++) {
+       var div = divs[i]; 
+       div.height(height);
+       div.width(width);
+       div.offset(offset);
+    }
+}
+
+
+function renderContent(clickedName) {
+  var content = $("#content" + clickedName); 
+  if (clickedName == "JavaScript") {
+  } else if (clickedName == "SVG") {
+     var code = myCodeMirror.getValue();
+     var draw = SVG("contentSVG");
+     eval(code); 
+  } 
+}
+
+function tabClick(clickedName) {
+  // Deselect all tabs and hide all panes.
+  for (var i = 0; i < tabs.length; i++) {
+    var name = tabs[i];
+    $('#tab' + name).removeClass('tabon');
+    $('#tab' + name).addClass('taboff');
+    $('#content' + name).css("visibility", 'hidden');
+  }
+
+  // Select the active tab.
+  selected = clickedName;
+  $('#tab' + clickedName).removeClass('taboff');
+  $('#tab' + clickedName).addClass('tabon');
+  $('#content' + clickedName).css("visibility", 'visible');
+
+  renderContent(clickedName);
+}
+
+$(window).on('load resize', onResize);
+
+$(function() {
+    tabClick(selected);
+    for (var i = 0; i < tabs.length; i++) {
+       var name = tabs[i];
+       $("#tab" + name).click(function(name_) { return function() { tabClick(name_); }; }(name));
+    }
+
+    myCodeMirror = CodeMirror(function(elt) {
+       $("#contentJavaScript").append($(elt));
+    }, { lineNumbers: true
+       , mode: "text/javascript"
+       , value: "var BC = BookCover;\n" +
+		"BC.start(draw);\n" +
+                "BC.pageFrame();\n" +
+                "  BC.stroke(null);\n" +
+                "  var i;\n" +
+                "  for (i = 0; i <= 330; i += 30) {\n" +
+                "    BC.fill(BC.hsl360(i, 100, 50));\n" +
+                "    BC.pushMatrix()\n" +
+                "      BC.translate(BC.pageWidth() / 2, BC.pageHeight() / 2);\n" +
+                "      BC.pushMatrix()\n" +
+                "        BC.rotate360(i);\n" +
+                "        BC.translate(80, 0);\n" +
+                "        BC.rect(-10, -10, 20, 20);\n" +
+                "      BC.popMatrix();\n" +
+                "    BC.popMatrix();\n" +
+                "  }\n" +
+                "BC.finish();\n" });
+
+    $("#intro").click(function() {
+//      alert("intro");
+      var tour = introJs();
+      tour.setOption('tooltipPosition', 'auto');
+      tour.start();
+      return false;
+    });
+
+});
+</script>
+</body>
+</html>
