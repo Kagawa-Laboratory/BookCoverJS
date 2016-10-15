@@ -95,24 +95,26 @@
 </style>
 </head>
 <body>
-
-
 <table>
 <tr>
     <td>
        <table width='100%'>
           <tr id="tabRow" height="1em">
-            <td id="tabJavaScript" class="taboff" style="white-space:nowrap;">JavaScript</td>
+            <td id="tabJavaScript" class="taboff" style="white-space:nowrap;" data-step="1"
+                data-intro="このタブをクリックして、プログラムを編集します。">JavaScript</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tabSVG" class="taboff" style="white-space:nowrap;" data-step="2" data-intro="このタブをクリックして、絵を確認します。">絵</td>
+            <td id="tabSVG" class="taboff" style="white-space:nowrap;" data-step="2"
+                data-intro="このタブをクリックして、絵を確認します。">絵</td>
             <td class="tabmax">
               <a href="#" id="intro" title="ヘルプ" class="button_like">&#x2753;</a>
               <a href="#" id="openButton" title="読込み" class="button_like" data-step="5"
                           data-intro="保存したプログラムを読み込みます。">&#x1f4c2;</a>
               <input type="file" id="openButtonAux" name="openButtonAux"  style="display:none;" />
-              <a href="#" id="saveButton" download="blocks.xml" title="保存" class="button_like" data-step="4"
+              <a href="#" id="saveButton" download="mydesign.js" title="保存" class="button_like" data-step="4"
                           data-intro="プログラムを保存します。">&#x1f4be;</a>
-              <a href="#" id="resetButton" title="リセット" class="button_like" data-step="6"
+              <a href='#' id="printButton" title="印刷用ページ" class="button_like" data-step="6"
+                          data-intro="印刷用ページを開きます。">&#x1f5a8;</a>
+              <a href="#" id="resetButton" title="リセット" class="button_like" data-step="7"
                           data-intro="これまでの変更を捨てて、最初のプログラムに戻します。">&#x21bb;</a>
             </td>
           </tr>
@@ -120,16 +122,17 @@
     </td>
 </tr>
 <tr>
-  <td id="blocklyArea" style='border: 0pt; height: 99%;'> 
-  </td>  
+  <td id="blocklyArea" style='border: 0pt; height: 99%;'>
+  </td>
 </tr>
 </table>
 <div id="contentJavaScript" class="content">
 </div>
 <div id="contentSVG"  class="content" style="padding: 0ex;"></div>
 <script>
-var tabs = ["JavaScript", "SVG"]; 
+var tabs = ["JavaScript", "SVG"];
 var selected = tabs[0];
+var draw;
 var myCodeMirror;
 
 function onResize() {
@@ -140,22 +143,27 @@ function onResize() {
     var height = area.height();
     var offset = area.offset();
     for (var i = 0; i < divs.length ; i++) {
-       var div = divs[i]; 
+       var div = divs[i];
        div.height(height);
        div.width(width);
        div.offset(offset);
     }
 }
 
+$(window).on('load resize', onResize);
+
+function renderSVG() {
+  var code = myCodeMirror.getValue();
+  draw.clear();
+  eval(code);
+}
 
 function renderContent(clickedName) {
-  var content = $("#content" + clickedName); 
+  var content = $("#content" + clickedName);
   if (clickedName == "JavaScript") {
   } else if (clickedName == "SVG") {
-     var code = myCodeMirror.getValue();
-     var draw = SVG("contentSVG");
-     eval(code); 
-  } 
+     renderSVG();
+  }
 }
 
 function tabClick(clickedName) {
@@ -176,36 +184,78 @@ function tabClick(clickedName) {
   renderContent(clickedName);
 }
 
-$(window).on('load resize', onResize);
+function backupJS() {
+  if ('localStorage' in window) {
+    var code = myCodeMirror.getValue();
+    var url = window.location.href.split('#')[0];
+    window.localStorage.setItem(url, code);
+  }
+}
+
+$(window).on('unload', backupJS);
+
+function restoreJS()  {
+  var url = window.location.href.split('#')[0];
+  if ('localStorage' in window && window.localStorage[url]) {
+    var code = window.localStorage[url];
+    myCodeMirror.setValue(code);
+  }
+}
 
 $(function() {
+    draw = SVG("contentSVG");
     tabClick(selected);
     for (var i = 0; i < tabs.length; i++) {
        var name = tabs[i];
        $("#tab" + name).click(function(name_) { return function() { tabClick(name_); }; }(name));
     }
 
+    var initCode = "var BC = BookCover;\n" +
+		   "BC.start(draw);\n" +
+                   "BC.pageFrame();\n" +
+                   "  BC.stroke(null);\n" +
+                   "  var i;\n" +
+                   "  for (i = 0; i <= 330; i += 30) {\n" +
+                   "    BC.fill(BC.hsl360(i, 100, 50));\n" +
+                   "    BC.pushMatrix()\n" +
+                   "      BC.translate(BC.pageWidth() / 2, BC.pageHeight() / 2);\n" +
+                   "      BC.pushMatrix()\n" +
+                   "        BC.rotate360(i);\n" +
+                   "        BC.translate(80, 0);\n" +
+                   "        BC.rect(-10, -10, 20, 20);\n" +
+                   "      BC.popMatrix();\n" +
+                   "    BC.popMatrix();\n" +
+                   "  }\n" +
+                   "BC.finish();\n";
+
     myCodeMirror = CodeMirror(function(elt) {
        $("#contentJavaScript").append($(elt));
     }, { lineNumbers: true
        , mode: "text/javascript"
-       , value: "var BC = BookCover;\n" +
-		"BC.start(draw);\n" +
-                "BC.pageFrame();\n" +
-                "  BC.stroke(null);\n" +
-                "  var i;\n" +
-                "  for (i = 0; i <= 330; i += 30) {\n" +
-                "    BC.fill(BC.hsl360(i, 100, 50));\n" +
-                "    BC.pushMatrix()\n" +
-                "      BC.translate(BC.pageWidth() / 2, BC.pageHeight() / 2);\n" +
-                "      BC.pushMatrix()\n" +
-                "        BC.rotate360(i);\n" +
-                "        BC.translate(80, 0);\n" +
-                "        BC.rect(-10, -10, 20, 20);\n" +
-                "      BC.popMatrix();\n" +
-                "    BC.popMatrix();\n" +
-                "  }\n" +
-                "BC.finish();\n" });
+       , value: "" });
+
+    var clean = $.query.get("clean");
+    if (clean != null && (clean.toLowerCase() == "true" || clean.toLowerCase() == "yes")) {
+        myCodeMirror.setValue(initCode);
+    } else {
+        window.setTimeout(function () {
+              var url = window.location.href.split('#')[0];
+              if ('localStorage' in window) {
+                var memo = window.localStorage[url];
+                if (memo) {
+                    myCodeMirror.setValue(memo);
+		    return;
+                    // memo が空だったら続行する
+                }
+              }
+              var jsUrl = $.query.get("url");
+              if (jsUrl) {
+              	$.ajax({ url: jsUrl, dataType: "text" }).done(function(data) {
+              	  myCodeMirror.setValue(data);
+              	});
+              }
+        }, 0);
+    }
 
     $("#intro").click(function() {
 //      alert("intro");
@@ -215,6 +265,54 @@ $(function() {
       return false;
     });
 
+    function printSVG() {
+        var svgText = draw.svg();
+        var blob    = new Blob([svgText], { type: 'image/svg+xml' });
+        var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
+        return false;
+    }
+
+    $("#printButton").click(function() {
+      if (!$('#tabJavaScript').hasClass('tabon')) {
+        renderSVG();
+      }
+      printSVG();
+      return false;
+    });
+
+    $("#saveButton").click(function() {
+       var code = myCodeMirror.getValue();
+       var blob    = new Blob([code], { type: 'application/javascript' });
+       $("#saveButton").attr('href', window.URL.createObjectURL(blob));
+    });
+    $("#openButton").click(function() {
+      $("#openButtonAux").click();
+      return false;
+    });
+    $("#openButtonAux").change(function(evt) {
+       var f = evt.target.files[0];
+       var reader = new FileReader();
+
+       reader.onload = function(e) {
+         var code = e.target.result;
+         myCodeMirror.setValue(code);
+         if (!$('#tabJavaScript').hasClass('tabon')) {
+           renderSVG();
+         }
+       };
+       reader.readAsText(f);
+
+    });
+    $("#resetButton").click(function () {
+        var q = window.confirm("編集したプログラムを捨てて、最初の内容に戻します。よろしいですか？");
+        if (!q) return;
+        var jsUrl = $.query.get("url");
+        if (jsUrl) {
+          $.ajax({ url: jsUrl, dataType: "text" }).done(function(data) {
+              myCodeMirror.setValue(data);
+          });
+        }
+    });
 });
 </script>
 </body>

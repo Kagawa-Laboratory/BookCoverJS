@@ -1059,8 +1059,7 @@ function tabClick(clickedName) {
     try {
       xmlDom = Blockly.Xml.textToDom(xmlText);
     } catch (e) {
-      var q =
-          window.confirm(MSG['badXml'].replace('%1', e));
+      var q = window.confirm(MSG['badXml'].replace('%1', e));
       if (!q) {
         // Leave the user on the XML tab.
         return;
@@ -1129,11 +1128,13 @@ $(function() {
                     // xml が空だったら続行する
                 } 
               }
-               var xmlUrl = $.query.get("url");
-               $.ajax({ url: xmlUrl, dataType: "text" }).done(function(data) {
-                   var xml = Blockly.Xml.textToDom(data);
-                   Blockly.Xml.domToWorkspace(xml, workspace);
-               });
+              var xmlUrl = $.query.get("url");
+              if (xmlUrl) { 
+              	$.ajax({ url: xmlUrl, dataType: "text" }).done(function(data) {
+              	    var xml = Blockly.Xml.textToDom(data);
+              	    Blockly.Xml.domToWorkspace(xml, workspace);
+              	});
+              }
         }, 0);
     }
 
@@ -1199,11 +1200,13 @@ $(function() {
         var q = window.confirm("編集したプログラムを捨てて、最初の内容に戻します。よろしいですか？");
         if (!q) return;
         var xmlUrl = $.query.get("url");
-        $.ajax({ url: xmlUrl, dataType: "text" }).done(function(data) {
-            workspace.clear();
-            var xml = Blockly.Xml.textToDom(data);
-            Blockly.Xml.domToWorkspace(xml, workspace);
-        });
+        if (xmlUrl) {
+          $.ajax({ url: xmlUrl, dataType: "text" }).done(function(data) {
+              workspace.clear();
+              var xml = Blockly.Xml.textToDom(data);
+              Blockly.Xml.domToWorkspace(xml, workspace);
+          });
+        }
     });
     onResize();
     Blockly.svgResize(workspace);
