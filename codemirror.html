@@ -112,7 +112,7 @@
               <input type="file" id="openButtonAux" name="openButtonAux"  style="display:none;" />
               <a href="#" id="saveButton" download="mydesign.js" title="保存" class="button_like" data-step="4"
                           data-intro="プログラムを保存します。">&#x1f4be;</a>
-              <a href='#' id="printButton" title="印刷用ページ" class="button_like" data-step="6"
+              <a href="#" id="printButton" title="印刷用ページ" class="button_like" data-step="6"
                           data-intro="印刷用ページを開きます。">&#x1f5a8;</a>
               <a href="#" id="resetButton" title="リセット" class="button_like" data-step="7"
                           data-intro="これまでの変更を捨てて、最初のプログラムに戻します。">&#x21bb;</a>
@@ -128,7 +128,7 @@
 </table>
 <div id="contentJavaScript" class="content">
 </div>
-<div id="contentSVG"  class="content" style="padding: 0ex;"></div>
+<div id="contentSVG" class="content" style="padding: 0ex;"></div>
 <script>
 var tabs = ["JavaScript", "SVG"];
 var selected = tabs[0];
@@ -253,6 +253,8 @@ $(function() {
               	$.ajax({ url: jsUrl, dataType: "text" }).done(function(data) {
               	  myCodeMirror.setValue(data);
               	});
+              } else {
+                myCodeMirror.setValue(initCode);
               }
         }, 0);
     }
@@ -266,14 +268,14 @@ $(function() {
     });
 
     function printSVG() {
-        var svgText = draw.svg();
-        var blob    = new Blob([svgText], { type: 'image/svg+xml' });
-        var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
-        return false;
+      var svgText = draw.svg();
+      var blob    = new Blob([svgText], { type: 'image/svg+xml' });
+      var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
+      return false;
     }
 
     $("#printButton").click(function() {
-      if (!$('#tabJavaScript').hasClass('tabon')) {
+      if (!$('#tabSVG').hasClass('tabon')) {
         renderSVG();
       }
       printSVG();
@@ -285,10 +287,12 @@ $(function() {
        var blob    = new Blob([code], { type: 'application/javascript' });
        $("#saveButton").attr('href', window.URL.createObjectURL(blob));
     });
+
     $("#openButton").click(function() {
       $("#openButtonAux").click();
       return false;
     });
+
     $("#openButtonAux").change(function(evt) {
        var f = evt.target.files[0];
        var reader = new FileReader();
@@ -301,8 +305,8 @@ $(function() {
          }
        };
        reader.readAsText(f);
-
     });
+
     $("#resetButton").click(function () {
         var q = window.confirm("編集したプログラムを捨てて、最初の内容に戻します。よろしいですか？");
         if (!q) return;
@@ -311,6 +315,8 @@ $(function() {
           $.ajax({ url: jsUrl, dataType: "text" }).done(function(data) {
               myCodeMirror.setValue(data);
           });
+        } else {
+          myCodeMirror.setValue(initCode);
         }
     });
 });

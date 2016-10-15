@@ -18,6 +18,8 @@
 <script src="3rdParty/jquery.query.js"></script>
 <script src="3rdParty/intro.js"></script>
 <link rel="stylesheet" href="3rdParty/introjs.css"/>
+<script src="3rdParty/svg.js"></script>
+<script src="BookCoverJS/BookCover.js"></script>
 <style>
     html, body {
       height: 100%;
@@ -938,7 +940,9 @@
               <input type="file" id="openButtonAux" name="openButtonAux"  style="display:none;" />
               <a href="#" id="saveButton" download="blocks.xml" title="保存" class="button_like" data-step="4"
                           data-intro="プログラムを保存します。">&#x1f4be;</a>
-              <a href="#" id="resetButton" title="リセット" class="button_like" data-step="6"
+              <a href="#" id="printButton" title="印刷用ページ" class="button_like" data-step="6"
+                          data-intro="印刷用ページを開きます。">&#x1f5a8;</a>
+              <a href="#" id="resetButton" title="リセット" class="button_like" data-step="7"
                           data-intro="これまでの変更を捨てて、最初のプログラムに戻します。">&#x21bb;</a>
             </td>
           </tr>
@@ -946,8 +950,8 @@
     </td>
 </tr>
 <tr>
-  <td id="blocklyArea" style='border: 0pt; height: 99%;'> 
-  </td>  
+  <td id="blocklyArea" style='border: 0pt; height: 99%;'>
+  </td>
 </tr>
 </table>
 <div id="contentBlock" style="position: absolute;"></div>
@@ -955,8 +959,10 @@
 <div id="contentSVG"  class="content" style="padding: 0ex;"></div>
 <textarea id="contentXml" class="content" wrap="off"></textarea>
 <script>
-var tabs = ["Blocks", "JavaScript", "SVG", "Xml"]; 
+var tabs = ["Blocks", "JavaScript", "SVG", "Xml"];
 var selected = tabs[0];
+var draw;
+var workspace = null;
 
 function onResize() {
     var area = $("#blocklyArea");
@@ -966,17 +972,23 @@ function onResize() {
     var height = area.height();
     var offset = area.offset();
     for (var i = 0; i < divs.length ; i++) {
-       var div = divs[i]; 
+       var div = divs[i];
        div.height(height);
        div.width(width);
        div.offset(offset);
     }
 }
 
-var workspace = null;
+$(window).on('load resize', onResize);
+
+function renderSVG() {
+  var code = Blockly.JavaScript.workspaceToCode(workspace);
+  draw.clear();
+  eval(code);
+}
 
 function renderContent(clickedName) {
-  var content = $("#content" + clickedName); 
+  var content = $("#content" + clickedName);
   if (clickedName == "Xml") {
     var xmlDom  = Blockly.Xml.workspaceToDom(workspace);
     var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
@@ -990,63 +1002,7 @@ function renderContent(clickedName) {
     code = prettyPrintOne(code, 'js');
     content.html(code);
   } else if (clickedName == "SVG") {
-    var code = Blockly.JavaScript.workspaceToCode(workspace);
-    var href = location.href;
-    var dir  = href.substring(0, href.lastIndexOf('/'));
-    var htmlText = "<!DOCTYPE html>\n";
-    htmlText    += "<head>\n";
-    htmlText 	+= "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>\n";
-    htmlText 	+= "<title>BookCover</title>\n";
-    htmlText    += "<style>\n";
-    htmlText    += "    .button_like {\n";
-    htmlText    += "      font-size: 70%;\n";
-    htmlText    += "      font-family: 'Segoe UI Emoji';\n";
-    htmlText    += "      padding: 3px 5px 3px 5px;\n";
-    htmlText    += "      text-align: center;\n";
-    htmlText    += "      text-decoration: none;\n";
-    htmlText    += "      border: 2px solid;\n";
-    htmlText    += "      border-color: #aaaaaa #444444 #444444 #aaaaaa;\n";
-    htmlText    += "      background: #dddddd;\n";
-    htmlText    += "    }\n";
-    htmlText    += "\n";
-    htmlText    += "    .button_like:hover{\n";
-    htmlText    += "      background:#ccddff;\n";
-    htmlText    += "      border-color: #aaaacc #444466 #444466 #aaaacc;\n";
-    htmlText    += "    }\n";
-    htmlText    += "</style>\n";
-    htmlText 	+= "</head>\n";
-    htmlText 	+= "<body style='margin: 0pt;'>\n";
-    htmlText 	+= "<div align='right'>";
-//		+  "<input type='button' value='&#x1f5a8;' id='click' title='印刷用ページ' /></div>\n";
-    htmlText    += "<a href='#' id='click' title='印刷用ページ' class='button_like'>&#x1f5a8;</a>";
-    htmlText    += "</div>\n";
-    htmlText 	+= "<div id='drawing' style='border-style:solid; border-width: 1px;'></div>\n";
-    htmlText    += "<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'><\/script>\n";
-    htmlText    += "<script src='" + dir + "/3rdParty/svg.js'><\/script>\n";
-    htmlText    += "<script src='" + dir + "/BookCoverJS/BookCover.js'><\/script>\n";
-    htmlText  	+= "<script type='text/javascript'>\n";
-    htmlText    += "var draw;\n"; 
-    htmlText    += "function printSVG() {\n";
-    htmlText  	+= "    var svgText = draw.svg();\n";
-    htmlText  	+= "    var blob    = new Blob([svgText], { type: 'image/svg+xml' });\n";
-    htmlText  	+= "    var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');\n";
-    htmlText    += "    return false;\n";
-    htmlText    += "}\n";
-    htmlText  	+= "$(function() {\n";
-    htmlText  	+= "    draw = SVG('drawing');\n";
-    htmlText    += code;
-    htmlText  	+= "    $('#click').click(printSVG);\n";
-    htmlText  	+= "});\n";
-    htmlText  	+= "<\/script>\n";
-    htmlText  	+= "</body>\n";
-    htmlText  	+= "</html>\n";
-
-//    console.log(htmlText);
-    var blob = new Blob([htmlText], { type: "text/html" });
-    content.html("<object data='" + URL.createObjectURL(blob) + "'"
-                     + " id='svgFrame'" 
-                     + " width='" + content.width() + "'"
-                     + " height='" + content.height() + "'></object>");
+    renderSVG();
   }
 }
 
@@ -1097,8 +1053,6 @@ function tabClick(clickedName) {
   Blockly.svgResize(workspace);
 }
 
-$(window).on('load resize', onResize);
-
 $(function() {
     workspace = Blockly.inject('contentBlock',
        { toolbox: document.getElementById('toolbox'),
@@ -1109,31 +1063,34 @@ $(function() {
 
     workspace.addChangeListener(Blockly.Events.disableOrphans);
 
+    draw = SVG("contentSVG");
 
     var clean = $.query.get("clean");
     if (clean != null && (clean.toLowerCase() == "true" || clean.toLowerCase() == "yes")) {
         Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
     } else {
-        window.setTimeout(function () { 
+        window.setTimeout(function () {
 //            BlocklyStorage.restoreBlocks(workspace);
               var url = window.location.href.split('#')[0];
               if ('localStorage' in window) {
                 var memo = window.localStorage[url];
-                if (memo) { 
+                if (memo) {
                     var xml = Blockly.Xml.textToDom(memo);
                     if (xml.hasChildNodes()) {
                         Blockly.Xml.domToWorkspace(xml, workspace);
-                        return;  
-                    } 
+                        return;
+                    }
                     // xml が空だったら続行する
-                } 
+                }
               }
               var xmlUrl = $.query.get("url");
-              if (xmlUrl) { 
+              if (xmlUrl) {
               	$.ajax({ url: xmlUrl, dataType: "text" }).done(function(data) {
               	    var xml = Blockly.Xml.textToDom(data);
               	    Blockly.Xml.domToWorkspace(xml, workspace);
               	});
+              } else {
+                Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
               }
         }, 0);
     }
@@ -1154,6 +1111,22 @@ $(function() {
       return false;
     });
 
+    function printSVG() {
+      var svgText = draw.svg();
+      var blob    = new Blob([svgText], { type: 'image/svg+xml' });
+      var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
+      return false;
+    }
+
+    $("#printButton").click(function() {
+      if (!$('#tabSVG').hasClass('tabon')) {
+        renderSVG();
+      }
+      printSVG();
+      return false;
+    });
+
+
     $("#saveButton").click(function() {
        var xmlText;
        if ($('#tabXml').hasClass('tabon')) {
@@ -1168,7 +1141,7 @@ $(function() {
     $("#openButton").click(function() {
       $("#openButtonAux").click();
       return false;
-    }); 
+    });
     $("#openButtonAux").change(function(evt) {
        var f = evt.target.files[0];
        var reader = new FileReader();
@@ -1177,7 +1150,7 @@ $(function() {
          var xmlText = e.target.result;
          $("contentXml").val(xmlText);
          if (!$('#tabXml').hasClass('tabon')) {
-           try {    
+           try {
              xmlDom = Blockly.Xml.textToDom(xmlText);
            } catch (e) {
              var q =
@@ -1194,7 +1167,7 @@ $(function() {
          }
        };
        reader.readAsText(f);
-   
+
     });
     $("#resetButton").click(function () {
         var q = window.confirm("編集したプログラムを捨てて、最初の内容に戻します。よろしいですか？");
@@ -1206,6 +1179,9 @@ $(function() {
               var xml = Blockly.Xml.textToDom(data);
               Blockly.Xml.domToWorkspace(xml, workspace);
           });
+        } else {
+           workspace.clear();
+           Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
         }
     });
     onResize();
