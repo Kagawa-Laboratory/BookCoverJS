@@ -3,45 +3,103 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="favicon.png" type="image/png"/>
 <link rel="icon" href="favicon.png" type="image/png"/>
-<title>BookCoverJS</title>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<title>お絵かきプログラミング・Blockly 版</title>
 </head>
 <body>
+<h1 style="text-align:center;">お絵かきプログラミング<br />
+<span style='font-size:71%;'>Blockly 版</span></h1>
+<p align="center">Java/C 版は<a href="../index.html">こちら</a></p>
+</p>
+<h2>はじめに</h2>
+<p>
+コンピューターは、計算をしたりゲームをしたり、いろいろなことができる魔法の杖（ツエ）です。その魔法の杖を自由にあやつる魔術師になるためには、ちょっとした呪文体系（プログラミング言語）をマナぶ必要があります。
+今回は、その呪文の一部を使って、コンピューターにおえかきさせる体験をしましょう。コンピューターが得意なのは、規則的なくり返しのある絵を描くことです。できた作品は印刷して、ブックカバーやシールなどにできます。
+</p>
+
+<p>
+ここでは、<a href="https://developers.google.com/blockly/">Blockly</a> という 
+Google が作ったブロック式のプログラム編集環境（エディター）と、
+香川研究室が <a href="https://processing.org/">Processing</a> 
+を参考にして開発したプログラム部品集（ライブラリー）の BookCover.js 
+を使って、プログラムを作成していきます。
+</p>
+
+<h2>さっそく、やってみよう</h2>
+<p>
+シール（カード）またはブックカバーを作ることができます。
+好きなほうを選んでください。
+</p>
+<div align="center">
+<table border="1">
+<thead>
+<tr><th></th><th>シール・カード</th><th>ブックカバー</th></tr>
+</thead>  
+<tbody>
+<tr><th>サンプル</th>
+    <td><object data="Samples/RandomDot.svg" width="200" height="282"></td>
+    <td><object data="Samples/RandomEmoji.svg" width="282" height="200"></td>
+</tr>
+<tr><th>ここをクリック &rarr;</th>
+    <td>チュートリアル <a href="Tutorial/card.html">シール・カード編</a></td> 
+    <td>チュートリアル <a href="Tutorial/bookcover.html">ブックカバー編</a></td> 
+</tr>
+</tbody>
+</table>
+</div>
+
+<p align="right" style='font-size:71%;'>
+（管理者用）<a href="blockly.html">Blockly</a>, <a href="codemirror.html">CodeMirror</a>
+</p>
+<p>直接、<a href="samples.html">サンプル集のページ</a>へ</p>
+
+<h2>参考リンク</h2>
+<ul>
+<li><a href='../unicode.html'>主な絵文字（例: &#x1f383;&#x1f428;&#x1f43b;&#x1f43c;）（数値参照付）</a></li>
+<li><a href='../Images/HSBRing.svg'>HSB 表色系の説明</a></li>
+<li><a href='../Images/HSLRing.svg'>HSL 表色系の説明</a></li>
+</ul>
+
+<h2>参考リンク（外部）</h2>
+<ul>
+<li><a href='http://chobitt.com/book/'>本の洋服屋</a>（ブックカバー無料ダウンロードサイト）</li>
+<li><a href="https://developers.google.com/blockly/">Blockly</a></li>
+<li><a href='http://processing.org/'>Processing</a> （画像作成命令の参考にした言語）</li>
+<li><a href='http://www.colordic.org/'>色見本</a> </li>
+<li>フォント関係
+<ul>
+<li><a href='http://users.teilar.gr/~g1951d/'>Unicode Fonts for Ancient Scripts</a> 
+（Symbola フォントはここから取ってくる）</li>
+<li><a href="https://www.google.com/get/noto/">Google Noto Fonts</a> &mdash;
+（Noto Emoji フォントはここから取ってくる。
+Noto Color Emoji のほうは Windows では使えません。） </li>
+<li><a href="http://www.quivira-font.com/downloads.php">Quivira</a> &mdash;
+Quivira フォント</li>
+</ul>
+</li>
+</ul>
+
 <!--
-<iframe id="myframe" sandbox="allow-same-origin" src="empty.svg"
-        width="294" height="210"></iframe>
+繰り返す
+色について
+色をかえる
+	グラデーション
+	HSBGrad.java
+乱数を使う
+	CardDots.java
+条件判断    
+----
+再帰をつかう
+	CardTree.java
+----
+回転と水平移動
+----
+タートルグラフィックス
+	ManyTurtles.java
+渦巻をかく
+Reflect.java
 -->
-<h1 style="text-align:center;">BookCoverJS</h1>
-<!--
-<object id="myframe" sandbox="allow-same-origin"
-        data="empty.svg" type="image/svg+xml"
-        width="294" height="210"></object>
--->
-<!-- todo: save button -->
-<input type="button" value="&#x1f5d6;" id="click" /><br />
-<div id='drawing' style='border-style:solid;'></div>
 <hr />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="3rdParty/svg.js"></script>
-<script src="BookCoverJS/BookCover.js"></script>
-<!--<script src="BookCoverJS/HSBGrad.js"></script> -->
-<script src="BookCoverJS/RandTest.js"></script>
-<script type="text/javascript">
-/*
-for (var i = 0; i < 100; i++) {
-  console.log(BookCover.randomInRange(0, 100));
-}
-*/
-$(function() {
-//    var drawing = $("#myframe").contents().find("#drawing")[0];
-    var draw = SVG('drawing').size('294mm', '210mm');
-//    hsbGrad(draw);
-    randTest(draw);
-    $("#click").click(function () {
-      var svgText = draw.svg();
-      var blob = new Blob([svgText], { type: "image/svg+xml" });
-      var sub = window.open(URL.createObjectURL(blob), "SVG subwindow");
-    });
-});
-</script>
+<address>香川研究室</address>
 </body>
 </html>

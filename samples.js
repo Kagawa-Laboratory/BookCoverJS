@@ -8,7 +8,7 @@ function outputSVG(name, portrait, sc) {
 }
 
 function outputBlockly(name) {
-  document.writeln("<a href='blockly.html?url=Samples%2f" + name + ".xml'>Start Blockly</a>");
+  document.writeln("<a href='blockly.html?url=Samples%2f" + name + ".xml'>Blockly ではじめる</a>");
 }
 
 
