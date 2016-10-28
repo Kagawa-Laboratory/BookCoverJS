@@ -1200,12 +1200,49 @@ $(function() {
         }
     });
 
-    var upload = $.query.get("upload");
-
-    if (upload == null || upload == "") {
+    var uploadUrl = $.query.get("upload");
+    // uploadUrl は name と data というパラメーターをとると仮定する
+    if (uploadUrl == null || uploadUrl == "") {
       $("#uploadXmlButton").hide();
       $("#uploadSvgButton").hide();
     } else {
+      $("#uploadXmlButton").click(function() {
+       	 var xmlText;
+       	 if ($('#tabXml').hasClass('tabon')) {
+       	     xmlText = $('#contentXml').val();
+       	 } else {
+       	     var xmlDom  = Blockly.Xml.workspaceToDom(workspace);
+       	     xmlText     = Blockly.Xml.domToPrettyText(xmlDom);
+       	 }
+         $.ajax({ url: uploadUrl
+		, data: ({ name: "blocks.xml", data: xmlText })
+                , type: "post"  
+                , dataType: "text" 
+		}).done(function (message) {
+                   console.log("success", message);
+                   alert(message);
+                }).fail(function (message, status) {
+                   console.log("fail", status);
+                   alert(status);
+                });
+      });
+      $("#uploadSvgButton").click(function() {
+      	 if (!$('#tabSVG').hasClass('tabon')) {
+      	   renderSVG();
+      	 }  
+         var svgText = draw.svg();
+         $.ajax({ url: uploadUrl
+                , type: "post"  
+		, data: ({ name: "blocks.svg", data: svgText })
+                , dataType: "text" 
+		}).done(function (message) {
+                   console.log("success", message);
+                   alert(message);
+                }).fail(function (message, status) {
+                   console.log("fail", status);
+                   alert(status);
+                });
+      });
     }
 
     onResize();
