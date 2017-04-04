@@ -458,6 +458,56 @@ var BookCover = (function () {
         return this.__height;
     },
 
+    init: function () {
+        var self = this;
+    	self.__strokeWeight = 1;
+    	self.__stroke = "none";
+    	self.__strokeOpacity = 1;
+    	self.__fill   = "#000000";
+    	self.__fillOpacity = 1;
+    	self.__fontFamily = "MS-Mincho";
+    	/* char * __fontFamily = "Times New Roman"; */
+    	self.__fontSize = 12;
+
+    	self.__firstVertex = true;
+    	self.__shapePath = "";
+
+    	/* turtle graphics */
+    	self.__turtlePen = self.CLEAN;  /* up: 0, down: 1, dirty: 2 */
+    	self.__turtleX = 148.5;
+    	self.__turtleY = 105;
+    	self.__turtleHeading = 0;
+    	self.__turtleStack = [ ];
+        self.__gDepth = 0;
+        self.__gStack = [ ];
+
+    	self.__width = 297;
+    	self.__height = 210;
+    	self.__landscape = 1;
+
+    	self.__leftMargin   = 15;
+    	self.__rightMargin  = 30;
+    	self.__topMargin    = 15;
+    	self.__bottomMargin = 15;
+
+    	self.__currentLeftMargin   = self.__leftMargin;
+    	self.__currentRightMargin  = self.__rightMargin;
+    	self.__currentTopMargin    = self.__topMargin;
+    	self.__currentBottomMargin = self.__bottomMargin;
+    	self.__firstVertex = true;
+    	self.__shapePath = "";
+
+    	/* turtle graphics */
+    	self.__turtlePen = self.CLEAN;  /* up: 0, down: 1, dirty: 2 */
+    	self.__turtleX = 148.5;
+    	self.__turtleY = 105;
+    	self.__turtleHeading = 0;
+    	self.__turtleStack = [ ];
+
+        self.__clipMargin = 1;
+    },
+
+
     start: function(draw) {
     //    printf("<?xml version=\"1.0\" encoding=\"%s\"?>\n", enc);
     //    printf("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"\n");
@@ -469,6 +519,8 @@ var BookCover = (function () {
     //    printf("  fill-rule=\"evenodd\"\n");
     //    printf("  xmlns=\"http://www.w3.org/2000/svg\"\n");
     //    printf("  xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n");
+
+
         this.randomizeByTime();
         this.__gDepth = 0;
         this.__currentGroup = draw;

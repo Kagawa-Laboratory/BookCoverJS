@@ -998,6 +998,7 @@ $(window).on('load resize', onResize);
 function renderSVG() {
   var code = Blockly.JavaScript.workspaceToCode(workspace);
   draw.clear();
+  BookCover.init();
   eval(code);
 }
 
@@ -1126,7 +1127,14 @@ $(function() {
     });
 
     function printSVG() {
+      var wid = draw.attr("width");
+      var hei = draw.attr("height");
+      draw.attr("width", BookCover.pageWidth() + "mm");
+      draw.attr("height", BookCover.pageHeight() + "mm");
       var svgText = draw.svg();
+      draw.attr("width", wid);
+      draw.attr("height", hei);
+      console.log(svgText);
       var blob    = new Blob([svgText], { type: 'image/svg+xml' });
       var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
       return false;
@@ -1216,8 +1224,8 @@ $(function() {
        	 }
          $.ajax({ url: uploadUrl
 		, data: ({ name: "blocks.xml", data: xmlText })
-                , type: "post"  
-                , dataType: "text" 
+                , type: "post"
+                , dataType: "text"
 		}).done(function (message) {
                    console.log("success", message);
                    alert(message);
@@ -1229,12 +1237,12 @@ $(function() {
       $("#uploadSvgButton").click(function() {
       	 if (!$('#tabSVG').hasClass('tabon')) {
       	   renderSVG();
-      	 }  
+      	 }
          var svgText = draw.svg();
          $.ajax({ url: uploadUrl
-                , type: "post"  
+                , type: "post"
 		, data: ({ name: "blocks.svg", data: svgText })
-                , dataType: "text" 
+                , dataType: "text"
 		}).done(function (message) {
                    console.log("success", message);
                    alert(message);
