@@ -1136,7 +1136,11 @@ $(function() {
       draw.attr("height", hei);
       console.log(svgText);
       var blob    = new Blob([svgText], { type: 'image/svg+xml' });
-      var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
+      if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+         window.navigator.msSaveOrOpenBlob(blob);
+      } else {
+         var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
+      }
       return false;
     }
 
@@ -1147,7 +1151,6 @@ $(function() {
       printSVG();
       return false;
     });
-
 
     $("#saveButton").click(function() {
        var xmlText;
@@ -1241,7 +1244,7 @@ $(function() {
          var svgText = draw.svg();
          $.ajax({ url: uploadUrl
                 , type: "post"
-		, data: ({ name: "blocks.svg", data: svgText })
+		        , data: ({ name: "blocks.svg", data: svgText })
                 , dataType: "text"
 		}).done(function (message) {
                    console.log("success", message);
