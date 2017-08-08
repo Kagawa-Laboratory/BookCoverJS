@@ -1608,7 +1608,7 @@ Blockly.JavaScript['bookcover_image'] = function(block) {
 Blockly.Blocks['bookcover_rulers'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["文庫本", "BUNKO"]/*, ["ライブラリー版", "LIBRARY"], ["新書・コミック", "SHINSHO"], ["B6", "B6"]'*/]), "SIZE")
+        .appendField(new Blockly.FieldDropdown([["文庫本", "BUNKO"], ["（目安線なし）", "NONE"] /*, ["ライブラリー版", "LIBRARY"], ["新書・コミック", "SHINSHO"], ["B6", "B6"]'*/]), "SIZE")
         .appendField("用の目安線を描く");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -1621,7 +1621,12 @@ Blockly.Blocks['bookcover_rulers'] = {
 
 Blockly.JavaScript['bookcover_rulers'] = function(block) {
   var dropdown_size = block.getFieldValue('SIZE');
-  var code = 'BC.rulers();\n';
+  var code;
+  switch (dropdown_size) {
+      case "BUNKO": code = 'BC.rulers();\n'; break;
+      case "NONE" : code = '\n'; break;
+      default:      code = 'BC.rulers();\n'; break;   
+  }
   return code;
 };
 
