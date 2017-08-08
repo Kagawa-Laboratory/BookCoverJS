@@ -15,10 +15,37 @@
 </p>
 <h2>はじめに</h2>
 <p>
+コンピューターはテレビ・自動車・炊飯器など、現代の世の中のあらゆるところで使われています。
 コンピューターは、計算をしたりゲームをしたり、いろいろなことができる魔法の杖（ツエ）です。その魔法の杖を自由にあやつる魔術師になるためには、ちょっとした呪文体系（プログラミング言語）をマナぶ必要があります。
-今回は、その呪文の一部を使って、コンピューターにおえかきさせる体験をしましょう。コンピューターが得意なのは、規則的なくり返しのある絵を描くことです。できた作品は印刷して、ブックカバーやシールなどにできます。
+ここでは、その呪文の一部を使って、コンピューターにおえかきさせる体験をしましょう。コンピューターが得意なのは、規則的なくり返しのある絵を描くことです。できた作品は印刷して、ブックカバーやシールなどにできます。
 </p>
 
+<h3>（もう少し詳しく&hellip;）</h3>
+<button id="kuwashiku_toggle" title="開く／閉じる" style="border-radius:5px;">
+<span id="kuwashiku_plus">+</span>
+<span id="kuwashiku_minus" style="display:none;">-</span>
+</button>
+<div id="kuwashiku" style="border-width:thin;border-style:dashed;padding:0px 10px">
+<p>コンピューターの素晴らしいところは、人間では不可能なくらい正確に数値を計算したり、複雑な条件判断を何度も間違えずにこなしたり、数万回でも同じことをいやがらずにくり返したりすることです。そのコンピューターはプログラムという指令（手順）がなければ動きません。ここでは、コンピューターのプログラムとはどういうものかあらましを紹介するために、プログラムによるお絵かきを紹介します。</p> 
+
+<p>プログラムの中で最も基本となるカタチは<b>順次</b>・<b>反復</b>・<b>分岐</b>の 3 つです。</p>
+<dl style="margin: 0px 1em;">
+<dt><b>順次</b>（逐次）</dt>
+<dd>いくつかの処理を、順に一つずつ実行していくこと。<br />
+  （コンピューターはもちろんできます。）
+</dd>
+<dt><b>反復</b></dt>
+<dd>同じ処理を繰り返すこと。<br />
+（コンピューターが一番得意なことです。）</dd>
+<dt><b>分岐</b>（選択）</dt>
+<dd>条件が成り立つか否かによって、処理を選ぶこと。<br />
+  （繰り返すたびに全く同じことをしていては面白いことはできません。）</dd>
+</dl>
+<p>この 3 つの構造を使って、お絵かきしていきます。</p>
+</div>
+
+<p><a href="//guppy.eng.kagawa-u.ac.jp/Seminar/about.html">香川研究室について</a></p>
+<h2>さっそく、やってみよう</h2>
 <p>
 ここでは、<a href="https://developers.google.com/blockly/">Blockly</a> という 
 Google が作ったブロック式のプログラム編集環境（エディター）と、
@@ -27,7 +54,7 @@ Google が作ったブロック式のプログラム編集環境（エディタ�
 を使って、プログラムを作成していきます。
 </p>
 
-<h2>さっそく、やってみよう</h2>
+
 <p>
 シール（カード）またはブックカバーを作ることができます。
 好きなほうを選んでください。
@@ -104,5 +131,17 @@ Reflect.java
 -->
 <hr />
 <address>香川研究室</address>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#kuwashiku").hide();
+  $("#kuwashiku_toggle").click(function () {
+    $("#kuwashiku").toggle();
+    $("#kuwashiku_plus").toggle();
+    $("#kuwashiku_minus").toggle();
+  });
+});
+</script>
 </body>
 </html>
