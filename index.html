@@ -9,11 +9,16 @@
 <body>
 <h1 style="text-align:center;">お絵かきプログラミング<br />
 <span style='font-size:71%;'>Blockly 版</span></h1>
+<div align="center">香川大学工学部 電子・情報工学科 香川研究室<br />
+<a href="//guppy.eng.kagawa-u.ac.jp/Seminar/about.html">香川研究室について</a>
+</div>
+<hr />
 <p align="right">データのダウンロードは、
 <a href="https://platy.eng.kagawa-u.ac.jp/SimpleUpload/JSP/inputNumber.jsp">こちら</a></a></p>
 <p align="center">Java/C 版は<a href="../index.html">こちら</a></p>
 </p>
 <h2>はじめに</h2>
+
 <p>
 コンピューターはテレビ・自動車・炊飯器など、現代の世の中のあらゆるところで使われています。
 コンピューターは、計算をしたりゲームをしたり、いろいろなことができる魔法の杖（ツエ）です。その魔法の杖を自由にあやつる魔術師になるためには、ちょっとした呪文体系（プログラミング言語）をマナぶ必要があります。
@@ -41,23 +46,48 @@
 <dd>条件が成り立つか否かによって、処理を選ぶこと。<br />
   （繰り返すたびに全く同じことをしていては面白いことはできません。）</dd>
 </dl>
-<p>この 3 つの構造を使って、お絵かきしていきます。</p>
+<p>この 3 つはどんなプログラミング言語にも必ずある、もっとも基本的なカタチです。
+この 3 つのカタチを使って、お絵かきしていきます。</p>
 </div>
 
-<p><a href="//guppy.eng.kagawa-u.ac.jp/Seminar/about.html">香川研究室について</a></p>
+<h2>作品例</h2>
+<table border='0' align='center'>
+<tbody>
+<tr>
+<td>
+サンプル 1<br />
+<object data="Samples/Translate.svg" width='200' height='282' ></object>
+</td>
+<td>
+サンプル 2<br />
+<object data="Samples/Ferns.svg" width='200' height='282' ></object>
+</td>
+<td>
+サンプル 3<br />
+<object data="Samples/Reflect.svg" width='282' height='200' ></object>
+</td>
+<td>
+サンプル 4<br />
+<object data="Samples/Uzu.svg" width='282' height='200' ></object>
+</td>
+</tr>
+</tbody>
+</table>
+
 <h2>さっそく、やってみよう</h2>
 <p>
-ここでは、<a href="https://developers.google.com/blockly/">Blockly</a> という 
-Google が作ったブロック式のプログラム編集環境（エディター）と、
+ここでは、
 香川研究室が <a href="https://processing.org/">Processing</a> 
-を参考にして開発したプログラム部品集（ライブラリー）の BookCover.js 
+を参考にして開発したプログラム部品集（ライブラリー）の BookCover.js と、 
+<a href="https://developers.google.com/blockly/">Blockly</a> という 
+Google が作ったブロック式のプログラム編集環境（エディター）を BookCover.js 向けに拡張したもの、
 を使って、プログラムを作成していきます。
 </p>
 
 
 <p>
 シール（カード）またはブックカバーを作ることができます。
-好きなほうを選んでください。
+好きなほうのチュートリアルを選んでください。
 </p>
 <div align="center">
 <table border="1">
@@ -80,13 +110,16 @@ Google が作ったブロック式のプログラム編集環境（エディタ�
 <p align="right" style='font-size:71%;'>
 （管理者用）<a href="blockly.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp">Blockly</a>, <a href="codemirror.html">CodeMirror</a>
 </p>
-<p>直接、<a href="samples.html">サンプル集のページ</a>へ</p>
+<p>または、直接、<a href="samples.html">サンプル集のページ</a>へ飛ぶ。<br />
+（気に入ったデザインのものを選んで、
+Blockly ではじめる、をクリックして下さい。呪文（プログラム）が表示されますので、
+数や文字列などを書き換えて実行してみて下さい。）</p>
 <p><a href="../print.html">印刷の仕方</a></p>
 
 <h2>参考リンク</h2>
 <ul>
 <li><a href='../unicode.html'>主な絵文字（例: &#x1f383;&#x1f428;&#x1f43b;&#x1f43c;）（数値参照付）</a></li>
-<li><a href='../Images/HSBRing.svg'>HSB 表色系の説明</a></li>
+<!--<li><a href='../Images/HSBRing.svg'>HSB 表色系の説明</a></li>-->
 <li><a href='../Images/HSLRing.svg'>HSL 表色系の説明</a></li>
 </ul>
 
