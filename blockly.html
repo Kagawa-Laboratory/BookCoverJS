@@ -947,6 +947,9 @@
             <td class="tabmin">&nbsp;</td>
             <td id="tabXml" class="taboff" style="font-family:'Segoe UI Emoji'; white-space:nowrap;">(管理者用)</td>
             <td class="tabmax">
+              <a href="#" id="undoButton" title="アンドゥー" class="i18n button_like">&#x21b6</a>
+              <a href="#" id="redoButton" title="リドゥー" class="i18n button_like">&#x21b7</a>
+              &nbsp;&nbsp;&nbsp; 
               <a href="#" id="intro" title="ヘルプ" class="i18n button_like">&#x2753;</a>
               <a href="#" id="openButton" title="読込み" class="i18n button_like" data-step="5"
                           data-intro="保存したプログラムを読み込みます。">&#x1f4c2;</a>
@@ -1084,13 +1087,15 @@ function confirmLang(lang) {
 }
 
 var i18nMap = {
-    "intro": { "ja": "ヘルプ", "en": "Help", "default": "&#x2753;" }
-  , "openButton": { "ja": "読込", "en": "Open", "default": "&#x1f4c2;" }
-  , "saveButton": { "ja": "保存", "en": "Save", "default": "&#x1f4be;"  }
-  , "printButton": { "ja": "印刷", "en": "Print", "default": "&#x1f5a8;" }
+    "undoButton":      { "ja": "アンドゥー", "en": "Undo", "default": "&#x21b6;" }
+  , "redoButton":      { "ja": "リドゥー", "en": "Redo", "default": "&#x21b7;" }
+  , "intro":           { "ja": "ヘルプ", "en": "Help", "default": "&#x2753;" }
+  , "openButton":      { "ja": "読込", "en": "Open", "default": "&#x1f4c2;" }
+  , "saveButton":      { "ja": "保存", "en": "Save", "default": "&#x1f4be;"  }
+  , "printButton":     { "ja": "印刷", "en": "Print", "default": "&#x1f5a8;" }
   , "uploadXmlButton": { "ja": "データアップロード", "en": "Upload Data", "default": "&#x1f4c4;&#x1f4e4;" }
   , "uploadSvgButton": { "ja": "画像アップロード", "en": "Upload Image", "default": "&#x1f5bc;&#x1f4e4;" }
-  , "resetButton": { "ja": "リセット", "en": "Reset", "default": "&#x21bb;" }
+  , "resetButton":     { "ja": "リセット", "en": "Reset", "default": "&#x21bb;" }
 };
 
 function replaceI18nElement(id, lang) {
@@ -1248,6 +1253,14 @@ $(function() {
            workspace.clear();
            Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
         }
+    });
+
+    $("#undoButton").click(function () {
+	Blockly.mainWorkspace.undo(false);	      
+    });
+
+    $("#redoButton").click(function () {
+	Blockly.mainWorkspace.undo(true);
     });
 
     var uploadUrl = $.query.get("upload");
