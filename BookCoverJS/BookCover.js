@@ -520,11 +520,29 @@ var BookCover = (function () {
     //    printf("  xmlns=\"http://www.w3.org/2000/svg\"\n");
     //    printf("  xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n");
 
+    	this.__strokeWeight = 1;
+    	this.__stroke = "none";
+    	this.__strokeOpacity = 1;
+    	this.__fill   = "#000000";
+    	this.__fillOpacity = 1;
+    	this.__fontFamily = "MS-Mincho";
+    	/* char * __fontFamily = "Times New Roman"; */
+    	this.__fontSize = 12;
 
         this.randomizeByTime();
         this.__gDepth = 0;
         this.__currentGroup = draw;
         this.__root         = draw;
+
+    	this.__firstVertex = true;
+    	this.__shapePath = "";
+
+    	/* turtle graphics */
+    	this.__turtlePen = this.CLEAN;  /* up: 0, down: 1, dirty: 2 */
+    	this.__turtleX = 148.5;
+    	this.__turtleY = 105;
+    	this.__turtleHeading = 0;
+    	this.__turtleStack = [ ];
     },
 
     resetMatrix: function() {

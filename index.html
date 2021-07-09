@@ -9,16 +9,23 @@
 <body>
 <h1 style="text-align:center;">お絵かきプログラミング<br />
 <span style='font-size:71%;'>Blockly 版</span></h1>
-<div align="center">香川大学工学部 電子・情報工学科 香川研究室<br />
-<a href="//guppy.eng.kagawa-u.ac.jp/Seminar/about.html">香川研究室について</a>
+<p align="center"
+   style='border: 3px solid var(--main-border-color); border-radius: 9px; font-size: 141%;' >
+  <a href='../OnsiteLecture/slide.html'>出張授業 (2021/07/09) 用スライド</a>
+</p>
+
+<div align="center">香川大学創造工学部 情報システム・セキュリティコース 香川研究室<br />
+香川研究室について（<a href='../Reveal/slide.html'>説明スライド・棒読み付</a>、<a href="//guppy.eng.kagawa-u.ac.jp/Seminar/about.html">Web ページ</a>）
 </div>
 <hr />
 <p align="right">データのダウンロードは、
-<a href="https://platy.eng.kagawa-u.ac.jp/SimpleUpload/JSP/inputNumber.jsp">こちら</a></a></p>
-<p align="center">Java/C 版は<a href="../index.html">こちら</a></p>
+<a href="https://platy.eng.kagawa-u.ac.jp/SimpleUpload/JSP/inputNumber.jsp">こちら</a><span style='font-size: 71%;'>（画像などをアップロードしたときの７ケタの数字を入力します）</span></p>
+<p>このページは Blockly 版（プログラミング未経験者・初心者向け）です。</p>
+<p>Java/C 版（ある程度プログラミングの経験のある人向け）は<a href="../index.html">こちら</a>へ<br/>
+いきなり<a href="samples.html?lang=ja">サンプル集</a>のページヘ</p>
 </p>
 <h2>はじめに</h2>
-
+<!-- <div align="right">説明用<a href="/OpenCampus/aboutProgramming.pptx">パワーポイント</a>, <a href="/OpenCampus/aboutProgramming.pdf">PDF</a></div> -->
 <p>
 コンピューターはテレビ・自動車・炊飯器など、現代の世の中のあらゆるところで使われています。
 コンピューターは、計算をしたりゲームをしたり、いろいろなことができる魔法の杖（ツエ）です。その魔法の杖を自由にあやつる魔術師になるためには、ちょっとした呪文体系（プログラミング言語）をマナぶ必要があります。
@@ -30,7 +37,7 @@
 <span id="kuwashiku_plus">+</span>
 <span id="kuwashiku_minus" style="display:none;">-</span>
 </button>
-<div id="kuwashiku" style="border-width:thin;border-style:dashed;padding:0px 10px">
+<div id="kuwashiku" style="border-left: 3px solid var(--main-border-color); padding: 0px 10px;">
 <p>コンピューターの素晴らしいところは、人間では不可能なくらい正確に数値を計算したり、複雑な条件判断を何度も間違えずにこなしたり、数万回でも同じことをいやがらずにくり返したりすることです。そのコンピューターはプログラムという指令（手順）がなければ動きません。ここでは、コンピューターのプログラムとはどういうものかあらましを紹介するために、プログラムによるお絵かきを紹介します。</p> 
 
 <p>プログラムの中で最も基本となるカタチは<b>順次</b>・<b>反復</b>・<b>分岐</b>の 3 つです。</p>
@@ -56,11 +63,11 @@
 <tr>
 <td>
 サンプル 1<br />
-<object data="Samples/Translate.svg" width='200' height='282' ></object>
+<object data="Samples/RandomEmojiCard.svg" width='200' height='282' ></object>
 </td>
 <td>
 サンプル 2<br />
-<object data="Samples/Ferns.svg" width='200' height='282' ></object>
+<object data="Samples/Turtle.svg" width='200' height='282' ></object>
 </td>
 <td>
 サンプル 3<br />
@@ -97,7 +104,7 @@ Google が作ったブロック式のプログラム編集環境（エディタ�
 <tbody>
 <tr><th>サンプル</th>
     <td><object data="Samples/RandomDot.svg" width="200" height="282"></td>
-    <td><object data="Samples/RandomEmoji.svg" width="282" height="200"></td>
+    <td><object data="Samples/Mesh.svg" width="282" height="200"></td>
 </tr>
 <tr><th>ここをクリック &rarr;</th>
     <td>チュートリアル <a href="Tutorial/card.html">シール・カード編</a></td> 
@@ -108,12 +115,18 @@ Google が作ったブロック式のプログラム編集環境（エディタ�
 </div>
 
 <p align="right" style='font-size:71%;'>
-（管理者用）<a href="blockly.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp">Blockly</a>, <a href="codemirror.html">CodeMirror</a>
+（管理者用）<a href="blockly.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp">Blockly</a>, <a href="codemirror.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp">CodeMirror</a>
 </p>
-<p>または、直接、<a href="samples.html">サンプル集のページ</a>へ飛ぶ。<br />
+<p>または、直接、<a href="samples.html?lang=ja">サンプル集のページ</a>へ飛ぶこともできます。<br />
 （気に入ったデザインのものを選んで、
 Blockly ではじめる、をクリックして下さい。呪文（プログラム）が表示されますので、
 数や文字列などを書き換えて実行してみて下さい。）</p>
+<p>
+または、次のリンクでとてもシンプルな例からスタートします。
+（<a href="blockly.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&lang=ja">Blocklyで始める</a>、
+<a href="codemirror.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&lang=ja">JavaScriptで始める</a>）
+</p>
+
 <p><a href="../print.html">印刷の仕方</a></p>
 
 <h2>参考リンク</h2>
@@ -129,7 +142,7 @@ Blockly ではじめる、をクリックして下さい。呪文（プログラ
 <li><a href="https://developers.google.com/blockly/">Blockly</a></li>
 <li><a href='http://processing.org/'>Processing</a> （画像作成命令の参考にした言語）</li>
 <li><a href='http://www.colordic.org/'>色見本</a> </li>
-<li>フォント関係
+<li>フォント関係（絵文字用のフォント）
 <ul>
 <li><a href='http://users.teilar.gr/~g1951d/'>Unicode Fonts for Ancient Scripts</a> 
 （Symbola フォントはここから取ってくる）</li>

@@ -1,16 +1,45 @@
-body { margin: 0% 7.5% 0%; }
-h1 { text-align: center; 
-     background-color: #CCCCAA; 
-     color:#008800;
-     border-radius: 5px;
-   }
-h2 { background-color: #CCCCAA; 
-     color:#008800; 
-     border-radius: 7.5px;
-     padding-left: 10px;
-    }
-h3 { color: #008800; }
-h4 { color: #008800; }
-hr { border:1px solid #CCCCAA;}
-address { font-family:'Comic Sans MS', Impact, cursive; }
-a.mail { font-family:'Courier New', Courier, monospace; text-decoration:none; }
+:root {
+    --main-color: 90.0; /* hue を黄金角（137.5 度）ずつ加算する。 */
+    --sub-color: 5.0;
+    --shadow-color:  hsl(var(--main-color), 100%, 20%);
+    --main-border-color: hsla(var(--main-color),50%,60%,0.5);
+    --sub-border-color: hsla(var(--sub-color),50%,60%,0.5);
+    --main-bg-color: hsla(var(--main-color),50%,60%,0.25); 
+    --main-fg-color: hsl(var(--main-color), 100%, 33%);
+    --sub-fg-color:  hsl(var(--main-color), 100%, 20%);
+}
+
+body { 
+    font-family: "Segoe UI", "UD デジタル 教科書体 N-R";
+    margin: 0% 7.5% 0%; 
+}
+h1 { 
+    text-align:       center; 
+    background-color: var(--main-bg-color);
+    color:            var(--main-fg-color);
+    text-shadow:      2px 2px 2px var(--shadow-color);
+    border-radius:    5px;
+}
+h2 { 
+    background-color: var(--main-bg-color);
+    color:            var(--main-fg-color);
+    text-shadow:      0.25px 0.25px 0.25px var(--shadow-color);
+    border-radius:    7.5px;
+    padding-left:     10px;
+}
+h3 {
+    color: var(--main-fg-color);
+}
+h4 { 
+    color: var(--sub-fg-color);
+}
+hr { 
+    border: 1px solid var(--sub-border-color);
+}
+address { 
+    font-family:'Comic Sans MS', Impact, cursive;
+}
+a.mail { 
+    font-family:'Courier New', Courier, monospace;
+    text-decoration:none;
+}

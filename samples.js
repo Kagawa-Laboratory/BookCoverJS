@@ -7,21 +7,25 @@ function outputSVG(name, portrait, sc) {
   }  
 }
 
-function outputBlockly(name) {
-  document.writeln("<a href='blockly.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&url=Samples%2f" + name + ".xml'>Blockly ではじめる</a>");
+function outputBlockly(name, lang) {
+  document.writeln("<a href='blockly.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&url=Samples%2f" + name + ".xml" + ((lang == null || lang == "") ? "" : ("&lang=" + lang)) +  " '>Blockly ではじめる</a>");
 }
 
+function outputCodeMirror(name, lang) {
+  document.writeln("<span style='font-size:50%'><a href='codemirror.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&url=Samples%2f" + name + ".js" + ((lang == null || lang == "") ? "" : ("&lang=" + lang)) +  " '>(JS)</a></span>");
+}
 
-
-function output(name, portrait, sc) {
+function output(name, portrait, sc, lang) {
   document.writeln("<td>");
   outputSVG(name, portrait, sc);
   document.writeln("<br />");
-  outputBlockly(name);
+  outputBlockly(name, lang);
+  document.write(" ");
+  outputCodeMirror(name, lang);
   document.writeln("</td>");
 }
 
-function writeTable(names, cols, portrait, sc) {
+function writeTable(names, cols, portrait, sc, lang) {
   if (cols == null) {
    cols = 3;
   }
@@ -30,7 +34,7 @@ function writeTable(names, cols, portrait, sc) {
     if (i % cols == 0) {
        document.writeln("<tr>");
     }
-    output(names[i], portrait, sc);
+    output(names[i], portrait, sc, lang);
     if (i % cols == cols - 1) {
        document.writeln("</tr>");
     }
