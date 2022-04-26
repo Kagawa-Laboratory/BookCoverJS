@@ -1,0 +1,20 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_for" id="hQM%S~u82joh2xs#TQ/s">
+    <field name="VAR">i</field>
+    <value name="FROM">
+      <block type="math_number" id="~gMl#Pi[(4ZG((9B}y]J">
+        <field name="NUM">5</field>
+      </block>
+    </value>
+    <value name="TO">
+      <block type="math_number" id="VS^H;]{jT],cQj(+b#{I">
+        <field name="NUM">25</field>
+      </block>
+    </value>
+    <value name="BY">
+      <block type="math_number" id="b2;(+YHf4A:[r#%c4+-v">
+        <field name="NUM">4</field>
+      </block>
+    </value>
+  </block>
+</xml>

@@ -1,0 +1,798 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="ISI_iI+ufsoLc6M3WS0+">横位置</variable>
+    <variable type="" id="+d%FvJYv[OQXC0EAap?8">縦位置</variable>
+    <variable type="" id="[.27XPJTO]=y@B]j:tG:">横ずれ</variable>
+    <variable type="" id="C:el^TElxan*zeO,|)8t">縦ずれ</variable>
+    <variable type="" id=",U)aC*d{?a3MHh%4X.HN">傾き</variable>
+    <variable type="" id="}!^HYf_Ti(kvGvEAM;fq">左端</variable>
+    <variable type="" id="aCalZ;$Id=2lE**NtAeI">右端</variable>
+    <variable type="" id="#-:0dP(TjqP,AJ:v45JG">上端</variable>
+    <variable type="" id="!cTHwcNt^fNU~b$:lT/s">下端</variable>
+    <variable type="" id="Ax.p3Q:]LZX.lD|GH7ku">i</variable>
+  </variables>
+  <block type="bookcover_frame" id="qeA^NC1`yvI/z6/mLH;f">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_stroke" id="D0LRDsMD@S(RN?~KI[Mp">
+        <value name="COLOUR">
+          <block type="bookcover_none" id="D8sAN=?6vo@9PGZoh0QC"></block>
+        </value>
+        <next>
+          <block type="bookcover_fill_opacity" id=";MEf^nEq_oO4cn7ni0)i">
+            <value name="opacity">
+              <block type="math_number" id=":kA}R92A{YFQz.too1(9">
+                <field name="NUM">0.7</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_text_font" id="0cG;R2s%w5tQOB=Rd*Ih">
+                <value name="name">
+                  <block type="bookcover_font_name" id="%/PS7cSHkihj6U/PF2@4">
+                    <field name="NAME">Segoe UI Symbol</field>
+                  </block>
+                </value>
+                <value name="size">
+                  <block type="math_number" id="5z.!L+??E-w*!,@}B(EM">
+                    <field name="NUM">12</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="6I^%4+iA4BAqWuszxUbg">
+                    <field name="VAR" id="ISI_iI+ufsoLc6M3WS0+" variabletype="">横位置</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="ytiC.0`n2Pq[9Eqra|3q">
+                        <field name="OP">DIVIDE</field>
+                        <value name="A">
+                          <block type="bookcover_pageWidth" id="-4P];RN05zv@@Hd{S+3O"></block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="}zZiUe.n%x7DO2!c6o*4">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="186tUmu!Kn:?*pTrVK(c">
+                        <field name="VAR" id="+d%FvJYv[OQXC0EAap?8" variabletype="">縦位置</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="}wb4=G?zUsp0b{N|S-Hb">
+                            <field name="OP">DIVIDE</field>
+                            <value name="A">
+                              <block type="bookcover_pageHeight" id="j+R{luV_yZBWm9BfguBj"></block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="U!E1|tWgyWcUH(gbXWX+">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="gs3;Q.X-r/%9Q!0m_!jc">
+                            <field name="VAR" id="[.27XPJTO]=y@B]j:tG:" variabletype="">横ずれ</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="Au3LX:wJcU9.E?CqW|S+">
+                                <field name="NUM">16</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="eunGLn0~]sJf2Ic@VgvD">
+                                <field name="VAR" id="C:el^TElxan*zeO,|)8t" variabletype="">縦ずれ</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="I@WYnMtv-d./b~6z2![w">
+                                    <field name="NUM">10</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="variables_set" id="BRSv4Zd[lKLj{y=M#[_~">
+                                    <field name="VAR" id=",U)aC*d{?a3MHh%4X.HN" variabletype="">傾き</field>
+                                    <next>
+                                      <block type="variables_set" id="4i,i--yr5/]N5e+t`NE8">
+                                        <field name="VAR" id="}!^HYf_Ti(kvGvEAM;fq" variabletype="">左端</field>
+                                        <value name="VALUE">
+                                          <block type="math_number" id="iIhQ`oXa740%oqE%:d~q">
+                                            <field name="NUM">20</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set" id="fqD,H-jyINo^|)[`LX1i">
+                                            <field name="VAR" id="aCalZ;$Id=2lE**NtAeI" variabletype="">右端</field>
+                                            <value name="VALUE">
+                                              <block type="math_arithmetic" id="7T9HhL#7uhJ(U19!!QmD">
+                                                <field name="OP">MINUS</field>
+                                                <value name="A">
+                                                  <block type="bookcover_pageWidth" id="sOa@Byc_KTrh6]Ht{[dE"></block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="math_number" id="iyG.H/AcdN`^nUz+A5xC">
+                                                    <field name="NUM">30</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="variables_set" id="tQtVenC`r.w@;}2MRNNl">
+                                                <field name="VAR" id="#-:0dP(TjqP,AJ:v45JG" variabletype="">上端</field>
+                                                <value name="VALUE">
+                                                  <block type="math_number" id="0R=YOXGe~t:%/^TZC6HL">
+                                                    <field name="NUM">40</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="variables_set" id="4.`70qA|?j4Q1acN}~W:">
+                                                    <field name="VAR" id="!cTHwcNt^fNU~b$:lT/s" variabletype="">下端</field>
+                                                    <value name="VALUE">
+                                                      <block type="math_arithmetic" id="mUgE*hHjVv(QR;;i_gM9">
+                                                        <field name="OP">MINUS</field>
+                                                        <value name="A">
+                                                          <block type="bookcover_pageHeight" id="V8^@]=uM+4WMb}Jlt|2k"></block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="math_number" id="*jzYt;U5t0=]8nOOrB:k">
+                                                            <field name="NUM">50</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="controls_for" id="`N3}r-`G)-9~};kP~Vph">
+                                                        <field name="VAR" id="Ax.p3Q:]LZX.lD|GH7ku" variabletype="">i</field>
+                                                        <value name="FROM">
+                                                          <block type="math_number" id="P.@W`rXqFTEk#ZPB@V-p">
+                                                            <field name="NUM">1</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="TO">
+                                                          <block type="math_number" id="h.DJEFQ]yo3P-MF+ayc5">
+                                                            <field name="NUM">160</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="BY">
+                                                          <block type="math_number" id="4A,~L=W`Kf]:%;#%:uV4">
+                                                            <field name="NUM">1</field>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="DO">
+                                                          <block type="bookcover_fill" id=")10zc,(RuaFJ%3WHzVic">
+                                                            <value name="COLOUR">
+                                                              <block type="bookcover_hsl360" id="4PEkH?sfQH)|wa^8=8pf">
+                                                                <value name="hue">
+                                                                  <block type="math_arithmetic" id="#)G!,Iia4L2,X,a6LP`|">
+                                                                    <field name="OP">MULTIPLY</field>
+                                                                    <value name="A">
+                                                                      <block type="variables_get" id="FUTDwHtAVIE3.VM{YL=T">
+                                                                        <field name="VAR" id="Ax.p3Q:]LZX.lD|GH7ku" variabletype="">i</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <block type="math_number" id="#q*wt.6SV8?tzRJO7(Q7">
+                                                                        <field name="NUM">8</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="saturation">
+                                                                  <block type="math_number" id="C{(+19UAHlY@+Cg7!j1/">
+                                                                    <field name="NUM">100</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="luminance">
+                                                                  <block type="math_number" id="yFxL(b(vvln`9u[]46G7">
+                                                                    <field name="NUM">50</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="bookcover_matrix" id="?pr-1yt%I6`^q%(v51D7">
+                                                                <statement name="statements">
+                                                                  <block type="bookcover_translate" id="(*`=Eik)XPm(0jR8bs/9">
+                                                                    <value name="x">
+                                                                      <block type="variables_get" id="8?QkEyPln#9WQryj3%bQ">
+                                                                        <field name="VAR" id="ISI_iI+ufsoLc6M3WS0+" variabletype="">横位置</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="y">
+                                                                      <block type="variables_get" id="(X8L]MEO`w5Hy|lf?pHr">
+                                                                        <field name="VAR" id="+d%FvJYv[OQXC0EAap?8" variabletype="">縦位置</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="bookcover_rotate" id="u]lQF#N|W@u)1h1+bewq">
+                                                                        <value name="angle">
+                                                                          <block type="variables_get" id="#%eWXac;[nT*]`;.-M~6">
+                                                                            <field name="VAR" id=",U)aC*d{?a3MHh%4X.HN" variabletype="">傾き</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="bookcover_text" id="Qm[+Gmf.9I4!66eM+(26">
+                                                                            <value name="x">
+                                                                              <block type="math_number" id="LLKFz1FOlYwE7?r,cb^x">
+                                                                                <field name="NUM">0</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="y">
+                                                                              <block type="math_number" id="n;.?nR!LjrL,6P;?xH1/">
+                                                                                <field name="NUM">0</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="str">
+                                                                              <block type="text_charAt" id="K_kT5rd[?2~6`uy:y?K*">
+                                                                                <mutation at="false"></mutation>
+                                                                                <field name="WHERE">RANDOM</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="text" id="arHC6j07RHvw;}=(U:r~">
+                                                                                    <field name="TEXT">⯀</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </statement>
+                                                                <next>
+                                                                  <block type="variables_set" id="99PU)5I@JtH,evO#PKe=">
+                                                                    <field name="VAR" id="ISI_iI+ufsoLc6M3WS0+" variabletype="">横位置</field>
+                                                                    <value name="VALUE">
+                                                                      <block type="math_arithmetic" id="_=wHH,7X[32!fue+6mpK">
+                                                                        <field name="OP">ADD</field>
+                                                                        <value name="A">
+                                                                          <block type="variables_get" id=":]j4P!^h3YehV*o`Rl=g">
+                                                                            <field name="VAR" id="ISI_iI+ufsoLc6M3WS0+" variabletype="">横位置</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <block type="variables_get" id="ZvcwYkhu0+{I.;RYMPSi">
+                                                                            <field name="VAR" id="[.27XPJTO]=y@B]j:tG:" variabletype="">横ずれ</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="variables_set" id="LwYaNW+CQSrynZ{^FFiv">
+                                                                        <field name="VAR" id="+d%FvJYv[OQXC0EAap?8" variabletype="">縦位置</field>
+                                                                        <value name="VALUE">
+                                                                          <block type="math_arithmetic" id="nTxGQkxV@g6b6km!5/-q">
+                                                                            <field name="OP">ADD</field>
+                                                                            <value name="A">
+                                                                              <block type="variables_get" id="wDNNBv(C[kLne.@,8;9_">
+                                                                                <field name="VAR" id="+d%FvJYv[OQXC0EAap?8" variabletype="">縦位置</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="variables_get" id="}%ZlCc9quHcy-ji}HDm=">
+                                                                                <field name="VAR" id="C:el^TElxan*zeO,|)8t" variabletype="">縦ずれ</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="controls_if" id="j#=@K..;ApMoE@){~;vP">
+                                                                            <mutation elseif="1"></mutation>
+                                                                            <value name="IF0">
+                                                                              <block type="logic_compare" id="v/S2u?J[##ot]NkCobi^">
+                                                                                <field name="OP">LT</field>
+                                                                                <value name="A">
+                                                                                  <block type="variables_get" id="9o}q@4R.a7-;?Z~-Dejh">
+                                                                                    <field name="VAR" id="ISI_iI+ufsoLc6M3WS0+" variabletype="">横位置</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="variables_get" id="O*XE/8KS_683jog=lmc;">
+                                                                                    <field name="VAR" id="}!^HYf_Ti(kvGvEAM;fq" variabletype="">左端</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <statement name="DO0">
+                                                                              <block type="variables_set" id="8lle3`ZrM5.!Kc~CFxQK">
+                                                                                <field name="VAR" id="[.27XPJTO]=y@B]j:tG:" variabletype="">横ずれ</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="math_arithmetic" id="qQ2|s1?m]fP-+|/lyoY7">
+                                                                                    <field name="OP">MULTIPLY</field>
+                                                                                    <value name="A">
+                                                                                      <block type="variables_get" id="ya5/`AKW5f%jV(5I*SBe">
+                                                                                        <field name="VAR" id="[.27XPJTO]=y@B]j:tG:" variabletype="">横ずれ</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="math_number" id="Wl(;EZ4pY{ON9J)lKsPU">
+                                                                                        <field name="NUM">-1</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="variables_set" id="p[_u-r];eLbhd!@G~bm^">
+                                                                                    <field name="VAR" id="ISI_iI+ufsoLc6M3WS0+" variabletype="">横位置</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="math_arithmetic" id="L~ulgDIU.bO{kUvu2]mE">
+                                                                                        <field name="OP">MINUS</field>
+                                                                                        <value name="A">
+                                                                                          <block type="math_arithmetic" id="sdU{I{NhUdcoz[y*osZv">
+                                                                                            <field name="OP">MULTIPLY</field>
+                                                                                            <value name="A">
+                                                                                              <block type="math_number" id="#~Y3,.[NFD%.Yp-Upg8m">
+                                                                                                <field name="NUM">2</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <block type="variables_get" id="Vy(5xEbAZ.hTgM9*P1R%">
+                                                                                                <field name="VAR" id="}!^HYf_Ti(kvGvEAM;fq" variabletype="">左端</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="variables_get" id="h;dOdWKA|R-1G0!V(*,[">
+                                                                                            <field name="VAR" id="ISI_iI+ufsoLc6M3WS0+" variabletype="">横位置</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="variables_set" id=".I}xyt)]8n-NSb`5nK##">
+                                                                                        <field name="VAR" id=",U)aC*d{?a3MHh%4X.HN" variabletype="">傾き</field>
+                                                                                        <value name="VALUE">
+                                                                                          <block type="bookcover_atan2" id="W=:]{aK|0oSeDw1-oaMX">
+                                                                                            <value name="X1">
+                                                                                              <shadow type="math_number" id="l@UGLD7)JE0oaN55f^m2">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </shadow>
+                                                                                              <block type="math_number" id="7:1iWjWkC)Dx~Arh+m@k">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="Y1">
+                                                                                              <shadow type="math_number" id="2~1;*T;u7~j{Nu+thXcs">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </shadow>
+                                                                                              <block type="math_number" id="LQ,#ZyJo3jFt4=Sw]+Qa">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="X2">
+                                                                                              <shadow type="math_number" id="`m;!qw(k}w4+Kv7}Eq/z">
+                                                                                                <field name="NUM">3</field>
+                                                                                              </shadow>
+                                                                                              <block type="variables_get" id="34fUS8)I/P@Z9j#`?Cco">
+                                                                                                <field name="VAR" id="[.27XPJTO]=y@B]j:tG:" variabletype="">横ずれ</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="Y2">
+                                                                                              <shadow type="math_number" id="9Vhn!qrU,~jZCYqFr*3+">
+                                                                                                <field name="NUM">4</field>
+                                                                                              </shadow>
+                                                                                              <block type="variables_get" id="~Y1yi23s.JP=Zb9cD)hH">
+                                                                                                <field name="VAR" id="C:el^TElxan*zeO,|)8t" variabletype="">縦ずれ</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <value name="IF1">
+                                                                              <block type="logic_compare" id="ioIeyby]=p5.Xz~9fHwL">
+                                                                                <field name="OP">GT</field>
+                                                                                <value name="A">
+                                                                                  <block type="variables_get" id="*z[s6gSt7CN~uVm%0rf]">
+                                                                                    <field name="VAR" id="ISI_iI+ufsoLc6M3WS0+" variabletype="">横位置</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="variables_get" id="U(_|iimNmt@zde[MpNka">
+                                                                                    <field name="VAR" id="aCalZ;$Id=2lE**NtAeI" variabletype="">右端</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <statement name="DO1">
+                                                                              <block type="variables_set" id="?_d{+2FPAPT)MxG{HAx6">
+                                                                                <field name="VAR" id="[.27XPJTO]=y@B]j:tG:" variabletype="">横ずれ</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="math_arithmetic" id=".Ey!a._|J[QB?_zCwLUA">
+                                                                                    <field name="OP">MULTIPLY</field>
+                                                                                    <value name="A">
+                                                                                      <block type="variables_get" id="lLmltZ(nCwVHQAo67WLV">
+                                                                                        <field name="VAR" id="[.27XPJTO]=y@B]j:tG:" variabletype="">横ずれ</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="math_number" id="E.2]%qGZ0^aPrOB=ZW0r">
+                                                                                        <field name="NUM">-1</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="variables_set" id="#?G`C!:jddHY%^]ND`Z/">
+                                                                                    <field name="VAR" id="ISI_iI+ufsoLc6M3WS0+" variabletype="">横位置</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="math_arithmetic" id="0H}Hnm;tJh8O+Kn6xqK5">
+                                                                                        <field name="OP">MINUS</field>
+                                                                                        <value name="A">
+                                                                                          <block type="math_arithmetic" id="e,=mj.z96ssuK2}rjXiL">
+                                                                                            <field name="OP">MULTIPLY</field>
+                                                                                            <value name="A">
+                                                                                              <block type="math_number" id=";os%tlTuL*EAGQw)){1l">
+                                                                                                <field name="NUM">2</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <block type="variables_get" id="Niml4M%;hn!]VQ}yrqWO">
+                                                                                                <field name="VAR" id="aCalZ;$Id=2lE**NtAeI" variabletype="">右端</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="variables_get" id="N;hKQrx/|eSz^~yZ,8#C">
+                                                                                            <field name="VAR" id="ISI_iI+ufsoLc6M3WS0+" variabletype="">横位置</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="variables_set" id="15=p8.BAtv:FO+OL(aNz">
+                                                                                        <field name="VAR" id=",U)aC*d{?a3MHh%4X.HN" variabletype="">傾き</field>
+                                                                                        <value name="VALUE">
+                                                                                          <block type="bookcover_atan2" id=";goau(Cdw2{Lm5dYd]E9">
+                                                                                            <value name="X1">
+                                                                                              <shadow type="math_number" id="l@UGLD7)JE0oaN55f^m2">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </shadow>
+                                                                                              <block type="math_number" id="kLVV`Ag=uo.z#BC,L9]K">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="Y1">
+                                                                                              <shadow type="math_number" id="2~1;*T;u7~j{Nu+thXcs">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </shadow>
+                                                                                              <block type="math_number" id="S(},:zxuzy_kmN+RmV)Z">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="X2">
+                                                                                              <shadow type="math_number" id="`m;!qw(k}w4+Kv7}Eq/z">
+                                                                                                <field name="NUM">3</field>
+                                                                                              </shadow>
+                                                                                              <block type="variables_get" id="ko2*/COr:,m[M?VcEjE%">
+                                                                                                <field name="VAR" id="[.27XPJTO]=y@B]j:tG:" variabletype="">横ずれ</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="Y2">
+                                                                                              <shadow type="math_number" id="9Vhn!qrU,~jZCYqFr*3+">
+                                                                                                <field name="NUM">4</field>
+                                                                                              </shadow>
+                                                                                              <block type="variables_get" id="x-/[-5L5|@Hf},MPHQW+">
+                                                                                                <field name="VAR" id="C:el^TElxan*zeO,|)8t" variabletype="">縦ずれ</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <next>
+                                                                              <block type="controls_if" id="]W(,g=8u+G6t]*mV;o4y">
+                                                                                <mutation elseif="1"></mutation>
+                                                                                <value name="IF0">
+                                                                                  <block type="logic_compare" id="=U3g#EqsCT`*9#?*R|{J">
+                                                                                    <field name="OP">LT</field>
+                                                                                    <value name="A">
+                                                                                      <block type="variables_get" id="u:Eno.d+U;*U%,zeCq*O">
+                                                                                        <field name="VAR" id="+d%FvJYv[OQXC0EAap?8" variabletype="">縦位置</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="variables_get" id="RZj]H;l-YLx|JcfUq@I[">
+                                                                                        <field name="VAR" id="#-:0dP(TjqP,AJ:v45JG" variabletype="">上端</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <statement name="DO0">
+                                                                                  <block type="variables_set" id="mf[]5b`UY{70b!F6;Q7;">
+                                                                                    <field name="VAR" id="C:el^TElxan*zeO,|)8t" variabletype="">縦ずれ</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="math_arithmetic" id=";s%A}uOO0XEOxcM2l,zP">
+                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                        <value name="A">
+                                                                                          <block type="variables_get" id="5%9p(@g[,Xd/lVu[4%r-">
+                                                                                            <field name="VAR" id="C:el^TElxan*zeO,|)8t" variabletype="">縦ずれ</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="math_number" id="H)!;S1c62V8[Gs(k!A]|">
+                                                                                            <field name="NUM">-1</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="variables_set" id="0%_M1=^oLo@m!{buYo2z">
+                                                                                        <field name="VAR" id="+d%FvJYv[OQXC0EAap?8" variabletype="">縦位置</field>
+                                                                                        <value name="VALUE">
+                                                                                          <block type="math_arithmetic" id="rB+oGm0`(W9t?tE6a|`u">
+                                                                                            <field name="OP">MINUS</field>
+                                                                                            <value name="A">
+                                                                                              <block type="math_arithmetic" id="WK6664ja!7Dy*0F,1@lX">
+                                                                                                <field name="OP">MULTIPLY</field>
+                                                                                                <value name="A">
+                                                                                                  <block type="math_number" id="vSV3uM4-zMz]oK+V1J=}">
+                                                                                                    <field name="NUM">2</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="B">
+                                                                                                  <block type="variables_get" id="=BGw]aCVH,*mjhtb8b@a">
+                                                                                                    <field name="VAR" id="#-:0dP(TjqP,AJ:v45JG" variabletype="">上端</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <block type="variables_get" id="7k(s{(iIyjciT;th]4oA">
+                                                                                                <field name="VAR" id="+d%FvJYv[OQXC0EAap?8" variabletype="">縦位置</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="variables_set" id="#X#[z;Na;Cua)AC2BY)F">
+                                                                                            <field name="VAR" id=",U)aC*d{?a3MHh%4X.HN" variabletype="">傾き</field>
+                                                                                            <value name="VALUE">
+                                                                                              <block type="bookcover_atan2" id="KzHW6rCd.f:Ma4{aC=1p">
+                                                                                                <value name="X1">
+                                                                                                  <shadow type="math_number" id="l@UGLD7)JE0oaN55f^m2">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="math_number" id="(LH^7N5)mB~]QFoPV(.n">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="Y1">
+                                                                                                  <shadow type="math_number" id="2~1;*T;u7~j{Nu+thXcs">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="math_number" id="V1#tlY}@YTA{ktn`{!]^">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="X2">
+                                                                                                  <shadow type="math_number" id="`m;!qw(k}w4+Kv7}Eq/z">
+                                                                                                    <field name="NUM">3</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="variables_get" id="P2SB55xNLj)NzC4Jw:0{">
+                                                                                                    <field name="VAR" id="[.27XPJTO]=y@B]j:tG:" variabletype="">横ずれ</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="Y2">
+                                                                                                  <shadow type="math_number" id="9Vhn!qrU,~jZCYqFr*3+">
+                                                                                                    <field name="NUM">4</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="variables_get" id="5EpWVJ%YB!pCVEIdmb@:">
+                                                                                                    <field name="VAR" id="C:el^TElxan*zeO,|)8t" variabletype="">縦ずれ</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <value name="IF1">
+                                                                                  <block type="logic_compare" id="vi!nHsPXC!.pHn=yS{B8">
+                                                                                    <field name="OP">GT</field>
+                                                                                    <value name="A">
+                                                                                      <block type="variables_get" id="v)]4V^zFhRd_FhTmU^XY">
+                                                                                        <field name="VAR" id="+d%FvJYv[OQXC0EAap?8" variabletype="">縦位置</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="variables_get" id=".3WYyQ(20(QVu5/^L,..">
+                                                                                        <field name="VAR" id="!cTHwcNt^fNU~b$:lT/s" variabletype="">下端</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <statement name="DO1">
+                                                                                  <block type="variables_set" id="_[=b/:MJ5qI.6reN2vaD">
+                                                                                    <field name="VAR" id="C:el^TElxan*zeO,|)8t" variabletype="">縦ずれ</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="math_arithmetic" id="?l0sYP|8ElBRkGTwGwCn">
+                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                        <value name="A">
+                                                                                          <block type="variables_get" id="ve24e(xMQhM~jSx?};ZV">
+                                                                                            <field name="VAR" id="C:el^TElxan*zeO,|)8t" variabletype="">縦ずれ</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="math_number" id="fac:}?~D5uH?|/KIeOxv">
+                                                                                            <field name="NUM">-1</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="variables_set" id="K8-pWIC;jgAA@aW2!!4%">
+                                                                                        <field name="VAR" id="+d%FvJYv[OQXC0EAap?8" variabletype="">縦位置</field>
+                                                                                        <value name="VALUE">
+                                                                                          <block type="math_arithmetic" id=":oIE%F#t5@[%+OwP5A@4">
+                                                                                            <field name="OP">MINUS</field>
+                                                                                            <value name="A">
+                                                                                              <block type="math_arithmetic" id="CWyQE1sy#Ta-lhdn?gpc">
+                                                                                                <field name="OP">MULTIPLY</field>
+                                                                                                <value name="A">
+                                                                                                  <block type="math_number" id="?*X|YNij-;#Y#C]aTI=k">
+                                                                                                    <field name="NUM">2</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="B">
+                                                                                                  <block type="variables_get" id="^0yUpub?tYPIONMGH!YV">
+                                                                                                    <field name="VAR" id="!cTHwcNt^fNU~b$:lT/s" variabletype="">下端</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <block type="variables_get" id="yHyVHU-d]id=}Q3VV*+v">
+                                                                                                <field name="VAR" id="+d%FvJYv[OQXC0EAap?8" variabletype="">縦位置</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="variables_set" id="FSi;J%]_oy:@iT^%KS?K">
+                                                                                            <field name="VAR" id=",U)aC*d{?a3MHh%4X.HN" variabletype="">傾き</field>
+                                                                                            <value name="VALUE">
+                                                                                              <block type="bookcover_atan2" id="=V^910_lz]@;VE:T=C95">
+                                                                                                <value name="X1">
+                                                                                                  <shadow type="math_number" id="l@UGLD7)JE0oaN55f^m2">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="math_number" id="Q?H*|K{ey5Ihmb)!qyi2">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="Y1">
+                                                                                                  <shadow type="math_number" id="2~1;*T;u7~j{Nu+thXcs">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="math_number" id="Yx;Dwf:O?Og)V3/Yvl#j">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="X2">
+                                                                                                  <shadow type="math_number" id="`m;!qw(k}w4+Kv7}Eq/z">
+                                                                                                    <field name="NUM">3</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="variables_get" id="J/HwNpaad7`c!~K9Ji=2">
+                                                                                                    <field name="VAR" id="[.27XPJTO]=y@B]j:tG:" variabletype="">横ずれ</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="Y2">
+                                                                                                  <shadow type="math_number" id="9Vhn!qrU,~jZCYqFr*3+">
+                                                                                                    <field name="NUM">4</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="variables_get" id="7#;Yq3!.dG^_uVy8fqA4">
+                                                                                                    <field name="VAR" id="C:el^TElxan*zeO,|)8t" variabletype="">縦ずれ</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </statement>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </statement>
+                                                        <next>
+                                                          <block type="bookcover_fill" id="5B)B2.S[kEErDWG~,4r}">
+                                                            <value name="COLOUR">
+                                                              <block type="bookcover_colour" id="/E_9BWY@vgA2~tKb!W#3">
+                                                                <field name="COLOUR">#3333ff</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="bookcover_text_font" id="KxH@+J74ZrE8?[jC@hEp">
+                                                                <value name="name">
+                                                                  <block type="bookcover_font_name" id="PCvCg-;S~-)P}uXo5`_i">
+                                                                    <field name="NAME">Times New Roman</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="size">
+                                                                  <block type="math_number" id=";wU_qqloZfCIVAh2!qJb">
+                                                                    <field name="NUM">10</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="bookcover_text" id="+:X+9:OrA[o#FHTN|6i4">
+                                                                    <value name="x">
+                                                                      <block type="math_number" id="q^9^p:(h??/6;Ka8pW)H">
+                                                                        <field name="NUM">180</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="y">
+                                                                      <block type="math_number" id="Rdz4NbuQ8v-VuuaZCdCH">
+                                                                        <field name="NUM">140</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="str">
+                                                                      <block type="text_join" id=":Vi4RIOKFu+FWj5ne,!H">
+                                                                        <mutation items="3"></mutation>
+                                                                        <value name="ADD0">
+                                                                          <block type="text" id="k+G:]TdLYILSg]3h8iTu">
+                                                                            <field name="TEXT">Kagawa University</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="ADD1">
+                                                                          <block type="bookcover_newline" id="W|FMi7N~r_}aJB`Q%{,n"></block>
+                                                                        </value>
+                                                                        <value name="ADD2">
+                                                                          <block type="text" id="sn~m0r@L7I;Ze4+gP/Zh">
+                                                                            <field name="TEXT">OpenCampus YYYY/MM/DD</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

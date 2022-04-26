@@ -1,0 +1,104 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="bookcover_frame" id="D=2SXq{tl-7/QJlj5A@]">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_rulers" id="8~*p|h;ye9nlua1s^e:%">
+        <field name="SIZE">BUNKO</field>
+        <next>
+          <block type="bookcover_fill" id="nUavD}MY-._/)eUR7]Rm">
+            <value name="COLOUR">
+              <block type="bookcover_colour" id="7b4[I2^}]!+FI8T4?r1e">
+                <field name="COLOUR">#000000</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_text_font" id="B??s{Yotf/v~m6ia(+?y">
+                <value name="name">
+                  <block type="bookcover_font_name" id="#jeC}Fo^Yel9]t#QCE1r">
+                    <field name="NAME">ＭＳ 明朝</field>
+                  </block>
+                </value>
+                <value name="size">
+                  <block type="math_number" id="T|=f^c-B9L}S):+y;W~*">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="bookcover_text" id="GS;|dN{]|@mmsy{J9Bg#">
+                    <value name="x">
+                      <block type="math_number" id="=^!633O*`+|fyc#zQQRy">
+                        <field name="NUM">160</field>
+                      </block>
+                    </value>
+                    <value name="y">
+                      <block type="math_number" id="/PWiQm@3J^UQQGIuA@2W">
+                        <field name="NUM">135</field>
+                      </block>
+                    </value>
+                    <value name="str">
+                      <block type="text" id="@DoRLp1*?7EB5tGO)}bg">
+                        <field name="TEXT">香川大学創造工学部</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="bookcover_text" id="M.k!O)uQ`t,[a[ZfI2a/">
+                        <value name="x">
+                          <block type="math_number" id="~eg}!OtFc2=N-a.pBk}`">
+                            <field name="NUM">160</field>
+                          </block>
+                        </value>
+                        <value name="y">
+                          <block type="math_number" id="5nvMj3it;K-K4#d3n;5X">
+                            <field name="NUM">145</field>
+                          </block>
+                        </value>
+                        <value name="str">
+                          <block type="text" id="kz?q.KJYH,[Gh^*ev[Un">
+                            <field name="TEXT">オープンキャンパス</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_text_font" id="g2V4Bg?7b6FP};8oYQMN">
+                            <value name="name">
+                              <block type="bookcover_font_name" id="GU;V%vV^%s[1R,TIHQV;">
+                                <field name="NAME">Segoe UI Emoji</field>
+                              </block>
+                            </value>
+                            <value name="size">
+                              <block type="math_number" id=".];xbxSMEs3[9[.#HNty">
+                                <field name="NUM">12</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="bookcover_text" id="2raIhd6=7N?Qf1+)5o=C">
+                                <value name="x">
+                                  <block type="math_number" id="~Y#Brq[6I(pw3yRs/]23">
+                                    <field name="NUM">160</field>
+                                  </block>
+                                </value>
+                                <value name="y">
+                                  <block type="math_number" id="MwQ)uAev{jq]d(6@fj[5">
+                                    <field name="NUM">155</field>
+                                  </block>
+                                </value>
+                                <value name="str">
+                                  <block type="text" id="VX(Z0+7,Fm9PlFyhu,2(">
+                                    <field name="TEXT">🖊🍍🍎	🖋</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,124 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="bookcover_card_frame">
+    <value name="PAPER_SPEC">
+      <block type="bookcover_cardspec">
+        <field name="CARDSPEC">エーワン F8A4-5</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="bookcover_stroke">
+        <value name="COLOUR">
+          <block type="bookcover_none"></block>
+        </value>
+        <next>
+          <block type="bookcover_text_font">
+            <value name="name">
+              <block type="bookcover_font_name">
+                <field name="NAME">ＭＳ ゴシック</field>
+              </block>
+            </value>
+            <value name="size">
+              <block type="math_number">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_foreachcard">
+                <field name="CARD">カード</field>
+                <field name="COUNTER">カウンター</field>
+                <field name="CLIP">TRUE</field>
+                <field name="FRAME">TRUE</field>
+                <field name="MARGIN">1</field>
+                <statement name="DO">
+                  <block type="bookcover_fill">
+                    <value name="COLOUR">
+                      <block type="bookcover_rotate_h">
+                        <value name="colour">
+                          <block type="bookcover_colour">
+                            <field name="COLOUR">#cc0000</field>
+                          </block>
+                        </value>
+                        <value name="angle">
+                          <block type="math_arithmetic">
+                            <field name="OP">MULTIPLY</field>
+                            <value name="A">
+                              <block type="bookcover_angle">
+                                <field name="angle">45</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get">
+                                <field name="VAR">カウンター</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="bookcover_text">
+                        <value name="x">
+                          <block type="math_number">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <value name="y">
+                          <block type="math_number">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <value name="str">
+                          <block type="text">
+                            <field name="TEXT">香川大学創造工学部</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_text">
+                            <value name="x">
+                              <block type="math_number">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <value name="y">
+                              <block type="math_number">
+                                <field name="NUM">25</field>
+                              </block>
+                            </value>
+                            <value name="str">
+                              <block type="text">
+                                <field name="TEXT">讃岐 太郎</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="bookcover_text">
+                                <value name="x">
+                                  <block type="math_number">
+                                    <field name="NUM">10</field>
+                                  </block>
+                                </value>
+                                <value name="y">
+                                  <block type="math_number">
+                                    <field name="NUM">40</field>
+                                  </block>
+                                </value>
+                                <value name="str">
+                                  <block type="text">
+                                    <field name="TEXT">SANUKI, Taro</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

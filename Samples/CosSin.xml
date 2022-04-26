@@ -1,0 +1,710 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="">x</variable>
+    <variable type="">ｙ</variable>
+    <variable type="">t</variable>
+    <variable type="">i</variable>
+  </variables>
+  <block type="procedures_defnoreturn" x="10" y="10">
+    <mutation>
+      <arg name="x" varid="B8xQ82g2kX${xl`#W?Rg"></arg>
+      <arg name="ｙ" varid="O9d(Imc*|4}s,uo+SMbX"></arg>
+      <arg name="t" varid=".CX~.^jn-W%xO;$2~]g)"></arg>
+    </mutation>
+    <field name="NAME">説明を書く</field>
+    <comment pinned="false" h="80" w="160">この関数を説明する...</comment>
+    <statement name="STACK">
+      <block type="bookcover_text_font">
+        <value name="name">
+          <block type="bookcover_font_name">
+            <field name="NAME">Times New Roman</field>
+          </block>
+        </value>
+        <value name="size">
+          <block type="math_number">
+            <field name="NUM">7</field>
+          </block>
+        </value>
+        <next>
+          <block type="bookcover_matrix">
+            <statement name="statements">
+              <block type="bookcover_translate">
+                <value name="x">
+                  <block type="variables_get">
+                    <field name="VAR" variabletype="">x</field>
+                  </block>
+                </value>
+                <value name="y">
+                  <block type="variables_get">
+                    <field name="VAR" variabletype="">ｙ</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="bookcover_rotate">
+                    <value name="angle">
+                      <block type="math_arithmetic">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="variables_get">
+                            <field name="VAR" variabletype="">t</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number">
+                            <field name="NUM">-1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="bookcover_text">
+                        <value name="x">
+                          <block type="math_number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="y">
+                          <block type="math_number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="str">
+                          <block type="text_join">
+                            <mutation items="11"></mutation>
+                            <value name="ADD0">
+                              <block type="text">
+                                <field name="TEXT">(cos(</field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="variables_get">
+                                <field name="VAR" variabletype="">t</field>
+                              </block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="text">
+                                <field name="TEXT">), sin(</field>
+                              </block>
+                            </value>
+                            <value name="ADD3">
+                              <block type="variables_get">
+                                <field name="VAR" variabletype="">t</field>
+                              </block>
+                            </value>
+                            <value name="ADD4">
+                              <block type="text">
+                                <field name="TEXT">)) </field>
+                              </block>
+                            </value>
+                            <value name="ADD5">
+                              <block type="text">
+                                <field name="TEXT"></field>
+                              </block>
+                            </value>
+                            <value name="ADD6">
+                              <block type="text">
+                                <field name="TEXT">= (</field>
+                              </block>
+                            </value>
+                            <value name="ADD7">
+                              <block type="procedures_callreturn">
+                                <mutation name="小数第3位まで">
+                                  <arg name="x"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                  <block type="math_trig">
+                                    <field name="OP">COS</field>
+                                    <value name="NUM">
+                                      <block type="variables_get">
+                                        <field name="VAR" variabletype="">t</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="ADD8">
+                              <block type="text">
+                                <field name="TEXT">, </field>
+                              </block>
+                            </value>
+                            <value name="ADD9">
+                              <block type="procedures_callreturn">
+                                <mutation name="小数第3位まで">
+                                  <arg name="x"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                  <block type="math_trig">
+                                    <field name="OP">SIN</field>
+                                    <value name="NUM">
+                                      <block type="variables_get">
+                                        <field name="VAR" variabletype="">t</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="ADD10">
+                              <block type="text">
+                                <field name="TEXT">)</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="10" y="579">
+    <mutation>
+      <arg name="x" varid="B8xQ82g2kX${xl`#W?Rg"></arg>
+      <arg name="ｙ" varid="O9d(Imc*|4}s,uo+SMbX"></arg>
+      <arg name="t" varid=".CX~.^jn-W%xO;$2~]g)"></arg>
+    </mutation>
+    <field name="NAME">説明を書く2</field>
+    <comment pinned="false" h="80" w="160">この関数を説明する...</comment>
+    <statement name="STACK">
+      <block type="bookcover_text_font">
+        <value name="name">
+          <block type="bookcover_font_name">
+            <field name="NAME">Times New Roman</field>
+          </block>
+        </value>
+        <value name="size">
+          <block type="math_number">
+            <field name="NUM">7</field>
+          </block>
+        </value>
+        <next>
+          <block type="bookcover_matrix">
+            <statement name="statements">
+              <block type="bookcover_translate">
+                <value name="x">
+                  <block type="variables_get">
+                    <field name="VAR" variabletype="">x</field>
+                  </block>
+                </value>
+                <value name="y">
+                  <block type="variables_get">
+                    <field name="VAR" variabletype="">ｙ</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="bookcover_rotate">
+                    <value name="angle">
+                      <block type="math_arithmetic">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="variables_get">
+                            <field name="VAR" variabletype="">t</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number">
+                            <field name="NUM">-1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="bookcover_text">
+                        <value name="x">
+                          <block type="math_number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="y">
+                          <block type="math_number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="str">
+                          <block type="text">
+                            <field name="TEXT">(cos(𝑡), sin(𝑡))</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" x="10" y="837">
+    <mutation>
+      <arg name="x" varid="B8xQ82g2kX${xl`#W?Rg"></arg>
+    </mutation>
+    <field name="NAME">小数第3位まで</field>
+    <comment pinned="false" h="80" w="160">この関数を説明する...</comment>
+    <value name="RETURN">
+      <block type="math_arithmetic">
+        <field name="OP">DIVIDE</field>
+        <value name="A">
+          <block type="math_round">
+            <field name="OP">ROUND</field>
+            <value name="NUM">
+              <shadow type="math_number">
+                <field name="NUM">3.1</field>
+              </shadow>
+              <block type="math_arithmetic">
+                <field name="OP">MULTIPLY</field>
+                <value name="A">
+                  <block type="variables_get">
+                    <field name="VAR" variabletype="">x</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number">
+            <field name="NUM">1000</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="bookcover_frame" x="12" y="977">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_matrix">
+        <statement name="statements">
+          <block type="bookcover_translate">
+            <value name="x">
+              <block type="math_number">
+                <field name="NUM">96</field>
+              </block>
+            </value>
+            <value name="y">
+              <block type="math_number">
+                <field name="NUM">96</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_stroke">
+                <value name="COLOUR">
+                  <block type="bookcover_colour">
+                    <field name="COLOUR">#000000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="bookcover_fill">
+                    <value name="COLOUR">
+                      <block type="bookcover_none"></block>
+                    </value>
+                    <next>
+                      <block type="bookcover_stroke_weight">
+                        <value name="width">
+                          <block type="math_number">
+                            <field name="NUM">0.2</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_ellipse">
+                            <value name="x">
+                              <block type="math_number">
+                                <field name="NUM">-64</field>
+                              </block>
+                            </value>
+                            <value name="y">
+                              <block type="math_number">
+                                <field name="NUM">-64</field>
+                              </block>
+                            </value>
+                            <value name="w">
+                              <block type="math_number">
+                                <field name="NUM">128</field>
+                              </block>
+                            </value>
+                            <value name="h">
+                              <block type="math_number">
+                                <field name="NUM">128</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="bookcover_text_font">
+                                <value name="name">
+                                  <block type="bookcover_font_name">
+                                    <field name="NAME">Times New Roman</field>
+                                  </block>
+                                </value>
+                                <value name="size">
+                                  <block type="math_number">
+                                    <field name="NUM">7</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="bookcover_fill">
+                                    <value name="COLOUR">
+                                      <block type="bookcover_colour">
+                                        <field name="COLOUR">#000000</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="bookcover_text">
+                                        <value name="x">
+                                          <block type="math_number">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="y">
+                                          <block type="math_number">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="str">
+                                          <block type="text">
+                                            <field name="TEXT">中心 (0, 0)</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="controls_forEach">
+                                            <field name="VAR" variabletype="">i</field>
+                                            <value name="LIST">
+                                              <block type="lists_create_with">
+                                                <mutation items="5"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="bookcover_angle">
+                                                    <field name="angle">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="bookcover_angle">
+                                                    <field name="angle">30</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD2">
+                                                  <block type="bookcover_angle">
+                                                    <field name="angle">90</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD3">
+                                                  <block type="bookcover_angle">
+                                                    <field name="angle">225</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD4">
+                                                  <block type="bookcover_angle">
+                                                    <field name="angle">300</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <statement name="DO">
+                                              <block type="bookcover_matrix">
+                                                <statement name="statements">
+                                                  <block type="bookcover_rotate">
+                                                    <value name="angle">
+                                                      <block type="variables_get">
+                                                        <field name="VAR" variabletype="">i</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="bookcover_line">
+                                                        <value name="x1">
+                                                          <block type="math_number">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="y1">
+                                                          <block type="math_number">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="x2">
+                                                          <block type="math_number">
+                                                            <field name="NUM">64</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="y2">
+                                                          <block type="math_number">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="bookcover_ellipse">
+                                                            <value name="x">
+                                                              <block type="math_number">
+                                                                <field name="NUM">63</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="y">
+                                                              <block type="math_number">
+                                                                <field name="NUM">-1</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="w">
+                                                              <block type="math_number">
+                                                                <field name="NUM">2</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="h">
+                                                              <block type="math_number">
+                                                                <field name="NUM">2</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="procedures_callnoreturn" inline="true">
+                                                                <mutation name="説明を書く">
+                                                                  <arg name="x"></arg>
+                                                                  <arg name="ｙ"></arg>
+                                                                  <arg name="t"></arg>
+                                                                </mutation>
+                                                                <value name="ARG0">
+                                                                  <block type="math_number">
+                                                                    <field name="NUM">66</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ARG1">
+                                                                  <block type="math_number">
+                                                                    <field name="NUM">-3</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ARG2">
+                                                                  <block type="variables_get">
+                                                                    <field name="VAR" variabletype="">i</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="variables_set">
+                                                <field name="VAR" variabletype="">i</field>
+                                                <value name="VALUE">
+                                                  <block type="math_arithmetic">
+                                                    <field name="OP">MULTIPLY</field>
+                                                    <value name="A">
+                                                      <block type="bookcover_angle">
+                                                        <field name="angle">359.999</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_arithmetic">
+                                                        <field name="OP">DIVIDE</field>
+                                                        <value name="A">
+                                                          <block type="math_number">
+                                                            <field name="NUM">21</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="math_number">
+                                                            <field name="NUM">55</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="bookcover_stroke">
+                                                    <value name="COLOUR">
+                                                      <block type="bookcover_colour">
+                                                        <field name="COLOUR">#3333ff</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="bookcover_fill">
+                                                        <value name="COLOUR">
+                                                          <block type="bookcover_none"></block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="bookcover_arc">
+                                                            <value name="x">
+                                                              <block type="math_number">
+                                                                <field name="NUM">-20</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="y">
+                                                              <block type="math_number">
+                                                                <field name="NUM">-20</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="w">
+                                                              <block type="math_number">
+                                                                <field name="NUM">40</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="h">
+                                                              <block type="math_number">
+                                                                <field name="NUM">40</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="start">
+                                                              <block type="math_number">
+                                                                <field name="NUM">0</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="end">
+                                                              <block type="variables_get">
+                                                                <field name="VAR" variabletype="">i</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="bookcover_fill">
+                                                                <value name="COLOUR">
+                                                                  <block type="bookcover_colour">
+                                                                    <field name="COLOUR">#3333ff</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="bookcover_text">
+                                                                    <value name="x">
+                                                                      <block type="math_number">
+                                                                        <field name="NUM">9</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="y">
+                                                                      <block type="math_number">
+                                                                        <field name="NUM">14</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="str">
+                                                                      <block type="text">
+                                                                        <field name="TEXT">𝑡</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="bookcover_matrix">
+                                                                        <statement name="statements">
+                                                                          <block type="bookcover_rotate">
+                                                                            <value name="angle">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR" variabletype="">i</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="bookcover_line">
+                                                                                <value name="x1">
+                                                                                  <block type="math_number">
+                                                                                    <field name="NUM">0</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="y1">
+                                                                                  <block type="math_number">
+                                                                                    <field name="NUM">0</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="x2">
+                                                                                  <block type="math_number">
+                                                                                    <field name="NUM">64</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="y2">
+                                                                                  <block type="math_number">
+                                                                                    <field name="NUM">0</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="bookcover_ellipse">
+                                                                                    <value name="x">
+                                                                                      <block type="math_number">
+                                                                                        <field name="NUM">63</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="y">
+                                                                                      <block type="math_number">
+                                                                                        <field name="NUM">-1</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="w">
+                                                                                      <block type="math_number">
+                                                                                        <field name="NUM">2</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="h">
+                                                                                      <block type="math_number">
+                                                                                        <field name="NUM">2</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="procedures_callnoreturn" inline="true">
+                                                                                        <mutation name="説明を書く2">
+                                                                                          <arg name="x"></arg>
+                                                                                          <arg name="ｙ"></arg>
+                                                                                          <arg name="t"></arg>
+                                                                                        </mutation>
+                                                                                        <value name="ARG0">
+                                                                                          <block type="math_number">
+                                                                                            <field name="NUM">66</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="ARG1">
+                                                                                          <block type="math_number">
+                                                                                            <field name="NUM">-3</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="ARG2">
+                                                                                          <block type="variables_get">
+                                                                                            <field name="VAR" variabletype="">i</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </statement>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

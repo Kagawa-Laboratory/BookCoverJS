@@ -1,0 +1,230 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="bookcover_frame" id="qeA^NC1`yvI/z6/mLH;f" x="10" y="-23">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_fill" id="ennh!U~^Ms24%}O,mO_^">
+        <value name="COLOUR">
+          <block type="bookcover_none" id="Lc1I4D!nM?njJ)H*}Sy_"></block>
+        </value>
+        <next>
+          <block type="bookcover_stroke_weight" id="P,U76Ia[(_52)jRi^)^3">
+            <value name="width">
+              <block type="math_number" id="|^I-GxR1m;Lv;M}WvrJL">
+                <field name="NUM">0.333</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_for" id="MS6In/AovGl1%pNmdi=f">
+                <field name="VAR">i</field>
+                <value name="FROM">
+                  <block type="math_number" id="(_tMXV3Hk@M{6ZcS%R`f">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <value name="TO">
+                  <block type="math_number" id="@}67%Mgmidc|S+.c||kR">
+                    <field name="NUM">12</field>
+                  </block>
+                </value>
+                <value name="BY">
+                  <block type="math_number" id="clO]dzD^JY;JjAROMYTb">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="bookcover_stroke" id="sFi3/9@We%3kBL+9[RMQ">
+                    <value name="COLOUR">
+                      <block type="bookcover_rotate_h" id="ro^Q-tz9Fs/y%p[RV2)l">
+                        <value name="colour">
+                          <block type="bookcover_colour" id="P_q*_tA!VsDTJ]4+dQk6">
+                            <field name="COLOUR">#ff0000</field>
+                          </block>
+                        </value>
+                        <value name="angle">
+                          <block type="math_arithmetic" id="d`5{bj4HsndpY!Pt-GUo">
+                            <field name="OP">MULTIPLY</field>
+                            <value name="A">
+                              <block type="bookcover_angle" id="%6.EtLE}jTP2#-w{LZM[">
+                                <field name="angle">30</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="ME,tAF_mL*b!zbr)idAD">
+                                <field name="VAR">i</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_for" id="L|*XJr;P-KMIiZyLMI_E">
+                        <field name="VAR">j</field>
+                        <value name="FROM">
+                          <block type="math_number" id="E1ONic%cS/(^rApTB]5}">
+                            <field name="NUM">5</field>
+                          </block>
+                        </value>
+                        <value name="TO">
+                          <block type="math_number" id="r!g!eLxQ9i[`w|r7@:O`">
+                            <field name="NUM">13</field>
+                          </block>
+                        </value>
+                        <value name="BY">
+                          <block type="math_number" id="j-BhWXYk(:aX)J[#nXoO">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                        <statement name="DO">
+                          <block type="bookcover_pen_down" id="]YY3F?`c@J5v|*5QhRsd">
+                            <next>
+                              <block type="bookcover_direction" id="tvgrYW?Jo~voD)[m035m">
+                                <value name="angle">
+                                  <block type="bookcover_angle" id="v-In-/3G+5]jb;0@|%:d">
+                                    <field name="angle">0</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="bookcover_go" id="L?0N9|k(F5dsJXx9^HLG">
+                                    <value name="x">
+                                      <block type="math_arithmetic" id="-qR.#Gp*1(9f+RI(y8oV">
+                                        <field name="OP">ADD</field>
+                                        <value name="A">
+                                          <block type="math_arithmetic" id="qTuF?pEZYDaUcs]:qR8x">
+                                            <field name="OP">MULTIPLY</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="_@[6ovMR#M%!STkBZ/Ey">
+                                                <field name="VAR">i</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="q,Pb39-js,eH6{Y`fWT~">
+                                                <field name="NUM">21</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id=":0d!mEI}GH3~2Jqd;2t6">
+                                            <field name="NUM">5</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="y">
+                                      <block type="math_arithmetic" id="*Qlmc/F%kj;__y^t75SA">
+                                        <field name="OP">ADD</field>
+                                        <value name="A">
+                                          <block type="math_arithmetic" id="8v!C`i%?MCrE26;3(!p:">
+                                            <field name="OP">MULTIPLY</field>
+                                            <value name="A">
+                                              <block type="math_arithmetic" id="Vf|iHDFsUxI*%J(7T;0H">
+                                                <field name="OP">MINUS</field>
+                                                <value name="A">
+                                                  <block type="variables_get" id="ry9*K}G.ywdI%lw%R#8]">
+                                                    <field name="VAR">j</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="math_number" id="Xb(mS[]V^yPOd[U66%I:">
+                                                    <field name="NUM">3</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="^/ogWf+0(2Neg5*yx%RA">
+                                                <field name="NUM">14</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="(p}!afnfW{zDJ{|7UX9X">
+                                            <field name="NUM">14</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="controls_repeat_ext" id="X6WrhJ|7n[e#4@6#-~f^">
+                                        <value name="TIMES">
+                                          <block type="variables_get" id="%*b=mf!7s%#cRIpENuW8">
+                                            <field name="VAR">j</field>
+                                          </block>
+                                        </value>
+                                        <statement name="DO">
+                                          <block type="bookcover_forward" id="qSn+CgD)f@rN5y@cB+Rs">
+                                            <value name="len">
+                                              <block type="math_number" id="GcEx5,aGj3ky3/oiLHh?">
+                                                <field name="NUM">18</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="bookcover_turn" id="P;8I1nfLi2UKf|uX%Q:j">
+                                                <value name="angle">
+                                                  <block type="math_arithmetic" id="U#c@^g+?AMjq(-G`msEH">
+                                                    <field name="OP">MINUS</field>
+                                                    <value name="A">
+                                                      <block type="bookcover_angle" id="]4qrn(W2OQueHdF0b4}@">
+                                                        <field name="angle">180</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_arithmetic" id=";tIu()S~D[-Fj7(O6fh`">
+                                                        <field name="OP">DIVIDE</field>
+                                                        <value name="A">
+                                                          <block type="bookcover_angle" id="3:+g:DEq!/;`c-TzfmfU">
+                                                            <field name="angle">180</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="variables_get" id="[on.*KDG2%-xktB!%Q1#">
+                                                            <field name="VAR">j</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="bookcover_pen_up" id="Wx%+B-A7(mU1cooN@5aI"></block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="bookcover_text_font" id="0cG;R2s%w5tQOB=Rd*Ih">
+                    <value name="name">
+                      <block type="bookcover_font_name" id="%/PS7cSHkihj6U/PF2@4">
+                        <field name="NAME">HGRSMP</field>
+                      </block>
+                    </value>
+                    <value name="size">
+                      <block type="math_number" id="5z.!L+??E-w*!,@}B(EM">
+                        <field name="NUM">8</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

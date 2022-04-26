@@ -28,7 +28,8 @@ var cards =  [ /* "Sample1" */
              ];
 
 var bookcovers = [ "Gradation" 
-                 , "Mesh"
+//                 , "Mesh"
+                 , "Mesh2"
                  , "HSBGrad" 
                  , "Reflect"
   	         , "SuperBall"
@@ -38,6 +39,7 @@ var bookcovers = [ "Gradation"
                  , "Stars"
                  , "Squares"
                  , "Shapes"
+                 , "Euclidean" 
                  , "Snows"
                  ];
 
@@ -85,7 +87,9 @@ writeTable(bookcovers, 3, false, 1, lang);
 <address>香川研究室</address>
  <script>
   $(function() {
-    $( "#tabs" ).tabs();
+    $( "#tabs" ).tabs({
+        active: 1   // zero-based index of the panel that is active. 
+     });
   });
   </script>
 </body>

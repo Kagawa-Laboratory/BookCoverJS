@@ -1,0 +1,257 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="bookcover_frame">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_guide_bars">
+        <value name="width">
+          <block type="math_number">
+            <field name="NUM">0.5</field>
+          </block>
+        </value>
+        <next>
+          <block type="bookcover_fill_opacity">
+            <value name="opacity">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set">
+                <field name="VAR">x</field>
+                <value name="VALUE">
+                  <block type="math_number">
+                    <field name="NUM">20</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set">
+                    <field name="VAR">y</field>
+                    <value name="VALUE">
+                      <block type="math_number">
+                        <field name="NUM">30</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set">
+                        <field name="VAR">横</field>
+                        <value name="VALUE">
+                          <block type="math_number">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set">
+                            <field name="VAR">縦</field>
+                            <value name="VALUE">
+                              <block type="math_number">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="controls_whileUntil">
+                                <field name="MODE">WHILE</field>
+                                <value name="BOOL">
+                                  <block type="logic_compare">
+                                    <field name="OP">LTE</field>
+                                    <value name="A">
+                                      <block type="math_arithmetic">
+                                        <field name="OP">ADD</field>
+                                        <value name="A">
+                                          <block type="variables_get">
+                                            <field name="VAR">y</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="variables_get">
+                                            <field name="VAR">縦</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number">
+                                        <field name="NUM">180</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO">
+                                  <block type="controls_whileUntil">
+                                    <field name="MODE">WHILE</field>
+                                    <value name="BOOL">
+                                      <block type="logic_compare">
+                                        <field name="OP">LTE</field>
+                                        <value name="A">
+                                          <block type="math_arithmetic">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <block type="variables_get">
+                                                <field name="VAR">x</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="variables_get">
+                                                <field name="VAR">横</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number">
+                                            <field name="NUM">280</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="controls_if">
+                                        <value name="IF0">
+                                          <block type="logic_compare">
+                                            <field name="OP">LTE</field>
+                                            <value name="A">
+                                              <block type="bookcover_random_in_range">
+                                                <value name="min">
+                                                  <block type="math_number">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="max">
+                                                  <block type="math_number">
+                                                    <field name="NUM">1</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number">
+                                                <field name="NUM">0.7</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="bookcover_fill">
+                                            <value name="COLOUR">
+                                              <block type="bookcover_hsl360">
+                                                <value name="hue">
+                                                  <block type="bookcover_random_in_range">
+                                                    <value name="min">
+                                                      <block type="bookcover_angle">
+                                                        <field name="angle">0</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="max">
+                                                      <block type="bookcover_angle">
+                                                        <field name="angle">345</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="saturation">
+                                                  <block type="math_number">
+                                                    <field name="NUM">100</field>
+                                                  </block>
+                                                </value>
+                                                <value name="luminance">
+                                                  <block type="math_number">
+                                                    <field name="NUM">50</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="bookcover_rect">
+                                                <value name="x">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">x</field>
+                                                  </block>
+                                                </value>
+                                                <value name="y">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">y</field>
+                                                  </block>
+                                                </value>
+                                                <value name="w">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">横</field>
+                                                  </block>
+                                                </value>
+                                                <value name="h">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">縦</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="variables_set">
+                                            <field name="VAR">x</field>
+                                            <value name="VALUE">
+                                              <block type="math_arithmetic">
+                                                <field name="OP">ADD</field>
+                                                <value name="A">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">x</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">横</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="variables_set">
+                                        <field name="VAR">x</field>
+                                        <value name="VALUE">
+                                          <block type="math_number">
+                                            <field name="NUM">20</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set">
+                                            <field name="VAR">y</field>
+                                            <value name="VALUE">
+                                              <block type="math_arithmetic">
+                                                <field name="OP">ADD</field>
+                                                <value name="A">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">y</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">縦</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

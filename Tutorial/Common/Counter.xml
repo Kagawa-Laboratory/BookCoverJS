@@ -1,0 +1,5 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_get" x="10" y="0">
+        <field name="VAR">カウンター</field>
+    </block>
+</xml>

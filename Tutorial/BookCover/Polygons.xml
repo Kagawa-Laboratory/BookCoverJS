@@ -1,0 +1,295 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="bookcover_frame">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_fill">
+        <value name="COLOUR">
+          <block type="bookcover_none"></block>
+        </value>
+        <next>
+          <block type="bookcover_stroke_weight">
+            <value name="width">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_translate">
+                <value name="x">
+                  <block type="math_number">
+                    <field name="NUM">-145</field>
+                  </block>
+                </value>
+                <value name="y">
+                  <block type="math_number">
+                    <field name="NUM">-60</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_for">
+                    <field name="VAR">i</field>
+                    <value name="FROM">
+                      <block type="math_number">
+                        <field name="NUM">5</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number">
+                        <field name="NUM">9</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="bookcover_stroke">
+                        <value name="COLOUR">
+                          <block type="bookcover_rotate_h">
+                            <value name="colour">
+                              <block type="bookcover_colour">
+                                <field name="COLOUR">#ff0000</field>
+                              </block>
+                            </value>
+                            <value name="angle">
+                              <block type="math_arithmetic">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="bookcover_angle">
+                                    <field name="angle">72</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_matrix">
+                            <statement name="statements">
+                              <block type="bookcover_translate">
+                                <value name="x">
+                                  <block type="math_arithmetic">
+                                    <field name="OP">MULTIPLY</field>
+                                    <value name="A">
+                                      <block type="math_number">
+                                        <field name="NUM">42</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="variables_get">
+                                        <field name="VAR">i</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="y">
+                                  <block type="math_arithmetic">
+                                    <field name="OP">MULTIPLY</field>
+                                    <value name="A">
+                                      <block type="math_number">
+                                        <field name="NUM">24</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="variables_get">
+                                        <field name="VAR">i</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="controls_for">
+                                    <field name="VAR">j</field>
+                                    <value name="FROM">
+                                      <block type="math_number">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                    <value name="TO">
+                                      <block type="variables_get">
+                                        <field name="VAR">i</field>
+                                      </block>
+                                    </value>
+                                    <value name="BY">
+                                      <block type="math_number">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="variables_set">
+                                        <field name="VAR">t1</field>
+                                        <value name="VALUE">
+                                          <block type="math_arithmetic">
+                                            <field name="OP">MULTIPLY</field>
+                                            <value name="A">
+                                              <block type="math_arithmetic">
+                                                <field name="OP">DIVIDE</field>
+                                                <value name="A">
+                                                  <block type="math_number">
+                                                    <field name="NUM">360</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">i</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_arithmetic">
+                                                <field name="OP">MINUS</field>
+                                                <value name="A">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">j</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="math_number">
+                                                    <field name="NUM">1</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set">
+                                            <field name="VAR">t2</field>
+                                            <value name="VALUE">
+                                              <block type="math_arithmetic">
+                                                <field name="OP">MULTIPLY</field>
+                                                <value name="A">
+                                                  <block type="math_arithmetic">
+                                                    <field name="OP">DIVIDE</field>
+                                                    <value name="A">
+                                                      <block type="math_number">
+                                                        <field name="NUM">360</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="variables_get">
+                                                        <field name="VAR">i</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">j</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="bookcover_line">
+                                                <value name="x1">
+                                                  <block type="math_arithmetic">
+                                                    <field name="OP">MULTIPLY</field>
+                                                    <value name="A">
+                                                      <block type="math_number">
+                                                        <field name="NUM">20</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_trig">
+                                                        <field name="OP">COS</field>
+                                                        <value name="NUM">
+                                                          <block type="variables_get">
+                                                            <field name="VAR">t1</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="y1">
+                                                  <block type="math_arithmetic">
+                                                    <field name="OP">MULTIPLY</field>
+                                                    <value name="A">
+                                                      <block type="math_number">
+                                                        <field name="NUM">20</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_trig">
+                                                        <field name="OP">SIN</field>
+                                                        <value name="NUM">
+                                                          <block type="variables_get">
+                                                            <field name="VAR">t1</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="x2">
+                                                  <block type="math_arithmetic">
+                                                    <field name="OP">MULTIPLY</field>
+                                                    <value name="A">
+                                                      <block type="math_number">
+                                                        <field name="NUM">20</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_trig">
+                                                        <field name="OP">COS</field>
+                                                        <value name="NUM">
+                                                          <block type="variables_get">
+                                                            <field name="VAR">t2</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="y2">
+                                                  <block type="math_arithmetic">
+                                                    <field name="OP">MULTIPLY</field>
+                                                    <value name="A">
+                                                      <block type="math_number">
+                                                        <field name="NUM">20</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_trig">
+                                                        <field name="OP">SIN</field>
+                                                        <value name="NUM">
+                                                          <block type="variables_get">
+                                                            <field name="VAR">t2</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

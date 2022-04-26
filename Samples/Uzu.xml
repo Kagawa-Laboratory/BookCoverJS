@@ -1,0 +1,314 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="kT+7;[QC15m,.)odgUBX">横位置</variable>
+    <variable type="" id="]YeZ);?cFF;h=V*5n0S$">縦位置</variable>
+    <variable type="" id="S=`pzbrtJUx1@Zpnx@Br">傾き</variable>
+    <variable type="" id="kw_X%[!lT/Eh=kpVU$C0">距離</variable>
+  </variables>
+  <block type="bookcover_frame" id="qeA^NC1`yvI/z6/mLH;f">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_stroke" id="D0LRDsMD@S(RN?~KI[Mp">
+        <value name="COLOUR">
+          <block type="bookcover_none" id="D8sAN=?6vo@9PGZoh0QC"></block>
+        </value>
+        <next>
+          <block type="bookcover_fill_opacity" id=";MEf^nEq_oO4cn7ni0)i">
+            <value name="opacity">
+              <block type="math_number" id=":kA}R92A{YFQz.too1(9">
+                <field name="NUM">0.7</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_text_font" id="0cG;R2s%w5tQOB=Rd*Ih">
+                <value name="name">
+                  <block type="bookcover_font_name" id="%/PS7cSHkihj6U/PF2@4">
+                    <field name="NAME">Segoe UI Symbol</field>
+                  </block>
+                </value>
+                <value name="size">
+                  <block type="math_number" id="5z.!L+??E-w*!,@}B(EM">
+                    <field name="NUM">8</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_for" id="}XB!9sNaFQ48Cd+L1awn">
+                    <field name="VAR" id="kT+7;[QC15m,.)odgUBX" variabletype="">横位置</field>
+                    <value name="FROM">
+                      <block type="math_number" id="tU-rKNM4yN]!EvS3b)+e">
+                        <field name="NUM">30</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id="9HM8Dw_5PH%7elsBpK;#">
+                        <field name="NUM">260</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number" id="K@-2-WH][%7e]1~Q=|o/">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="controls_for" id="ub2Z_msm+~;?S*(IBbUC">
+                        <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$" variabletype="">縦位置</field>
+                        <value name="FROM">
+                          <block type="math_number" id="T^0^cR}?fyB(a{vI.?=9">
+                            <field name="NUM">20</field>
+                          </block>
+                        </value>
+                        <value name="TO">
+                          <block type="math_number" id="Ce~qn[lED|^OQwaQmJ,|">
+                            <field name="NUM">170</field>
+                          </block>
+                        </value>
+                        <value name="BY">
+                          <block type="math_number" id="*%Iy9];5cn4UidJ-+v1l">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <statement name="DO">
+                          <block type="variables_set" id="15=p8.BAtv:FO+OL(aNz">
+                            <field name="VAR" id="S=`pzbrtJUx1@Zpnx@Br" variabletype="">傾き</field>
+                            <value name="VALUE">
+                              <block type="bookcover_atan2" id="lqYP.x3]JL_XtiBGVr%D">
+                                <value name="X1">
+                                  <shadow type="math_number" id="X~V-*#z?:T9FHUtWYI6I">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="math_number" id="f73}IVx?oKfVG7u@WRy4">
+                                    <field name="NUM">145</field>
+                                  </block>
+                                </value>
+                                <value name="Y1">
+                                  <shadow type="math_number" id="8KL/I}UwbF+Z6w2Cc`1Q">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="math_number" id="jwGf/:Fqgzf((Lph.X)q">
+                                    <field name="NUM">105</field>
+                                  </block>
+                                </value>
+                                <value name="X2">
+                                  <shadow type="math_number" id="9w]u-H|s[9.{Y{dRA`TJ">
+                                    <field name="NUM">3</field>
+                                  </shadow>
+                                  <block type="variables_get" id="ky6rh/CYfN_y|f[_jT=6">
+                                    <field name="VAR" id="kT+7;[QC15m,.)odgUBX" variabletype="">横位置</field>
+                                  </block>
+                                </value>
+                                <value name="Y2">
+                                  <shadow type="math_number" id="/=I3uD!#cqlTn*ZU(tWu">
+                                    <field name="NUM">4</field>
+                                  </shadow>
+                                  <block type="variables_get" id="O*d3Pw5@x-g(RJF=/lou">
+                                    <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$" variabletype="">縦位置</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="v;O1;kbKM59icc_13UAB">
+                                <field name="VAR" id="kw_X%[!lT/Eh=kpVU$C0" variabletype="">距離</field>
+                                <value name="VALUE">
+                                  <block type="bookcover_distance" id="A:r++!fh1*}CF1K,|[xb">
+                                    <value name="X1">
+                                      <shadow type="math_number" id="sk+(^[MZEtJ1F0mHiQGy">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                      <block type="math_number" id="1KqB+zs+2J9Zr3bhZ,4a">
+                                        <field name="NUM">145</field>
+                                      </block>
+                                    </value>
+                                    <value name="Y1">
+                                      <shadow type="math_number" id="5z)Q?Nj@1~vueqwy%JM3">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                      <block type="math_number" id="QR7[:JgbkXlDjz:+.bxS">
+                                        <field name="NUM">105</field>
+                                      </block>
+                                    </value>
+                                    <value name="X2">
+                                      <shadow type="math_number" id="xO9XMP17WIXY-_^(,4l8">
+                                        <field name="NUM">3</field>
+                                      </shadow>
+                                      <block type="variables_get" id="Ce@3,[lG6Y0;#d8ax~.H">
+                                        <field name="VAR" id="kT+7;[QC15m,.)odgUBX" variabletype="">横位置</field>
+                                      </block>
+                                    </value>
+                                    <value name="Y2">
+                                      <shadow type="math_number" id="JwJivo@.llnohh!}iGkf">
+                                        <field name="NUM">4</field>
+                                      </shadow>
+                                      <block type="variables_get" id=".@DuO}}mbBCE_{RF_+c[">
+                                        <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$" variabletype="">縦位置</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="bookcover_fill" id=")10zc,(RuaFJ%3WHzVic">
+                                    <value name="COLOUR">
+                                      <block type="bookcover_hsl360" id="4PEkH?sfQH)|wa^8=8pf">
+                                        <value name="hue">
+                                          <block type="math_arithmetic" id="t=o@]waH}D6Wo8F~x/X/">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <block type="math_arithmetic" id="(F^j;?oP3Gi:v(d*ozc8">
+                                                <field name="OP">MULTIPLY</field>
+                                                <value name="A">
+                                                  <block type="variables_get" id="tq6`^iHib~=LED`_cq4V">
+                                                    <field name="VAR" id="S=`pzbrtJUx1@Zpnx@Br" variabletype="">傾き</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="math_number" id="D%MlKzN2_(ow2ic~f;t!">
+                                                    <field name="NUM">2</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_arithmetic" id="|BiqM27cLZ?ywGNnliOA">
+                                                <field name="OP">DIVIDE</field>
+                                                <value name="A">
+                                                  <block type="variables_get" id="iz@`ekQp|Zh{S80dO`b1">
+                                                    <field name="VAR" id="kw_X%[!lT/Eh=kpVU$C0" variabletype="">距離</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="math_number" id="E`2(SDUE7:h{rs4I)euf">
+                                                    <field name="NUM">0.5</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="saturation">
+                                          <block type="math_number" id="C{(+19UAHlY@+Cg7!j1/">
+                                            <field name="NUM">100</field>
+                                          </block>
+                                        </value>
+                                        <value name="luminance">
+                                          <block type="math_number" id="yFxL(b(vvln`9u[]46G7">
+                                            <field name="NUM">70</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="bookcover_matrix" id="?pr-1yt%I6`^q%(v51D7">
+                                        <statement name="statements">
+                                          <block type="bookcover_translate" id="(*`=Eik)XPm(0jR8bs/9">
+                                            <value name="x">
+                                              <block type="variables_get" id="8?QkEyPln#9WQryj3%bQ">
+                                                <field name="VAR" id="kT+7;[QC15m,.)odgUBX" variabletype="">横位置</field>
+                                              </block>
+                                            </value>
+                                            <value name="y">
+                                              <block type="variables_get" id="(X8L]MEO`w5Hy|lf?pHr">
+                                                <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$" variabletype="">縦位置</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="bookcover_text" id="Qm[+Gmf.9I4!66eM+(26">
+                                                <value name="x">
+                                                  <block type="math_number" id="LLKFz1FOlYwE7?r,cb^x">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="y">
+                                                  <block type="math_number" id="n;.?nR!LjrL,6P;?xH1/">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="str">
+                                                  <block type="text_charAt" id="K_kT5rd[?2~6`uy:y?K*">
+                                                    <mutation at="false"></mutation>
+                                                    <field name="WHERE">RANDOM</field>
+                                                    <value name="VALUE">
+                                                      <block type="text" id="arHC6j07RHvw;}=(U:r~">
+                                                        <field name="TEXT">◆●▼▲</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="bookcover_fill" id="5B)B2.S[kEErDWG~,4r}">
+                        <value name="COLOUR">
+                          <block type="bookcover_colour" id="/E_9BWY@vgA2~tKb!W#3">
+                            <field name="COLOUR">#00cccc</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_text_font" id="KxH@+J74ZrE8?[jC@hEp">
+                            <value name="name">
+                              <block type="bookcover_font_name" id="PCvCg-;S~-)P}uXo5`_i">
+                                <field name="NAME">Times New Roman</field>
+                              </block>
+                            </value>
+                            <value name="size">
+                              <block type="math_number" id=";wU_qqloZfCIVAh2!qJb">
+                                <field name="NUM">9</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="bookcover_text" id="+:X+9:OrA[o#FHTN|6i4">
+                                <value name="x">
+                                  <block type="math_number" id="q^9^p:(h??/6;Ka8pW)H">
+                                    <field name="NUM">150</field>
+                                  </block>
+                                </value>
+                                <value name="y">
+                                  <block type="math_number" id="Rdz4NbuQ8v-VuuaZCdCH">
+                                    <field name="NUM">120</field>
+                                  </block>
+                                </value>
+                                <value name="str">
+                                  <block type="text_join" id=":Vi4RIOKFu+FWj5ne,!H">
+                                    <mutation items="3"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="k+G:]TdLYILSg]3h8iTu">
+                                        <field name="TEXT">Kagawa University</field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="bookcover_newline" id="W|FMi7N~r_}aJB`Q%{,n"></block>
+                                    </value>
+                                    <value name="ADD2">
+                                      <block type="text" id="sn~m0r@L7I;Ze4+gP/Zh">
+                                        <field name="TEXT">OpenCampus YYYY/MM/DD</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

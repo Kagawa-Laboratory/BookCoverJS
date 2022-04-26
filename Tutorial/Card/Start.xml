@@ -1,0 +1,18 @@
+<xml id="startBlocks" style="display: none;">
+  <block type="bookcover_card_frame">
+    <value name="PAPER_SPEC">
+      <block type="bookcover_cardspec">
+        <field name="CARDSPEC">エーワン F8A4-5</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="bookcover_foreachcard">
+        <field name="CARD">カード</field>
+        <field name="COUNTER">カウンター</field>
+        <field name="CLIP">TRUE</field>
+        <field name="FRAME">TRUE</field>
+        <field name="MARGIN">1</field>
+      </block>
+    </statement>
+  </block>
+</xml>

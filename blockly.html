@@ -12,7 +12,7 @@
 <!-- script src="3rdParty/blockly/msg/js/en.js"></script-->
 <script src="3rdParty/blockly/msg/js/ja.js"></script>
 <script src="3rdParty/blockly/appengine/storage.js"></script>
-<link rel="stylesheet" type="text/css" href="3rdParty/blockly/demos/prettify.css">
+<!-- <link rel="stylesheet" type="text/css" href="3rdParty/blockly/demos/prettify.css"> -->
 <script src="myblockly.js"></script>
 <script src="myblocks.js"></script>
 <!--
@@ -953,14 +953,16 @@
               <a href="#" id="intro" title="ヘルプ" class="i18n button_like">&#x2753;</a>
               <a href="#" id="openButton" title="読込み" class="i18n button_like" data-step="5"
                           data-intro="保存したプログラムを読み込みます。">&#x1f4c2;</a>
-              <input type="file" id="openButtonAux" name="openButtonAux"  style="display:none;" />
+              <input type="file" id="openButtonAux" name="openButtonAux"  style="display: none;" />
               <a href="#" id="saveButton" download="blocks.xml" title="保存" class="i18n button_like" data-step="4"
                           data-intro="プログラムを保存します。">&#x1f4be;</a>
               <a href="#" id="printButton" title="印刷用ページ" class="i18n button_like" data-step="6"
                           data-intro="印刷用ページを開きます。">&#x1f5a8;</a>
               <a href="#" id="uploadSvgButton" title="絵をアップロード"
                           class="i18n button_like" data-step="8">&#x1f5bc;&#x1f4e4;</a>
-              <a href="#" id="uploadXmlButton" title="データ (XML) をアップロード"
+              <a href="#" id="downloadXmlButton" title="ブロックをダウンロード"
+                          class="i18n button_like" data-step="8">&#x1f4c4;&#x1f4e5;</a>
+              <a href="#" id="uploadXmlButton" title="ブロックをアップロード"
                           class="i18n button_like" data-step="8">&#x1f4c4;&#x1f4e4;</a>
               <a href="#" id="resetButton" title="リセット" class="i18n button_like" data-step="7"
                           data-intro="これまでの変更を捨てて、最初のプログラムに戻します。">&#x21bb;</a>
@@ -1087,19 +1089,20 @@ function confirmLang(lang) {
 }
 
 var i18nMap = {
-    "undoButton":      { "ja": "アンドゥー", "en": "Undo", "default": "&#x21b6;" }
-  , "redoButton":      { "ja": "リドゥー", "en": "Redo", "default": "&#x21b7;" }
-  , "intro":           { "ja": "ヘルプ", "en": "Help", "default": "&#x2753;" }
-  , "openButton":      { "ja": "読込", "en": "Open", "default": "&#x1f4c2;" }
-  , "saveButton":      { "ja": "保存", "en": "Save", "default": "&#x1f4be;"  }
-  , "printButton":     { "ja": "印刷", "en": "Print", "default": "&#x1f5a8;" }
-  , "uploadXmlButton": { "ja": "データアップロード", "en": "Upload Data", "default": "&#x1f4c4;&#x1f4e4;" }
-  , "uploadSvgButton": { "ja": "画像アップロード", "en": "Upload Image", "default": "&#x1f5bc;&#x1f4e4;" }
-  , "resetButton":     { "ja": "リセット", "en": "Reset", "default": "&#x21bb;" }
+    "undoButton":      	 { "ja": "アンドゥー", "en": "Undo", "default": "&#x21b6;" }
+  , "redoButton":      	 { "ja": "リドゥー", "en": "Redo", "default": "&#x21b7;" }
+  , "intro":           	 { "ja": "ヘルプ", "en": "Help", "default": "&#x2753;" }
+  , "openButton":      	 { "ja": "読込", "en": "Open", "default": "&#x1f4c2;" }
+  , "saveButton":      	 { "ja": "保存", "en": "Save", "default": "&#x1f4be;"  }
+  , "printButton":     	 { "ja": "印刷", "en": "Print", "default": "&#x1f5a8;" }
+  , "downloadXmlButton": { "ja": "ブロックダウンロード", "en": "Download Block", "default": "&#x1f4c4;&#x1f4e5;" }
+  , "uploadXmlButton": 	 { "ja": "ブロックアップロード", "en": "Upload Block", "default": "&#x1f4c4;&#x1f4e4;" }
+  , "uploadSvgButton": 	 { "ja": "画像アップロード", "en": "Upload Image", "default": "&#x1f5bc;&#x1f4e4;" }
+  , "resetButton":     	 { "ja": "リセット", "en": "Reset", "default": "&#x21bb;" }
 };
 
 function replaceI18nElement(id, lang) {
-   console.log(id, lang);
+//   console.log(id, lang);
    var content = i18nMap[id][lang];
    if (content == null) content = i18nMap[id]["default"];
 		      
@@ -1240,7 +1243,7 @@ $(function() {
     });
 
     $("#resetButton").click(function () {
-        var q = window.confirm("編集したプログラムを捨てて、最初の内容に戻します。よろしいですか？");
+        var q = window.confirm("編集したブロックを捨てて、最初の内容に戻します。よろしいですか？");
         if (!q) return;
         var xmlUrl = $.query.get("url");
         if (xmlUrl) {
@@ -1296,15 +1299,38 @@ $(function() {
          var svgText = draw.svg();
          $.ajax({ url: uploadUrl
                 , type: "post"
-		        , data: ({ name: "blocks.svg", data: svgText })
+		, data: ({ name: "blocks.svg", data: svgText })
                 , dataType: "text"
-		}).done(function (message) {
-                   console.log("success", message);
+		}).done(function(message) {
+//                   console.log("success", message);
                    alert(message); // TODO alert ではなくて Chrome でもコピペできるようにする
-                }).fail(function (message, status) {
+                }).fail(function(message, status) {
                    console.log("fail", status);
                    alert(status);
                 });
+      });
+    }
+
+    var downloadUrl = $.query.get("download");
+    if (downloadUrl == null || downloadUrl == "") {
+      $("#downloadXmlButton").hide();
+    } else {
+      $("#downloadXmlButton").click(function() {
+        var q = window.confirm("現在編集中のブロックを捨ててよろしいですか？");
+        if (!q) return;
+        var number = window.prompt("アップロードしたときの非負の整数を入力して下さい:");
+	$.ajax({ url: downloadUrl + "?number=" + number
+	       , type: "get"
+               , dataType: "text"
+	       }).done(function(data) {
+//		  console.log("success", data);
+		  workspace.clear();
+                  var xml = Blockly.Xml.textToDom(data);
+                  Blockly.Xml.domToWorkspace(xml, workspace);    
+               }).fail(function(message, status) {
+                  console.log("fail", status);
+                  alert("ダウンロードに失敗しました。" + status);
+               }); 
       });
     }
 
@@ -1332,4 +1358,3 @@ $(function() {
 </script>
 </body>
 </html>
-

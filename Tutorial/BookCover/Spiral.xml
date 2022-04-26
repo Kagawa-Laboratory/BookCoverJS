@@ -1,0 +1,157 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="bookcover_frame" id="qeA^NC1`yvI/z6/mLH;f" x="41" y="70">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_fill" id="ennh!U~^Ms24%}O,mO_^">
+        <value name="COLOUR">
+          <block type="bookcover_none" id="Lc1I4D!nM?njJ)H*}Sy_"></block>
+        </value>
+        <next>
+          <block type="bookcover_stroke_weight" id="P,U76Ia[(_52)jRi^)^3">
+            <value name="width">
+              <block type="math_number" id="|^I-GxR1m;Lv;M}WvrJL">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_translate" id="l3VrF/j99a}Wi):I:,H+">
+                <value name="x">
+                  <block type="math_number" id="t5ZiPg@!?jb+crLa[yk3">
+                    <field name="NUM">147</field>
+                  </block>
+                </value>
+                <value name="y">
+                  <block type="math_number" id="Lr|f.N1cJ]F=[V_~~a3a">
+                    <field name="NUM">105</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_for" id="MS6In/AovGl1%pNmdi=f">
+                    <field name="VAR">i</field>
+                    <value name="FROM">
+                      <block type="math_number" id="(_tMXV3Hk@M{6ZcS%R`f">
+                        <field name="NUM">5</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id="@}67%Mgmidc|S+.c||kR">
+                        <field name="NUM">85</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number" id="clO]dzD^JY;JjAROMYTb">
+                        <field name="NUM">0.4</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="bookcover_stroke" id="sFi3/9@We%3kBL+9[RMQ">
+                        <value name="COLOUR">
+                          <block type="bookcover_rotate_h" id="ro^Q-tz9Fs/y%p[RV2)l">
+                            <value name="colour">
+                              <block type="bookcover_colour" id="P_q*_tA!VsDTJ]4+dQk6">
+                                <field name="COLOUR">#ff0000</field>
+                              </block>
+                            </value>
+                            <value name="angle">
+                              <block type="math_arithmetic" id="d`5{bj4HsndpY!Pt-GUo">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="bookcover_angle" id="%6.EtLE}jTP2#-w{LZM[">
+                                    <field name="angle">15</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get" id="ME,tAF_mL*b!zbr)idAD">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_ellipse" id="iU:3)3#Vu[6x6Y?#c;R/">
+                            <value name="x">
+                              <block type="math_arithmetic" id="s=i+^7)Z1+wX=xv-bAo@">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="variables_get" id="=s6:Q{VyO!v}Vnu2[~4|">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_trig" id="k[XY4};Ru=:D._c!d*ks">
+                                    <field name="OP">COS</field>
+                                    <value name="NUM">
+                                      <block type="math_arithmetic" id="K@Z?kRjEN2fO+5pLA+zk">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="AM/};04+eP|@Pl9p|Z5g">
+                                            <field name="VAR">i</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="ra-))7a:HQ)6NA3i/+nP">
+                                            <field name="NUM">20</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="y">
+                              <block type="math_arithmetic" id="s5F)W)-u|pldp=hGS-D6">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="variables_get" id="bl4[[=}im`RolZW24eMv">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_trig" id="C^8j!4P(gMm6,lCCD{CV">
+                                    <field name="OP">SIN</field>
+                                    <value name="NUM">
+                                      <block type="math_arithmetic" id="yAYOPh6^4B:YwIh;HtjQ">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="ERpt/E8s{.S[WHMFD`nI">
+                                            <field name="VAR">i</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="jz0U}Bpc[cs?@|!nYzWO">
+                                            <field name="NUM">20</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="w">
+                              <block type="math_number" id="-~4UMR6#pkimWbS/a5kM">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                            <value name="h">
+                              <block type="math_number" id="VmmiFan}buJXL?]tYR}}">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

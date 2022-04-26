@@ -1,0 +1,133 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="bookcover_frame" id="qeA^NC1`yvI/z6/mLH;f" x="-4" y="105">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_fill" id="ennh!U~^Ms24%}O,mO_^">
+        <value name="COLOUR">
+          <block type="bookcover_none" id="Lc1I4D!nM?njJ)H*}Sy_"></block>
+        </value>
+        <next>
+          <block type="bookcover_stroke_weight" id="P,U76Ia[(_52)jRi^)^3">
+            <value name="width">
+              <block type="math_number" id="|^I-GxR1m;Lv;M}WvrJL">
+                <field name="NUM">0.333</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_go" id="L?0N9|k(F5dsJXx9^HLG">
+                <value name="x">
+                  <block type="math_arithmetic" id="yQ?fo#uzoaNPUu~4I.GK">
+                    <field name="OP">MULTIPLY</field>
+                    <value name="A">
+                      <block type="bookcover_pageWidth" id="_%(dtiwbrlzt3p-~)49O"></block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="O+?*0zV6aFOw@a^^na=g">
+                        <field name="NUM">0.6</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="y">
+                  <block type="math_arithmetic" id="_gF%@0Ec/PPs(fqWmvp{">
+                    <field name="OP">MULTIPLY</field>
+                    <value name="A">
+                      <block type="bookcover_pageHeight" id="(Y1S.=+-{jjY1amBnsYU"></block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id=":X9XW%@;7;MhgDtAUyHa">
+                        <field name="NUM">0.5</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="bookcover_direction" id="tvgrYW?Jo~voD)[m035m">
+                    <value name="angle">
+                      <block type="bookcover_angle" id="v-In-/3G+5]jb;0@|%:d">
+                        <field name="angle">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="bookcover_pen_down" id="]YY3F?`c@J5v|*5QhRsd">
+                        <next>
+                          <block type="controls_for" id="#OHG%Vb;Q:;J,f=XgqJk">
+                            <field name="VAR">i</field>
+                            <value name="FROM">
+                              <block type="math_number" id="t;-JslMTq~5k}W4+^IOD">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="TO">
+                              <block type="math_number" id="88FYK72-iHn6yYx?N{Z(">
+                                <field name="NUM">50</field>
+                              </block>
+                            </value>
+                            <value name="BY">
+                              <block type="math_number" id="Ogs.mjr_R|B,HWt^XldN">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <statement name="DO">
+                              <block type="bookcover_stroke" id="sFi3/9@We%3kBL+9[RMQ">
+                                <value name="COLOUR">
+                                  <block type="bookcover_rotate_h" id="ro^Q-tz9Fs/y%p[RV2)l">
+                                    <value name="colour">
+                                      <block type="bookcover_colour" id="P_q*_tA!VsDTJ]4+dQk6">
+                                        <field name="COLOUR">#ff0000</field>
+                                      </block>
+                                    </value>
+                                    <value name="angle">
+                                      <block type="math_arithmetic" id="d`5{bj4HsndpY!Pt-GUo">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="bookcover_angle" id="%6.EtLE}jTP2#-w{LZM[">
+                                            <field name="angle">7</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="variables_get" id="ME,tAF_mL*b!zbr)idAD">
+                                            <field name="VAR">i</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="bookcover_forward" id="qSn+CgD)f@rN5y@cB+Rs">
+                                    <value name="len">
+                                      <block type="math_number" id="GcEx5,aGj3ky3/oiLHh?">
+                                        <field name="NUM">50</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="bookcover_turn" id="P;8I1nfLi2UKf|uX%Q:j">
+                                        <value name="angle">
+                                          <block type="math_number" id="b!_oSnWsG4H5]NeYkg@[">
+                                            <field name="NUM">88</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="bookcover_pen_up" id="Wx%+B-A7(mU1cooN@5aI"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

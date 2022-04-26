@@ -1,0 +1,96 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="MWn/;XIB]XS+9ZNMg0cO">x</variable>
+    <variable type="" id="7c{HuYq@7d3C_xVcI5b?">y</variable>
+  </variables>
+  <block type="bookcover_frame" id="r:g0@:gkD@x3vzM1FZa#">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_rulers" id="AJ_C@dGLP5-a+?D|B49|">
+        <field name="SIZE">BUNKO</field>
+        <next>
+          <block type="bookcover_fill" id="5KU)/33Mg(~pZ.i+#du[">
+            <value name="COLOUR">
+              <block type="bookcover_colour" id="Fv.4om$V$f;uyqZ!by;(">
+                <field name="COLOUR">#ff9900</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_text_font" id="wC94Hl@7Qk=_.dXMFsjQ">
+                <value name="name">
+                  <block type="bookcover_font_name" id="}p6qX9UA+?Z/0s=$Jhp6">
+                    <field name="NAME">HGRSMP</field>
+                  </block>
+                </value>
+                <value name="size">
+                  <block type="math_number" id="SXMk==c2df76r)mYb(7e">
+                    <field name="NUM">8</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_for" id="_?tFQ|1$zd;h|TR7|h(+">
+                    <field name="VAR" id="MWn/;XIB]XS+9ZNMg0cO" variabletype="">x</field>
+                    <value name="FROM">
+                      <block type="math_number" id="C%7L`wqH|wCI5=kPe*Ib">
+                        <field name="NUM">30</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id="P)JucW$.%;5wOr;=G8I@">
+                        <field name="NUM">170</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number" id="!3PIW+$F[_e)|Cbv.9b`">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="controls_for" id="E@VW6|h|4mmnYHpeW(Hy">
+                        <field name="VAR" id="7c{HuYq@7d3C_xVcI5b?" variabletype="">y</field>
+                        <value name="FROM">
+                          <block type="math_number" id="jKw=@4pjo{ksF?N-j#vt">
+                            <field name="NUM">30</field>
+                          </block>
+                        </value>
+                        <value name="TO">
+                          <block type="math_number" id="d`Z`z_K.6uQ!{2qGgW);">
+                            <field name="NUM">170</field>
+                          </block>
+                        </value>
+                        <value name="BY">
+                          <block type="math_number" id="uC?VuhJYAM38We+}w42w">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <statement name="DO">
+                          <block type="bookcover_text" id="X!BT:_%EYX]FYuSR3ov!">
+                            <value name="x">
+                              <block type="variables_get" id="{U]z(2{4/Pr{^*n@w;lY">
+                                <field name="VAR" id="MWn/;XIB]XS+9ZNMg0cO" variabletype="">x</field>
+                              </block>
+                            </value>
+                            <value name="y">
+                              <block type="variables_get" id="!myxygVMlD:zPUj%K^G-">
+                                <field name="VAR" id="7c{HuYq@7d3C_xVcI5b?" variabletype="">y</field>
+                              </block>
+                            </value>
+                            <value name="str">
+                              <block type="text" id="j#G_P;A,SU2yjsglB]Z@">
+                                <field name="TEXT">フ</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,5 @@
+<xml id="startBlocks">
+  <block type="bookcover_frame">
+    <field name="frame">TRUE</field>
+  </block>
+</xml>

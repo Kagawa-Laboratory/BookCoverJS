@@ -1,0 +1,246 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="q(lV?TWXPu8ES4/FL%~h">i</variable>
+    <variable type="" id="r:GR3G@^r9wT3lX@uKR0">j</variable>
+  </variables>
+  <block type="bookcover_frame" id="D=2SXq{tl-7/QJlj5A@]" x="0" y="0">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_rulers" id="8~*p|h;ye9nlua1s^e:%">
+        <field name="SIZE">BUNKO</field>
+        <next>
+          <block type="bookcover_fill" id="nUavD}MY-._/)eUR7]Rm">
+            <value name="COLOUR">
+              <block type="bookcover_colour" id="7b4[I2^}]!+FI8T4?r1e">
+                <field name="COLOUR">#000000</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_text_font" id="g2V4Bg?7b6FP};8oYQMN">
+                <value name="name">
+                  <block type="bookcover_font_name" id="GU;V%vV^%s[1R,TIHQV;">
+                    <field name="NAME">Segoe UI Symbol</field>
+                  </block>
+                </value>
+                <value name="size">
+                  <block type="math_number" id=".];xbxSMEs3[9[.#HNty">
+                    <field name="NUM">15</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_for" id="iVwrNIOv,_Vqid{/FH@r">
+                    <field name="VAR" id="q(lV?TWXPu8ES4/FL%~h" variabletype="">i</field>
+                    <value name="FROM">
+                      <block type="math_number" id="rhp+ao#ZSK.SHd,0%~D0">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id=")-,Ho7QK}|lUlRNGhM+)">
+                        <field name="NUM">24</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number" id="b~-QkW/f79^?yY8gAzz:">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="controls_for" id=",~5!{~d!nZ`9Yg|X2)*I">
+                        <field name="VAR" id="r:GR3G@^r9wT3lX@uKR0" variabletype="">j</field>
+                        <value name="FROM">
+                          <block type="math_number" id="/mt=@T9nUzb}(`1/p{7^">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <value name="TO">
+                          <block type="math_number" id="I[/G5X4R*pingTpuvx,G">
+                            <field name="NUM">15</field>
+                          </block>
+                        </value>
+                        <value name="BY">
+                          <block type="math_number" id=";PVX4[JVmznkhlHoY+T#">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <statement name="DO">
+                          <block type="bookcover_fill" id="jgt-m#{))VEqfVm4[,^?">
+                            <value name="COLOUR">
+                              <block type="bookcover_hsl360" id="WQSU2ihCXM@[8@}.-Y~x">
+                                <value name="hue">
+                                  <block type="math_arithmetic" id="HKwud6zS+9=R[v%khkFU">
+                                    <field name="OP">MULTIPLY</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="g%ABMIcybBxE)[qS)gp)">
+                                        <field name="VAR" id="q(lV?TWXPu8ES4/FL%~h" variabletype="">i</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id=":}?.Ee!sy}Or@+X[U4[@">
+                                        <field name="NUM">15</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="saturation">
+                                  <block type="math_arithmetic" id="jV)zvgFbH~/(s!Qt]lo(">
+                                    <field name="OP">MULTIPLY</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="Q-%l/}ibYzssd!xSA?r+">
+                                        <field name="VAR" id="r:GR3G@^r9wT3lX@uKR0" variabletype="">j</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="ddKb2CGprNAG*:H#^y^:">
+                                        <field name="NUM">6.67</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="luminance">
+                                  <block type="math_number" id="o+BlXh6CxAhM*#n|6-[T">
+                                    <field name="NUM">50</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="bookcover_text" id="2raIhd6=7N?Qf1+)5o=C">
+                                <value name="x">
+                                  <block type="math_arithmetic" id="i4CC3g,lKd4%:/AmHzWU">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <block type="math_number" id="aS?DF]`hk#]:/LmBDrrH">
+                                        <field name="NUM">36</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_arithmetic" id="VNJH|T^U/{?E~0#ABVU]">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="l?1j*fZ.G?*nrc?I`A/I">
+                                            <field name="VAR" id="q(lV?TWXPu8ES4/FL%~h" variabletype="">i</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="~Y#Brq[6I(pw3yRs/]23">
+                                            <field name="NUM">9</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="y">
+                                  <block type="math_arithmetic" id="^i3`%jc-7#Llfb)Tr?MC">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <block type="math_number" id="NVj6t2Z%g_7-k?4?Nn:M">
+                                        <field name="NUM">18</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_arithmetic" id="7Nb=W4[s)0#EKn4Edn)n">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="8|cp[h{2rXN2a-SkTJ2(">
+                                            <field name="VAR" id="r:GR3G@^r9wT3lX@uKR0" variabletype="">j</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="9[Y%vbwCr2/VsV(c@Ut;">
+                                            <field name="NUM">10</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="str">
+                                  <block type="text_charAt" id=",(%fwhGy/}oJML{5tUlI">
+                                    <mutation at="false"></mutation>
+                                    <field name="WHERE">RANDOM</field>
+                                    <value name="VALUE">
+                                      <block type="text" id="VX(Z0+7,Fm9PlFyhu,2(">
+                                        <field name="TEXT">●⯂⯁⯀</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="bookcover_fill" id="KmBY74A,ds^`y[oTB;-4">
+                        <value name="COLOUR">
+                          <block type="bookcover_colour" id="s!/(c{.?P4B;zk83i5*A">
+                            <field name="COLOUR">#ffffff</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_text_font" id="B??s{Yotf/v~m6ia(+?y">
+                            <value name="name">
+                              <block type="bookcover_font_name" id="#jeC}Fo^Yel9]t#QCE1r">
+                                <field name="NAME">ＭＳ 明朝</field>
+                              </block>
+                            </value>
+                            <value name="size">
+                              <block type="math_number" id="T|=f^c-B9L}S):+y;W~*">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="bookcover_text" id="GS;|dN{]|@mmsy{J9Bg#">
+                                <value name="x">
+                                  <block type="math_number" id="=^!633O*`+|fyc#zQQRy">
+                                    <field name="NUM">160</field>
+                                  </block>
+                                </value>
+                                <value name="y">
+                                  <block type="math_number" id="/PWiQm@3J^UQQGIuA@2W">
+                                    <field name="NUM">135</field>
+                                  </block>
+                                </value>
+                                <value name="str">
+                                  <block type="text" id="@DoRLp1*?7EB5tGO)}bg">
+                                    <field name="TEXT">香川大学創造工学部</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="bookcover_text" id="M.k!O)uQ`t,[a[ZfI2a/">
+                                    <value name="x">
+                                      <block type="math_number" id="~eg}!OtFc2=N-a.pBk}`">
+                                        <field name="NUM">160</field>
+                                      </block>
+                                    </value>
+                                    <value name="y">
+                                      <block type="math_number" id="5nvMj3it;K-K4#d3n;5X">
+                                        <field name="NUM">145</field>
+                                      </block>
+                                    </value>
+                                    <value name="str">
+                                      <block type="text" id="kz?q.KJYH,[Gh^*ev[Un">
+                                        <field name="TEXT">オープンキャンパス</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

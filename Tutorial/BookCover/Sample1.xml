@@ -1,0 +1,72 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="bookcover_frame" id="D=2SXq{tl-7/QJlj5A@]">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_rulers" id="8~*p|h;ye9nlua1s^e:%">
+        <field name="SIZE">BUNKO</field>
+        <next>
+          <block type="bookcover_fill" id="]W-d2rm@NK+~:H`!J!fM">
+            <value name="COLOUR">
+              <block type="bookcover_colour" id="lKj2=wXY1?eguNJ#Sksm">
+                <field name="COLOUR">#000000</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_text_font" id="!i%`Qpq6/QdB_7z*WufT">
+                <value name="name">
+                  <block type="bookcover_font_name" id="fP#wvi54i^[j7Pj=@MI1">
+                    <field name="NAME">Times New Roman</field>
+                  </block>
+                </value>
+                <value name="size">
+                  <block type="math_number" id="^9MvaC06g.l3kiZ_Cvr,">
+                    <field name="NUM">7</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_for" id="=wVKm^c?T!jW;.`r9.eh">
+                    <field name="VAR">i</field>
+                    <value name="FROM">
+                      <block type="math_number" id="+O~T^*E}Bb)gz=?]I%n6">
+                        <field name="NUM">30</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id="n2M_=,9B9!yjtiJ(jPq9">
+                        <field name="NUM">170</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number" id="},cL(v-;F8/gKjR;X(yL">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="bookcover_text" id="]F=B,2vS~A!n=S;C^FsA">
+                        <value name="x">
+                          <block type="math_number" id="3QXwgB=5W5WxmNLf^X2p">
+                            <field name="NUM">40</field>
+                          </block>
+                        </value>
+                        <value name="y">
+                          <block type="variables_get" id="yLM5XW8;QaA*exIfa3z^">
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                        <value name="str">
+                          <block type="text" id="~3m80LEJXDw,SSAfYCZ]">
+                            <field name="TEXT">Hello! How's it going?</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

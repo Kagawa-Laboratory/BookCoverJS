@@ -1,0 +1,558 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="bookcover_frame">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="variables_set">
+        <field name="VAR">色々</field>
+        <value name="VALUE">
+          <block type="lists_create_with" inline="true">
+            <mutation items="19"></mutation>
+            <value name="ADD0">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#ff0000</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#ffff00</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#33ff33</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#33ccff</field>
+              </block>
+            </value>
+            <value name="ADD4">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#3333ff</field>
+              </block>
+            </value>
+            <value name="ADD5">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#6600cc</field>
+              </block>
+            </value>
+            <value name="ADD6">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#333333</field>
+              </block>
+            </value>
+            <value name="ADD7">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#cc0000</field>
+              </block>
+            </value>
+            <value name="ADD8">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#ffffff</field>
+              </block>
+            </value>
+            <value name="ADD9">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#ff6666</field>
+              </block>
+            </value>
+            <value name="ADD10">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#ff0000</field>
+              </block>
+            </value>
+            <value name="ADD11">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#ffff00</field>
+              </block>
+            </value>
+            <value name="ADD12">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#33ff33</field>
+              </block>
+            </value>
+            <value name="ADD13">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#33ccff</field>
+              </block>
+            </value>
+            <value name="ADD14">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#3333ff</field>
+              </block>
+            </value>
+            <value name="ADD15">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#6600cc</field>
+              </block>
+            </value>
+            <value name="ADD16">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#333333</field>
+              </block>
+            </value>
+            <value name="ADD17">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#c0c0c0</field>
+              </block>
+            </value>
+            <value name="ADD18">
+              <block type="bookcover_colour">
+                <field name="COLOUR">#ffffff</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set">
+            <field name="VAR">縦位置</field>
+            <value name="VALUE">
+              <block type="lists_create_with" inline="true">
+                <mutation items="19"></mutation>
+                <value name="ADD0">
+                  <block type="math_number">
+                    <field name="NUM">105</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="math_number">
+                    <field name="NUM">120</field>
+                  </block>
+                </value>
+                <value name="ADD2">
+                  <block type="math_number">
+                    <field name="NUM">135</field>
+                  </block>
+                </value>
+                <value name="ADD3">
+                  <block type="math_number">
+                    <field name="NUM">135</field>
+                  </block>
+                </value>
+                <value name="ADD4">
+                  <block type="math_number">
+                    <field name="NUM">120</field>
+                  </block>
+                </value>
+                <value name="ADD5">
+                  <block type="math_number">
+                    <field name="NUM">105</field>
+                  </block>
+                </value>
+                <value name="ADD6">
+                  <block type="math_number">
+                    <field name="NUM">105</field>
+                  </block>
+                </value>
+                <value name="ADD7">
+                  <block type="math_number">
+                    <field name="NUM">120</field>
+                  </block>
+                </value>
+                <value name="ADD8">
+                  <block type="math_number">
+                    <field name="NUM">135</field>
+                  </block>
+                </value>
+                <value name="ADD9">
+                  <block type="math_number">
+                    <field name="NUM">135</field>
+                  </block>
+                </value>
+                <value name="ADD10">
+                  <block type="math_number">
+                    <field name="NUM">120</field>
+                  </block>
+                </value>
+                <value name="ADD11">
+                  <block type="math_number">
+                    <field name="NUM">105</field>
+                  </block>
+                </value>
+                <value name="ADD12">
+                  <block type="math_number">
+                    <field name="NUM">105</field>
+                  </block>
+                </value>
+                <value name="ADD13">
+                  <block type="math_number">
+                    <field name="NUM">120</field>
+                  </block>
+                </value>
+                <value name="ADD14">
+                  <block type="math_number">
+                    <field name="NUM">135</field>
+                  </block>
+                </value>
+                <value name="ADD15">
+                  <block type="math_number">
+                    <field name="NUM">135</field>
+                  </block>
+                </value>
+                <value name="ADD16">
+                  <block type="math_number">
+                    <field name="NUM">120</field>
+                  </block>
+                </value>
+                <value name="ADD17">
+                  <block type="math_number">
+                    <field name="NUM">105</field>
+                  </block>
+                </value>
+                <value name="ADD18">
+                  <block type="math_number">
+                    <field name="NUM">105</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_fill">
+                <value name="COLOUR">
+                  <block type="bookcover_colour">
+                    <field name="COLOUR">#cccccc</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="bookcover_rect">
+                    <value name="x">
+                      <block type="math_number">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="y">
+                      <block type="math_number">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="w">
+                      <block type="math_number">
+                        <field name="NUM">297</field>
+                      </block>
+                    </value>
+                    <value name="h">
+                      <block type="math_number">
+                        <field name="NUM">210</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="bookcover_rulers">
+                        <field name="SIZE">BUNKO</field>
+                        <next>
+                          <block type="controls_for">
+                            <field name="VAR">横位置</field>
+                            <value name="FROM">
+                              <block type="math_number">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="TO">
+                              <block type="lists_length">
+                                <value name="VALUE">
+                                  <block type="variables_get">
+                                    <field name="VAR">色々</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="BY">
+                              <block type="math_number">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <statement name="DO">
+                              <block type="bookcover_fill">
+                                <value name="COLOUR">
+                                  <block type="lists_getIndex">
+                                    <mutation statement="false" at="true"></mutation>
+                                    <field name="MODE">GET</field>
+                                    <field name="WHERE">FROM_START</field>
+                                    <value name="VALUE">
+                                      <block type="variables_get">
+                                        <field name="VAR">色々</field>
+                                      </block>
+                                    </value>
+                                    <value name="AT">
+                                      <block type="variables_get">
+                                        <field name="VAR">横位置</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="controls_for">
+                                    <field name="VAR">y</field>
+                                    <value name="FROM">
+                                      <block type="math_number">
+                                        <field name="NUM">165</field>
+                                      </block>
+                                    </value>
+                                    <value name="TO">
+                                      <block type="lists_getIndex">
+                                        <mutation statement="false" at="true"></mutation>
+                                        <field name="MODE">GET</field>
+                                        <field name="WHERE">FROM_START</field>
+                                        <value name="VALUE">
+                                          <block type="variables_get">
+                                            <field name="VAR">縦位置</field>
+                                          </block>
+                                        </value>
+                                        <value name="AT">
+                                          <block type="variables_get">
+                                            <field name="VAR">横位置</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="BY">
+                                      <block type="math_number">
+                                        <field name="NUM">15</field>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="bookcover_rect">
+                                        <value name="x">
+                                          <block type="math_arithmetic">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <block type="math_number">
+                                                <field name="NUM">-5</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_arithmetic">
+                                                <field name="OP">MULTIPLY</field>
+                                                <value name="A">
+                                                  <block type="math_number">
+                                                    <field name="NUM">15</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">横位置</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="y">
+                                          <block type="variables_get">
+                                            <field name="VAR">y</field>
+                                          </block>
+                                        </value>
+                                        <value name="w">
+                                          <block type="math_number">
+                                            <field name="NUM">10</field>
+                                          </block>
+                                        </value>
+                                        <value name="h">
+                                          <block type="math_number">
+                                            <field name="NUM">10</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="bookcover_fill">
+                                <value name="COLOUR">
+                                  <block type="bookcover_colour">
+                                    <field name="COLOUR">#33ffff</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="bookcover_rect">
+                                    <value name="x">
+                                      <block type="math_number">
+                                        <field name="NUM">100</field>
+                                      </block>
+                                    </value>
+                                    <value name="y">
+                                      <block type="math_number">
+                                        <field name="NUM">60</field>
+                                      </block>
+                                    </value>
+                                    <value name="w">
+                                      <block type="math_number">
+                                        <field name="NUM">30</field>
+                                      </block>
+                                    </value>
+                                    <value name="h">
+                                      <block type="math_number">
+                                        <field name="NUM">30</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="bookcover_fill">
+                                        <value name="COLOUR">
+                                          <block type="bookcover_colour">
+                                            <field name="COLOUR">#33cc00</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="bookcover_rect">
+                                            <value name="x">
+                                              <block type="math_number">
+                                                <field name="NUM">170</field>
+                                              </block>
+                                            </value>
+                                            <value name="y">
+                                              <block type="math_number">
+                                                <field name="NUM">40</field>
+                                              </block>
+                                            </value>
+                                            <value name="w">
+                                              <block type="math_number">
+                                                <field name="NUM">20</field>
+                                              </block>
+                                            </value>
+                                            <value name="h">
+                                              <block type="math_number">
+                                                <field name="NUM">20</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="bookcover_fill">
+                                                <value name="COLOUR">
+                                                  <block type="bookcover_colour">
+                                                    <field name="COLOUR">#ff6600</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="bookcover_ellipse">
+                                                    <value name="x">
+                                                      <block type="math_number">
+                                                        <field name="NUM">50</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="y">
+                                                      <block type="math_number">
+                                                        <field name="NUM">30</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="w">
+                                                      <block type="math_number">
+                                                        <field name="NUM">30</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="h">
+                                                      <block type="math_number">
+                                                        <field name="NUM">30</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="bookcover_fill">
+                                                        <value name="COLOUR">
+                                                          <block type="bookcover_colour">
+                                                            <field name="COLOUR">#3333ff</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="bookcover_triangle">
+                                                            <value name="x1">
+                                                              <block type="math_number">
+                                                                <field name="NUM">240</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="y1">
+                                                              <block type="math_number">
+                                                                <field name="NUM">35</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="x2">
+                                                              <block type="math_number">
+                                                                <field name="NUM">220</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="y2">
+                                                              <block type="math_number">
+                                                                <field name="NUM">50</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="x3">
+                                                              <block type="math_number">
+                                                                <field name="NUM">260</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="y3">
+                                                              <block type="math_number">
+                                                                <field name="NUM">50</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="controls_for" disabled="true" x="145" y="1453">
+    <field name="VAR">y</field>
+    <value name="FROM">
+      <block type="math_number">
+        <field name="NUM">195</field>
+      </block>
+    </value>
+    <value name="TO">
+      <block type="math_number">
+        <field name="NUM">165</field>
+      </block>
+    </value>
+    <value name="BY">
+      <block type="math_number">
+        <field name="NUM">15</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="bookcover_rect">
+        <value name="x">
+          <block type="math_number">
+            <field name="NUM">130</field>
+          </block>
+        </value>
+        <value name="y">
+          <block type="variables_get">
+            <field name="VAR">y</field>
+          </block>
+        </value>
+        <value name="w">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <value name="h">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

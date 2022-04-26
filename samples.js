@@ -8,11 +8,11 @@ function outputSVG(name, portrait, sc) {
 }
 
 function outputBlockly(name, lang) {
-  document.writeln("<a href='blockly.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&url=Samples%2f" + name + ".xml" + ((lang == null || lang == "") ? "" : ("&lang=" + lang)) +  " '>Blockly ではじめる</a>");
+  document.writeln("<a href='blockly.html?upload=https%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&download=https%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&url=Samples%2f" + name + ".xml" + ((lang == null || lang == "") ? "" : ("&lang=" + lang)) +  " '>Blockly ではじめる</a>");
 }
 
 function outputCodeMirror(name, lang) {
-  document.writeln("<span style='font-size:50%'><a href='codemirror.html?upload=http%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&url=Samples%2f" + name + ".js" + ((lang == null || lang == "") ? "" : ("&lang=" + lang)) +  " '>(JS)</a></span>");
+  document.writeln("<span style='font-size:50%'><a href='codemirror.html?upload=https%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&url=Samples%2f" + name + ".js" + ((lang == null || lang == "") ? "" : ("&lang=" + lang)) +  " '>(JS)</a></span>");
 }
 
 function output(name, portrait, sc, lang) {

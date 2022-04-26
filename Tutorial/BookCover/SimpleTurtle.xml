@@ -1,0 +1,98 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+   <block type="bookcover_frame">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_stroke_weight">
+        <value name="width">
+          <block type="math_number">
+            <field name="NUM">2</field>
+          </block>
+        </value>
+        <next>
+          <block type="bookcover_pen_down">
+            <next>
+              <block type="bookcover_go">
+                <value name="x">
+                  <block type="math_number">
+                    <field name="NUM">95</field>
+                  </block>
+                </value>
+                <value name="y">
+                  <block type="math_number">
+                    <field name="NUM">180</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_for">
+                    <field name="VAR">i</field>
+                    <value name="FROM">
+                      <block type="math_number">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number">
+                        <field name="NUM">5</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="bookcover_stroke">
+                        <value name="COLOUR">
+                          <block type="bookcover_rotate_h">
+                            <value name="colour">
+                              <block type="bookcover_colour">
+                                <field name="COLOUR">#ff0000</field>
+                              </block>
+                            </value>
+                            <value name="angle">
+                              <block type="math_arithmetic">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="bookcover_angle">
+                                    <field name="angle">72</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_forward">
+                            <value name="len">
+                              <block type="math_number">
+                                <field name="NUM">100</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="bookcover_turn">
+                                <value name="angle">
+                                  <block type="bookcover_angle">
+                                    <field name="angle">288</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,579 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="bookcover_frame">
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_rulers">
+        <field name="SIZE">BUNKO</field>
+        <next>
+          <block type="bookcover_stroke_opacity">
+            <value name="opacity">
+              <block type="math_number">
+                <field name="NUM">0.5</field>
+              </block>
+            </value>
+            <next>
+              <block type="bookcover_stroke_weight">
+                <value name="width">
+                  <block type="math_number">
+                    <field name="NUM">0.75</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set">
+                    <field name="VAR">横余白</field>
+                    <value name="VALUE">
+                      <block type="math_number">
+                        <field name="NUM">20</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set">
+                        <field name="VAR">縦余白</field>
+                        <value name="VALUE">
+                          <block type="math_number">
+                            <field name="NUM">30</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set">
+                            <field name="VAR">絵の縦幅</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic">
+                                <field name="OP">MINUS</field>
+                                <value name="A">
+                                  <block type="bookcover_pageHeight"></block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_arithmetic">
+                                    <field name="OP">MULTIPLY</field>
+                                    <value name="A">
+                                      <block type="variables_get">
+                                        <field name="VAR">縦余白</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number">
+                                        <field name="NUM">2</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set">
+                                <field name="VAR">絵の横幅</field>
+                                <value name="VALUE">
+                                  <block type="math_arithmetic">
+                                    <field name="OP">MINUS</field>
+                                    <value name="A">
+                                      <block type="bookcover_pageWidth"></block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_arithmetic">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get">
+                                            <field name="VAR">横余白</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number">
+                                            <field name="NUM">2</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="variables_set">
+                                    <field name="VAR">線の本数</field>
+                                    <value name="VALUE">
+                                      <block type="math_number">
+                                        <field name="NUM">50</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="variables_set">
+                                        <field name="VAR">縦の間隔</field>
+                                        <value name="VALUE">
+                                          <block type="math_arithmetic">
+                                            <field name="OP">DIVIDE</field>
+                                            <value name="A">
+                                              <block type="variables_get">
+                                                <field name="VAR">絵の縦幅</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="variables_get">
+                                                <field name="VAR">線の本数</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set">
+                                            <field name="VAR">横の間隔</field>
+                                            <value name="VALUE">
+                                              <block type="math_arithmetic">
+                                                <field name="OP">DIVIDE</field>
+                                                <value name="A">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">絵の横幅</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">線の本数</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="controls_for">
+                                                <field name="VAR">i</field>
+                                                <value name="FROM">
+                                                  <block type="math_number">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="TO">
+                                                  <block type="variables_get">
+                                                    <field name="VAR">線の本数</field>
+                                                  </block>
+                                                </value>
+                                                <value name="BY">
+                                                  <block type="math_number">
+                                                    <field name="NUM">1</field>
+                                                  </block>
+                                                </value>
+                                                <statement name="DO">
+                                                  <block type="bookcover_stroke">
+                                                    <value name="COLOUR">
+                                                      <block type="bookcover_rotate_h">
+                                                        <value name="colour">
+                                                          <block type="bookcover_colour">
+                                                            <field name="COLOUR">#ff0000</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="angle">
+                                                          <block type="variables_get">
+                                                            <field name="VAR">i</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="variables_set">
+                                                        <field name="VAR">x</field>
+                                                        <value name="VALUE">
+                                                          <block type="math_arithmetic">
+                                                            <field name="OP">MULTIPLY</field>
+                                                            <value name="A">
+                                                              <block type="variables_get">
+                                                                <field name="VAR">横の間隔</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <block type="variables_get">
+                                                                <field name="VAR">i</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="variables_set">
+                                                            <field name="VAR">y</field>
+                                                            <value name="VALUE">
+                                                              <block type="math_arithmetic">
+                                                                <field name="OP">MULTIPLY</field>
+                                                                <value name="A">
+                                                                  <block type="variables_get">
+                                                                    <field name="VAR">縦の間隔</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <block type="variables_get">
+                                                                    <field name="VAR">i</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="bookcover_line">
+                                                                <value name="x1">
+                                                                  <block type="variables_get">
+                                                                    <field name="VAR">横余白</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="y1">
+                                                                  <block type="math_arithmetic">
+                                                                    <field name="OP">ADD</field>
+                                                                    <value name="A">
+                                                                      <block type="variables_get">
+                                                                        <field name="VAR">y</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <block type="variables_get">
+                                                                        <field name="VAR">縦余白</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="x2">
+                                                                  <block type="math_arithmetic">
+                                                                    <field name="OP">ADD</field>
+                                                                    <value name="A">
+                                                                      <block type="variables_get">
+                                                                        <field name="VAR">x</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <block type="variables_get">
+                                                                        <field name="VAR">横余白</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="y2">
+                                                                  <block type="math_arithmetic">
+                                                                    <field name="OP">ADD</field>
+                                                                    <value name="A">
+                                                                      <block type="variables_get">
+                                                                        <field name="VAR">絵の縦幅</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <block type="variables_get">
+                                                                        <field name="VAR">縦余白</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="bookcover_line">
+                                                                    <value name="x1">
+                                                                      <block type="variables_get">
+                                                                        <field name="VAR">横余白</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="y1">
+                                                                      <block type="math_arithmetic">
+                                                                        <field name="OP">ADD</field>
+                                                                        <value name="A">
+                                                                          <block type="math_arithmetic">
+                                                                            <field name="OP">MINUS</field>
+                                                                            <value name="A">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">絵の縦幅</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">y</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <block type="variables_get">
+                                                                            <field name="VAR">縦余白</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="x2">
+                                                                      <block type="math_arithmetic">
+                                                                        <field name="OP">ADD</field>
+                                                                        <value name="A">
+                                                                          <block type="variables_get">
+                                                                            <field name="VAR">x</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <block type="variables_get">
+                                                                            <field name="VAR">横余白</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="y2">
+                                                                      <block type="variables_get">
+                                                                        <field name="VAR">縦余白</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="bookcover_line">
+                                                                        <value name="x1">
+                                                                          <block type="math_arithmetic">
+                                                                            <field name="OP">ADD</field>
+                                                                            <value name="A">
+                                                                              <block type="math_arithmetic">
+                                                                                <field name="OP">MINUS</field>
+                                                                                <value name="A">
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR">絵の横幅</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR">x</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">横余白</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="y1">
+                                                                          <block type="math_arithmetic">
+                                                                            <field name="OP">ADD</field>
+                                                                            <value name="A">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">絵の縦幅</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">縦余白</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="x2">
+                                                                          <block type="math_arithmetic">
+                                                                            <field name="OP">ADD</field>
+                                                                            <value name="A">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">絵の横幅</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">横余白</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="y2">
+                                                                          <block type="math_arithmetic">
+                                                                            <field name="OP">ADD</field>
+                                                                            <value name="A">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">y</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">縦余白</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="bookcover_line">
+                                                                            <value name="x1">
+                                                                              <block type="math_arithmetic">
+                                                                                <field name="OP">ADD</field>
+                                                                                <value name="A">
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR">x</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR">横余白</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="y1">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">縦余白</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="x2">
+                                                                              <block type="math_arithmetic">
+                                                                                <field name="OP">ADD</field>
+                                                                                <value name="A">
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR">絵の横幅</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR">横余白</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="y2">
+                                                                              <block type="math_arithmetic">
+                                                                                <field name="OP">ADD</field>
+                                                                                <value name="A">
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR">y</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR">縦余白</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                                <next>
+                                                  <block type="bookcover_stroke">
+                                                    <value name="COLOUR">
+                                                      <block type="bookcover_none"></block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="bookcover_fill">
+                                                        <value name="COLOUR">
+                                                          <block type="bookcover_colour">
+                                                            <field name="COLOUR">#ff6600</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="bookcover_stroke_weight">
+                                                            <value name="width">
+                                                              <block type="math_number">
+                                                                <field name="NUM">0.5</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="bookcover_text_font">
+                                                                <value name="name">
+                                                                  <block type="bookcover_font_name">
+                                                                    <field name="NAME">Times New Roman</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="size">
+                                                                  <block type="math_number">
+                                                                    <field name="NUM">9</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="bookcover_text">
+                                                                    <value name="x">
+                                                                      <block type="math_arithmetic">
+                                                                        <field name="OP">ADD</field>
+                                                                        <value name="A">
+                                                                          <block type="math_arithmetic">
+                                                                            <field name="OP">DIVIDE</field>
+                                                                            <value name="A">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">絵の横幅</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="math_number">
+                                                                                <field name="NUM">8</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <block type="variables_get">
+                                                                            <field name="VAR">横余白</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="y">
+                                                                      <block type="math_arithmetic">
+                                                                        <field name="OP">ADD</field>
+                                                                        <value name="A">
+                                                                          <block type="math_arithmetic">
+                                                                            <field name="OP">DIVIDE</field>
+                                                                            <value name="A">
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR">絵の縦幅</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="math_number">
+                                                                                <field name="NUM">2.1</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <block type="variables_get">
+                                                                            <field name="VAR">横余白</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="str">
+                                                                      <block type="text_join">
+                                                                        <mutation items="3"></mutation>
+                                                                        <value name="ADD0">
+                                                                          <block type="text">
+                                                                            <field name="TEXT">Kagawa University</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="ADD1">
+                                                                          <block type="bookcover_newline"></block>
+                                                                        </value>
+                                                                        <value name="ADD2">
+                                                                          <block type="text">
+                                                                            <field name="TEXT">Open Campus🎃YYYY </field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

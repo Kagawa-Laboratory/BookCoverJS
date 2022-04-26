@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>チュートリアル（ブックカバー編）</title>
+<link rel="shortcut icon" href="favicon.png" type="image/png"/>
+<link rel="icon" href="favicon.png" type="image/png"/>
+<link rel="stylesheet" type="text/css"
+      href="common.css">
+<link rel="stylesheet" type="text/css" media="print"
+      href="print.css">
+<link rel="stylesheet" type="text/css" media="screen"
+      href="mystyle.css">
+
+<script src="../3rdParty/blockly/blockly_compressed.js"></script>
+<script src="../3rdParty/blockly/blocks_compressed.js"></script>
+<script src="../3rdParty/blockly/javascript_compressed.js"></script>
+<script src="../3rdParty/blockly/msg/js/ja.js"></script>
+<script src="../myblocks.js"></script>
+
+<script src="../3rdParty/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+<!-- todo: 条件分岐は乱数の前へ -->
+<h1 style="text-align:center;">チュートリアル（ブックカバー編）</h1>
+<h2>基本設定</h2>
+<p>ブックカバーは「基本設定」のメニューから次のようなブロックを選ぶところから始まります。</p>
+<div id="blocklyDiv1" style="height: 58px; width: 260px;"></div>
+<p>この凹みのなかにいろいろなブロックを配置していきます。</p>
+<h2>はじめの例</h2>
+<p>
+まずは文字を書いてみましょう。書く場所は紙の左端からの距離と上端からの距離（単位 mm）で指定します。
+</p>
+<p>
+ちなみに、最終的にA4用紙（297mm &times; 210mm）に印刷することを想定しているので、描画できる領域の範囲は
+(0, 0) &mdash; (297, 210) です。
+</p>
+
+
+<div id="blocklyDiv2" style="height: 225px; width: 400px;"></div>
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Tutorial/BookCover/Sample0.xml">Blockly ではじめる</a>
+
+<p>↓こういうブックカバーができます。</p>
+<object type='image/svg+xml' data='BookCover/Sample0.svg' width='353' height='250' ></object>
+
+<p>繰返しを入れてみましょう。</p>
+
+<div id="blocklyDiv3" style="height: 182px; width: 448px;"></div>
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Tutorial/BookCover/Sample1.xml">Blockly ではじめる</a>
+<p>↓こういうブックカバーができます。</p>
+<object type='image/svg+xml' data='BookCover/Sample1.svg' width='353' height='250' ></object>
+
+<p>繰返しのためのブロックは何種類かありますが、
+ここでは変数を変えながら繰り返すのものを選びました。</p>
+
+<div id="loopDiv" style="height: 70px; width: 330px;"></div>
+
+<p>
+色やフォントなど、繰返しごとに変らないことは、繰返す前に設定しておきます。
+繰返すことは、「...繰り返す:」の右側の凹みの中に置きます。
+&ldquo;変数&rdquo;（ここでは「i」という名前）
+</p>
+<div id="iDiv" style="height: 24px; width: 45px;"></div>
+<p>は繰り返すごとに
+（ここでは 10ずつ）値が変わっていきますので、
+それを利用して文字列を置く位置を変えます。
+</p>
+
+<h3>練習問題</h3>
+<ol>
+<li>表示される文字を変えてみよう。</li>
+<li>文字の色を（例えば緑色に）変えてみよう。</li>
+</ol>
+
+
+<h2>色を変えてみる</h2>
+<p>これだと地味すぎるので、繰返しごとに色を変えてみましょう。</p>
+
+<div id="blocklyDiv4" style="height: 222px; width: 475px;"></div>
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Tutorial/BookCover/Sample2.xml">Blockly ではじめる</a>
+
+<p>↓こういうブックカバーができます。</p>
+<object type='image/svg+xml' data='BookCover/Sample2.svg' width='353' height='250' ></object>
+
+<p>こんどは「塗りの色」を「...繰り返す:」のなかで変えています。
+「i」という&ldquo;変数&rdquo;は繰り返すごとに、10
+ずつ増えていきますので、１行ごとに色が変わるのです。
+</p>
+
+<p>色を表すやりかたはたくさんありますが、ここでは「色相」・「彩度」・「輝度」の
+3 つで表すやりかたを紹介します。次の図を見ると、すぐに意味がわかると思います。</p>
+
+
+<!--<object type='image/svg+xml' data='../Samples/ColorsLarge.svg' width='505'></object>-->
+<img src='../Samples/ColorsLarge.svg' width='423' />  <br />
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Samples/ColorsLarge.xml">Blockly ではじめる</a>
+
+
+<p>左側の輪は色相を説明しています。
+「色相」は、赤が 0, 黄色が 60, 緑が 120, &hellip; 青が 240 
+という角度に割り当てられていて、360 でまた赤に戻ります。
+右側の四角は（色相 0 の時の）彩度と輝度を示しています。
+「彩度」は白・灰・黒などが 0 で、純色は 100 になります。
+「輝度」は黒が 0, 白が 100 で、純色は 50 になります。
+</p>
+
+<h3>練習問題</h3>
+<ol>
+<li>色の動く範囲を、例えば赤〜黄色に限定してみよう。
+</ol>
+
+
+<h2>乱数を使う</h2>
+<p>あまり規則的すぎても面白くないので、乱数を使ってみましょう。
+乱数はサイコロを振って出る数のようにデタラメ<sup>※</sup>な数のことです。</p>
+<p style="font-size:84%;">（<sup>※</sup>実は、
+コンピューターはデタラメなことができないので、
+本当にデタラメなのではなく、現在時刻などから規則に従って計算するけれども、
+人間にとってはデタラメに見える数、です。擬似乱数と言います。）</p>
+
+
+<div id="blocklyDiv5" style="height:200px; width: min(570px, 100vw);"></div>
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Tutorial/BookCover/SimpleRand.xml">Blockly ではじめる</a>
+<p>↓こういうブックカバーができます。<br />
+（実行するたびに変わります。）</p>
+<object type='image/svg+xml' data='BookCover/SimpleRand.svg' width='353' height='250' ></object>
+
+<p>位置を乱数で変えてみました。実行する度に結果は変わります。</p>
+
+<p>文字列のなかからランダムに文字を一つ選ぶのはよく使うので、
+専用のブロックを用意しました。</p>
+
+<div id="blocklyDiv6" style="height:220px; width: min(715px, 100vw);"></div>
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Tutorial/BookCover/RandomChar.xml">Blockly ではじめる</a>
+<p>↓こういうブックカバーができます。<br />
+（実行するたびに変わります。）</p>
+<object type='image/svg+xml' data='BookCover/RandomChar.svg' width='353' height='250' ></object>
+
+
+<h3>練習問題</h3>
+<ol>
+<li>文字列の縦の位置もカードごとに乱数で変えてみよう。<br ／>
+<object type='image/svg+xml' data='BookCover/RandSample2.svg' width='353' height='250' ></object>
+</li>
+</ol>
+
+
+<h2>条件分岐する</h2>
+<p>ある条件が成り立つかどうかによって処理をわけてみましょう。
+次のようなブロックを使います。
+</p>
+
+<div id="condDiv" style="height: 85px; width: 125px;"></div>
+<p>変数「i」の値によって、置く文字列の種類を変えています。</p>
+
+
+<div id="blocklyDiv7" style="height:277px; width: min(540px, 100vw);"></div>
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Tutorial/BookCover/Cond.xml">Blockly ではじめる</a>
+
+<p>↓こういうブックカバーができます。</p>
+<object type='image/svg+xml' data='BookCover/Cond.svg' width='353' height='250' ></object>
+
+<p>３回に１回だけ英語でなくフランス語で表示しています。</p>
+
+<h3>練習問題</h3>
+<ol>
+<li>５回に１回だけ、右に 10mm ずらして文字列を表示するようにしてみよう。<br />
+<object type='image/svg+xml' data='BookCover/Cond2.svg' width='353' height='250' ></object>
+</li>
+</ol>
+
+
+<h2>さらに繰返す</h2>
+<p>繰返しのなかに繰返しを入れてみましょう。
+色を少しずつ変えながら長方形を描いていきます。</p>
+
+
+<div id="blocklyDiv8" style="height: 355px; width: min(750px, 100vw);"></div>
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Tutorial/BookCover/NestedLoop.xml">Blockly ではじめる</a>
+
+<p>↓こういうブックカバーができます。</p>
+<object type='image/svg+xml' data='BookCover/NestedLoop.svg' width='353' height='250' ></object>
+
+<p>内側の繰返しのなかでは、変数（この例では「x」）の値が変っていくので、
+その変数を利用して新しい色を計算しています。</p>
+
+<p>同じ値を２回以上使うため、「今の色」という変数に、
+計算した色を一旦代入していることにも注目してください。
+代入には次のようなブロックを使います。</p>
+
+<div id="imanoiroDiv" style="height: 35px; width: 290px;"></div>
+
+<h3>練習問題</h3>
+<ol>
+<li>つぎのように少しずつ色を変えてランダムな文字を出力してみよう。<br />
+<object type='image/svg+xml' data='BookCover/HSLGrad.svg' width='353' height='250' ></object>
+</li>
+</ol>
+
+<h2>（発展）三角関数を使う</h2>
+<p>
+三角関数を使うと、図形の表現の幅が一気に広がります。三角関数といっても、その定義だけを知っておけば充分で、
+高度な性質を理解する必要はありません。三角関数の定義は次の図を見てください。
+</p>
+
+
+
+<!--<object type='image/svg+xml' data='../Samples/CosSin.svg' width='505'></object>-->
+<img src ='../Samples/CosSin.svg' width='423' /><br />
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Samples/CosSin.xml">Blockly ではじめる</a>
+
+<p>
+図の青色のところを見てください。
+半径 1 の円の中心が (0, 0) にあるとき、(0, 0) を通り、水平（つまり(0, 0) &mdash; (1, 0) を結ぶ線分）と角度 <i>t</i> をなす線分が
+円と交わる点の座標が (cos(<i>t</i>&thinsp;), sin(<i>t</i>&thinsp;)) です。 
+</p>
+
+<p>正多角形を描いてみましょう。</p>
+
+<div id="blocklyDiv9" style="height: 435px; width: min(1060px, 100vw);"></div>
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Tutorial/BookCover/Polygons.xml">Blockly ではじめる</a><br />
+↓こういうブックカバーができます。<br />
+<object type='image/svg+xml' data='BookCover/Polygons.svg' width='353' height='250' ></object>
+
+
+<h3>練習問題</h3>
+<ol>
+<li>つぎのような図形を描いてみよう。<br />
+<object type='image/svg+xml' data='BookCover/Diamonds.svg' width='353' height='250' ></object>
+</li>
+<li>つぎのような図形を描いてみよう。<br />
+<object type='image/svg+xml' data='BookCover/Spiral.svg' width='353' height='250' ></object>
+</li>
+</ol>
+
+<h2>タートルに命令する</h2>
+
+<p>絵の書き方のもう一つの流儀として、ペンを持った仮想のカメを考え、
+カメに指令を与えて線を描かせる、という方法（タートルグラフィックス）があります。
+カメに与える指令には次のようなものがあります。
+</p>
+<ul>
+<li>ペンを上げる／下げる</li>
+<li>距離 〜 だけ前に進む</li>
+<li>角度 〜 だけその場で回転する。
+</ul>
+
+<p>
+このカメを使って正多角形を描いてみましょう。
+</p>
+
+<div id="blocklyDiv10" style="height: 255px; width: 485px;"></div>
+<a class='noprint' href="../blockly.html?lang=ja&amp;upload=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&amp;download=http%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&amp;url=Tutorial/BookCover/SimpleTurtle.xml">Blockly ではじめる</a><br />
+↓こういうブックカバーができます。<br />
+<object type='image/svg+xml' data='BookCover/SimpleTurtle.svg' width='353' height='250' ></object>
+
+<h3>練習問題</h3>
+<ol>
+<li>六角形・七角形・八角形・&hellip;にしてみましょう</li>
+<li>星型★にしてみましょう</li>
+</ol>
+
+<h2>さいごに</h2>
+<p>
+「お絵かきプログラミング」が用意しているブロックはこれだけではありませんが、
+主なものは一通り説明しました。あとは、実際に使ってどのような働きをするか、
+試しながら学んでいってください。
+</p>
+
+<ul class='noprint'>
+  <li><a href="../samples.html">サンプル集のページ</a>へ</li>
+</ul>
+<p class='noprint'><a href="../index.html">戻る</a></p>
+
+<hr class='noprint' />
+<address class='noprint'>香川研究室</address>
+
+<script type="application/javascript">
+$(function () {
+  var params = [ { div: 'blocklyDiv1', xml: 'BookCover/Start.xml' }
+               , { div: 'blocklyDiv2', xml: 'BookCover/Sample0.xml' }
+               , { div: 'blocklyDiv3', xml: 'BookCover/Sample1.xml' }
+               , { div: 'blocklyDiv4', xml: 'BookCover/Sample2.xml' }
+               , { div: 'blocklyDiv5', xml: 'BookCover/SimpleRand.xml' }
+               , { div: 'blocklyDiv6', xml: 'BookCover/RandomChar.xml' }
+               , { div: 'blocklyDiv7', xml: 'BookCover/Cond.xml' }
+               , { div: 'blocklyDiv8', xml: 'BookCover/NestedLoop.xml' }
+               , { div: 'blocklyDiv9', xml: 'BookCover/Polygons.xml' }
+               , { div: 'blocklyDiv10', xml: 'BookCover/SimpleTurtle.xml' }
+               , { div: 'iDiv', xml: 'Common/I.xml' }
+               , { div: 'loopDiv', xml: 'Common/Loop.xml' }
+               , { div: 'condDiv', xml: 'Common/IfElse.xml' }
+               , { div: 'imanoiroDiv', xml: 'Common/ImanoIro.xml' }
+               ];
+  var workspaces = [];
+  for (var i = 0; i < params.length; i++) {
+     (function () {
+    	var data = params[i]; 
+     	var workspace = Blockly.inject(data.div,{ readOnly: true, zoom: { startScale: 0.75 }  });
+     	$.ajax({ url: data.xml
+     	       , dataType: "text"
+     	}).done(function(txt) { 
+     	  var xml = Blockly.Xml.textToDom(txt);
+     	  Blockly.Xml.domToWorkspace(xml, workspace);
+     	});
+     	workspaces.push(workspace);
+     }) ();
+  }
+});
+</script>
+<script src='myscript.js'></script>
+</body>
+</html>

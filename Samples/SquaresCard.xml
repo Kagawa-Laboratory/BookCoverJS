@@ -1,0 +1,385 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="">カード</variable>
+    <variable type="">カウンター</variable>
+    <variable type="">i</variable>
+    <variable type="">j</variable>
+    <variable type="">今の色</variable>
+  </variables>
+  <block type="bookcover_card_frame">
+    <value name="PAPER_SPEC">
+      <block type="bookcover_cardspec">
+        <field name="CARDSPEC">エーワン F8A4-5</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="bookcover_stroke">
+        <value name="COLOUR">
+          <block type="bookcover_none"></block>
+        </value>
+        <next>
+          <block type="bookcover_foreachcard">
+            <field name="CARD" variabletype="">カード</field>
+            <field name="COUNTER" variabletype="">カウンター</field>
+            <field name="CLIP">TRUE</field>
+            <field name="FRAME">TRUE</field>
+            <field name="MARGIN">1</field>
+            <statement name="DO">
+              <block type="bookcover_fill_opacity">
+                <value name="opacity">
+                  <block type="math_number">
+                    <field name="NUM">0.3</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_for">
+                    <field name="VAR" variabletype="">i</field>
+                    <value name="FROM">
+                      <block type="math_number">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="bookcover_cardWidth">
+                        <value name="CARD">
+                          <block type="variables_get">
+                            <field name="VAR" variabletype="">カード</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number">
+                        <field name="NUM">6</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="controls_for">
+                        <field name="VAR" variabletype="">j</field>
+                        <value name="FROM">
+                          <block type="math_number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="TO">
+                          <block type="bookcover_cardHeight">
+                            <value name="CARD">
+                              <block type="variables_get">
+                                <field name="VAR" variabletype="">カード</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="BY">
+                          <block type="math_number">
+                            <field name="NUM">6</field>
+                          </block>
+                        </value>
+                        <statement name="DO">
+                          <block type="controls_if">
+                            <value name="IF0">
+                              <block type="logic_compare">
+                                <field name="OP">LTE</field>
+                                <value name="A">
+                                  <block type="bookcover_random_in_range">
+                                    <value name="min">
+                                      <block type="math_number">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <value name="max">
+                                      <block type="math_number">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number">
+                                    <field name="NUM">0.4</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="bookcover_fill">
+                                <value name="COLOUR">
+                                  <block type="bookcover_hsl360">
+                                    <value name="hue">
+                                      <block type="bookcover_random_in_range">
+                                        <value name="min">
+                                          <block type="math_number">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="max">
+                                          <block type="math_number">
+                                            <field name="NUM">359</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="saturation">
+                                      <block type="math_number">
+                                        <field name="NUM">100</field>
+                                      </block>
+                                    </value>
+                                    <value name="luminance">
+                                      <block type="math_number">
+                                        <field name="NUM">50</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="bookcover_text_font">
+                                    <value name="name">
+                                      <block type="bookcover_font_name">
+                                        <field name="NAME">Segoe UI Symbol</field>
+                                      </block>
+                                    </value>
+                                    <value name="size">
+                                      <block type="math_number">
+                                        <field name="NUM">5</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="bookcover_rect">
+                                        <value name="x">
+                                          <block type="variables_get">
+                                            <field name="VAR" variabletype="">i</field>
+                                          </block>
+                                        </value>
+                                        <value name="y">
+                                          <block type="variables_get">
+                                            <field name="VAR" variabletype="">j</field>
+                                          </block>
+                                        </value>
+                                        <value name="w">
+                                          <block type="math_number">
+                                            <field name="NUM">6</field>
+                                          </block>
+                                        </value>
+                                        <value name="h">
+                                          <block type="math_number">
+                                            <field name="NUM">6</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="variables_set">
+                        <field name="VAR" variabletype="">今の色</field>
+                        <value name="VALUE">
+                          <block type="bookcover_rotate_h">
+                            <value name="colour">
+                              <block type="bookcover_colour">
+                                <field name="COLOUR">#ff0000</field>
+                              </block>
+                            </value>
+                            <value name="angle">
+                              <block type="math_arithmetic">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="bookcover_angle">
+                                    <field name="angle">45</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get">
+                                    <field name="VAR" variabletype="">カウンター</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_fill">
+                            <value name="COLOUR">
+                              <block type="variables_get">
+                                <field name="VAR" variabletype="">今の色</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="bookcover_fill_opacity">
+                                <value name="opacity">
+                                  <block type="math_number">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="bookcover_text_font">
+                                    <value name="name">
+                                      <block type="bookcover_font_name">
+                                        <field name="NAME">ＭＳ 明朝</field>
+                                      </block>
+                                    </value>
+                                    <value name="size">
+                                      <block type="math_number">
+                                        <field name="NUM">8</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="bookcover_text">
+                                        <value name="x">
+                                          <block type="math_number">
+                                            <field name="NUM">10</field>
+                                          </block>
+                                        </value>
+                                        <value name="y">
+                                          <block type="math_number">
+                                            <field name="NUM">10</field>
+                                          </block>
+                                        </value>
+                                        <value name="str">
+                                          <block type="text">
+                                            <field name="TEXT">香川大学創造工学部</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="bookcover_text">
+                                            <value name="x">
+                                              <block type="math_number">
+                                                <field name="NUM">10</field>
+                                              </block>
+                                            </value>
+                                            <value name="y">
+                                              <block type="math_number">
+                                                <field name="NUM">20</field>
+                                              </block>
+                                            </value>
+                                            <value name="str">
+                                              <block type="text">
+                                                <field name="TEXT">讃岐 太郎</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="bookcover_text_font">
+                                                <value name="name">
+                                                  <block type="bookcover_font_name">
+                                                    <field name="NAME">Times New Roman</field>
+                                                  </block>
+                                                </value>
+                                                <value name="size">
+                                                  <block type="math_number">
+                                                    <field name="NUM">8</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="bookcover_text">
+                                                    <value name="x">
+                                                      <block type="math_number">
+                                                        <field name="NUM">10</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="y">
+                                                      <block type="math_number">
+                                                        <field name="NUM">30</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="str">
+                                                      <block type="text">
+                                                        <field name="TEXT">SANUKI, Taro</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="bookcover_text_font">
+                                                        <value name="name">
+                                                          <block type="bookcover_font_name">
+                                                            <field name="NAME">Courier New</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="size">
+                                                          <block type="math_number">
+                                                            <field name="NUM">5</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="bookcover_text">
+                                                            <value name="x">
+                                                              <block type="math_number">
+                                                                <field name="NUM">10</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="y">
+                                                              <block type="math_number">
+                                                                <field name="NUM">43</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="str">
+                                                              <block type="text">
+                                                                <field name="TEXT">taro.sanuki@example.com</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="bookcover_text_font">
+                                                                <value name="name">
+                                                                  <block type="bookcover_font_name">
+                                                                    <field name="NAME">Segoe UI Symbol</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="size">
+                                                                  <block type="math_number">
+                                                                    <field name="NUM">20</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="bookcover_text">
+                                                                    <value name="x">
+                                                                      <block type="math_number">
+                                                                        <field name="NUM">70</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="y">
+                                                                      <block type="math_number">
+                                                                        <field name="NUM">10</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="str">
+                                                                      <block type="text">
+                                                                        <field name="TEXT">🐧</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
