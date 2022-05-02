@@ -939,7 +939,7 @@
     <td>
        <table width='100%'>
           <tr id="tabRow" height="1em">
-            <td id="tabBlocks" class="tabon" style="white-space:nowrap;" data-step="1" data-intro="このタブをクリックして、編集をはじめます。">ブロック</td>
+            <td id="tabBlock" class="tabon" style="white-space:nowrap;" data-step="1" data-intro="このタブをクリックして、編集をはじめます。">ブロック</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tabJavaScript" class="taboff" style="white-space:nowrap;">JavaScript</td>
             <td class="tabmin">&nbsp;</td>
@@ -981,7 +981,7 @@
 <div id="contentSVG"  class="content" style="padding: 0ex;"></div>
 <textarea id="contentXml" class="content" wrap="off"></textarea>
 <script>
-var tabs = ["Blocks", "JavaScript", "SVG", "Xml"];
+var tabs = ["Block", "JavaScript", "SVG", "Xml"];
 var selected = tabs[0];
 var draw;
 var workspace = null;
@@ -1050,7 +1050,7 @@ function tabClick(clickedName) {
     }
   }
 
-  if ($("#tabBlocks").hasClass('tabon')) {
+  if ($("#tabBlock").hasClass('tabon')) {
     workspace.setVisible(false);
   }
 
@@ -1070,7 +1070,7 @@ function tabClick(clickedName) {
 
   renderContent(clickedName);
 
-  if (clickedName == 'Blocks') {
+  if (clickedName == 'Block') {
     workspace.setVisible(true);
   }
   Blockly.svgResize(workspace);
