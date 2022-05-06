@@ -1,0 +1,86 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+  overflow: hidden;
+}
+table {
+  height: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Tabs */
+#tabRow>td {
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+td.tabon {
+  border-bottom-color: #ddd !important;
+  background-color: #ddd;
+  padding: 5px 19px;
+}
+td.taboff {
+  cursor: pointer;
+  padding: 5px 19px;
+}
+td.taboff:hover {
+  background-color: #eee;
+}
+td.tabmin {
+  border-top-style: none !important;
+  border-left-style: none !important;
+  border-right-style: none !important;
+}
+td.tabmax {
+  border-top-style: none !important;
+  border-left-style: none !important;
+  border-right-style: none !important;
+  width: 99%;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.content {
+  visibility: hidden;
+  margin: 0;
+  padding: 1ex;
+  position: absolute;
+  direction: ltr;
+}
+pre.content {
+  border: 1px solid #ccc;
+  overflow: scroll;
+}
+div.content {
+  border: 1px solid #ccc;
+  overflow: scroll;
+}
+
+.button_like {
+  font-size: 70%;
+  font-family: 'Segoe UI Emoji';
+  padding: 3px 5px 3px 5px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid;
+  border-color: #aaaaaa #444444 #444444 #aaaaaa;
+  background: #dddddd;
+}
+
+.button_like:hover{
+  background:#ccddff;
+  border-color: #aaaacc #444466 #444466 #aaaacc;
+}
+
+.CodeMirror {
+  height: auto; 
+  overflow-y: hidden; 
+  overflow-x: auto;
+}
