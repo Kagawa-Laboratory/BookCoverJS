@@ -3,103 +3,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>BookCoverJS (CodeMirror)</title>
 <link rel="shortcut icon" href="favicon.png" type="image/png"/>
-<script src="3rdParty/codemirror/lib/codemirror.js"></script>
-<link rel="stylesheet" href="3rdParty/codemirror/lib/codemirror.css" />
-<script src="3rdParty/codemirror/mode/javascript/javascript.js"></script>
-<script src="3rdParty/jquery-2.2.4.min.js"></script>
-<script src="3rdParty/jquery.query.js"></script>
-<script src="3rdParty/intro.js"></script>
-<link rel="stylesheet" href="3rdParty/introjs.css" />
-<script src="3rdParty/svg.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/javascript/javascript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/5.1.0/intro.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/5.1.0/introjs.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
 <script src="BookCoverJS/BookCover.js"></script>
-<style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    body {
-      font-family: sans-serif;
-      overflow: hidden;
-    }
-    table {
-      height: 100%;
-      width: 100%;
-      border-collapse: collapse;
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
-
-    /* Tabs */
-    #tabRow>td {
-      border: 1px solid #ccc;
-      border-bottom: none;
-    }
-    td.tabon {
-      border-bottom-color: #ddd !important;
-      background-color: #ddd;
-      padding: 5px 19px;
-    }
-    td.taboff {
-      cursor: pointer;
-      padding: 5px 19px;
-    }
-    td.taboff:hover {
-      background-color: #eee;
-    }
-    td.tabmin {
-      border-top-style: none !important;
-      border-left-style: none !important;
-      border-right-style: none !important;
-    }
-    td.tabmax {
-      border-top-style: none !important;
-      border-left-style: none !important;
-      border-right-style: none !important;
-      width: 99%;
-      padding-left: 10px;
-      padding-right: 10px;
-      text-align: right;
-    }
-
-    .content {
-      visibility: hidden;
-      margin: 0;
-      padding: 1ex;
-      position: absolute;
-      direction: ltr;
-    }
-    pre.content {
-      border: 1px solid #ccc;
-      overflow: scroll;
-    }
-    div.content {
-      border: 1px solid #ccc;
-      overflow: scroll;
-    }
-
-    .button_like {
-      font-size: 70%;
-      font-family: 'Segoe UI Emoji';
-      padding: 3px 5px 3px 5px;
-      text-align: center;
-      text-decoration: none;
-      border: 2px solid;
-      border-color: #aaaaaa #444444 #444444 #aaaaaa;
-      background: #dddddd;
-    }
-
-    .button_like:hover{
-      background:#ccddff;
-      border-color: #aaaacc #444466 #444466 #aaaacc;
-    }
-
-    .CodeMirror {
-      height: auto; 
-      overflow-y: hidden; 
-      overflow-x: auto;
-    }
-</style>
+<link rel="stylesheet" href="mycodemirror.css" />
 </head>
 <body>
 <table>
@@ -147,21 +58,25 @@ var draw;
 var myCodeMirror;
 
 function onResize() {
-    var area = $("#blocklyArea");
-    var divs = [$("#contentJavaScript"), $("#contentSVG") ];
+    var area = document.getElementById("blocklyArea");
+    var divs = [document.getElementById("contentJavaScript"), document.getElementById("contentSVG") ];
 
-    var width = area.width();
-    var height = area.height();
-    var offset = area.offset();
+    var width  = area.offsetWidth;
+    var height = area.offsetHeight;
+    var offset = area.getBoundingClientRect();
+    var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    var scrollTop  = window.pageYOffset || document.documentElement.scrollTop;
     for (var i = 0; i < divs.length ; i++) {
        var div = divs[i];
-       div.height(height);
-       div.width(width);
-       div.offset(offset);
+       div.style.height = `${height}px`;
+       div.style.width  = `${width}px`;
+       div.style.left   = `${offset.left + scrollLeft}px`;
+       div.style.top    = `${offset.top  + scrollTop}px`;
     }
 }
 
-$(window).on('load resize', onResize);
+window.addEventListener('load', onResize);
+window.addEventListener('resize', onResize);
 
 function renderSVG() {
   var code = myCodeMirror.getValue();
@@ -170,7 +85,7 @@ function renderSVG() {
 }
 
 function renderContent(clickedName) {
-  var content = $("#content" + clickedName);
+  var content = document.getElementById(`content${clickedName}`);
   if (clickedName == "JavaScript") {
   } else if (clickedName == "SVG") {
      renderSVG();
@@ -181,16 +96,16 @@ function tabClick(clickedName) {
   // Deselect all tabs and hide all panes.
   for (var i = 0; i < tabs.length; i++) {
     var name = tabs[i];
-    $('#tab' + name).removeClass('tabon');
-    $('#tab' + name).addClass('taboff');
-    $('#content' + name).css("visibility", 'hidden');
+    document.getElementById('tab' + name).classList.remove('tabon');
+    document.getElementById('tab' + name).classList.add('taboff');
+    document.getElementById('content' + name).style.visibility = 'hidden';
   }
 
   // Select the active tab.
   selected = clickedName;
-  $('#tab' + clickedName).removeClass('taboff');
-  $('#tab' + clickedName).addClass('tabon');
-  $('#content' + clickedName).css("visibility", 'visible');
+  document.getElementById('tab' + clickedName).classList.remove('taboff');
+  document.getElementById('tab' + clickedName).classList.add('tabon');
+  document.getElementById('content' + clickedName).style.visibility = 'visible';
 
   renderContent(clickedName);
 }
@@ -203,7 +118,7 @@ function backupJS() {
   }
 }
 
-$(window).on('unload', backupJS);
+window.addEventListener('unload', backupJS);
 
 function restoreJS()  {
   var url = window.location.href.split('#')[0];
@@ -217,7 +132,7 @@ function confirmLang(lang) {
     if (lang == null)  return "emoji";
     switch (lang) {
       case "ja":
-      case "日本語":	return "ja";  
+      case "日本語":	return "ja";
       case "simple_ja":
       case "にほんご": 	return "simple_ja";
       case "en":	return "en";
@@ -226,62 +141,66 @@ function confirmLang(lang) {
 }
 
 var i18nMap = {
-    "intro": { "ja": "ヘルプ", "en": "Help", "default": "&#x2753;" }
-  , "openButton": { "ja": "読込", "en": "Open", "default": "&#x1f4c2;" }
-  , "saveButton": { "ja": "保存", "en": "Save", "default": "&#x1f4be;"  }
-  , "printButton": { "ja": "印刷", "en": "Print", "default": "&#x1f5a8;" }
-  , "uploadSourceButton": { "ja": "ソースアップロード", "en": "Upload Data", "default": "&#x1f4c4;&#x1f4e4;" }
-  , "uploadSvgButton": { "ja": "画像アップロード", "en": "Upload Image", "default": "&#x1f5bc;&#x1f4e4;" }
-  , "resetButton": { "ja": "リセット", "en": "Reset", "default": "&#x21bb;" }
+    "intro":              { "ja": "ヘルプ",             "en": "Help",         "default": "&#x2753;" }
+  , "openButton":         { "ja": "読込",              "en": "Open",         "default": "&#x1f4c2;" }
+  , "saveButton":         { "ja": "保存",              "en": "Save",         "default": "&#x1f4be;"  }
+  , "printButton":        { "ja": "印刷",              "en": "Print",        "default": "&#x1f5a8;" }
+  , "uploadSourceButton": { "ja": "ソースアップロード", "en": "Upload Data",  "default": "&#x1f4c4;&#x1f4e4;" }
+  , "uploadSvgButton":    { "ja": "画像アップロード",   "en": "Upload Image", "default": "&#x1f5bc;&#x1f4e4;" }
+  , "resetButton":        { "ja": "リセット",           "en": "Reset",        "default": "&#x21bb;" }
 };
 
 function replaceI18nElement(id, lang) {
-   console.log(id, lang);
    var content = i18nMap[id][lang];
    if (content == null) content = i18nMap[id]["default"];
-		      
    return content;
 }
 
-$(function() {
-    draw = SVG("contentSVG");
+window.addEventListener('load', () => {
+    const params = new URLSearchParams(location.search);
+    draw = SVG().addTo("#contentSVG").size('100%', '100%');
     tabClick(selected);
     for (var i = 0; i < tabs.length; i++) {
        var name = tabs[i];
-       $("#tab" + name).click(function(name_) { return function() { tabClick(name_); }; }(name));
+       document.getElementById(`tab${name}`).addEventListener('click', function(name_) {
+           return ev => { ev.preventDefault(); tabClick(name_); };
+       }(name));
     }
 
-    var initCode = "var BC = BookCover;\n" +
-		   "BC.start(draw);\n" +
-                   "BC.pageFrame();\n" +
-                   "  BC.stroke(null);\n" +
-                   "  var i;\n" +
-                   "  for (i = 0; i <= 330; i += 30) {\n" +
-                   "    BC.fill(BC.hsl360(i, 100, 50));\n" +
-                   "    BC.pushMatrix()\n" +
-                   "      BC.translate(BC.pageWidth() / 2, BC.pageHeight() / 2);\n" +
-                   "      BC.pushMatrix()\n" +
-                   "        BC.rotate360(i);\n" +
-                   "        BC.translate(80, 0);\n" +
-                   "        BC.rect(-10, -10, 20, 20);\n" +
-                   "      BC.popMatrix();\n" +
-                   "    BC.popMatrix();\n" +
-                   "  }\n" +
-                   "BC.finish();\n";
+    const initCode = `
+        var BC = BookCover;
+        BC.start(draw);
+        BC.pageFrame();
+          BC.stroke(null);
+          var i;
+          for (i = 0; i <= 330; i += 30) {
+            BC.fill(BC.hsl360(i, 100, 50));
+            BC.pushMatrix()
+              BC.translate(BC.pageWidth() / 2, BC.pageHeight() / 2);
+              BC.pushMatrix()
+                BC.rotate360(i);
+                BC.translate(80, 0);
+                BC.rect(-10, -10, 20, 20);
+              BC.popMatrix();
+            BC.popMatrix();
+          }
+        BC.finish();
+        `.replace(/\n        /g, '\n');
 
     myCodeMirror = CodeMirror(function(elt) {
-       $("#contentJavaScript").append($(elt));
-    }, { lineNumbers: true
+       document.getElementById("contentJavaScript").append(elt);
+    }, {
+         lineNumbers: true
        , mode: "text/javascript"
        , value: "" });
 
-    var lang = confirmLang($.query.get("lang"));
+    var lang = confirmLang(params.get("lang"));
 
-    $(".i18n").html(function() {
-        return replaceI18nElement($(this).attr("id"), lang);
+    document.querySelectorAll(".i18n").forEach(elm => {
+       elm.innerHTML = replaceI18nElement(elm.getAttribute("id"), lang);
     });
 
-    var clean = $.query.get("clean");
+    var clean = params.get("clean");
     if (clean != null && (clean.toLowerCase() == "true" || clean.toLowerCase() == "yes")) {
         myCodeMirror.setValue(initCode);
     } else {
@@ -295,23 +214,24 @@ $(function() {
                     // memo が空だったら続行する
                 }
               }
-              var jsUrl = $.query.get("url");
+              var jsUrl = params.get("url");
               if (jsUrl) {
-              	$.ajax({ url: jsUrl, dataType: "text" }).done(function(data) {
-              	  myCodeMirror.setValue(data);
-              	});
+                fetch(jsUrl, {})
+                  .then(response => response.text())
+                  .then(data => {
+                     myCodeMirror.setValue(data);
+                });
               } else {
                 myCodeMirror.setValue(initCode);
               }
         }, 0);
     }
 
-    $("#intro").click(function() {
-//      alert("intro");
+    document.getElementById("intro").addEventListener('click', ev => {
+      ev.preventDefault();
       var tour = introJs();
       tour.setOption('tooltipPosition', 'auto');
       tour.start();
-      return false;
     });
 
     function printSVG() {
@@ -321,88 +241,103 @@ $(function() {
       return false;
     }
 
-    $("#printButton").click(function() {
-      if (!$('#tabSVG').hasClass('tabon')) {
+    document.getElementById("printButton").addEventListener('click', ev => {
+      ev.preventDefault();
+      if (!document.getElementById('tabSVG').classList.contains('tabon')) {
         renderSVG();
       }
       printSVG();
       return false;
     });
 
-    $("#saveButton").click(function() {
-       var code = myCodeMirror.getValue();
-       var blob    = new Blob([code], { type: 'application/javascript' });
-       $("#saveButton").attr('href', window.URL.createObjectURL(blob));
+    document.getElementById("saveButton").addEventListener('click', ev => {
+      ev.preventDefault();
+      var code = myCodeMirror.getValue();
+      var blob    = new Blob([code], { type: 'application/javascript' });
+      document.getElementById("saveButton").href = window.URL.createObjectURL(blob);
     });
 
-    $("#openButton").click(function() {
-      $("#openButtonAux").click();
+    document.getElementById("openButton").addEventListener('click', ev =>  {
+      ev.preventDefault();
+      document.getElementById("openButtonAux").click();
       return false;
     });
 
-    $("#openButtonAux").change(function(evt) {
-       var f = evt.target.files[0];
-       var reader = new FileReader();
+    document.getElementById("openButtonAux").addEventListener('change', evt => {
+      evt.preventDefault();
+      var f = evt.target.files[0];
+      var reader = new FileReader();
 
-       reader.onload = function(e) {
-         var code = e.target.result;
-         myCodeMirror.setValue(code);
-         if (!$('#tabJavaScript').hasClass('tabon')) {
-           renderSVG();
-         }
-       };
-       reader.readAsText(f);
-    });
-
-    $("#resetButton").click(function () {
-        var q = window.confirm("編集したプログラムを捨てて、最初の内容に戻します。よろしいですか？");
-        if (!q) return;
-        var jsUrl = $.query.get("url");
-        if (jsUrl) {
-          $.ajax({ url: jsUrl, dataType: "text" }).done(function(data) {
-              myCodeMirror.setValue(data);
-          });
-        } else {
-          myCodeMirror.setValue(initCode);
+      reader.onload = function(e) {
+        var code = e.target.result;
+        myCodeMirror.setValue(code);
+        if (!document.getElementById('tabJavaScript').classList.contains('tabon')) {
+          renderSVG();
         }
+      };
+      reader.readAsText(f);
     });
 
-    var uploadUrl = $.query.get("upload");
+    document.getElementById("resetButton").addEventListener('click', ev => {
+      ev.preventDefault();
+      var q = window.confirm("編集したプログラムを捨てて、最初の内容に戻します。よろしいですか？");
+      if (!q) return;
+      var jsUrl = params.get("url");
+      if (jsUrl) {
+        fetch(jsUrl, {})
+          .then(response => response.text())
+          .then(data => {
+            myCodeMirror.setValue(data);
+          });
+      } else {
+        myCodeMirror.setValue(initCode);
+      }
+    });
+
+    const uploadUrl = params.get("upload");
     // uploadUrl は name と data というパラメーターをとると仮定する
     if (uploadUrl == null || uploadUrl == "") {
-      $("#uploadSourceButton").hide();
-      $("#uploadSvgButton").hide();
+      document.getElementById("uploadSourceButton").style.display = 'none';
+      document.getElementById("uploadSvgButton").style.display = 'none';
     } else {
-      $("#uploadSourceButton").click(function() {
-       	 var sourceText = myCodeMirror.getValue();
-         $.ajax({ url: uploadUrl
-		, data: ({ name: "myGraphics.js", data: sourceText })
-                , type: "post"
-                , dataType: "text"
-		}).done(function (message) {
-                   console.log("success", message);
-                   alert(message); // TODO alert ではなくて Chrome でもコピペできるようにする
-                }).fail(function (message, status) {
-                   console.log("fail", status);
-                   alert(status);
-                });
+      document.getElementById("uploadSourceButton").addEventListener('click', ev =>  {
+        ev.preventDefault();
+       	const sourceText = myCodeMirror.getValue();
+        fetch(uploadUrl, {
+            method: 'post'
+//          , headers: { 'Content-Type': 'application/json' }
+//          , body: JSON.stringify({ name: "myGraphics.js", data: sourceText })
+            , headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            , body: new URLSearchParams({ name: "myGraphics.js", data: sourceText })
+        }).then(response => response.text())
+          .then(message => {
+          console.log("success", message);
+          alert(message); // TODO alert ではなくて Chrome でもコピペできるようにする
+        }).catch(reason => {
+          console.log("fail", reason);
+          alert(reason);
+        });
       });
-      $("#uploadSvgButton").click(function() {
-      	 if (!$('#tabSVG').hasClass('tabon')) {
-      	   renderSVG();
-      	 }
-         var svgText = draw.svg();
-         $.ajax({ url: uploadUrl
-                , type: "post"
-		        , data: ({ name: "myGraphics.svg", data: svgText })
-                , dataType: "text"
-		}).done(function (message) {
-                   console.log("success", message);
-                   alert(message); // TODO alert ではなくて Chrome でもコピペできるようにする
-                }).fail(function (message, status) {
-                   console.log("fail", status);
-                   alert(status);
-                });
+      document.getElementById("uploadSvgButton").addEventListener('click', ev => {
+        ev.preventDefault();
+      	if (!document.getElementById('tabSVG').classList.contains('tabon')) {
+      	  renderSVG();
+      	}
+        const svgText = draw.svg();
+        fetch(uploadUrl, {
+            method: 'post'
+//          , headers: { 'Content-Type': 'application/json' }
+//          , body: JSON.stringify({ name: "myGraphics.svg", data: svgText })
+            , headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            , body: new URLSearchParams({ name: "myGraphics.svg", data: svgText })
+        }).then(response => response.text())
+          .then(message => {
+          console.log("success", message);
+          alert(message); // TODO alert ではなくて Chrome でもコピペできるようにする
+        }).catch(reason => {
+          console.log("fail", reason);
+          alert(reason);
+        });
       });
     }
 });

@@ -1,18 +1,23 @@
 function outputSVG(name, portrait, sc) {
   if (sc == null) { sc = 1; }
   if (portrait) {
-    document.writeln("<object type='image/svg+xml' data='Samples/" + name + ".svg' width='" + 141 * sc + "' height='" + 200 * sc + "' ></object>");
+    document.writeln(`<object type='image/svg+xml' data='Samples/${name}.svg' width='${141 * sc}' height='${200 * sc}' ></object>`);
   } else {
-    document.writeln("<object type='image/svg+xml' data='Samples/" + name + ".svg' width='" + 282 * sc + "' height='" + 200 * sc + "' ></object>");
+    document.writeln(`<object type='image/svg+xml' data='Samples/${name}.svg' width='${282 * sc}' height='${200 * sc}' ></object>`);
   }  
 }
 
 function outputBlockly(name, lang) {
-  document.writeln("<a href='blockly.html?upload=https%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&download=https%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&url=Samples%2f" + name + ".xml" + ((lang == null || lang == "") ? "" : ("&lang=" + lang)) +  " '>Blockly ではじめる</a>");
+  const upurl   = "%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fupload";
+  const downurl = "%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fdownload";
+  const langop  = (lang == null || lang == "") ? "" : `&lang=${lang}`;
+  document.writeln(`<a href='blockly.html?upload=${upurl}&download=${downurl}&url=Samples%2f${name}.xml${langop}'>Blockly ではじめる</a>`);
 }
 
 function outputCodeMirror(name, lang) {
-  document.writeln("<span style='font-size:50%'><a href='codemirror.html?upload=https%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&url=Samples%2f" + name + ".js" + ((lang == null || lang == "") ? "" : ("&lang=" + lang)) +  " '>(JS)</a></span>");
+  const upurl   = "%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fupload";
+  const langop  = (lang == null || lang == "") ? "" : `&lang=${lang}`; 
+  document.writeln(`<span style='font-size: 50%;'><a href='codemirror.html?upload=${upurl}&url=Samples%2f${name}.js${langop}" '>(JS)</a></span>`);
 }
 
 function output(name, portrait, sc, lang) {

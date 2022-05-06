@@ -21,7 +21,7 @@
 </div>
 <hr />
 <p align="right">データのダウンロードは、
-<a href="https://platy.eng.kagawa-u.ac.jp/SimpleUpload/JSP/inputNumber.jsp">こちら</a><span style='font-size: 71%;'>（画像などをアップロードしたときの７ケタの数字を入力します）</span></p>
+<a href="//guppy.eng.kagawa-u.ac.jp/VanillaUpload/inputNumber.html">こちら</a><span style='font-size: 71%;'>（画像などをアップロードしたときの７ケタの数字を入力します）</span></p>
 <p>このページは Blockly 版（プログラミング未経験者・初心者向け）です。</p>
 <p>Java/C 版（ある程度プログラミングの経験のある人向け）は<a href="../index.html">こちら</a>へ<br/>
 いきなり<a href="samples.html?lang=ja">サンプル集</a>のページヘ</p>
@@ -42,16 +42,16 @@
 <div id="kuwashiku" style="border-left: 3px solid var(--main-border-color); padding: 0px 10px;">
 <p>コンピューターの素晴らしいところは、人間では不可能なくらい正確に数値を計算したり、複雑な条件判断を何度も間違えずにこなしたり、数万回でも同じことをいやがらずにくり返したりすることです。そのコンピューターはプログラムという指令（手順）がなければ動きません。ここでは、コンピューターのプログラムとはどういうものかあらましを紹介するために、プログラムによるお絵かきを紹介します。</p> 
 
-<p>プログラムの中で最も基本となるカタチは<b>順次</b>・<b>反復</b>・<b>分岐</b>の 3 つです。</p>
+<p>プログラムの中で最も基本となるカタチは<strong>順次</strong>・<strong>反復</strong>・<strong>分岐</strong>の 3 つです。</p>
 <dl style="margin: 0px 1em;">
-<dt><b>順次</b>（逐次）</dt>
+<dt><strong>順次</strong>（逐次）</dt>
 <dd>いくつかの処理を、順に一つずつ実行していくこと。<br />
   （コンピューターはもちろんできます。）
 </dd>
-<dt><b>反復</b></dt>
+<dt><strong>反復</strong></dt>
 <dd>同じ処理を繰り返すこと。<br />
 （コンピューターが一番得意なことです。）</dd>
-<dt><b>分岐</b>（選択）</dt>
+<dt><strong>分岐</strong>（選択）</dt>
 <dd>条件が成り立つか否かによって、処理を選ぶこと。<br />
   （繰り返すたびに全く同じことをしていては面白いことはできません。）</dd>
 </dl>
@@ -117,8 +117,8 @@ Google が作ったブロック式のプログラム編集環境（エディタ�
 </div>
 
 <p align="right" style='font-size:71%;'>
-（管理者用）<a href="blockly.html?upload=https%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&dowload=https%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp">Blockly</a>,
-<a href="codemirror.html?upload=https%3A%2F%2Fguppyy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp">CodeMirror</a>
+（管理者用）<a href="blockly.html?upload=%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fupload&dowload=%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fdownload">Blockly</a>,
+<a href="codemirror.html?upload=%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fupload">CodeMirror</a>
 </p>
 <p>または、直接、<a href="samples.html?lang=ja">サンプル集のページ</a>へ飛ぶこともできます。<br />
 （気に入ったデザインのものを選んで、
@@ -126,8 +126,8 @@ Blockly ではじめる、をクリックして下さい。呪文（プログラ
 数や文字列などを書き換えて実行してみて下さい。）</p>
 <p>
 または、次のリンクでとてもシンプルな例からスタートします。
-（<a href="blockly.html?upload=https%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&download=https%3A%2F%2Fguppy.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleDownload.jsp&lang=ja">Blocklyで始める</a>、
-<a href="codemirror.html?upload=https%3A%2F%2Fplaty.eng.kagawa-u.ac.jp%2FSimpleUpload%2FJSP%2FsimpleUpload.jsp&lang=ja">JavaScriptで始める</a>）
+（<a href="blockly.html?upload=%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fupload&download=%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fdownload&lang=ja">Blocklyで始める</a>、
+<a href="codemirror.html?upload=%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fupload&lang=ja">JavaScriptで始める</a>）
 </p>
 
 <p><a href="../print.html">印刷の仕方</a></p>
@@ -180,15 +180,25 @@ Reflect.java
 -->
 <hr />
 <address>香川研究室</address>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-  $("#kuwashiku").hide();
-  $("#kuwashiku_toggle").click(function () {
-    $("#kuwashiku").toggle();
-    $("#kuwashiku_plus").toggle();
-    $("#kuwashiku_minus").toggle();
+function toggle(elm) {
+  if (elm.display.style = null) {
+    elm.display.style = 'hidden';
+  } else if (elm.display.style = 'hidden') {
+    elm.display.style = null; 
+  }
+}
+
+window.addEventListener('load', () => {
+  var kuwashiku = document.getElementById('kuwashiku');
+  var butn      = document.getElementById('kuwashiku_toggle');
+  var plus      = document.getElementById('kuwashiku_plus');
+  var minus     = document.getElementById('kuwashiku_minus');    
+  kuwashiku.style.display = 'hidden';
+  butn.addEventListener('click', () => {
+    toggle(kuwashiku);
+    toggle(plus);
+    toggle(minus);
   });
 });
 </script>
