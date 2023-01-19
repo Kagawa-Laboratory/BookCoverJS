@@ -145,7 +145,7 @@
                                         <field name="OP">ADD</field>
                                         <value name="A">
                                           <block type="math_number" id="NVj6t2Z%g_7-k?4?Nn:M">
-                                            <field name="NUM">18</field>
+                                            <field name="NUM">30</field>
                                           </block>
                                         </value>
                                         <value name="B">

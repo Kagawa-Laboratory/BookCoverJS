@@ -1,0 +1,536 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="">i</variable>
+  </variables>
+  <block type="bookcover_frame" >
+    <field name="frame">TRUE</field>
+    <statement name="statements">
+      <block type="bookcover_text_font">
+        <value name="name">
+          <block type="bookcover_font_name">
+            <field name="NAME">Noto Emoji</field>
+          </block>
+        </value>
+        <value name="size">
+          <block type="math_number">
+            <field name="NUM">6</field>
+          </block>
+        </value>
+        <next>
+          <block type="bookcover_fill">
+            <value name="COLOUR">
+              <block type="bookcover_none"></block>
+            </value>
+            <next>
+              <block type="bookcover_stroke_weight">
+                <value name="width">
+                  <block type="math_number">
+                    <field name="NUM">0.333</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="bookcover_go">
+                    <value name="x">
+                      <block type="math_arithmetic">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="bookcover_pageWidth"></block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number">
+                            <field name="NUM">0.3</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="y">
+                      <block type="math_arithmetic">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="bookcover_pageHeight"></block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number">
+                            <field name="NUM">0.575</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="bookcover_direction">
+                        <value name="angle">
+                          <block type="bookcover_angle">
+                            <field name="angle">36</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_pen_down">
+                            <next>
+                              <block type="controls_for">
+                                <field name="VAR" variabletype="">i</field>
+                                <value name="FROM">
+                                  <block type="math_number">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <value name="TO">
+                                  <block type="math_number">
+                                    <field name="NUM">5</field>
+                                  </block>
+                                </value>
+                                <value name="BY">
+                                  <block type="math_number">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <statement name="DO">
+                                  <block type="bookcover_stroke">
+                                    <value name="COLOUR">
+                                      <block type="bookcover_rotate_h">
+                                        <value name="colour">
+                                          <block type="bookcover_colour">
+                                            <field name="COLOUR">#33cc00</field>
+                                          </block>
+                                        </value>
+                                        <value name="angle">
+                                          <block type="math_arithmetic">
+                                            <field name="OP">MULTIPLY</field>
+                                            <value name="A">
+                                              <block type="bookcover_angle">
+                                                <field name="angle">72</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="variables_get">
+                                                <field name="VAR" variabletype="">i</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="bookcover_forward">
+                                        <value name="len">
+                                          <block type="math_number">
+                                            <field name="NUM">36</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="bookcover_turn">
+                                            <value name="angle">
+                                              <block type="math_number">
+                                                <field name="NUM">72</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="bookcover_say">
+                                    <value name="str">
+                                      <block type="text">
+                                        <field name="TEXT">⭐🌌</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="bookcover_pen_up">
+                                        <next>
+                                          <block type="bookcover_text_font">
+                                            <value name="name">
+                                              <block type="bookcover_font_name">
+                                                <field name="NAME">Arial</field>
+                                              </block>
+                                            </value>
+                                            <value name="size">
+                                              <block type="math_number">
+                                                <field name="NUM">6</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="bookcover_go">
+                                                <value name="x">
+                                                  <block type="math_arithmetic">
+                                                    <field name="OP">MULTIPLY</field>
+                                                    <value name="A">
+                                                      <block type="bookcover_pageWidth"></block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_number">
+                                                        <field name="NUM">0.6</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="y">
+                                                  <block type="math_arithmetic">
+                                                    <field name="OP">MULTIPLY</field>
+                                                    <value name="A">
+                                                      <block type="bookcover_pageHeight"></block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_number">
+                                                        <field name="NUM">0.3</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="bookcover_direction">
+                                                    <value name="angle">
+                                                      <block type="bookcover_angle">
+                                                        <field name="angle">0</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="bookcover_pen_down">
+                                                        <next>
+                                                          <block type="controls_for">
+                                                            <field name="VAR" variabletype="">i</field>
+                                                            <value name="FROM">
+                                                              <block type="math_number">
+                                                                <field name="NUM">1</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="TO">
+                                                              <block type="math_number">
+                                                                <field name="NUM">9</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="BY">
+                                                              <block type="math_number">
+                                                                <field name="NUM">1</field>
+                                                              </block>
+                                                            </value>
+                                                            <statement name="DO">
+                                                              <block type="bookcover_stroke">
+                                                                <value name="COLOUR">
+                                                                  <block type="bookcover_rotate_h">
+                                                                    <value name="colour">
+                                                                      <block type="bookcover_colour">
+                                                                        <field name="COLOUR">#3333ff</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="angle">
+                                                                      <block type="math_arithmetic">
+                                                                        <field name="OP">MULTIPLY</field>
+                                                                        <value name="A">
+                                                                          <block type="bookcover_angle">
+                                                                            <field name="angle">40</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <block type="variables_get">
+                                                                            <field name="VAR" variabletype="">i</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="bookcover_forward">
+                                                                    <value name="len">
+                                                                      <block type="math_number">
+                                                                        <field name="NUM">70</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="bookcover_turn">
+                                                                        <value name="angle">
+                                                                          <block type="math_number">
+                                                                            <field name="NUM">160</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </statement>
+                                                            <next>
+                                                              <block type="bookcover_say">
+                                                                <value name="str">
+                                                                  <block type="text">
+                                                                    <field name="TEXT">Kagawa University</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="bookcover_pen_up">
+                                                                    <next>
+                                                                      <block type="bookcover_go">
+                                                                        <value name="x">
+                                                                          <block type="math_arithmetic">
+                                                                            <field name="OP">MULTIPLY</field>
+                                                                            <value name="A">
+                                                                              <block type="bookcover_pageWidth"></block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="math_number">
+                                                                                <field name="NUM">0.65</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="y">
+                                                                          <block type="math_arithmetic">
+                                                                            <field name="OP">MULTIPLY</field>
+                                                                            <value name="A">
+                                                                              <block type="bookcover_pageHeight"></block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="math_number">
+                                                                                <field name="NUM">0.55</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="bookcover_direction">
+                                                                            <value name="angle">
+                                                                              <block type="bookcover_angle">
+                                                                                <field name="angle">0</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="bookcover_pen_down">
+                                                                                <next>
+                                                                                  <block type="controls_for">
+                                                                                    <field name="VAR" variabletype="">i</field>
+                                                                                    <value name="FROM">
+                                                                                      <block type="math_number">
+                                                                                        <field name="NUM">1</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="TO">
+                                                                                      <block type="math_number">
+                                                                                        <field name="NUM">50</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="BY">
+                                                                                      <block type="math_number">
+                                                                                        <field name="NUM">1</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <statement name="DO">
+                                                                                      <block type="bookcover_stroke">
+                                                                                        <value name="COLOUR">
+                                                                                          <block type="bookcover_rotate_h">
+                                                                                            <value name="colour">
+                                                                                              <block type="bookcover_colour">
+                                                                                                <field name="COLOUR">#ff0000</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="angle">
+                                                                                              <block type="math_arithmetic">
+                                                                                                <field name="OP">MULTIPLY</field>
+                                                                                                <value name="A">
+                                                                                                  <block type="bookcover_angle">
+                                                                                                    <field name="angle">7</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="B">
+                                                                                                  <block type="variables_get">
+                                                                                                    <field name="VAR" variabletype="">i</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="bookcover_forward">
+                                                                                            <value name="len">
+                                                                                              <block type="math_number">
+                                                                                                <field name="NUM">50</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <next>
+                                                                                              <block type="bookcover_turn">
+                                                                                                <value name="angle">
+                                                                                                  <block type="math_number">
+                                                                                                    <field name="NUM">88</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                    <next>
+                                                                                      <block type="bookcover_say">
+                                                                                        <value name="str">
+                                                                                          <block type="text">
+                                                                                            <field name="TEXT">Open Campus</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="bookcover_pen_up">
+                                                                                            <next>
+                                                                                              <block type="bookcover_go">
+                                                                                                <value name="x">
+                                                                                                  <block type="math_arithmetic">
+                                                                                                    <field name="OP">MULTIPLY</field>
+                                                                                                    <value name="A">
+                                                                                                      <block type="bookcover_pageWidth"></block>
+                                                                                                    </value>
+                                                                                                    <value name="B">
+                                                                                                      <block type="math_number">
+                                                                                                        <field name="NUM">0.175</field>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="y">
+                                                                                                  <block type="math_arithmetic">
+                                                                                                    <field name="OP">MULTIPLY</field>
+                                                                                                    <value name="A">
+                                                                                                      <block type="bookcover_pageHeight"></block>
+                                                                                                    </value>
+                                                                                                    <value name="B">
+                                                                                                      <block type="math_number">
+                                                                                                        <field name="NUM">0.29</field>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <next>
+                                                                                                  <block type="bookcover_direction">
+                                                                                                    <value name="angle">
+                                                                                                      <block type="bookcover_angle">
+                                                                                                        <field name="angle">0</field>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                    <next>
+                                                                                                      <block type="bookcover_pen_down">
+                                                                                                        <next>
+                                                                                                          <block type="controls_for">
+                                                                                                            <field name="VAR" variabletype="">i</field>
+                                                                                                            <value name="FROM">
+                                                                                                              <block type="math_number">
+                                                                                                                <field name="NUM">1</field>
+                                                                                                              </block>
+                                                                                                            </value>
+                                                                                                            <value name="TO">
+                                                                                                              <block type="math_number">
+                                                                                                                <field name="NUM">70</field>
+                                                                                                              </block>
+                                                                                                            </value>
+                                                                                                            <value name="BY">
+                                                                                                              <block type="math_number">
+                                                                                                                <field name="NUM">1</field>
+                                                                                                              </block>
+                                                                                                            </value>
+                                                                                                            <statement name="DO">
+                                                                                                              <block type="bookcover_stroke">
+                                                                                                                <value name="COLOUR">
+                                                                                                                  <block type="bookcover_rotate_h">
+                                                                                                                    <value name="colour">
+                                                                                                                      <block type="bookcover_colour">
+                                                                                                                        <field name="COLOUR">#ff0000</field>
+                                                                                                                      </block>
+                                                                                                                    </value>
+                                                                                                                    <value name="angle">
+                                                                                                                      <block type="math_arithmetic">
+                                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                                        <value name="A">
+                                                                                                                          <block type="bookcover_angle">
+                                                                                                                            <field name="angle">137.5</field>
+                                                                                                                          </block>
+                                                                                                                        </value>
+                                                                                                                        <value name="B">
+                                                                                                                          <block type="variables_get">
+                                                                                                                            <field name="VAR" variabletype="">i</field>
+                                                                                                                          </block>
+                                                                                                                        </value>
+                                                                                                                      </block>
+                                                                                                                    </value>
+                                                                                                                  </block>
+                                                                                                                </value>
+                                                                                                                <next>
+                                                                                                                  <block type="bookcover_forward">
+                                                                                                                    <value name="len">
+                                                                                                                      <block type="math_number">
+                                                                                                                        <field name="NUM">70</field>
+                                                                                                                      </block>
+                                                                                                                    </value>
+                                                                                                                    <next>
+                                                                                                                      <block type="bookcover_turn">
+                                                                                                                        <value name="angle">
+                                                                                                                          <block type="math_number">
+                                                                                                                            <field name="NUM">137.5</field>
+                                                                                                                          </block>
+                                                                                                                        </value>
+                                                                                                                      </block>
+                                                                                                                    </next>
+                                                                                                                  </block>
+                                                                                                                </next>
+                                                                                                              </block>
+                                                                                                            </statement>
+                                                                                                            <next>
+                                                                                                              <block type="bookcover_say">
+                                                                                                                <value name="str">
+                                                                                                                  <block type="text">
+                                                                                                                    <field name="TEXT">YYYY/MM/DD</field>
+                                                                                                                  </block>
+                                                                                                                </value>
+                                                                                                              </block>
+                                                                                                            </next>
+                                                                                                          </block>
+                                                                                                        </next>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

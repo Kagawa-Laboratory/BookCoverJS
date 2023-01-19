@@ -1184,8 +1184,9 @@ window.addEventListener('load', () => {
     });
 
     function printSVG() {
-      const wid = draw.getAttribute("width");
-      const hei = draw.getAttribute("height");
+      console.log(draw);  
+      const wid = draw.width;
+      const hei = draw.height;
       draw.width  = `${BookCover.pageWidth()}mm`;
       draw.height = `${BookCover.pageHeight()}mm`;
       const svgText = draw.svg();

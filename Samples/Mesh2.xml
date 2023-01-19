@@ -1,72 +1,72 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables>
-    <variable type="" id="06o++d%4*Zg2U4*5V@oz">左端</variable>
-    <variable type="" id="+;xu:SY3vvao3~9V(`D3">上端</variable>
-    <variable type="" id="#-(H^j8~xp$Fy;X9aJCb">絵の縦幅</variable>
-    <variable type="" id="$agLQ%qn+S^xyzLerwg-">絵の横幅</variable>
-    <variable type="" id="7ERNgwC~_`$0uS[,4Uv}">右端</variable>
-    <variable type="" id="s1Lb69ZNe./xX`Rx_7;`">下端</variable>
-    <variable type="" id="s$}MuoF.o=*YSv3~mHCw">線の本数</variable>
-    <variable type="" id="c)]OxzDM=1_R%ZQ@1WH-">縦の間隔</variable>
-    <variable type="" id="lCLX?[!8Y^_e4.%Q|oO#">横の間隔</variable>
-    <variable type="" id="EnTi`;x0`IlL0o[q)S0P">i</variable>
-    <variable type="" id="LebuzO3qVp$q4nAh.Mn[">x</variable>
-    <variable type="" id="v7OYF=N:B[q}`8k89uD^">y</variable>
+    <variable type="">左端</variable>
+    <variable type="">上端</variable>
+    <variable type="">絵の縦幅</variable>
+    <variable type="">絵の横幅</variable>
+    <variable type="">右端</variable>
+    <variable type="">下端</variable>
+    <variable type="">線の本数</variable>
+    <variable type="">縦の間隔</variable>
+    <variable type="">横の間隔</variable>
+    <variable type="">i</variable>
+    <variable type="">x</variable>
+    <variable type="">y</variable>
   </variables>
-  <block type="bookcover_frame" id="npmhTwD-+$B-;V2*RK,X">
+  <block type="bookcover_frame" x="10" y="10">
     <field name="frame">FALSE</field>
     <statement name="statements">
-      <block type="bookcover_rulers" id="G;i(h*[Q_OS3E5Zr*l1u">
+      <block type="bookcover_rulers">
         <field name="SIZE">BUNKO</field>
         <next>
-          <block type="bookcover_stroke_opacity" id="HYA6E|liJ*[C7HN8nO%m">
+          <block type="bookcover_stroke_opacity">
             <value name="opacity">
-              <block type="math_number" id="Z;q5bNAgnJ{2JSdxRvTY">
+              <block type="math_number">
                 <field name="NUM">0.5</field>
               </block>
             </value>
             <next>
-              <block type="bookcover_stroke_weight" id="+oxH=uk3GzJd,z}hfK!l">
+              <block type="bookcover_stroke_weight">
                 <value name="width">
-                  <block type="math_number" id=",x%WeZ@4XJ[k}NOp/E;K">
+                  <block type="math_number">
                     <field name="NUM">0.75</field>
                   </block>
                 </value>
                 <next>
-                  <block type="variables_set" id="#Qd-VvrU8`--8bXOOAFD">
-                    <field name="VAR" id="06o++d%4*Zg2U4*5V@oz" variabletype="">左端</field>
+                  <block type="variables_set">
+                    <field name="VAR" variabletype="">左端</field>
                     <value name="VALUE">
-                      <block type="math_number" id=".]tjMF*=L,#U10xGGEVy">
+                      <block type="math_number">
                         <field name="NUM">20</field>
                       </block>
                     </value>
                     <next>
-                      <block type="variables_set" id="SonS+:tU9$J~3lT7KCW9">
-                        <field name="VAR" id="+;xu:SY3vvao3~9V(`D3" variabletype="">上端</field>
+                      <block type="variables_set">
+                        <field name="VAR" variabletype="">上端</field>
                         <value name="VALUE">
-                          <block type="math_number" id="S3fz9!/vtwRQWmAG=4MA">
+                          <block type="math_number">
                             <field name="NUM">30</field>
                           </block>
                         </value>
                         <next>
-                          <block type="variables_set" id="(*W+D$z/82Fcc_p;Ak#X">
-                            <field name="VAR" id="#-(H^j8~xp$Fy;X9aJCb" variabletype="">絵の縦幅</field>
+                          <block type="variables_set">
+                            <field name="VAR" variabletype="">絵の縦幅</field>
                             <value name="VALUE">
-                              <block type="math_arithmetic" id="SgQ}x277M-znB,=CrJtV">
+                              <block type="math_arithmetic">
                                 <field name="OP">MINUS</field>
                                 <value name="A">
-                                  <block type="bookcover_pageHeight" id="S,_u@XD0K?u9-7I/C4f;"></block>
+                                  <block type="bookcover_pageHeight"></block>
                                 </value>
                                 <value name="B">
-                                  <block type="math_arithmetic" id="FNdw~6%J?Xjhszg9LBfJ">
+                                  <block type="math_arithmetic">
                                     <field name="OP">MULTIPLY</field>
                                     <value name="A">
-                                      <block type="variables_get" id="ivnX14JnRv*+D5End0;}">
-                                        <field name="VAR" id="+;xu:SY3vvao3~9V(`D3" variabletype="">上端</field>
+                                      <block type="variables_get">
+                                        <field name="VAR" variabletype="">上端</field>
                                       </block>
                                     </value>
                                     <value name="B">
-                                      <block type="math_number" id="ATM}IqER5`p,w56?lEeK">
+                                      <block type="math_number">
                                         <field name="NUM">2</field>
                                       </block>
                                     </value>
@@ -75,24 +75,24 @@
                               </block>
                             </value>
                             <next>
-                              <block type="variables_set" id="2*YCs`HG/I:^41s{ak$E">
-                                <field name="VAR" id="$agLQ%qn+S^xyzLerwg-" variabletype="">絵の横幅</field>
+                              <block type="variables_set">
+                                <field name="VAR" variabletype="">絵の横幅</field>
                                 <value name="VALUE">
-                                  <block type="math_arithmetic" id="E_qjdSj,P$4`GXvjD=$^">
+                                  <block type="math_arithmetic">
                                     <field name="OP">MINUS</field>
                                     <value name="A">
-                                      <block type="bookcover_pageWidth" id="3G+a3p@p;%e?7Daf/KMY"></block>
+                                      <block type="bookcover_pageWidth"></block>
                                     </value>
                                     <value name="B">
-                                      <block type="math_arithmetic" id="FXbwdldac:B!8|P}2EH_">
+                                      <block type="math_arithmetic">
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
-                                          <block type="variables_get" id=")15O!+:.N!`=8i^5L@jG">
-                                            <field name="VAR" id="06o++d%4*Zg2U4*5V@oz" variabletype="">左端</field>
+                                          <block type="variables_get">
+                                            <field name="VAR" variabletype="">左端</field>
                                           </block>
                                         </value>
                                         <value name="B">
-                                          <block type="math_number" id=".HgbIBkH7j[J:Sa9c5R%">
+                                          <block type="math_number">
                                             <field name="NUM">2</field>
                                           </block>
                                         </value>
@@ -101,123 +101,123 @@
                                   </block>
                                 </value>
                                 <next>
-                                  <block type="variables_set" id="W4.[tI@Fgp=dwz[$)w6$">
-                                    <field name="VAR" id="7ERNgwC~_`$0uS[,4Uv}" variabletype="">右端</field>
+                                  <block type="variables_set">
+                                    <field name="VAR" variabletype="">右端</field>
                                     <value name="VALUE">
-                                      <block type="math_arithmetic" id="hH)GU8z`k/YyhMa|E+Lf">
+                                      <block type="math_arithmetic">
                                         <field name="OP">ADD</field>
                                         <value name="A">
-                                          <block type="variables_get" id="x|TqPWgq`r9Beg{XhB`_">
-                                            <field name="VAR" id="06o++d%4*Zg2U4*5V@oz" variabletype="">左端</field>
+                                          <block type="variables_get">
+                                            <field name="VAR" variabletype="">左端</field>
                                           </block>
                                         </value>
                                         <value name="B">
-                                          <block type="variables_get" id="DR,Hd)x?3AlT6fYY2:Y{">
-                                            <field name="VAR" id="$agLQ%qn+S^xyzLerwg-" variabletype="">絵の横幅</field>
+                                          <block type="variables_get">
+                                            <field name="VAR" variabletype="">絵の横幅</field>
                                           </block>
                                         </value>
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="variables_set" id="|a#RkdquHxV~9krv%SIe">
-                                        <field name="VAR" id="s1Lb69ZNe./xX`Rx_7;`" variabletype="">下端</field>
+                                      <block type="variables_set">
+                                        <field name="VAR" variabletype="">下端</field>
                                         <value name="VALUE">
-                                          <block type="math_arithmetic" id="mvTUCxgD^:%(T3MNq!?R">
+                                          <block type="math_arithmetic">
                                             <field name="OP">ADD</field>
                                             <value name="A">
-                                              <block type="variables_get" id="a;M1aHwxWwv%I/8,s_nc">
-                                                <field name="VAR" id="+;xu:SY3vvao3~9V(`D3" variabletype="">上端</field>
+                                              <block type="variables_get">
+                                                <field name="VAR" variabletype="">上端</field>
                                               </block>
                                             </value>
                                             <value name="B">
-                                              <block type="variables_get" id="G%lk#;c|ZVDn_oNW$ANB">
-                                                <field name="VAR" id="#-(H^j8~xp$Fy;X9aJCb" variabletype="">絵の縦幅</field>
+                                              <block type="variables_get">
+                                                <field name="VAR" variabletype="">絵の縦幅</field>
                                               </block>
                                             </value>
                                           </block>
                                         </value>
                                         <next>
-                                          <block type="variables_set" id="@.h3^I]v|N/ucuzJ)`4r">
-                                            <field name="VAR" id="s$}MuoF.o=*YSv3~mHCw" variabletype="">線の本数</field>
+                                          <block type="variables_set">
+                                            <field name="VAR" variabletype="">線の本数</field>
                                             <value name="VALUE">
-                                              <block type="math_number" id="WDE5Oh]K9^LsE67KhTut">
-                                                <field name="NUM">60</field>
+                                              <block type="math_number">
+                                                <field name="NUM">30</field>
                                               </block>
                                             </value>
                                             <next>
-                                              <block type="variables_set" id="93Hhwjs2,5M0my$c-i8W">
-                                                <field name="VAR" id="c)]OxzDM=1_R%ZQ@1WH-" variabletype="">縦の間隔</field>
+                                              <block type="variables_set">
+                                                <field name="VAR" variabletype="">縦の間隔</field>
                                                 <value name="VALUE">
-                                                  <block type="math_arithmetic" id="^ivXn|.fT#gEzQm1;[q_">
+                                                  <block type="math_arithmetic">
                                                     <field name="OP">DIVIDE</field>
                                                     <value name="A">
-                                                      <block type="variables_get" id="Ej%L}E^|9Z=HMspoNlCh">
-                                                        <field name="VAR" id="#-(H^j8~xp$Fy;X9aJCb" variabletype="">絵の縦幅</field>
+                                                      <block type="variables_get">
+                                                        <field name="VAR" variabletype="">絵の縦幅</field>
                                                       </block>
                                                     </value>
                                                     <value name="B">
-                                                      <block type="variables_get" id="G4P-0tAv#K=s~dWDRbJl">
-                                                        <field name="VAR" id="s$}MuoF.o=*YSv3~mHCw" variabletype="">線の本数</field>
+                                                      <block type="variables_get">
+                                                        <field name="VAR" variabletype="">線の本数</field>
                                                       </block>
                                                     </value>
                                                   </block>
                                                 </value>
                                                 <next>
-                                                  <block type="variables_set" id="8NRBC4PSftexaFnQkX+M">
-                                                    <field name="VAR" id="lCLX?[!8Y^_e4.%Q|oO#" variabletype="">横の間隔</field>
+                                                  <block type="variables_set">
+                                                    <field name="VAR" variabletype="">横の間隔</field>
                                                     <value name="VALUE">
-                                                      <block type="math_arithmetic" id="^{2GHi,q,9axY`~1pGx6">
+                                                      <block type="math_arithmetic">
                                                         <field name="OP">DIVIDE</field>
                                                         <value name="A">
-                                                          <block type="variables_get" id="d}~SLb#-Ad^1m}|mlRZE">
-                                                            <field name="VAR" id="$agLQ%qn+S^xyzLerwg-" variabletype="">絵の横幅</field>
+                                                          <block type="variables_get">
+                                                            <field name="VAR" variabletype="">絵の横幅</field>
                                                           </block>
                                                         </value>
                                                         <value name="B">
-                                                          <block type="variables_get" id="^u+o,Z/JXb^vENQ`gPR`">
-                                                            <field name="VAR" id="s$}MuoF.o=*YSv3~mHCw" variabletype="">線の本数</field>
+                                                          <block type="variables_get">
+                                                            <field name="VAR" variabletype="">線の本数</field>
                                                           </block>
                                                         </value>
                                                       </block>
                                                     </value>
                                                     <next>
-                                                      <block type="controls_for" id="Kh;u[k5uhpry/+E4qcD+">
-                                                        <field name="VAR" id="EnTi`;x0`IlL0o[q)S0P" variabletype="">i</field>
+                                                      <block type="controls_for">
+                                                        <field name="VAR" variabletype="">i</field>
                                                         <value name="FROM">
-                                                          <block type="math_number" id="I#en{.gFfypWw]CabTmO">
+                                                          <block type="math_number">
                                                             <field name="NUM">0</field>
                                                           </block>
                                                         </value>
                                                         <value name="TO">
-                                                          <block type="variables_get" id="F#I7`wpq?T+h;^I7aZBw">
-                                                            <field name="VAR" id="s$}MuoF.o=*YSv3~mHCw" variabletype="">線の本数</field>
+                                                          <block type="variables_get">
+                                                            <field name="VAR" variabletype="">線の本数</field>
                                                           </block>
                                                         </value>
                                                         <value name="BY">
-                                                          <block type="math_number" id="bFy|2:)9kTjVm`QJ/=W|">
+                                                          <block type="math_number">
                                                             <field name="NUM">1</field>
                                                           </block>
                                                         </value>
                                                         <statement name="DO">
-                                                          <block type="bookcover_stroke" id="$v#X+l:plQygubu$@P!u">
+                                                          <block type="bookcover_stroke">
                                                             <value name="COLOUR">
-                                                              <block type="bookcover_rotate_h" id="l;Qg9bTj0@QxDsdvl=@O">
+                                                              <block type="bookcover_rotate_h">
                                                                 <value name="colour">
-                                                                  <block type="bookcover_colour" id="U#E%)ufwYnW(7C;;YtX:">
+                                                                  <block type="bookcover_colour">
                                                                     <field name="COLOUR">#ff0000</field>
                                                                   </block>
                                                                 </value>
                                                                 <value name="angle">
-                                                                  <block type="math_arithmetic" id=";UN(/e|Ek.gUe?x^4qY4">
+                                                                  <block type="math_arithmetic">
                                                                     <field name="OP">MULTIPLY</field>
                                                                     <value name="A">
-                                                                      <block type="variables_get" id="S9:ND~1%kGo.pMT3(-(@">
-                                                                        <field name="VAR" id="EnTi`;x0`IlL0o[q)S0P" variabletype="">i</field>
+                                                                      <block type="variables_get">
+                                                                        <field name="VAR" variabletype="">i</field>
                                                                       </block>
                                                                     </value>
                                                                     <value name="B">
-                                                                      <block type="math_number" id="78N[YUF(]WtMkxRv7(Dd">
-                                                                        <field name="NUM">6</field>
+                                                                      <block type="math_number">
+                                                                        <field name="NUM">12</field>
                                                                       </block>
                                                                     </value>
                                                                   </block>
@@ -225,225 +225,225 @@
                                                               </block>
                                                             </value>
                                                             <next>
-                                                              <block type="variables_set" id="1x{QJ)oaFLm[atcE(xo)">
-                                                                <field name="VAR" id="LebuzO3qVp$q4nAh.Mn[" variabletype="">x</field>
+                                                              <block type="variables_set">
+                                                                <field name="VAR" variabletype="">x</field>
                                                                 <value name="VALUE">
-                                                                  <block type="math_arithmetic" id="C-I6yPa|BLb16:r#+eq(">
+                                                                  <block type="math_arithmetic">
                                                                     <field name="OP">DIVIDE</field>
                                                                     <value name="A">
-                                                                      <block type="math_arithmetic" id="ZbuUr7Az9ch^H8Jj[!me">
+                                                                      <block type="math_arithmetic">
                                                                         <field name="OP">MULTIPLY</field>
                                                                         <value name="A">
-                                                                          <block type="variables_get" id="0,/PIp{@7W(k47Ul@O-Z">
-                                                                            <field name="VAR" id="lCLX?[!8Y^_e4.%Q|oO#" variabletype="">横の間隔</field>
+                                                                          <block type="variables_get">
+                                                                            <field name="VAR" variabletype="">横の間隔</field>
                                                                           </block>
                                                                         </value>
                                                                         <value name="B">
-                                                                          <block type="variables_get" id="H:P8MB8TY1E?Kqe:m`_T">
-                                                                            <field name="VAR" id="EnTi`;x0`IlL0o[q)S0P" variabletype="">i</field>
+                                                                          <block type="variables_get">
+                                                                            <field name="VAR" variabletype="">i</field>
                                                                           </block>
                                                                         </value>
                                                                       </block>
                                                                     </value>
                                                                     <value name="B">
-                                                                      <block type="math_number" id=",8u:)kW3$+YEE(tPLj|`">
+                                                                      <block type="math_number">
                                                                         <field name="NUM">1.5</field>
                                                                       </block>
                                                                     </value>
                                                                   </block>
                                                                 </value>
                                                                 <next>
-                                                                  <block type="variables_set" id="6(a,E5F9xfA]^u|wa.{*">
-                                                                    <field name="VAR" id="v7OYF=N:B[q}`8k89uD^" variabletype="">y</field>
+                                                                  <block type="variables_set">
+                                                                    <field name="VAR" variabletype="">y</field>
                                                                     <value name="VALUE">
-                                                                      <block type="math_arithmetic" id="f_Wr$`dJ2j4K1}(_}-4t">
+                                                                      <block type="math_arithmetic">
                                                                         <field name="OP">DIVIDE</field>
                                                                         <value name="A">
-                                                                          <block type="math_arithmetic" id="r6ohCI0r,=IZJ8`BTSoj">
+                                                                          <block type="math_arithmetic">
                                                                             <field name="OP">MULTIPLY</field>
                                                                             <value name="A">
-                                                                              <block type="variables_get" id="a?@Ba^hLopf84K|)]827">
-                                                                                <field name="VAR" id="c)]OxzDM=1_R%ZQ@1WH-" variabletype="">縦の間隔</field>
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR" variabletype="">縦の間隔</field>
                                                                               </block>
                                                                             </value>
                                                                             <value name="B">
-                                                                              <block type="variables_get" id="6/Enp+g=dvPCCwZ1Ms8H">
-                                                                                <field name="VAR" id="EnTi`;x0`IlL0o[q)S0P" variabletype="">i</field>
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR" variabletype="">i</field>
                                                                               </block>
                                                                             </value>
                                                                           </block>
                                                                         </value>
                                                                         <value name="B">
-                                                                          <block type="math_number" id="evR1t3maNcsj+iRRVbpt">
+                                                                          <block type="math_number">
                                                                             <field name="NUM">1.5</field>
                                                                           </block>
                                                                         </value>
                                                                       </block>
                                                                     </value>
                                                                     <next>
-                                                                      <block type="bookcover_line" id=",zWn?#jD]|xdd7#eJ9f#">
+                                                                      <block type="bookcover_line">
                                                                         <value name="x1">
-                                                                          <block type="variables_get" id="c2@mU6?-{WfjmlykOEBT">
-                                                                            <field name="VAR" id="06o++d%4*Zg2U4*5V@oz" variabletype="">左端</field>
+                                                                          <block type="variables_get">
+                                                                            <field name="VAR" variabletype="">左端</field>
                                                                           </block>
                                                                         </value>
                                                                         <value name="y1">
-                                                                          <block type="math_arithmetic" id="W4+bAIdJO%~Vc$pd.Eff">
+                                                                          <block type="math_arithmetic">
                                                                             <field name="OP">MINUS</field>
                                                                             <value name="A">
-                                                                              <block type="variables_get" id="*r$^P,D;NZE]Kb_M`6[x">
-                                                                                <field name="VAR" id="s1Lb69ZNe./xX`Rx_7;`" variabletype="">下端</field>
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR" variabletype="">下端</field>
                                                                               </block>
                                                                             </value>
                                                                             <value name="B">
-                                                                              <block type="variables_get" id="Bgq)O0@~JH5BsKZ+3a+f">
-                                                                                <field name="VAR" id="v7OYF=N:B[q}`8k89uD^" variabletype="">y</field>
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR" variabletype="">y</field>
                                                                               </block>
                                                                             </value>
                                                                           </block>
                                                                         </value>
                                                                         <value name="x2">
-                                                                          <block type="math_arithmetic" id="773zibo%`E+aXgv5Ugg2">
+                                                                          <block type="math_arithmetic">
                                                                             <field name="OP">MINUS</field>
                                                                             <value name="A">
-                                                                              <block type="variables_get" id=",U:%UrRJOW8^=eIvHR|O">
-                                                                                <field name="VAR" id="7ERNgwC~_`$0uS[,4Uv}" variabletype="">右端</field>
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR" variabletype="">右端</field>
                                                                               </block>
                                                                             </value>
                                                                             <value name="B">
-                                                                              <block type="variables_get" id="kZd=u|9/pI6!0(.3-ACs">
-                                                                                <field name="VAR" id="LebuzO3qVp$q4nAh.Mn[" variabletype="">x</field>
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR" variabletype="">x</field>
                                                                               </block>
                                                                             </value>
                                                                           </block>
                                                                         </value>
                                                                         <value name="y2">
-                                                                          <block type="variables_get" id="5x!vM2)_h(tx|u3itJNh">
-                                                                            <field name="VAR" id="s1Lb69ZNe./xX`Rx_7;`" variabletype="">下端</field>
+                                                                          <block type="variables_get">
+                                                                            <field name="VAR" variabletype="">下端</field>
                                                                           </block>
                                                                         </value>
                                                                         <next>
-                                                                          <block type="bookcover_line" id="9U7693SL;,44yz%|/g?q">
+                                                                          <block type="bookcover_line">
                                                                             <value name="x1">
-                                                                              <block type="variables_get" id="f7oriqgkRp]b7;i0lpo#">
-                                                                                <field name="VAR" id="06o++d%4*Zg2U4*5V@oz" variabletype="">左端</field>
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR" variabletype="">左端</field>
                                                                               </block>
                                                                             </value>
                                                                             <value name="y1">
-                                                                              <block type="math_arithmetic" id="w.@C+N(D-JRP9QM+%:Cz">
+                                                                              <block type="math_arithmetic">
                                                                                 <field name="OP">MINUS</field>
                                                                                 <value name="A">
-                                                                                  <block type="variables_get" id="L1fd!A?qrFp6pSI?!nKx">
-                                                                                    <field name="VAR" id="s1Lb69ZNe./xX`Rx_7;`" variabletype="">下端</field>
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR" variabletype="">下端</field>
                                                                                   </block>
                                                                                 </value>
                                                                                 <value name="B">
-                                                                                  <block type="variables_get" id="!yS[m*ty|u{qJi7%E/,;">
-                                                                                    <field name="VAR" id="v7OYF=N:B[q}`8k89uD^" variabletype="">y</field>
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR" variabletype="">y</field>
                                                                                   </block>
                                                                                 </value>
                                                                               </block>
                                                                             </value>
                                                                             <value name="x2">
-                                                                              <block type="math_arithmetic" id="=kT5Xc0mO[^*)_oIe4$C">
+                                                                              <block type="math_arithmetic">
                                                                                 <field name="OP">ADD</field>
                                                                                 <value name="A">
-                                                                                  <block type="variables_get" id="e,8:ID:*Qt!9cbQ`,FY;">
-                                                                                    <field name="VAR" id="06o++d%4*Zg2U4*5V@oz" variabletype="">左端</field>
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR" variabletype="">左端</field>
                                                                                   </block>
                                                                                 </value>
                                                                                 <value name="B">
-                                                                                  <block type="variables_get" id="$e@[9[%8V^[3u@)f#@zN">
-                                                                                    <field name="VAR" id="LebuzO3qVp$q4nAh.Mn[" variabletype="">x</field>
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR" variabletype="">x</field>
                                                                                   </block>
                                                                                 </value>
                                                                               </block>
                                                                             </value>
                                                                             <value name="y2">
-                                                                              <block type="variables_get" id="6)5v5D#iGu!=q67x{%-b">
-                                                                                <field name="VAR" id="+;xu:SY3vvao3~9V(`D3" variabletype="">上端</field>
+                                                                              <block type="variables_get">
+                                                                                <field name="VAR" variabletype="">上端</field>
                                                                               </block>
                                                                             </value>
                                                                             <next>
-                                                                              <block type="bookcover_line" id="4r{87x:EI$6i-3MEK%h:">
+                                                                              <block type="bookcover_line">
                                                                                 <value name="x1">
-                                                                                  <block type="math_arithmetic" id="F:gm`1+H,?p5oYlxkeST">
+                                                                                  <block type="math_arithmetic">
                                                                                     <field name="OP">MINUS</field>
                                                                                     <value name="A">
-                                                                                      <block type="variables_get" id="EG_e}Jy~#H*YA3u/:hcb">
-                                                                                        <field name="VAR" id="7ERNgwC~_`$0uS[,4Uv}" variabletype="">右端</field>
+                                                                                      <block type="variables_get">
+                                                                                        <field name="VAR" variabletype="">右端</field>
                                                                                       </block>
                                                                                     </value>
                                                                                     <value name="B">
-                                                                                      <block type="variables_get" id="{}[|O[`Uh)S(u}nb`ECp">
-                                                                                        <field name="VAR" id="LebuzO3qVp$q4nAh.Mn[" variabletype="">x</field>
+                                                                                      <block type="variables_get">
+                                                                                        <field name="VAR" variabletype="">x</field>
                                                                                       </block>
                                                                                     </value>
                                                                                   </block>
                                                                                 </value>
                                                                                 <value name="y1">
-                                                                                  <block type="variables_get" id="w#=Inb*qoaSE$._h970P">
-                                                                                    <field name="VAR" id="s1Lb69ZNe./xX`Rx_7;`" variabletype="">下端</field>
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR" variabletype="">下端</field>
                                                                                   </block>
                                                                                 </value>
                                                                                 <value name="x2">
-                                                                                  <block type="variables_get" id="+9%P2[qv#4Pbp_wn|Zj=">
-                                                                                    <field name="VAR" id="7ERNgwC~_`$0uS[,4Uv}" variabletype="">右端</field>
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR" variabletype="">右端</field>
                                                                                   </block>
                                                                                 </value>
                                                                                 <value name="y2">
-                                                                                  <block type="math_arithmetic" id="6bZ!=ci;W;SM[sHNB;Hy">
+                                                                                  <block type="math_arithmetic">
                                                                                     <field name="OP">ADD</field>
                                                                                     <value name="A">
-                                                                                      <block type="variables_get" id=":/7;WIlB)bEZbk:lk$$k">
-                                                                                        <field name="VAR" id="+;xu:SY3vvao3~9V(`D3" variabletype="">上端</field>
+                                                                                      <block type="variables_get">
+                                                                                        <field name="VAR" variabletype="">上端</field>
                                                                                       </block>
                                                                                     </value>
                                                                                     <value name="B">
-                                                                                      <block type="variables_get" id="ZqHZ|w~[,ME5uQ;=x]Xs">
-                                                                                        <field name="VAR" id="v7OYF=N:B[q}`8k89uD^" variabletype="">y</field>
+                                                                                      <block type="variables_get">
+                                                                                        <field name="VAR" variabletype="">y</field>
                                                                                       </block>
                                                                                     </value>
                                                                                   </block>
                                                                                 </value>
                                                                                 <next>
-                                                                                  <block type="bookcover_line" id="aYG0Coczt0~PvNMH6#4t">
+                                                                                  <block type="bookcover_line">
                                                                                     <value name="x1">
-                                                                                      <block type="math_arithmetic" id="/vFhhX(vH8NL.4$[p68/">
+                                                                                      <block type="math_arithmetic">
                                                                                         <field name="OP">ADD</field>
                                                                                         <value name="A">
-                                                                                          <block type="variables_get" id="zK#dx-zIe*Yi9Z-IhT8T">
-                                                                                            <field name="VAR" id="06o++d%4*Zg2U4*5V@oz" variabletype="">左端</field>
+                                                                                          <block type="variables_get">
+                                                                                            <field name="VAR" variabletype="">左端</field>
                                                                                           </block>
                                                                                         </value>
                                                                                         <value name="B">
-                                                                                          <block type="variables_get" id="T2{DB4a=k**9HFxK9D~K">
-                                                                                            <field name="VAR" id="LebuzO3qVp$q4nAh.Mn[" variabletype="">x</field>
+                                                                                          <block type="variables_get">
+                                                                                            <field name="VAR" variabletype="">x</field>
                                                                                           </block>
                                                                                         </value>
                                                                                       </block>
                                                                                     </value>
                                                                                     <value name="y1">
-                                                                                      <block type="variables_get" id="#tp5CA@;QHkT0xGe%1Wd">
-                                                                                        <field name="VAR" id="+;xu:SY3vvao3~9V(`D3" variabletype="">上端</field>
+                                                                                      <block type="variables_get">
+                                                                                        <field name="VAR" variabletype="">上端</field>
                                                                                       </block>
                                                                                     </value>
                                                                                     <value name="x2">
-                                                                                      <block type="variables_get" id="8w:z,FbGB=%(;[*IHh{~">
-                                                                                        <field name="VAR" id="7ERNgwC~_`$0uS[,4Uv}" variabletype="">右端</field>
+                                                                                      <block type="variables_get">
+                                                                                        <field name="VAR" variabletype="">右端</field>
                                                                                       </block>
                                                                                     </value>
                                                                                     <value name="y2">
-                                                                                      <block type="math_arithmetic" id="F5z9Wl8D8E]o)clgvrAh">
+                                                                                      <block type="math_arithmetic">
                                                                                         <field name="OP">ADD</field>
                                                                                         <value name="A">
-                                                                                          <block type="variables_get" id="wl+8!EJ+aRLvvhJ1DK2n">
-                                                                                            <field name="VAR" id="+;xu:SY3vvao3~9V(`D3" variabletype="">上端</field>
+                                                                                          <block type="variables_get">
+                                                                                            <field name="VAR" variabletype="">上端</field>
                                                                                           </block>
                                                                                         </value>
                                                                                         <value name="B">
-                                                                                          <block type="variables_get" id="b0t%Kl2l-4[5r_CqhY:6">
-                                                                                            <field name="VAR" id="v7OYF=N:B[q}`8k89uD^" variabletype="">y</field>
+                                                                                          <block type="variables_get">
+                                                                                            <field name="VAR" variabletype="">y</field>
                                                                                           </block>
                                                                                         </value>
                                                                                       </block>
@@ -463,56 +463,56 @@
                                                           </block>
                                                         </statement>
                                                         <next>
-                                                          <block type="bookcover_stroke" id="bL!QW?LUn`ka_F6[9m]}">
+                                                          <block type="bookcover_stroke">
                                                             <value name="COLOUR">
-                                                              <block type="bookcover_none" id="f`/5+g(59by~/PG?i3^y"></block>
+                                                              <block type="bookcover_none"></block>
                                                             </value>
                                                             <next>
-                                                              <block type="bookcover_fill" id="m`w2/|mI}BOtO{Z%?xZ,">
+                                                              <block type="bookcover_fill">
                                                                 <value name="COLOUR">
-                                                                  <block type="bookcover_colour" id="/--qLt7-[!UBg[B;D;03">
+                                                                  <block type="bookcover_colour">
                                                                     <field name="COLOUR">#ff6600</field>
                                                                   </block>
                                                                 </value>
                                                                 <next>
-                                                                  <block type="bookcover_stroke_weight" id="1,aykwnK32iQFT;rTiwc">
+                                                                  <block type="bookcover_stroke_weight">
                                                                     <value name="width">
-                                                                      <block type="math_number" id="8E:W!A_{RklgY[o2a7cG">
+                                                                      <block type="math_number">
                                                                         <field name="NUM">0.5</field>
                                                                       </block>
                                                                     </value>
                                                                     <next>
-                                                                      <block type="bookcover_text_font" id="_se)6*r]~6)BIu0kPu2]">
+                                                                      <block type="bookcover_text_font">
                                                                         <value name="name">
-                                                                          <block type="bookcover_font_name" id="1$vI/PN@Xsy?F![cpQzG">
+                                                                          <block type="bookcover_font_name">
                                                                             <field name="NAME">Times New Roman</field>
                                                                           </block>
                                                                         </value>
                                                                         <value name="size">
-                                                                          <block type="math_number" id="R7dex4vLd}%KJb*LykW6">
+                                                                          <block type="math_number">
                                                                             <field name="NUM">9</field>
                                                                           </block>
                                                                         </value>
                                                                         <next>
-                                                                          <block type="bookcover_text" id="wbe]8iPJTI%yd,1Wz({$">
+                                                                          <block type="bookcover_text">
                                                                             <value name="x">
-                                                                              <block type="math_arithmetic" id="0+YR^{,JuJ$0Ca/t`/tO">
+                                                                              <block type="math_arithmetic">
                                                                                 <field name="OP">ADD</field>
                                                                                 <value name="A">
-                                                                                  <block type="variables_get" id="lvQV@0:)@3iM~1x4TdX`">
-                                                                                    <field name="VAR" id="06o++d%4*Zg2U4*5V@oz" variabletype="">左端</field>
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR" variabletype="">左端</field>
                                                                                   </block>
                                                                                 </value>
                                                                                 <value name="B">
-                                                                                  <block type="math_arithmetic" id="vxL.sS}_2ri)y(PZ9/!C">
+                                                                                  <block type="math_arithmetic">
                                                                                     <field name="OP">DIVIDE</field>
                                                                                     <value name="A">
-                                                                                      <block type="variables_get" id="%4=)9r!{kopO2Ff{K7P*">
-                                                                                        <field name="VAR" id="$agLQ%qn+S^xyzLerwg-" variabletype="">絵の横幅</field>
+                                                                                      <block type="variables_get">
+                                                                                        <field name="VAR" variabletype="">絵の横幅</field>
                                                                                       </block>
                                                                                     </value>
                                                                                     <value name="B">
-                                                                                      <block type="math_number" id=",*y2`9_XscnYe(i78EE:">
+                                                                                      <block type="math_number">
                                                                                         <field name="NUM">8</field>
                                                                                       </block>
                                                                                     </value>
@@ -521,23 +521,23 @@
                                                                               </block>
                                                                             </value>
                                                                             <value name="y">
-                                                                              <block type="math_arithmetic" id="Co@:_(PVCSNi3TLht2j{">
+                                                                              <block type="math_arithmetic">
                                                                                 <field name="OP">ADD</field>
                                                                                 <value name="A">
-                                                                                  <block type="variables_get" id="{1s!MWP3Jfr7^3A4[]or">
-                                                                                    <field name="VAR" id="+;xu:SY3vvao3~9V(`D3" variabletype="">上端</field>
+                                                                                  <block type="variables_get">
+                                                                                    <field name="VAR" variabletype="">上端</field>
                                                                                   </block>
                                                                                 </value>
                                                                                 <value name="B">
-                                                                                  <block type="math_arithmetic" id="X2$tn+7/GDFz!$;y}m7D">
+                                                                                  <block type="math_arithmetic">
                                                                                     <field name="OP">DIVIDE</field>
                                                                                     <value name="A">
-                                                                                      <block type="variables_get" id="BM@OI2K*-@H@FKS._Ign">
-                                                                                        <field name="VAR" id="#-(H^j8~xp$Fy;X9aJCb" variabletype="">絵の縦幅</field>
+                                                                                      <block type="variables_get">
+                                                                                        <field name="VAR" variabletype="">絵の縦幅</field>
                                                                                       </block>
                                                                                     </value>
                                                                                     <value name="B">
-                                                                                      <block type="math_number" id="ZKp#Az#?nh1[,=Xd^5|R">
+                                                                                      <block type="math_number">
                                                                                         <field name="NUM">2.1</field>
                                                                                       </block>
                                                                                     </value>
@@ -546,19 +546,19 @@
                                                                               </block>
                                                                             </value>
                                                                             <value name="str">
-                                                                              <block type="text_join" id="~?lbl/.i}C!)V9]F2Pk_">
+                                                                              <block type="text_join">
                                                                                 <mutation items="3"></mutation>
                                                                                 <value name="ADD0">
-                                                                                  <block type="text" id="kETmj]`.4{ja_|$|@|JI">
+                                                                                  <block type="text">
                                                                                     <field name="TEXT">Kagawa University</field>
                                                                                   </block>
                                                                                 </value>
                                                                                 <value name="ADD1">
-                                                                                  <block type="bookcover_newline" id="fvOKBrRF@f)L~K`V#r%)"></block>
+                                                                                  <block type="bookcover_newline"></block>
                                                                                 </value>
                                                                                 <value name="ADD2">
-                                                                                  <block type="text" id="aI^T-pc9+.K30sun9tCO">
-                                                                                    <field name="TEXT">Open Campus YYYY </field>
+                                                                                  <block type="text">
+                                                                                    <field name="TEXT">Open Campus YYYY/MM/DD</field>
                                                                                   </block>
                                                                                 </value>
                                                                               </block>
