@@ -1,0 +1,522 @@
+:root {
+  --main-color: 245.0; /* hue を黄金角（137.5 度）ずつ加算する。 */
+  --sub-color: 5.0;
+  --shadow-color:  hsl(var(--main-color), 100%, 20%);
+  --main-border-color: hsla(var(--main-color),50%,60%,0.5);
+  --sub-border-color: hsla(var(--sub-color),50%,60%,0.5);
+  --main-bg-color: hsla(var(--main-color),50%,60%,0.25); 
+  --main-fg-color: hsl(var(--main-color), 100%, 33%);
+  --sub-fg-color:  hsl(var(--main-color), 100%, 20%);
+}
+
+/*
+Emoji Symbols Font (c)blockworks - Kenichi Kaneko
+http://emojisymbols.com/
+*/
+@font-face {
+	font-family: "EmojiSymbols";
+	src: url("//guppy.eng.kagawa-u.ac.jp/~kagawa/emojisymbolsfont/font/EmojiSymbols-Regular.woff") format("woff");
+	text-decoration: none;
+	font-style: normal;
+}
+
+.minus2 {
+    font-size: 66%;
+}
+
+.minus1 {
+    font-size: 71%;
+}
+
+blockquote {
+    margin: 16px 20px;
+}
+
+code {
+  font-family: "Courier New", "MS Gothic";
+}
+
+pre {
+  font-family: "Courier New", "MS Gothic";
+}
+
+.CodeMirror * {
+  font-family: "Courier New", "MS Gothic";
+}
+
+.emj {
+	font-family: "EmojiSymbols";
+	line-height: 1;
+}
+
+.myemph {
+  color: blue;
+}
+
+.myem {
+  color: #333;
+}
+
+.gothic {
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", Arial, Helvetica, sans-serif;
+}
+
+
+.sourcecode {
+  border-style: ridge;
+  padding: 0px 10px;
+  white-space: pre;
+}
+
+.breakbox {
+  border-style: solid;
+  border-width: thin;
+  padding: 0px 10px;
+}
+
+.fbox {
+  border-style: solid;
+  border-width: thin;
+}
+
+.ovalbox {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 5px;
+  padding: 0px 5px;
+}
+
+.bigoval {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 10px;
+  padding: 0px 5px;
+}
+
+.cancel {
+  text-decoration: red line-through double;
+}
+
+.hrulefill {
+  border-style: none none solid; 
+  border-color: grey; 
+  border-width: 0.5px;
+} 
+
+.javaapi::before {
+  content: 'https://docs.oracle.com/javase/jp/15/docs/api/java.base';
+}
+
+.dot {
+  /* text-emphasis: filled; */
+}
+
+.key {
+  font-weight: bold;
+}
+
+.phantom {
+  visibility: hidden;
+}
+
+.dbend::before {
+    content: url("Images/Knuth's_dangerous_bend_symbol.svg");
+}
+
+@counter-style circled-decimal {
+  system: fixed;
+  symbols: ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳ ㉑ ㉒ ㉓ ㉔ ㉕ ㉖ ㉗ ㉘ ㉙ ㉚ ㉛ ㉜ ㉝ ㉞ ㉟ ㊱ ㊲ ㊳ ㊴ ㊵ ㊶ ㊷ ㊸ ㊹ ㊺ ㊻ ㊼ ㊽ ㊾ ㊿;
+  suffix: " ";
+}
+
+@counter-style negative-circled-decimal {
+  system: fixed;
+  symbols: ❶ ❷ ❸ ❹ ❺ ❻ ❼ ❽ ❾ ❿ ⓫ ⓬ ⓭ ⓮ ⓯ ⓰ ⓱ ⓲ ⓳ ⓴;
+  suffix: " ";
+}
+
+@counter-style double-circled-decimal {
+  system: fixed;
+  symbols: ⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽ ⓾;
+  suffix: " ";
+}
+
+@counter-style parened-decimal {
+  system: fixed;
+  symbols: ⑴ ⑵ ⑶ ⑷ ⑸ ⑹ ⑺ ⑻ ⑼ ⑽ ⑾ ⑿ ⒀ ⒁ ⒂ ⒃ ⒄ ⒅ ⒆ ⒇; 
+  suffix: " ";
+}
+
+@counter-style inner1 {
+  system: extends lower-roman;
+  prefix: "(";
+  suffix: "). ";
+}
+
+@counter-style inner2 {
+  system: extends upper-latin;
+  prefix: "(";
+  suffix: "). ";
+}
+
+@counter-style bibdecimal {
+  system: extends decimal;
+  prefix: "[";
+  suffix: "] ";
+}
+
+.chapter {
+  counter-reset: section-count 0;
+}
+
+.chapter::before {
+  counter-increment: chapter-count;
+  content: "第" counter(chapter-count, var(--chapter-style, decimal)) "章" " ";
+}
+
+.section {
+  counter-reset: quiz-count subsection-count;
+}
+
+.section::before {
+  counter-increment: section-count; 
+  content: counter(chapter-count, var(--chapter-style, decimal)) "." counter(section-count) " ";
+}
+
+.subsection::before {
+  counter-increment: subsection-count; 
+  content: counter(chapter-count, var(--chapter-style, decimal)) "." counter(section-count) "." counter(subsection-count) " ";
+}
+
+.quiz {
+  counter-increment: quiz-count;
+  border-left: 2px solid var(--sub-border-color);
+  padding-left: 2px
+}
+
+.quiz > *:first-child::before {
+ font-weight: bold;
+ content: "Q " counter(chapter-count, var(--chapter-style, decimal)) "." counter(section-count) "." counter(quiz-count) " ";
+}
+
+.rei {
+ counter-increment: quiz-count;
+}
+
+.rei > *:first-child::before {
+ font-weight: bold;
+ content: "例題 " counter(chapter-count, var(--chapter-style, decimal)) "." counter(section-count) "." counter(quiz-count) " ";
+}
+
+.toi {
+  counter-increment: quiz-count;
+  border-left: 2px solid var(--sub-border-color);
+  padding-left: 2px
+}
+ 
+.toi > *:first-child::before {
+  font-weight: bold;
+  content: "問 " counter(chapter-count, var(--chapter-style, decimal)) "." counter(section-count) "." counter(quiz-count) " ";
+}
+
+.index {
+  display: none;
+}
+
+.aboutc {
+  display: none;
+}
+
+.footnote::before {
+  content: " \2985";
+}
+
+.footnote::after {
+  content: "\2986 ";
+}
+
+.marginpar::before {
+  content: " \2985";
+}
+
+.marginpar {
+  font-size: 71%;
+}
+
+.marginpar::after {
+  content: "\2986 ";
+}
+
+.myblank {
+  visibility: hidden;
+  /* color: transparent; */ 
+  /* border-style: solid; */
+  /* border-width: thin; */
+  /* border-color: blue; */
+}
+
+.myblank3 {
+  color: whitesmoke;
+  background-color: whitesmoke;
+}
+
+.noborder {
+}
+
+.myalt {
+  display: none;
+}
+
+.arroundmyblank {
+  color: blue;
+  border-style: none none solid; 
+  border-width: 1.5px;
+  border-color: var(--main-border-color);
+}
+
+.arroundmyblanknb {
+  color: blue;
+}
+
+.myhidden {
+   visibility: hidden;
+}
+
+/*
+.compact > dt {
+  float: left;
+}
+
+.compact > dd {
+  margin-left: 90px;
+}
+*/
+
+/* https://stackoverflow.com/questions/1713048/how-to-style-dt-and-dd-so-they-are-on-the-same-line/44599527#44599527 */
+dl.compact {
+  display: grid;
+  grid-template-columns: max-content auto;
+}
+
+dl.compact > dt {
+  grid-column-start: 1;
+}
+
+dl.compact > dd {
+  grid-column-start: 2;
+}
+
+table.bordered {
+  border-collapse: collapse;
+}
+
+table.bordered td {
+  border: 1px solid #333;
+  padding: 0px 8px;
+}
+
+table.bordered th {
+  border: 1px solid #333;
+  padding: 0px 8px;
+}
+
+table.simple {
+  border-collapse: collapse;
+}
+
+table.simple td:first-child, table.simple th:first-child {
+  border-right: thin solid #333;
+}
+
+table.simple tr:first-child td, table.simple tr:first-child th {
+  border-bottom: thin solid #333;
+}
+
+table.answer td, table.answer th {
+  height: 2em;
+}
+
+table.answer {
+  page-break-inside: avoid;
+}
+
+table.cell td {
+  font-family: Consolas, monospace;  
+}
+
+table.cell tr:first-child:last-child td {
+  border-top:    solid 0.1px black;
+  border-bottom: solid 0.1px black; 
+}
+
+table.cell tr:first-child td {
+  border-top: solid 0.1px black;
+  border-bottom: dashed 0.1px gray;
+}
+
+table.cell tr:nth-child(n+2):nth-last-child(n+2) td {
+  border-top: none;
+  border-bottom: dashed 0.1px gray;
+}
+
+table.cell tr:last-child td {
+  border-top: none;
+  border-bottom: solid 0.1px black;
+}
+
+table.cell td:first-child {
+  border-left:  solid 0.1px black;
+  border-right: dashed 0.1px gray;
+}
+
+table.cell td:nth-child(n+2):nth-last-child(n+2) {
+  border-left: none;
+  border-right: dashed 0.1px gray;
+}
+
+table.cell td:last-child  {
+  border-left: none;
+  border-right: solid 0.1px black;
+}
+
+table.centered th, table.centered td {
+  font-family: Symbola, "Cambria Math";
+  text-align: center;
+  min-width: 3em;
+}
+
+table.centered { border-collapse: collapse; }
+table.centered th { background-color: #D0D0FF; }
+
+table.tall th, table.tall td { height: 4ex; }
+
+.shasen { 
+  background-image: linear-gradient(to top right,
+                        transparent, transparent 49%,
+                        black 49%, black 51%, 
+                        transparent 51%, transparent); 
+}
+
+td.unknown {
+  background-color: #ffc;
+}
+
+ol.answer-list {
+  list-style-type: upper-roman;
+}
+
+ol.answer-list li {
+  page-break-inside: avoid;
+}
+
+
+ol.bibitem li {
+  list-style-type: bibdecimal;
+}
+
+ul.bibitem li {
+  list-style-type: none;
+}
+/*
+.myblank::before{
+  content: '[';
+  visibility: visible;
+  display: inline-block;
+  width: 0;
+  overflow: visible;
+}
+
+.myblank::after {
+  content: '[';
+  direction: rtl;     // hack!
+  visibility: visible;
+  display: inline-block;
+  width: 0;
+  overflow: visible;
+}
+*/
+
+.courier {
+  font-family: 'Courier New', monospace;
+}
+
+.courierb {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+}
+
+.textsf {
+  font-family: sans-serif;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.timesri {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+}
+
+.textri {
+  font-family: Cambria, serif;
+  font-style: italic;
+}
+
+.dot::after {
+  content: '\30a';
+}
+
+.nomargin {
+  margin: 0px 0px;
+}
+
+.empha {
+  color: red;
+}
+
+td.correct {
+  color: red;
+  text-align: center; 
+}
+
+.insignificant { 
+  opacity: 0.9 
+}
+
+.hreflike {
+  color: blue;
+  text-decoration: underline;
+}
+
+.hreflike:hover {
+  cursor: pointer;  
+}
+
+.small {
+  font-size: 91%;
+}
+
+.footnotesize {
+  font-size: 84%;
+}
+
+.scriptsize {
+  font-size: 71%;
+}
+
+.tiny {
+  font-size: 50%;
+}
+
+.verytiny {
+  font-size: 35.5%;
+}
+
+.supertiny {
+  font-size: 25%;
+}
+
+.left {
+  text-align: left;  
+}

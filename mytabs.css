@@ -1,0 +1,46 @@
+.tab {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
+.tab > div:not(.div-active) {
+    display: none;
+}
+
+.tab > ul > li {
+    border-color: gray;
+    border-style: solid;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-width: 1px 1px 0 1px;
+    background-color: white;
+
+    list-style: none;
+    display: inline;
+    padding: 0.5em 1em;
+}
+
+.tab > ul > li.item-active {
+    text-shadow: 1px 1px 2px gray;
+    background-color: white;
+}
+
+.tab > ul > li:not(.item-active) {
+    background-color: #eeeeee;
+}
+
+.tab > ul > li > a {
+    color: black;
+    text-decoration : none;
+}
+
+.tab > ul {
+    border-color: gray;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 1px 1px 0px 1px;
+    margin: 0px;
+    background-color: lightgray;
+    padding: 0.5em 0;
+}
+

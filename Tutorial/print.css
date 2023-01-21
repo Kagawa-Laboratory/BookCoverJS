@@ -1,0 +1,64 @@
+﻿@page {
+/*    size: A4 portrait; *//* これを指定するとChromeで印刷時に「詳細設定」が出なくなる（バグ？） */
+}
+
+@page :right {
+    margin: 25.4mm 57.9mm 25.4mm 25.4mm;
+    @top-right {
+/*         font-family: "Times New Roman", "UD デジタル 教科書体 N-R"; */
+         font-family: "Segoe UI", "UD デジタル 教科書体 N-R";
+    }
+
+}
+
+@page :left {
+    margin: 25.4mm 25.4mm 25.4mm 57.9mm;
+    @top-left {
+/*         font-family: "Times New Roman", "UD デジタル 教科書体 N-R"; */
+         font-family: "Segoe UI", "UD デジタル 教科書体 N-R";
+    }
+}
+
+body { 
+/*    font-family: "Times New Roman", "UD デジタル 教科書体 N-R"; */
+/*    font-family: "UD デジタル 教科書体 NP-R", "UD デジタル 教科書体 N-R"; */
+    font-family: "Segoe UI", "UD デジタル 教科書体 N-R";
+    font-size: 10pt;
+    width: 126.7mm;
+}
+
+p  { 
+    line-height: 1.5 
+}
+
+h1 {
+    font-size:  168%;
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 141%;
+}
+
+h3 {
+    font-size: 119%;
+}
+
+a:visited { color: #000000; }
+a:link    { color: #000000; }
+
+.noprint { display: none; }
+
+.myspace {
+/*    color: hsla(0, 0%, 0%, 0%); */
+/*    color: hsla(240, 75%, 50%, 100%); */
+    color: transparent; 
+/*    text-decoration: underline solid hsla(240, 0%, 50%, 50%); */
+    text-decoration-line: underline;
+    text-decoration-color: black;
+    font-size: 150%;
+}
+
+.hfill {
+    width: 126.7mm;
+}
