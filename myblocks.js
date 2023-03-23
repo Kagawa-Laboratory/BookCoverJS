@@ -1,3 +1,7 @@
+import * as Blockly from 'blockly/core';
+import * as libraryBlocks from 'blockly/blocks';
+import { javascriptGenerator } from 'blockly/javascript';
+
 Blockly.Blocks['bookcover_frame'] = {
   init: function() {
     this.appendDummyInput()
@@ -12,9 +16,9 @@ Blockly.Blocks['bookcover_frame'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_frame'] = function(block) {
+javascriptGenerator['bookcover_frame'] = function(block) {
   var checkbox_frame = block.getFieldValue('frame') == 'TRUE';
-  var statements_statements = Blockly.JavaScript.statementToCode(block, 'statements');
+  var statements_statements = javascriptGenerator.statementToCode(block, 'statements');
   var code = "var BC = BookCover;\n"
            + "BC.start(draw);\n";
   if (checkbox_frame) {
@@ -41,8 +45,8 @@ Blockly.Blocks['bookcover_guide_bars'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_guide_bars'] = function(block) {
-  var value_width = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_COMMA);
+javascriptGenerator['bookcover_guide_bars'] = function(block) {
+  var value_width = javascriptGenerator.valueToCode(block, 'width', javascriptGenerator.ORDER_COMMA);
   var code = 'BC.guideBars(' + value_width + ');\n';
   return code;
 };
@@ -61,8 +65,8 @@ Blockly.Blocks['bookcover_matrix'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_matrix'] = function(block) {
-  var statements_statements = Blockly.JavaScript.statementToCode(block, 'statements');
+javascriptGenerator['bookcover_matrix'] = function(block) {
+  var statements_statements = javascriptGenerator.statementToCode(block, 'statements');
   var code = 'BC.pushMatrix()\n' + statements_statements + 'BC.popMatrix();\n';
   return code;
 };
@@ -92,11 +96,11 @@ Blockly.Blocks['bookcover_line'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_line'] = function(block) {
-  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y2 = Blockly.JavaScript.valueToCode(block, 'y2', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_line'] = function(block) {
+  var value_x1 = javascriptGenerator.valueToCode(block, 'x1', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y1 = javascriptGenerator.valueToCode(block, 'y1', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_x2 = javascriptGenerator.valueToCode(block, 'x2', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y2 = javascriptGenerator.valueToCode(block, 'y2', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.line(' + value_x1 + ',' +  value_y1 + ','  
                         + value_x2 + ',' +  value_y2 + ');\n';
   return code;
@@ -119,8 +123,8 @@ Blockly.Blocks['bookcover_fill'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_fill'] = function(block) {
-  var value_colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_fill'] = function(block) {
+  var value_colour = javascriptGenerator.valueToCode(block, 'COLOUR', javascriptGenerator.ORDER_COMMA) || 0;
 
   var code = 'BC.fill(' + value_colour + ');\n';
   return code;
@@ -143,8 +147,8 @@ Blockly.Blocks['bookcover_stroke'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_stroke'] = function(block) {
-  var value_colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_stroke'] = function(block) {
+  var value_colour = javascriptGenerator.valueToCode(block, 'COLOUR', javascriptGenerator.ORDER_COMMA) || 0;
 
   var code = 'BC.stroke(' + value_colour + ');\n';
   return code;
@@ -162,10 +166,10 @@ Blockly.Blocks['bookcover_colour'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_colour'] = function(block) {
+javascriptGenerator['bookcover_colour'] = function(block) {
   var colour_colour = block.getFieldValue('COLOUR');
   var code = "0x" + colour_colour.substring(1);
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
 Blockly.Blocks['bookcover_rect'] = {
@@ -193,11 +197,11 @@ Blockly.Blocks['bookcover_rect'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_rect'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0 ;
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_rect'] = function(block) {
+  var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0 ;
+  var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_w = javascriptGenerator.valueToCode(block, 'w', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_h = javascriptGenerator.valueToCode(block, 'h', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.rect(' + value_x + ', ' + value_y + ', ' + value_w + ', ' + value_h +');\n';
   return code;
 };
@@ -227,11 +231,11 @@ Blockly.Blocks['bookcover_ellipse'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_ellipse'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_ellipse'] = function(block) {
+  var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_w = javascriptGenerator.valueToCode(block, 'w', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_h = javascriptGenerator.valueToCode(block, 'h', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.ellipse(' + value_x + ', ' + value_y + ', ' + value_w + ', ' + value_h +');\n';
   return code;
 };
@@ -254,11 +258,11 @@ Blockly.Blocks['bookcover_rotate_h'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_rotate_h'] = function(block) {
-  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_rotate_h'] = function(block) {
+  var value_colour = javascriptGenerator.valueToCode(block, 'colour', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_angle = javascriptGenerator.valueToCode(block, 'angle', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.rotateH360(' + value_colour + ', ' + value_angle + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Blocks['bookcover_add_s'] = {
@@ -279,11 +283,11 @@ Blockly.Blocks['bookcover_add_s'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_add_s'] = function(block) {
-  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_delta = Blockly.JavaScript.valueToCode(block, 'delta', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_add_s'] = function(block) {
+  var value_colour = javascriptGenerator.valueToCode(block, 'colour', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_delta = javascriptGenerator.valueToCode(block, 'delta', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.addS100L(' + value_colour + ', ' + value_delta + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Blocks['bookcover_add_l'] = {
@@ -304,11 +308,11 @@ Blockly.Blocks['bookcover_add_l'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_add_l'] = function(block) {
-  var value_colour = Blockly.JavaScript.valueToCode(block, 'colour', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_delta = Blockly.JavaScript.valueToCode(block, 'delta', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_add_l'] = function(block) {
+  var value_colour = javascriptGenerator.valueToCode(block, 'colour', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_delta = javascriptGenerator.valueToCode(block, 'delta', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.addL100(' + value_colour + ', ' + value_delta + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Blocks['bookcover_angle'] = {
@@ -323,10 +327,10 @@ Blockly.Blocks['bookcover_angle'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_angle'] = function(block) {
+javascriptGenerator['bookcover_angle'] = function(block) {
   var angle_angle = block.getFieldValue('angle');
   var code = angle_angle;
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Blocks['bookcover_stroke_weight'] = {
@@ -345,8 +349,8 @@ Blockly.Blocks['bookcover_stroke_weight'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_stroke_weight'] = function(block) {
-  var value_width = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_COMMA) || 1;
+javascriptGenerator['bookcover_stroke_weight'] = function(block) {
+  var value_width = javascriptGenerator.valueToCode(block, 'width', javascriptGenerator.ORDER_COMMA) || 1;
   var code = 'BC.strokeWeight(' + value_width + ');\n';
   return code;
 };
@@ -367,8 +371,8 @@ Blockly.Blocks['bookcover_stroke_opacity'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_stroke_opacity'] = function(block) {
-  var value_opacity = Blockly.JavaScript.valueToCode(block, 'opacity', Blockly.JavaScript.ORDER_COMMA) || 1;
+javascriptGenerator['bookcover_stroke_opacity'] = function(block) {
+  var value_opacity = javascriptGenerator.valueToCode(block, 'opacity', javascriptGenerator.ORDER_COMMA) || 1;
   var code = 'BC.strokeOpacity(' + value_opacity + ');\n';
   return code;
 };
@@ -389,8 +393,8 @@ Blockly.Blocks['bookcover_fill_opacity'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_fill_opacity'] = function(block) {
-  var value_opacity = Blockly.JavaScript.valueToCode(block, 'opacity', Blockly.JavaScript.ORDER_COMMA) || 1;
+javascriptGenerator['bookcover_fill_opacity'] = function(block) {
+  var value_opacity = javascriptGenerator.valueToCode(block, 'opacity', javascriptGenerator.ORDER_COMMA) || 1;
   var code = 'BC.fillOpacity(' + value_opacity + ');\n';
   return code;
 };
@@ -408,7 +412,7 @@ Blockly.Blocks['bookcover_no_stroke'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_no_stroke'] = function(block) {
+javascriptGenerator['bookcover_no_stroke'] = function(block) {
   var code = 'BC.noStroke();\n';
   return code;
 };
@@ -426,7 +430,7 @@ Blockly.Blocks['bookcover_no_fill'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_no_fill'] = function(block) {
+javascriptGenerator['bookcover_no_fill'] = function(block) {
   var code = 'BC.noFill();\n';
   return code;
 };
@@ -450,9 +454,9 @@ Blockly.Blocks['bookcover_text_font'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_text_font'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_COMMA) || "\"\"";
-  var value_size = Blockly.JavaScript.valueToCode(block, 'size', Blockly.JavaScript.ORDER_COMMA) || 10;
+javascriptGenerator['bookcover_text_font'] = function(block) {
+  var value_name = javascriptGenerator.valueToCode(block, 'name', javascriptGenerator.ORDER_COMMA) || "\"\"";
+  var value_size = javascriptGenerator.valueToCode(block, 'size', javascriptGenerator.ORDER_COMMA) || 10;
   var code = 'BC.textFont(' + value_name + ', ' + value_size + ');\n';
   return code;
 };
@@ -473,8 +477,8 @@ Blockly.Blocks['bookcover_random_seed'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_random_seed'] = function(block) {
-  var value_seed = Blockly.JavaScript.valueToCode(block, 'seed', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_random_seed'] = function(block) {
+  var value_seed = javascriptGenerator.valueToCode(block, 'seed', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.randomSeed(' + value_seed + ');\n';
   return code;
 };
@@ -498,9 +502,9 @@ Blockly.Blocks['bookcover_translate'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_translate'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_translate'] = function(block) {
+  var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.translate(' + value_x + ', ' + value_y + ');\n';
   return code;
 };
@@ -524,9 +528,9 @@ Blockly.Blocks['bookcover_scale'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_scale'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 1 ;
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 1;
+javascriptGenerator['bookcover_scale'] = function(block) {
+  var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 1 ;
+  var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 1;
   var code = 'BC.scale(' + value_x + ', ' + value_y + ');\n';
   return code;
 };
@@ -547,8 +551,8 @@ Blockly.Blocks['bookcover_rotate'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_rotate'] = function(block) {
-  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_rotate'] = function(block) {
+  var value_angle = javascriptGenerator.valueToCode(block, 'angle', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.rotate360(' + value_angle + ');\n';
   return code;
 };
@@ -567,7 +571,7 @@ Blockly.Blocks['bookcover_pen_up'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_pen_up'] = function(block) {
+javascriptGenerator['bookcover_pen_up'] = function(block) {
   var code = 'BC.penUp();\n';
   return code;
 };
@@ -585,7 +589,7 @@ Blockly.Blocks['bookcover_pen_down'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_pen_down'] = function(block) {
+javascriptGenerator['bookcover_pen_down'] = function(block) {
   var code = 'BC.penDown();\n';
   return code;
 };
@@ -606,8 +610,8 @@ Blockly.Blocks['bookcover_forward'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_forward'] = function(block) {
-  var value_len = Blockly.JavaScript.valueToCode(block, 'len', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_forward'] = function(block) {
+  var value_len = javascriptGenerator.valueToCode(block, 'len', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.forward(' + value_len + ');\n';
   return code;
 };
@@ -628,8 +632,8 @@ Blockly.Blocks['bookcover_turn'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_turn'] = function(block) {
-  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_turn'] = function(block) {
+  var value_angle = javascriptGenerator.valueToCode(block, 'angle', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.turn(' + value_angle + ');\n';
   return code;
 };
@@ -650,8 +654,8 @@ Blockly.Blocks['bookcover_direction'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_direction'] = function(block) {
-  var value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_direction'] = function(block) {
+  var value_angle = javascriptGenerator.valueToCode(block, 'angle', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.direction(' + value_angle + ');\n';
   return code;
 };
@@ -675,9 +679,9 @@ Blockly.Blocks['bookcover_go'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_go'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_go'] = function(block) {
+  var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.go(' + value_x + ', ' + value_y + ');\n';
   return code;
 };
@@ -701,11 +705,11 @@ Blockly.Blocks['bookcover_random_in_range'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_random_in_range'] = function(block) {
-  var value_min = Blockly.JavaScript.valueToCode(block, 'min', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_max = Blockly.JavaScript.valueToCode(block, 'max', Blockly.JavaScript.ORDER_COMMA) || 1;
+javascriptGenerator['bookcover_random_in_range'] = function(block) {
+  var value_min = javascriptGenerator.valueToCode(block, 'min', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_max = javascriptGenerator.valueToCode(block, 'max', javascriptGenerator.ORDER_COMMA) || 1;
   var code = 'BC.randomInRange(' + value_min + ', ' + value_max + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Blocks['bookcover_rgb255'] = {
@@ -729,12 +733,12 @@ Blockly.Blocks['bookcover_rgb255'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_rgb255'] = function(block) {
-  var value_red = Blockly.JavaScript.valueToCode(block, 'red', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_green = Blockly.JavaScript.valueToCode(block, 'green', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_blue = Blockly.JavaScript.valueToCode(block, 'blue', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_rgb255'] = function(block) {
+  var value_red = javascriptGenerator.valueToCode(block, 'red', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_green = javascriptGenerator.valueToCode(block, 'green', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_blue = javascriptGenerator.valueToCode(block, 'blue', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.rgb255(' + value_red +', ' + value_green + ', ' + value_blue + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Blocks['bookcover_rgb100'] = {
@@ -758,12 +762,12 @@ Blockly.Blocks['bookcover_rgb100'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_rgb100'] = function(block) {
-  var value_red = Blockly.JavaScript.valueToCode(block, 'red', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_green = Blockly.JavaScript.valueToCode(block, 'green', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_blue = Blockly.JavaScript.valueToCode(block, 'blue', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_rgb100'] = function(block) {
+  var value_red = javascriptGenerator.valueToCode(block, 'red', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_green = javascriptGenerator.valueToCode(block, 'green', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_blue = javascriptGenerator.valueToCode(block, 'blue', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.rgb100(' + value_red +', ' + value_green + ', ' + value_blue + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Blocks['bookcover_hsb360'] = {
@@ -787,12 +791,12 @@ Blockly.Blocks['bookcover_hsb360'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_hsb360'] = function(block) {
-  var value_hue = Blockly.JavaScript.valueToCode(block, 'hue', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_saturation = Blockly.JavaScript.valueToCode(block, 'saturation', Blockly.JavaScript.ORDER_COMMA) || 100;
-  var value_brightness = Blockly.JavaScript.valueToCode(block, 'brightness', Blockly.JavaScript.ORDER_COMMA) || 100;
+javascriptGenerator['bookcover_hsb360'] = function(block) {
+  var value_hue = javascriptGenerator.valueToCode(block, 'hue', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_saturation = javascriptGenerator.valueToCode(block, 'saturation', javascriptGenerator.ORDER_COMMA) || 100;
+  var value_brightness = javascriptGenerator.valueToCode(block, 'brightness', javascriptGenerator.ORDER_COMMA) || 100;
   var code = 'BC.hsb360(' + value_hue +', ' + value_saturation + ', ' + value_brightness + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Blocks['bookcover_hsl360'] = {
@@ -816,12 +820,12 @@ Blockly.Blocks['bookcover_hsl360'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_hsl360'] = function(block) {
-  var value_hue = Blockly.JavaScript.valueToCode(block, 'hue', Blockly.JavaScript.ORDER_COMMA) || 0 ;
-  var value_saturation = Blockly.JavaScript.valueToCode(block, 'saturation', Blockly.JavaScript.ORDER_COMMA) || 100;
-  var value_luminance = Blockly.JavaScript.valueToCode(block, 'luminance', Blockly.JavaScript.ORDER_COMMA) || 50;
+javascriptGenerator['bookcover_hsl360'] = function(block) {
+  var value_hue = javascriptGenerator.valueToCode(block, 'hue', javascriptGenerator.ORDER_COMMA) || 0 ;
+  var value_saturation = javascriptGenerator.valueToCode(block, 'saturation', javascriptGenerator.ORDER_COMMA) || 100;
+  var value_luminance = javascriptGenerator.valueToCode(block, 'luminance', javascriptGenerator.ORDER_COMMA) || 50;
   var code = 'BC.hsl360(' + value_hue +', ' + value_saturation + ', ' + value_luminance + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Blocks['bookcover_none'] = {
@@ -835,9 +839,9 @@ Blockly.Blocks['bookcover_none'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_none'] = function(block) {
+javascriptGenerator['bookcover_none'] = function(block) {
   var code = 'null';
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
 
@@ -852,9 +856,9 @@ Blockly.Blocks['bookcover_newline'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_newline'] = function(block) {
+javascriptGenerator['bookcover_newline'] = function(block) {
   var code = '"\\n"';
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
 
@@ -869,10 +873,10 @@ Blockly.Blocks['bookcover_font_name'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_font_name'] = function(block) {
+javascriptGenerator['bookcover_font_name'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var code = "\"" + dropdown_name + "\"";
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
 Blockly.Blocks['bookcover_text'] = {
@@ -897,10 +901,10 @@ Blockly.Blocks['bookcover_text'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_text'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC) || 0;
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC) || 0;
-  var value_str = Blockly.JavaScript.valueToCode(block, 'str', Blockly.JavaScript.ORDER_ATOMIC) || "\"\"";
+javascriptGenerator['bookcover_text'] = function(block) {
+  var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_ATOMIC) || 0;
+  var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_ATOMIC) || 0;
+  var value_str = javascriptGenerator.valueToCode(block, 'str', javascriptGenerator.ORDER_ATOMIC) || "\"\"";
   var code = 'BC.text(' + value_str + ', ' + value_x + ', ' + value_y + ');\n';
   return code;
 };
@@ -937,8 +941,8 @@ Blockly.Blocks['bookcover_say'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_say'] = function(block) {
-  var value_str = Blockly.JavaScript.valueToCode(block, 'str', Blockly.JavaScript.ORDER_ATOMIC) || "\"\"";
+javascriptGenerator['bookcover_say'] = function(block) {
+  var value_str = javascriptGenerator.valueToCode(block, 'str', javascriptGenerator.ORDER_ATOMIC) || "\"\"";
   var code = 'BC.say(' + value_str + ');\n';
   return code;
 };
@@ -955,7 +959,7 @@ Blockly.Blocks['bookcover_generic_statement'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_generic_statement'] = function(block) {
+javascriptGenerator['bookcover_generic_statement'] = function(block) {
   var text_statement = block.getFieldValue('STATEMENT') || "";
   var code = text_statement + '\n';
   return code;
@@ -973,10 +977,10 @@ Blockly.Blocks['bookcover_generic_expression'] = {
 };
 
 
-Blockly.JavaScript['bookcover_generic_expression'] = function(block) {
+javascriptGenerator['bookcover_generic_expression'] = function(block) {
   var text_expression = block.getFieldValue('EXPRESSION') || 0;
   var code = text_expression;
-  return [code, Blockly.JavaScript.ATOM];
+  return [code, javascriptGenerator.ATOM];
 };
 
 Blockly.Blocks['bookcover_card_frame'] = {
@@ -996,9 +1000,9 @@ Blockly.Blocks['bookcover_card_frame'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_card_frame'] = function(block) {
-  var value_paper_spec = Blockly.JavaScript.valueToCode(block, 'PAPER_SPEC', Blockly.JavaScript.ORDER_ATOMIC);
-  var statements_do = Blockly.JavaScript.statementToCode(block, 'DO');
+javascriptGenerator['bookcover_card_frame'] = function(block) {
+  var value_paper_spec = javascriptGenerator.valueToCode(block, 'PAPER_SPEC', javascriptGenerator.ORDER_ATOMIC);
+  var statements_do = javascriptGenerator.statementToCode(block, 'DO');
   var code = 'var BC = BookCover;\n';
   code    += 'BC.start(draw);\n';
   code    += '  var __cardSpec = BC.__cardSpecs[' + value_paper_spec + '];\n';
@@ -1037,10 +1041,10 @@ Blockly.Blocks['bookcover_foreachcard'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_foreachcard'] = function(block) {
-  var variable_card = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('CARD'), Blockly.Variables.NAME_TYPE);
-  var variable_counter = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('COUNTER'), Blockly.Variables.NAME_TYPE);
-  var statements_do = Blockly.JavaScript.statementToCode(block, 'DO');
+javascriptGenerator['bookcover_foreachcard'] = function(block) {
+  var variable_card = javascriptGenerator.variableDB_.getName(block.getFieldValue('CARD'), Blockly.Variables.NAME_TYPE);
+  var variable_counter = javascriptGenerator.variableDB_.getName(block.getFieldValue('COUNTER'), Blockly.Variables.NAME_TYPE);
+  var statements_do = javascriptGenerator.statementToCode(block, 'DO');
   var checkbox_clip = block.getFieldValue('CLIP') == 'TRUE';
   var checkbox_frame = block.getFieldValue('FRAME') == 'TRUE';
   var number_margin = block.getFieldValue('MARGIN');
@@ -1075,16 +1079,16 @@ Blockly.Blocks['bookcover_cardspec'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_cardspec'] = function(block) {
+javascriptGenerator['bookcover_cardspec'] = function(block) {
   var dropdown_cardspec = block.getFieldValue('CARDSPEC');
   var code = "'" + dropdown_cardspec + "'";
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
-Blockly.JavaScript['text_length'] = function(block) {
-  var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_COMMA);
+javascriptGenerator['text_length'] = function(block) {
+  var value_value = javascriptGenerator.valueToCode(block, 'VALUE', javascriptGenerator.ORDER_COMMA);
   var code = 'BC.countSymbols(' + value_value + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 
@@ -1102,47 +1106,47 @@ Blockly.Blocks['bookcover_fromCodePoint'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_fromCodePoint'] = function(block) {
-  var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_COMMA);
+javascriptGenerator['bookcover_fromCodePoint'] = function(block) {
+  var value_value = javascriptGenerator.valueToCode(block, 'VALUE', javascriptGenerator.ORDER_COMMA);
   var code = 'String.fromCodePoint(' + value_value + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 
-Blockly.JavaScript['text_charAt'] = function(block) {
+javascriptGenerator['text_charAt'] = function(block) {
   // Get letter at index.
   // Note: Until January 2013 this block did not have the WHERE input.
   var where = block.getFieldValue('WHERE') || 'FROM_START';
-  var textOrder = (where == 'RANDOM') ? Blockly.JavaScript.ORDER_NONE :
-      Blockly.JavaScript.ORDER_MEMBER;
-  var text = Blockly.JavaScript.valueToCode(block, 'VALUE',
+  var textOrder = (where == 'RANDOM') ? javascriptGenerator.ORDER_NONE :
+      javascriptGenerator.ORDER_MEMBER;
+  var text = javascriptGenerator.valueToCode(block, 'VALUE',
       textOrder) || '\'\'';
   switch (where) {
     case 'FIRST':
       var code = 'BC.fixedCharAt(' + text + ', ' +  '0)';
-      return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+      return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
     case 'LAST':
       var code = 'BC.fixedCharAt(' + text + ', ' +  'BC.countSymbols(' + text + ') - 1)';
-      return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+      return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
     case 'FROM_START':
-      var at = Blockly.JavaScript.getAdjusted(block, 'AT');
+      var at = javascriptGenerator.getAdjusted(block, 'AT');
       // Adjust index if using one-based indices.
       var code = 'BC.fixedCharAt(' + text + ', ' +  at + ')';
-      return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+      return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
     case 'FROM_END':
-      var at = Blockly.JavaScript.getAdjusted(block, 'AT', 1, true);
+      var at = javascriptGenerator.getAdjusted(block, 'AT', 1, true);
       var code = 'BC.fixedCharAt(' + text + ', ' +  'BC.countSymbols(' + text + ') + (' + at + '))';
-      return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+      return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
     case 'RANDOM':
-      var functionName = Blockly.JavaScript.provideFunction_(
+      var functionName = javascriptGenerator.provideFunction_(
           'textRandomLetter',
-          ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+          ['function ' + javascriptGenerator.FUNCTION_NAME_PLACEHOLDER_ +
               '(text) {',
            '  var x = Math.floor(Math.random() * BC.countSymbols(text));',
            '  return BC.fixedCharAt(text, x);',
            '}']);
       var code = functionName + '(' + text + ')';
-      return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+      return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
   }
   throw 'Unhandled option (text_charAt).';
 };
@@ -1158,9 +1162,9 @@ Blockly.Blocks['bookcover_pageWidth'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_pageWidth'] = function(block) {
+javascriptGenerator['bookcover_pageWidth'] = function(block) {
   var code = 'BC.pageWidth()';
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
 Blockly.Blocks['bookcover_pageHeight'] = {
@@ -1174,9 +1178,9 @@ Blockly.Blocks['bookcover_pageHeight'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_pageHeight'] = function(block) {
+javascriptGenerator['bookcover_pageHeight'] = function(block) {
   var code = 'BC.pageHeight()';
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
 Blockly.Blocks['bookcover_cardWidth'] = {
@@ -1194,10 +1198,10 @@ Blockly.Blocks['bookcover_cardWidth'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_cardWidth'] = function(block) {
-  var value_card = Blockly.JavaScript.valueToCode(block, 'CARD', Blockly.JavaScript.ORDER_MEMBER);
+javascriptGenerator['bookcover_cardWidth'] = function(block) {
+  var value_card = javascriptGenerator.valueToCode(block, 'CARD', javascriptGenerator.ORDER_MEMBER);
   var code = value_card + '["width"]';
-  return [code, Blockly.JavaScript.ORDER_MEMBER];
+  return [code, javascriptGenerator.ORDER_MEMBER];
 };
 
 Blockly.Blocks['bookcover_cardHeight'] = {
@@ -1215,10 +1219,10 @@ Blockly.Blocks['bookcover_cardHeight'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_cardHeight'] = function(block) {
-  var value_card = Blockly.JavaScript.valueToCode(block, 'CARD', Blockly.JavaScript.ORDER_MEMBER);
+javascriptGenerator['bookcover_cardHeight'] = function(block) {
+  var value_card = javascriptGenerator.valueToCode(block, 'CARD', javascriptGenerator.ORDER_MEMBER);
   var code = value_card + '["height"]';
-  return [code, Blockly.JavaScript.ORDER_MEMBER];
+  return [code, javascriptGenerator.ORDER_MEMBER];
 };
 
 Blockly.Blocks['bookcover_console_log'] = {
@@ -1238,8 +1242,8 @@ Blockly.Blocks['bookcover_console_log'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_console_log'] = function(block) {
-  var value_log = Blockly.JavaScript.valueToCode(block, 'LOG', Blockly.JavaScript.ORDER_COMMA) || "\"\"";
+javascriptGenerator['bookcover_console_log'] = function(block) {
+  var value_log = javascriptGenerator.valueToCode(block, 'LOG', javascriptGenerator.ORDER_COMMA) || "\"\"";
   var code = 'console.log(' + value_log + ');\n';
   return code;
 };
@@ -1255,9 +1259,9 @@ Blockly.Blocks['bookcover_get_x'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_get_x'] = function(block) {
+javascriptGenerator['bookcover_get_x'] = function(block) {
   var code = 'BC.getX()';
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
 Blockly.Blocks['bookcover_get_y'] = {
@@ -1271,9 +1275,9 @@ Blockly.Blocks['bookcover_get_y'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_get_y'] = function(block) {
+javascriptGenerator['bookcover_get_y'] = function(block) {
   var code = 'BC.getY()';
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
 Blockly.Blocks['bookcover_get_angle'] = {
@@ -1287,9 +1291,9 @@ Blockly.Blocks['bookcover_get_angle'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_get_angle'] = function(block) {
+javascriptGenerator['bookcover_get_angle'] = function(block) {
   var code = 'BC.getAngle()';
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
 Blockly.Blocks['bookcover_triangle'] = {
@@ -1323,13 +1327,13 @@ Blockly.Blocks['bookcover_triangle'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_triangle'] = function(block) {
-  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y2 = Blockly.JavaScript.valueToCode(block, 'y2', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_x3 = Blockly.JavaScript.valueToCode(block, 'x3', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y3 = Blockly.JavaScript.valueToCode(block, 'y3', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_triangle'] = function(block) {
+  var value_x1 = javascriptGenerator.valueToCode(block, 'x1', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y1 = javascriptGenerator.valueToCode(block, 'y1', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_x2 = javascriptGenerator.valueToCode(block, 'x2', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y2 = javascriptGenerator.valueToCode(block, 'y2', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_x3 = javascriptGenerator.valueToCode(block, 'x3', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y3 = javascriptGenerator.valueToCode(block, 'y3', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.triangle(' + value_x1 + ', ' + value_y1 
                      + ', ' + value_x2 + ', ' + value_y2 
                      + ', ' + value_x3 + ', ' + value_y3 + ');\n';
@@ -1373,15 +1377,15 @@ Blockly.Blocks['bookcover_quad'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_quad'] = function(block) {
-  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y2 = Blockly.JavaScript.valueToCode(block, 'y2', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_x3 = Blockly.JavaScript.valueToCode(block, 'x3', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y3 = Blockly.JavaScript.valueToCode(block, 'y3', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_x4 = Blockly.JavaScript.valueToCode(block, 'x4', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y4 = Blockly.JavaScript.valueToCode(block, 'y4', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_quad'] = function(block) {
+  var value_x1 = javascriptGenerator.valueToCode(block, 'x1', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y1 = javascriptGenerator.valueToCode(block, 'y1', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_x2 = javascriptGenerator.valueToCode(block, 'x2', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y2 = javascriptGenerator.valueToCode(block, 'y2', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_x3 = javascriptGenerator.valueToCode(block, 'x3', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y3 = javascriptGenerator.valueToCode(block, 'y3', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_x4 = javascriptGenerator.valueToCode(block, 'x4', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y4 = javascriptGenerator.valueToCode(block, 'y4', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.quad(' + value_x1 + ', ' + value_y1 
                  + ', ' + value_x2 + ', ' + value_y2 
                  + ', ' + value_x3 + ', ' + value_y3 
@@ -1420,13 +1424,13 @@ Blockly.Blocks['bookcover_arc'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_arc'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_start = Blockly.JavaScript.valueToCode(block, 'start', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_end = Blockly.JavaScript.valueToCode(block, 'end', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_arc'] = function(block) {
+  var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_w = javascriptGenerator.valueToCode(block, 'w', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_h = javascriptGenerator.valueToCode(block, 'h', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_start = javascriptGenerator.valueToCode(block, 'start', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_end = javascriptGenerator.valueToCode(block, 'end', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.arc360(' + value_x + ', ' + value_y 
                    + ', ' + value_w + ', ' + value_h 
                    + ', ' + value_start + ', ' + value_end +  ');\n';
@@ -1461,12 +1465,12 @@ Blockly.Blocks['bookcover_image'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_image'] = function(block) {
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_h = Blockly.JavaScript.valueToCode(block, 'h', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_url = Blockly.JavaScript.valueToCode(block, 'url', Blockly.JavaScript.ORDER_COMMA) || "";
+javascriptGenerator['bookcover_image'] = function(block) {
+  var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_w = javascriptGenerator.valueToCode(block, 'w', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_h = javascriptGenerator.valueToCode(block, 'h', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_url = javascriptGenerator.valueToCode(block, 'url', javascriptGenerator.ORDER_COMMA) || "";
   var code = 'BC.image(' + value_url + ', ' + value_x + ', ' + value_y
                   + ', ' + value_w + ', ' + value_h + ');\n';
   return code;
@@ -1486,7 +1490,7 @@ Blockly.Blocks['bookcover_rulers'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_rulers'] = function(block) {
+javascriptGenerator['bookcover_rulers'] = function(block) {
   var dropdown_size = block.getFieldValue('SIZE');
   var code;
   switch (dropdown_size) {
@@ -1534,15 +1538,15 @@ Blockly.Blocks['bookcover_bezier'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_bezier'] = function(block) {
-  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y2 = Blockly.JavaScript.valueToCode(block, 'y2', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_x3 = Blockly.JavaScript.valueToCode(block, 'x3', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y3 = Blockly.JavaScript.valueToCode(block, 'y3', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_x4 = Blockly.JavaScript.valueToCode(block, 'x4', Blockly.JavaScript.ORDER_COMMA) || 0;
-  var value_y4 = Blockly.JavaScript.valueToCode(block, 'y4', Blockly.JavaScript.ORDER_COMMA) || 0;
+javascriptGenerator['bookcover_bezier'] = function(block) {
+  var value_x1 = javascriptGenerator.valueToCode(block, 'x1', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y1 = javascriptGenerator.valueToCode(block, 'y1', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_x2 = javascriptGenerator.valueToCode(block, 'x2', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y2 = javascriptGenerator.valueToCode(block, 'y2', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_x3 = javascriptGenerator.valueToCode(block, 'x3', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y3 = javascriptGenerator.valueToCode(block, 'y3', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_x4 = javascriptGenerator.valueToCode(block, 'x4', javascriptGenerator.ORDER_COMMA) || 0;
+  var value_y4 = javascriptGenerator.valueToCode(block, 'y4', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.bezier(' + value_x1 + ', ' + value_y1 
                    + ', ' + value_x2 + ', ' + value_y2 
                    + ', ' + value_x3 + ', ' + value_y3 
@@ -1574,14 +1578,14 @@ Blockly.Blocks['bookcover_distance'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_distance'] = function(block) {
-  var value_x1 = Blockly.JavaScript.valueToCode(block, 'X1', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
-  var value_y1 = Blockly.JavaScript.valueToCode(block, 'Y1', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
-  var value_x2 = Blockly.JavaScript.valueToCode(block, 'X2', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
-  var value_y2 = Blockly.JavaScript.valueToCode(block, 'Y2', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
+javascriptGenerator['bookcover_distance'] = function(block) {
+  var value_x1 = javascriptGenerator.valueToCode(block, 'X1', javascriptGenerator.ORDER_SUBTRACTION) || 0;
+  var value_y1 = javascriptGenerator.valueToCode(block, 'Y1', javascriptGenerator.ORDER_SUBTRACTION) || 0;
+  var value_x2 = javascriptGenerator.valueToCode(block, 'X2', javascriptGenerator.ORDER_SUBTRACTION) || 0;
+  var value_y2 = javascriptGenerator.valueToCode(block, 'Y2', javascriptGenerator.ORDER_SUBTRACTION) || 0;
   // TODO Math.hypot(...)
   var code = 'Math.sqrt((' + value_x2 + ' - ' + value_x1 + ') * (' + value_x2 + ' - ' + value_x1 + ') + (' + value_y2 + ' - ' + value_y1 + ') * (' + value_y2 + ' - ' + value_y1 +'))';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Blocks['bookcover_atan2'] = {
@@ -1608,13 +1612,13 @@ Blockly.Blocks['bookcover_atan2'] = {
   }
 };
 
-Blockly.JavaScript['bookcover_atan2'] = function(block) {
-  var value_x1 = Blockly.JavaScript.valueToCode(block, 'X1', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
-  var value_y1 = Blockly.JavaScript.valueToCode(block, 'Y1', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
-  var value_x2 = Blockly.JavaScript.valueToCode(block, 'X2', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
-  var value_y2 = Blockly.JavaScript.valueToCode(block, 'Y2', Blockly.JavaScript.ORDER_SUBTRACTION) || 0;
+javascriptGenerator['bookcover_atan2'] = function(block) {
+  var value_x1 = javascriptGenerator.valueToCode(block, 'X1', javascriptGenerator.ORDER_SUBTRACTION) || 0;
+  var value_y1 = javascriptGenerator.valueToCode(block, 'Y1', javascriptGenerator.ORDER_SUBTRACTION) || 0;
+  var value_x2 = javascriptGenerator.valueToCode(block, 'X2', javascriptGenerator.ORDER_SUBTRACTION) || 0;
+  var value_y2 = javascriptGenerator.valueToCode(block, 'Y2', javascriptGenerator.ORDER_SUBTRACTION) || 0;
 
   var code = 'Math.atan2(' + value_y2 + ' - ' + value_y1 + ', ' + value_x2 + ' - ' + value_x1 + ') * 180 / Math.PI';
-  return [code, Blockly.JavaScript.ORDER_MULTIPLICATION];
+  return [code, javascriptGenerator.ORDER_MULTIPLICATION];
 };
 

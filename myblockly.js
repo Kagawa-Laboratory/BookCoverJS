@@ -1,3 +1,5 @@
+import Blockly from 'blockly';
+
 Blockly.Msg.DISABLE_BLOCK = "ブロックを無効にする";
 Blockly.Msg.ENABLE_BLOCK = "ブロックを有効にする";
 Blockly.Msg.EXPAND_ALL = "ブロックをすべて展開する";
@@ -128,6 +130,5 @@ Blockly.Msg.CONTROLS_FOR_HELPURL = "https://github.com/google/blockly/wiki/Loops
 Blockly.Msg.CONTROLS_FOR_TITLE = "変数 %1 を %2 から %3 まで %4 ずつ変えながら";
 Blockly.Msg.CONTROLS_FOR_INPUT_DO = "以下を繰り返す: ";
 Blockly.Msg.CONTROLS_FOR_TOOLTIP = "変数 \"%1\"は、%4 ずつ変わりながら、%2 から %3 まで、値をとり、指定したブロックを実行する。";
-
 // -----------------------
 

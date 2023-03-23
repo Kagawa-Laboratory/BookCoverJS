@@ -1,4 +1,4 @@
-var BookCover = (function () {
+export var BookCover = (function () {
   var BookCover = function () {
     var self = this;
     self.__strokeWeight = 1;

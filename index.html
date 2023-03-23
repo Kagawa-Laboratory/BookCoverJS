@@ -181,27 +181,6 @@ Reflect.java
 -->
 <hr />
 <address>香川研究室</address>
-<script type="text/javascript">
-function toggle(elm) {
-  if (elm.display.style = null) {
-    elm.display.style = 'hidden';
-  } else if (elm.display.style = 'hidden') {
-    elm.display.style = null; 
-  }
-}
-
-window.addEventListener('load', () => {
-  var kuwashiku = document.getElementById('kuwashiku');
-  var butn      = document.getElementById('kuwashiku_toggle');
-  var plus      = document.getElementById('kuwashiku_plus');
-  var minus     = document.getElementById('kuwashiku_minus');    
-  kuwashiku.style.display = 'hidden';
-  butn.addEventListener('click', () => {
-    toggle(kuwashiku);
-    toggle(plus);
-    toggle(minus);
-  });
-});
-</script>
+<script type="module" src='index_main.js'></script>
 </body>
 </html>
