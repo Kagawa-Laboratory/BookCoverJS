@@ -6,49 +6,7 @@
 <link rel="shortcut icon" href="favicon.png" type="image/png"/>
 <link rel="icon" href="favicon.png" type="image/png"/>
 <title>お絵かきプログラミング（サンプル集）</title>
-<script src="mytabs.js"></script>
 <link rel="stylesheet" type="text/css" href="mytabs.css">
-<script src="samples.js"></script>
-<script type="text/javascript">
-const cards =  [ /* "Sample1" */
-    "HSBGradCard"
-  , "RandomEmojiCard"
-  , "RandomDot"
-  , "StringArt"
-  , "SpiralCard"
-  , "SquaresCard"
-  , "Turtle"
-  , "Stripe" 
-  , "Rotate"
-  , "Translate"
-  , "SineCurve" 
-  , "Ferns"
-  ];
-
-const bookcovers = [ 
-    "Gradation" 
-//   , "Mesh"
-  , "Mesh2"
-  , "HSBGrad" 
-  , "Reflect"
-  , "SuperBall"
-  , "RandomEmoji"
-  , "Uzu"
-  , "Trains"
-  , "Stars"
-  , "Squares"
-  , "TurtleBookCover"
-  , "Shapes"
-  , "Euclidean" 
-  , "Snows"
-  , "RandomCircle"
-  , "RandomString1"
-  , "RandomString2"
-  ];
-
-const params = new URLSearchParams(location.search);
-const lang   = params.get("lang");
-</script>
 </head>
 <body>
 <h1>お絵かきプログラミング（サンプル集）</h1>
@@ -68,20 +26,14 @@ SVG を表示できるブラウザーで見て下さい。
 <div id="t-1">
 <h2>シール用</h2>
 <table border='1' align='center'>
-<tbody>
-<script type="text/javascript">
-writeTable(cards, 3, true, 2, lang);
-</script>
+<tbody id='sticker'>
 </tbody>
 </table>
 </div>
 <div id="t-2">
 <h2>ブックカバー用</h2>
 <table border='1' align='center'>
-<tbody>
-<script type="text/javascript">
-writeTable(bookcovers, 3, false, 1, lang);
-</script>
+<tbody id='bookcover'>
 </tbody>
 </table>
 </div>
@@ -89,12 +41,6 @@ writeTable(bookcovers, 3, false, 1, lang);
 <p><a href="index.html">戻る</a></p>
 <hr />
 <address>香川研究室</address>
-<script>
-window.addEventListener('load', () => {
-  tabs(document.getElementById("tabs"), {
-      active: 1   // zero-based index of the panel that is active. 
-  });
-});
-</script>
+<script type='module' src='samples_main.js'></script>
 </body>
 </html>

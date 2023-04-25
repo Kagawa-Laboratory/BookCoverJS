@@ -1,4 +1,6 @@
-function hsbGrad(draw) {
+import {BookCover} from "./BookCover.js";
+
+export function hsbGrad(draw) {
     var BC = BookCover;
     var x0 = 36, y0 = 24;
     BC.start(draw);

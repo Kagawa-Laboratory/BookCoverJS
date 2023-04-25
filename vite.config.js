@@ -7,9 +7,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main:       resolve(__dirname, 'index.html'),
-        blockly:    resolve(__dirname, 'blockly.html'),
-        codemirror: resolve(__dirname, 'codemirror.html'),
+        main:          resolve(__dirname, 'index.html'),
+        blockly:       resolve(__dirname, 'blockly.html'),
+        codemirror:    resolve(__dirname, 'codemirror.html'),
+        bookCoverTest: resolve(__dirname, 'bookCoverTest.html'),
+        samples:       resolve(__dirname, 'samples.html'),
       },
     },
   },

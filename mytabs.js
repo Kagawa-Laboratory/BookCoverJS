@@ -1,4 +1,4 @@
-function tabs(myDiv, options) {
+export function tabs(myDiv, options) {
     myDiv.classList.add('tab');
     const menuItems = myDiv.querySelectorAll(':scope > ul > li > a');
     const divs      = myDiv.querySelectorAll(':scope > div');

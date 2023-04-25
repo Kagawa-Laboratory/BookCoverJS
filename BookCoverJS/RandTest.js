@@ -1,4 +1,6 @@
-function randTest(draw) {
+import {BookCover} from "./BookCover.js";
+
+export function randTest(draw) {
     var BC = BookCover;
     BC.start(draw);
     BC.fill(BC.bw1(0.8));
