@@ -546,7 +546,7 @@ export var BookCover = (function () {
     },
 
     resetMatrix: function() {
-        while(this.__gDepth > 0) {
+        while (this.__gDepth > 0) {
             this.__gDepth--;
             this.__currentGroup = this.__currentGroup.parent();
     //        printf("</g>\n");
@@ -588,7 +588,7 @@ export var BookCover = (function () {
 
     popMatrix: function() {
         var tmp = this.__gStack.pop();
-        while(this.__gDepth > tmp) {
+        while (this.__gDepth > tmp) {
             this.__gDepth--;
     //        printf("</g>\n");
             this.__currentGroup = this.__currentGroup.parent();
@@ -1154,7 +1154,7 @@ export var BookCover = (function () {
         args.push("" + arguments[0]);  /* String に強制 */
         args.push(0);
         args.push(0);
-        for (i = 1; i < arguments.length; i++) {
+        for (var i = 1; i < arguments.length; i++) {
             args.push(arguments(i));
         }
         this.text.apply(this, args);

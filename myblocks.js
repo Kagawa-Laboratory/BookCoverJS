@@ -1042,13 +1042,15 @@ Blockly.Blocks['bookcover_foreachcard'] = {
 };
 
 javascriptGenerator['bookcover_foreachcard'] = function(block) {
-  var variable_card = javascriptGenerator.variableDB_.getName(block.getFieldValue('CARD'), Blockly.Variables.NAME_TYPE);
-  var variable_counter = javascriptGenerator.variableDB_.getName(block.getFieldValue('COUNTER'), Blockly.Variables.NAME_TYPE);
+//  var variable_card    = javascriptGenerator.variableDB_.getName(block.getFieldValue('CARD'), Blockly.Variables.NAME_TYPE);
+ var variable_card = javascriptGenerator.nameDB_.getName(block.getFieldValue('CARD'), Blockly.Names.NameType.VARIABLE);
+//  var variable_counter = javascriptGenerator.variableDB_.getName(block.getFieldValue('COUNTER'), Blockly.Variables.NAME_TYPE);
+  var variable_counter = javascriptGenerator.nameDB_.getName(block.getFieldValue('COUNTER'), Blockly.Names.NameType.VARIABLE);   
   var statements_do = javascriptGenerator.statementToCode(block, 'DO');
   var checkbox_clip = block.getFieldValue('CLIP') == 'TRUE';
   var checkbox_frame = block.getFieldValue('FRAME') == 'TRUE';
   var number_margin = block.getFieldValue('MARGIN');
-  var code = 'for (' + variable_counter + ' = 1; ' + variable_counter + ' <= BC.__cards.length; ' + variable_counter + '++ ) {\n';
+  var code = 'for (var ' + variable_counter + ' = 1; ' + variable_counter + ' <= BC.__cards.length; ' + variable_counter + '++ ) {\n';
   code    += '  var ' + variable_card + ' =  BC.__cards[' + variable_counter + ' - 1];\n';
   code    += '  BC.pushMatrix();\n';
   code    += '  BC.translate(' + variable_card + '["x"], ' + variable_card + '["y"]);\n';
