@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
   const params = new URLSearchParams(location.search);
   const lang   = params.get("lang");
 
-  console.log(lang);  
+//  console.log(lang);  
   const tbl1 = document.getElementById("sticker");
   writeTable(tbl1, cards, 3, true, 2, lang);
 

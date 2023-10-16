@@ -206,7 +206,7 @@ window.addEventListener('load', () => {
     });
 
     function printSVG() {
-      console.log(draw);  
+//      console.log(draw);  
       const wid = draw.width;
       const hei = draw.height;
       draw.width  = `${BookCover.pageWidth()}mm`;
