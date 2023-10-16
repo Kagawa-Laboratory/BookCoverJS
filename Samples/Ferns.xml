@@ -1,18 +1,18 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable type="">残り</variable>
-    <variable type="">横</variable>
-    <variable type="">縦</variable>
-    <variable type="">長さ</variable>
-    <variable type="">角</variable>
-    <variable type="">次の横</variable>
-    <variable type="">次の縦</variable>
-    <variable type="">枝</variable>
-    <variable type="">カード</variable>
-    <variable type="">カウンター</variable>
-    <variable type="">各枝</variable>
-    <variable type="">今の色</variable>
-    <variable type="">比</variable>
+    <variable>残り</variable>
+    <variable>横</variable>
+    <variable>縦</variable>
+    <variable>長さ</variable>
+    <variable>角</variable>
+    <variable>次の横</variable>
+    <variable>次の縦</variable>
+    <variable>枝</variable>
+    <variable>カード</variable>
+    <variable>カウンター</variable>
+    <variable>各枝</variable>
+    <variable>今の色</variable>
+    <variable>比</variable>
   </variables>
   <block type="procedures_defnoreturn" x="10" y="22">
     <field name="NAME">名前を書く</field>
@@ -38,7 +38,7 @@
             </value>
             <value name="y">
               <block type="math_number">
-                <field name="NUM">10</field>
+                <field name="NUM">20.4</field>
               </block>
             </value>
             <value name="str">
@@ -55,7 +55,7 @@
                 </value>
                 <value name="y">
                   <block type="math_number">
-                    <field name="NUM">20</field>
+                    <field name="NUM">30.4</field>
                   </block>
                 </value>
                 <value name="str">
@@ -84,7 +84,7 @@
                         </value>
                         <value name="y">
                           <block type="math_number">
-                            <field name="NUM">30</field>
+                            <field name="NUM">40.4</field>
                           </block>
                         </value>
                         <value name="str">
@@ -113,7 +113,7 @@
                                 </value>
                                 <value name="y">
                                   <block type="math_number">
-                                    <field name="NUM">42</field>
+                                    <field name="NUM">49.5</field>
                                   </block>
                                 </value>
                                 <value name="str">
@@ -138,11 +138,11 @@
   </block>
   <block type="procedures_defnoreturn" x="10" y="373">
     <mutation>
-      <arg name="残り" varid="yuMKO{`m+lOiygpI{6/g"></arg>
-      <arg name="横" varid=":1q|jn`0/pp)X./[u$+="></arg>
-      <arg name="縦" varid="qpd/v#`1]W!.xE-`$4gN"></arg>
-      <arg name="長さ" varid="7CT*o[/m!:GcIq*D4WJ="></arg>
-      <arg name="角" varid="~@1;d(;z[F}EKLSj4)*d"></arg>
+      <arg name="残り"></arg>
+      <arg name="横"></arg>
+      <arg name="縦"></arg>
+      <arg name="長さ"></arg>
+      <arg name="角"></arg>
     </mutation>
     <field name="NAME">木を描く</field>
     <comment pinned="false" h="80" w="160">この関数を説明する...</comment>
@@ -153,7 +153,7 @@
             <field name="OP">GTE</field>
             <value name="A">
               <block type="variables_get">
-                <field name="VAR" variabletype="">残り</field>
+                <field name="VAR">残り</field>
               </block>
             </value>
             <value name="B">
@@ -165,13 +165,13 @@
         </value>
         <statement name="DO0">
           <block type="variables_set">
-            <field name="VAR" variabletype="">次の横</field>
+            <field name="VAR">次の横</field>
             <value name="VALUE">
               <block type="math_arithmetic">
                 <field name="OP">ADD</field>
                 <value name="A">
                   <block type="variables_get">
-                    <field name="VAR" variabletype="">横</field>
+                    <field name="VAR">横</field>
                   </block>
                 </value>
                 <value name="B">
@@ -179,7 +179,7 @@
                     <field name="OP">MULTIPLY</field>
                     <value name="A">
                       <block type="variables_get">
-                        <field name="VAR" variabletype="">長さ</field>
+                        <field name="VAR">長さ</field>
                       </block>
                     </value>
                     <value name="B">
@@ -187,7 +187,7 @@
                         <field name="OP">COS</field>
                         <value name="NUM">
                           <block type="variables_get">
-                            <field name="VAR" variabletype="">角</field>
+                            <field name="VAR">角</field>
                           </block>
                         </value>
                       </block>
@@ -198,13 +198,13 @@
             </value>
             <next>
               <block type="variables_set">
-                <field name="VAR" variabletype="">次の縦</field>
+                <field name="VAR">次の縦</field>
                 <value name="VALUE">
                   <block type="math_arithmetic">
                     <field name="OP">ADD</field>
                     <value name="A">
                       <block type="variables_get">
-                        <field name="VAR" variabletype="">縦</field>
+                        <field name="VAR">縦</field>
                       </block>
                     </value>
                     <value name="B">
@@ -212,7 +212,7 @@
                         <field name="OP">MULTIPLY</field>
                         <value name="A">
                           <block type="variables_get">
-                            <field name="VAR" variabletype="">長さ</field>
+                            <field name="VAR">長さ</field>
                           </block>
                         </value>
                         <value name="B">
@@ -220,7 +220,7 @@
                             <field name="OP">SIN</field>
                             <value name="NUM">
                               <block type="variables_get">
-                                <field name="VAR" variabletype="">角</field>
+                                <field name="VAR">角</field>
                               </block>
                             </value>
                           </block>
@@ -233,35 +233,35 @@
                   <block type="bookcover_line">
                     <value name="x1">
                       <block type="variables_get">
-                        <field name="VAR" variabletype="">横</field>
+                        <field name="VAR">横</field>
                       </block>
                     </value>
                     <value name="y1">
                       <block type="variables_get">
-                        <field name="VAR" variabletype="">縦</field>
+                        <field name="VAR">縦</field>
                       </block>
                     </value>
                     <value name="x2">
                       <block type="variables_get">
-                        <field name="VAR" variabletype="">次の横</field>
+                        <field name="VAR">次の横</field>
                       </block>
                     </value>
                     <value name="y2">
                       <block type="variables_get">
-                        <field name="VAR" variabletype="">次の縦</field>
+                        <field name="VAR">次の縦</field>
                       </block>
                     </value>
                     <next>
                       <block type="controls_forEach">
-                        <field name="VAR" variabletype="">各枝</field>
+                        <field name="VAR">各枝</field>
                         <value name="LIST">
                           <block type="variables_get">
-                            <field name="VAR" variabletype="">枝</field>
+                            <field name="VAR">枝</field>
                           </block>
                         </value>
                         <statement name="DO">
                           <block type="variables_set">
-                            <field name="VAR" variabletype="">比</field>
+                            <field name="VAR">比</field>
                             <value name="VALUE">
                               <block type="lists_getIndex">
                                 <mutation statement="false" at="false"></mutation>
@@ -269,7 +269,7 @@
                                 <field name="WHERE">FIRST</field>
                                 <value name="VALUE">
                                   <block type="variables_get">
-                                    <field name="VAR" variabletype="">各枝</field>
+                                    <field name="VAR">各枝</field>
                                   </block>
                                 </value>
                               </block>
@@ -288,7 +288,7 @@
                                     <field name="OP">MINUS</field>
                                     <value name="A">
                                       <block type="variables_get">
-                                        <field name="VAR" variabletype="">残り</field>
+                                        <field name="VAR">残り</field>
                                       </block>
                                     </value>
                                     <value name="B">
@@ -306,7 +306,7 @@
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">横</field>
+                                            <field name="VAR">横</field>
                                           </block>
                                         </value>
                                         <value name="B">
@@ -319,7 +319,7 @@
                                             </value>
                                             <value name="B">
                                               <block type="variables_get">
-                                                <field name="VAR" variabletype="">比</field>
+                                                <field name="VAR">比</field>
                                               </block>
                                             </value>
                                           </block>
@@ -331,12 +331,12 @@
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">次の横</field>
+                                            <field name="VAR">次の横</field>
                                           </block>
                                         </value>
                                         <value name="B">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">比</field>
+                                            <field name="VAR">比</field>
                                           </block>
                                         </value>
                                       </block>
@@ -351,7 +351,7 @@
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">縦</field>
+                                            <field name="VAR">縦</field>
                                           </block>
                                         </value>
                                         <value name="B">
@@ -364,7 +364,7 @@
                                             </value>
                                             <value name="B">
                                               <block type="variables_get">
-                                                <field name="VAR" variabletype="">比</field>
+                                                <field name="VAR">比</field>
                                               </block>
                                             </value>
                                           </block>
@@ -376,12 +376,12 @@
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">次の縦</field>
+                                            <field name="VAR">次の縦</field>
                                           </block>
                                         </value>
                                         <value name="B">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">比</field>
+                                            <field name="VAR">比</field>
                                           </block>
                                         </value>
                                       </block>
@@ -393,7 +393,7 @@
                                     <field name="OP">MULTIPLY</field>
                                     <value name="A">
                                       <block type="variables_get">
-                                        <field name="VAR" variabletype="">長さ</field>
+                                        <field name="VAR">長さ</field>
                                       </block>
                                     </value>
                                     <value name="B">
@@ -403,7 +403,7 @@
                                         <field name="WHERE">FROM_START</field>
                                         <value name="VALUE">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">各枝</field>
+                                            <field name="VAR">各枝</field>
                                           </block>
                                         </value>
                                         <value name="AT">
@@ -420,7 +420,7 @@
                                     <field name="OP">ADD</field>
                                     <value name="A">
                                       <block type="variables_get">
-                                        <field name="VAR" variabletype="">角</field>
+                                        <field name="VAR">角</field>
                                       </block>
                                     </value>
                                     <value name="B">
@@ -430,7 +430,7 @@
                                         <field name="WHERE">FROM_START</field>
                                         <value name="VALUE">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">各枝</field>
+                                            <field name="VAR">各枝</field>
                                           </block>
                                         </value>
                                         <value name="AT">
@@ -477,7 +477,7 @@
             </value>
             <next>
               <block type="variables_set">
-                <field name="VAR" variabletype="">枝</field>
+                <field name="VAR">枝</field>
                 <value name="VALUE">
                   <block type="lists_create_with">
                     <mutation items="3"></mutation>
@@ -545,14 +545,14 @@
                 </value>
                 <next>
                   <block type="bookcover_foreachcard">
-                    <field name="CARD" variabletype="">カード</field>
-                    <field name="COUNTER" variabletype="">カウンター</field>
+                    <field name="CARD">カード</field>
+                    <field name="COUNTER">カウンター</field>
                     <field name="CLIP">TRUE</field>
                     <field name="FRAME">TRUE</field>
                     <field name="MARGIN">1</field>
                     <statement name="DO">
                       <block type="variables_set">
-                        <field name="VAR" variabletype="">今の色</field>
+                        <field name="VAR">今の色</field>
                         <value name="VALUE">
                           <block type="bookcover_rotate_h">
                             <value name="colour">
@@ -570,7 +570,7 @@
                                 </value>
                                 <value name="B">
                                   <block type="variables_get">
-                                    <field name="VAR" variabletype="">カウンター</field>
+                                    <field name="VAR">カウンター</field>
                                   </block>
                                 </value>
                               </block>
@@ -581,7 +581,7 @@
                           <block type="bookcover_fill">
                             <value name="COLOUR">
                               <block type="variables_get">
-                                <field name="VAR" variabletype="">今の色</field>
+                                <field name="VAR">今の色</field>
                               </block>
                             </value>
                             <next>
@@ -599,7 +599,7 @@
                                         <field name="WHERE">FIRST</field>
                                         <value name="VALUE">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">枝</field>
+                                            <field name="VAR">枝</field>
                                           </block>
                                         </value>
                                       </block>
@@ -627,7 +627,7 @@
                                             </value>
                                             <value name="B">
                                               <block type="variables_get">
-                                                <field name="VAR" variabletype="">カウンター</field>
+                                                <field name="VAR">カウンター</field>
                                               </block>
                                             </value>
                                           </block>
@@ -640,7 +640,7 @@
                                           <block type="bookcover_rotate_h">
                                             <value name="colour">
                                               <block type="variables_get">
-                                                <field name="VAR" variabletype="">今の色</field>
+                                                <field name="VAR">今の色</field>
                                               </block>
                                             </value>
                                             <value name="angle">

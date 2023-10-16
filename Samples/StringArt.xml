@@ -1,20 +1,20 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable type="">縦余白</variable>
-    <variable type="">線の本数</variable>
-    <variable type="">横余白</variable>
-    <variable type="">カード</variable>
-    <variable type="">カウンター</variable>
-    <variable type="">絵の横幅</variable>
-    <variable type="">絵の高さ</variable>
-    <variable type="">横の間隔</variable>
-    <variable type="">縦の間隔</variable>
-    <variable type="">今の色</variable>
-    <variable type="">i</variable>
-    <variable type="">x</variable>
-    <variable type="">y</variable>
+    <variable>線の本数</variable>
+    <variable>横余白</variable>
+    <variable>縦余白</variable>
+    <variable>カード</variable>
+    <variable>カウンター</variable>
+    <variable>絵の横幅</variable>
+    <variable>絵の高さ</variable>
+    <variable>横の間隔</variable>
+    <variable>縦の間隔</variable>
+    <variable>今の色</variable>
+    <variable>i</variable>
+    <variable>x</variable>
+    <variable>y</variable>
   </variables>
-  <block type="bookcover_card_frame">
+  <block type="bookcover_card_frame" x="10" y="10">
     <value name="PAPER_SPEC">
       <block type="bookcover_cardspec">
         <field name="CARDSPEC">エーワン F8A4-5</field>
@@ -27,7 +27,7 @@
         </value>
         <next>
           <block type="variables_set">
-            <field name="VAR" variabletype="">線の本数</field>
+            <field name="VAR">線の本数</field>
             <value name="VALUE">
               <block type="math_number">
                 <field name="NUM">60</field>
@@ -35,7 +35,7 @@
             </value>
             <next>
               <block type="variables_set">
-                <field name="VAR" variabletype="">横余白</field>
+                <field name="VAR">横余白</field>
                 <value name="VALUE">
                   <block type="math_number">
                     <field name="NUM">5</field>
@@ -43,7 +43,7 @@
                 </value>
                 <next>
                   <block type="variables_set">
-                    <field name="VAR" variabletype="">縦余白</field>
+                    <field name="VAR">縦余白</field>
                     <value name="VALUE">
                       <block type="math_number">
                         <field name="NUM">5</field>
@@ -51,14 +51,14 @@
                     </value>
                     <next>
                       <block type="bookcover_foreachcard">
-                        <field name="CARD" variabletype="">カード</field>
-                        <field name="COUNTER" variabletype="">カウンター</field>
+                        <field name="CARD">カード</field>
+                        <field name="COUNTER">カウンター</field>
                         <field name="CLIP">TRUE</field>
                         <field name="FRAME">TRUE</field>
                         <field name="MARGIN">1</field>
                         <statement name="DO">
                           <block type="variables_set">
-                            <field name="VAR" variabletype="">絵の横幅</field>
+                            <field name="VAR">絵の横幅</field>
                             <value name="VALUE">
                               <block type="math_arithmetic">
                                 <field name="OP">MINUS</field>
@@ -66,7 +66,7 @@
                                   <block type="bookcover_cardWidth">
                                     <value name="CARD">
                                       <block type="variables_get">
-                                        <field name="VAR" variabletype="">カード</field>
+                                        <field name="VAR">カード</field>
                                       </block>
                                     </value>
                                   </block>
@@ -76,7 +76,7 @@
                                     <field name="OP">MULTIPLY</field>
                                     <value name="A">
                                       <block type="variables_get">
-                                        <field name="VAR" variabletype="">横余白</field>
+                                        <field name="VAR">横余白</field>
                                       </block>
                                     </value>
                                     <value name="B">
@@ -90,7 +90,7 @@
                             </value>
                             <next>
                               <block type="variables_set">
-                                <field name="VAR" variabletype="">絵の高さ</field>
+                                <field name="VAR">絵の高さ</field>
                                 <value name="VALUE">
                                   <block type="math_arithmetic">
                                     <field name="OP">MINUS</field>
@@ -98,7 +98,7 @@
                                       <block type="bookcover_cardHeight">
                                         <value name="CARD">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">カード</field>
+                                            <field name="VAR">カード</field>
                                           </block>
                                         </value>
                                       </block>
@@ -108,7 +108,7 @@
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">縦余白</field>
+                                            <field name="VAR">縦余白</field>
                                           </block>
                                         </value>
                                         <value name="B">
@@ -122,43 +122,43 @@
                                 </value>
                                 <next>
                                   <block type="variables_set">
-                                    <field name="VAR" variabletype="">横の間隔</field>
+                                    <field name="VAR">横の間隔</field>
                                     <value name="VALUE">
                                       <block type="math_arithmetic">
                                         <field name="OP">DIVIDE</field>
                                         <value name="A">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">絵の横幅</field>
+                                            <field name="VAR">絵の横幅</field>
                                           </block>
                                         </value>
                                         <value name="B">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">線の本数</field>
+                                            <field name="VAR">線の本数</field>
                                           </block>
                                         </value>
                                       </block>
                                     </value>
                                     <next>
                                       <block type="variables_set">
-                                        <field name="VAR" variabletype="">縦の間隔</field>
+                                        <field name="VAR">縦の間隔</field>
                                         <value name="VALUE">
                                           <block type="math_arithmetic">
                                             <field name="OP">DIVIDE</field>
                                             <value name="A">
                                               <block type="variables_get">
-                                                <field name="VAR" variabletype="">絵の高さ</field>
+                                                <field name="VAR">絵の高さ</field>
                                               </block>
                                             </value>
                                             <value name="B">
                                               <block type="variables_get">
-                                                <field name="VAR" variabletype="">線の本数</field>
+                                                <field name="VAR">線の本数</field>
                                               </block>
                                             </value>
                                           </block>
                                         </value>
                                         <next>
                                           <block type="variables_set">
-                                            <field name="VAR" variabletype="">今の色</field>
+                                            <field name="VAR">今の色</field>
                                             <value name="VALUE">
                                               <block type="bookcover_rotate_h">
                                                 <value name="colour">
@@ -176,7 +176,7 @@
                                                     </value>
                                                     <value name="B">
                                                       <block type="variables_get">
-                                                        <field name="VAR" variabletype="">カウンター</field>
+                                                        <field name="VAR">カウンター</field>
                                                       </block>
                                                     </value>
                                                   </block>
@@ -199,7 +199,7 @@
                                                     </value>
                                                     <next>
                                                       <block type="controls_for">
-                                                        <field name="VAR" variabletype="">i</field>
+                                                        <field name="VAR">i</field>
                                                         <value name="FROM">
                                                           <block type="math_number">
                                                             <field name="NUM">0</field>
@@ -207,7 +207,7 @@
                                                         </value>
                                                         <value name="TO">
                                                           <block type="variables_get">
-                                                            <field name="VAR" variabletype="">線の本数</field>
+                                                            <field name="VAR">線の本数</field>
                                                           </block>
                                                         </value>
                                                         <value name="BY">
@@ -221,7 +221,7 @@
                                                               <block type="bookcover_rotate_h">
                                                                 <value name="colour">
                                                                   <block type="variables_get">
-                                                                    <field name="VAR" variabletype="">今の色</field>
+                                                                    <field name="VAR">今の色</field>
                                                                   </block>
                                                                 </value>
                                                                 <value name="angle">
@@ -229,7 +229,7 @@
                                                                     <field name="OP">MULTIPLY</field>
                                                                     <value name="A">
                                                                       <block type="variables_get">
-                                                                        <field name="VAR" variabletype="">i</field>
+                                                                        <field name="VAR">i</field>
                                                                       </block>
                                                                     </value>
                                                                     <value name="B">
@@ -243,36 +243,36 @@
                                                             </value>
                                                             <next>
                                                               <block type="variables_set">
-                                                                <field name="VAR" variabletype="">x</field>
+                                                                <field name="VAR">x</field>
                                                                 <value name="VALUE">
                                                                   <block type="math_arithmetic">
                                                                     <field name="OP">MULTIPLY</field>
                                                                     <value name="A">
                                                                       <block type="variables_get">
-                                                                        <field name="VAR" variabletype="">横の間隔</field>
+                                                                        <field name="VAR">横の間隔</field>
                                                                       </block>
                                                                     </value>
                                                                     <value name="B">
                                                                       <block type="variables_get">
-                                                                        <field name="VAR" variabletype="">i</field>
+                                                                        <field name="VAR">i</field>
                                                                       </block>
                                                                     </value>
                                                                   </block>
                                                                 </value>
                                                                 <next>
                                                                   <block type="variables_set">
-                                                                    <field name="VAR" variabletype="">y</field>
+                                                                    <field name="VAR">y</field>
                                                                     <value name="VALUE">
                                                                       <block type="math_arithmetic">
                                                                         <field name="OP">MULTIPLY</field>
                                                                         <value name="A">
                                                                           <block type="variables_get">
-                                                                            <field name="VAR" variabletype="">縦の間隔</field>
+                                                                            <field name="VAR">縦の間隔</field>
                                                                           </block>
                                                                         </value>
                                                                         <value name="B">
                                                                           <block type="variables_get">
-                                                                            <field name="VAR" variabletype="">i</field>
+                                                                            <field name="VAR">i</field>
                                                                           </block>
                                                                         </value>
                                                                       </block>
@@ -281,7 +281,7 @@
                                                                       <block type="bookcover_line">
                                                                         <value name="x1">
                                                                           <block type="variables_get">
-                                                                            <field name="VAR" variabletype="">横余白</field>
+                                                                            <field name="VAR">横余白</field>
                                                                           </block>
                                                                         </value>
                                                                         <value name="y1">
@@ -289,12 +289,12 @@
                                                                             <field name="OP">ADD</field>
                                                                             <value name="A">
                                                                               <block type="variables_get">
-                                                                                <field name="VAR" variabletype="">縦余白</field>
+                                                                                <field name="VAR">縦余白</field>
                                                                               </block>
                                                                             </value>
                                                                             <value name="B">
                                                                               <block type="variables_get">
-                                                                                <field name="VAR" variabletype="">y</field>
+                                                                                <field name="VAR">y</field>
                                                                               </block>
                                                                             </value>
                                                                           </block>
@@ -307,26 +307,26 @@
                                                                                 <field name="OP">ADD</field>
                                                                                 <value name="A">
                                                                                   <block type="variables_get">
-                                                                                    <field name="VAR" variabletype="">横余白</field>
+                                                                                    <field name="VAR">横余白</field>
                                                                                   </block>
                                                                                 </value>
                                                                                 <value name="B">
                                                                                   <block type="variables_get">
-                                                                                    <field name="VAR" variabletype="">絵の横幅</field>
+                                                                                    <field name="VAR">絵の横幅</field>
                                                                                   </block>
                                                                                 </value>
                                                                               </block>
                                                                             </value>
                                                                             <value name="B">
                                                                               <block type="variables_get">
-                                                                                <field name="VAR" variabletype="">x</field>
+                                                                                <field name="VAR">x</field>
                                                                               </block>
                                                                             </value>
                                                                           </block>
                                                                         </value>
                                                                         <value name="y2">
                                                                           <block type="variables_get">
-                                                                            <field name="VAR" variabletype="">縦余白</field>
+                                                                            <field name="VAR">縦余白</field>
                                                                           </block>
                                                                         </value>
                                                                       </block>
@@ -346,7 +346,7 @@
                                                               <block type="bookcover_fill">
                                                                 <value name="COLOUR">
                                                                   <block type="variables_get">
-                                                                    <field name="VAR" variabletype="">今の色</field>
+                                                                    <field name="VAR">今の色</field>
                                                                   </block>
                                                                 </value>
                                                                 <next>
@@ -370,7 +370,7 @@
                                                                         </value>
                                                                         <value name="y">
                                                                           <block type="math_number">
-                                                                            <field name="NUM">10</field>
+                                                                            <field name="NUM">20.4</field>
                                                                           </block>
                                                                         </value>
                                                                         <value name="str">
@@ -387,7 +387,7 @@
                                                                             </value>
                                                                             <value name="y">
                                                                               <block type="math_number">
-                                                                                <field name="NUM">20</field>
+                                                                                <field name="NUM">30.4</field>
                                                                               </block>
                                                                             </value>
                                                                             <value name="str">
@@ -416,7 +416,7 @@
                                                                                     </value>
                                                                                     <value name="y">
                                                                                       <block type="math_number">
-                                                                                        <field name="NUM">30</field>
+                                                                                        <field name="NUM">40.4</field>
                                                                                       </block>
                                                                                     </value>
                                                                                     <value name="str">
@@ -445,7 +445,7 @@
                                                                                             </value>
                                                                                             <value name="y">
                                                                                               <block type="math_number">
-                                                                                                <field name="NUM">43</field>
+                                                                                                <field name="NUM">49.5</field>
                                                                                               </block>
                                                                                             </value>
                                                                                             <value name="str">
@@ -474,7 +474,7 @@
                                                                                                     </value>
                                                                                                     <value name="y">
                                                                                                       <block type="math_number">
-                                                                                                        <field name="NUM">10</field>
+                                                                                                        <field name="NUM">36</field>
                                                                                                       </block>
                                                                                                     </value>
                                                                                                     <value name="str">

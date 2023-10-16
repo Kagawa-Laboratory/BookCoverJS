@@ -1,11 +1,11 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable type="">カード</variable>
-    <variable type="">カウンター</variable>
-    <variable type="">i</variable>
-    <variable type="">今の色</variable>
+    <variable>カード</variable>
+    <variable>カウンター</variable>
+    <variable>i</variable>
+    <variable>今の色</variable>
   </variables>
-  <block type="bookcover_card_frame">
+  <block type="bookcover_card_frame" x="10" y="10">
     <value name="PAPER_SPEC">
       <block type="bookcover_cardspec">
         <field name="CARDSPEC">エーワン F8A4-5</field>
@@ -13,8 +13,8 @@
     </value>
     <statement name="DO">
       <block type="bookcover_foreachcard">
-        <field name="CARD" variabletype="">カード</field>
-        <field name="COUNTER" variabletype="">カウンター</field>
+        <field name="CARD">カード</field>
+        <field name="COUNTER">カウンター</field>
         <field name="CLIP">TRUE</field>
         <field name="FRAME">TRUE</field>
         <field name="MARGIN">1</field>
@@ -41,7 +41,7 @@
                     </value>
                     <next>
                       <block type="controls_for">
-                        <field name="VAR" variabletype="">i</field>
+                        <field name="VAR">i</field>
                         <value name="FROM">
                           <block type="math_number">
                             <field name="NUM">1</field>
@@ -79,7 +79,7 @@
                                         </value>
                                         <value name="B">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">カウンター</field>
+                                            <field name="VAR">カウンター</field>
                                           </block>
                                         </value>
                                       </block>
@@ -89,7 +89,7 @@
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">i</field>
+                                            <field name="VAR">i</field>
                                           </block>
                                         </value>
                                         <value name="B">
@@ -107,7 +107,7 @@
                               <block type="bookcover_forward">
                                 <value name="len">
                                   <block type="variables_get">
-                                    <field name="VAR" variabletype="">i</field>
+                                    <field name="VAR">i</field>
                                   </block>
                                 </value>
                                 <next>
@@ -122,7 +122,7 @@
                                         </value>
                                         <value name="B">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">カウンター</field>
+                                            <field name="VAR">カウンター</field>
                                           </block>
                                         </value>
                                       </block>
@@ -142,7 +142,7 @@
                                 </value>
                                 <next>
                                   <block type="variables_set">
-                                    <field name="VAR" variabletype="">今の色</field>
+                                    <field name="VAR">今の色</field>
                                     <value name="VALUE">
                                       <block type="bookcover_rotate_h">
                                         <value name="colour">
@@ -160,7 +160,7 @@
                                             </value>
                                             <value name="B">
                                               <block type="variables_get">
-                                                <field name="VAR" variabletype="">カウンター</field>
+                                                <field name="VAR">カウンター</field>
                                               </block>
                                             </value>
                                           </block>
@@ -171,7 +171,7 @@
                                       <block type="bookcover_fill">
                                         <value name="COLOUR">
                                           <block type="variables_get">
-                                            <field name="VAR" variabletype="">今の色</field>
+                                            <field name="VAR">今の色</field>
                                           </block>
                                         </value>
                                         <next>
@@ -195,7 +195,7 @@
                                                 </value>
                                                 <value name="y">
                                                   <block type="math_number">
-                                                    <field name="NUM">10</field>
+                                                    <field name="NUM">20.4</field>
                                                   </block>
                                                 </value>
                                                 <value name="str">
@@ -212,7 +212,7 @@
                                                     </value>
                                                     <value name="y">
                                                       <block type="math_number">
-                                                        <field name="NUM">20</field>
+                                                        <field name="NUM">30.4</field>
                                                       </block>
                                                     </value>
                                                     <value name="str">
@@ -241,7 +241,7 @@
                                                             </value>
                                                             <value name="y">
                                                               <block type="math_number">
-                                                                <field name="NUM">30</field>
+                                                                <field name="NUM">40.4</field>
                                                               </block>
                                                             </value>
                                                             <value name="str">
@@ -270,7 +270,7 @@
                                                                     </value>
                                                                     <value name="y">
                                                                       <block type="math_number">
-                                                                        <field name="NUM">43</field>
+                                                                        <field name="NUM">49.5</field>
                                                                       </block>
                                                                     </value>
                                                                     <value name="str">

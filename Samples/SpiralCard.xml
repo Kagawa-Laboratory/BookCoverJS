@@ -1,104 +1,104 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable type="" id="wJ/ty^c,qhhNU$1?I+m`">カード</variable>
-    <variable type="" id="0SK$v=~%9}Fy8=gBGuS3">カウンター</variable>
-    <variable type="" id="g{%Xuk5X)FYxio!Q=n/x">i</variable>
-    <variable type="" id="8DffBUM7lcC?V.u_S:vn">j</variable>
-    <variable type="" id="wN8H+HSMf9{8Q,/jn~|~">今の色</variable>
-    <variable type="" id="[[PAnR~t1#FxmzDDmEyJ">距離</variable>
-    <variable type="" id="Rk)15-gleh;W~RM|=!HN">傾き</variable>
+    <variable>カード</variable>
+    <variable>カウンター</variable>
+    <variable>i</variable>
+    <variable>j</variable>
+    <variable>今の色</variable>
+    <variable>距離</variable>
+    <variable>傾き</variable>
   </variables>
-  <block type="bookcover_card_frame" id="n|TB`*UB3fOzyk$5YFiE" x="10" y="10">
+  <block type="bookcover_card_frame" x="10" y="10">
     <value name="PAPER_SPEC">
-      <block type="bookcover_cardspec" id="9}j%[ATyK$1r;ps:z0lu">
+      <block type="bookcover_cardspec">
         <field name="CARDSPEC">エーワン F8A4-5</field>
       </block>
     </value>
     <statement name="DO">
-      <block type="bookcover_stroke" id="E/IpI6|Q=Zj7Vd9EtfkK">
+      <block type="bookcover_stroke">
         <value name="COLOUR">
-          <block type="bookcover_none" id="^s_j-h9D)[p0#-25)/xT"></block>
+          <block type="bookcover_none"></block>
         </value>
         <next>
-          <block type="bookcover_foreachcard" id="6o)(MBj=[F~bRiAGF/mS">
-            <field name="CARD" id="wJ/ty^c,qhhNU$1?I+m`" variabletype="">カード</field>
-            <field name="COUNTER" id="0SK$v=~%9}Fy8=gBGuS3" variabletype="">カウンター</field>
+          <block type="bookcover_foreachcard">
+            <field name="CARD">カード</field>
+            <field name="COUNTER">カウンター</field>
             <field name="CLIP">TRUE</field>
             <field name="FRAME">TRUE</field>
             <field name="MARGIN">1</field>
             <statement name="DO">
-              <block type="bookcover_fill_opacity" id="g3RXIH+[q_MLp$Busn%B">
+              <block type="bookcover_fill_opacity">
                 <value name="opacity">
-                  <block type="math_number" id="~JH{T;9rxEyM[eASKfKg">
+                  <block type="math_number">
                     <field name="NUM">0.3</field>
                   </block>
                 </value>
                 <next>
-                  <block type="controls_for" id="V?E-L9M-P3Z/4$;JP[g1">
-                    <field name="VAR" id="g{%Xuk5X)FYxio!Q=n/x" variabletype="">i</field>
+                  <block type="controls_for">
+                    <field name="VAR">i</field>
                     <value name="FROM">
-                      <block type="math_number" id="?nt;8`vP08F@F3XX[7)=">
+                      <block type="math_number">
                         <field name="NUM">0</field>
                       </block>
                     </value>
                     <value name="TO">
-                      <block type="bookcover_cardWidth" id="@.L|SBJ@1Jjur^H[SeQO">
+                      <block type="bookcover_cardWidth">
                         <value name="CARD">
-                          <block type="variables_get" id="?NvYH9ENj`-_baHsKwF:">
-                            <field name="VAR" id="wJ/ty^c,qhhNU$1?I+m`" variabletype="">カード</field>
+                          <block type="variables_get">
+                            <field name="VAR">カード</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <value name="BY">
-                      <block type="math_number" id=".IY[`}k(z51q9139WY3}">
+                      <block type="math_number">
                         <field name="NUM">6</field>
                       </block>
                     </value>
                     <statement name="DO">
-                      <block type="controls_for" id="~Q2w#+s!t0mc3)2VMD/v">
-                        <field name="VAR" id="8DffBUM7lcC?V.u_S:vn" variabletype="">j</field>
+                      <block type="controls_for">
+                        <field name="VAR">j</field>
                         <value name="FROM">
-                          <block type="math_number" id="UTiG.mQt;VRzP`x5O,].">
+                          <block type="math_number">
                             <field name="NUM">0</field>
                           </block>
                         </value>
                         <value name="TO">
-                          <block type="bookcover_cardHeight" id="cBrM~)U[Q11`eMbGxB+]">
+                          <block type="bookcover_cardHeight">
                             <value name="CARD">
-                              <block type="variables_get" id="lO}RQ-HYL8^EZqhdt(#x">
-                                <field name="VAR" id="wJ/ty^c,qhhNU$1?I+m`" variabletype="">カード</field>
+                              <block type="variables_get">
+                                <field name="VAR">カード</field>
                               </block>
                             </value>
                           </block>
                         </value>
                         <value name="BY">
-                          <block type="math_number" id="Zq7AI`M;J*:G(V4iMP0)">
+                          <block type="math_number">
                             <field name="NUM">6</field>
                           </block>
                         </value>
                         <statement name="DO">
-                          <block type="variables_set" id="aF1_O!#2k~E@C`#!!LCT">
-                            <field name="VAR" id="[[PAnR~t1#FxmzDDmEyJ" variabletype="">距離</field>
+                          <block type="variables_set">
+                            <field name="VAR">距離</field>
                             <value name="VALUE">
-                              <block type="bookcover_distance" id="e~+c=%K%@s%jQlsOJ~s+">
+                              <block type="bookcover_distance">
                                 <value name="X1">
                                   <shadow type="math_number">
                                     <field name="NUM">0</field>
                                   </shadow>
-                                  <block type="math_arithmetic" id="0]hK@K22Be3SK}BpuKUR">
+                                  <block type="math_arithmetic">
                                     <field name="OP">DIVIDE</field>
                                     <value name="A">
-                                      <block type="bookcover_cardWidth" id="d^.(a1k=gs_]Dx1-dLmc">
+                                      <block type="bookcover_cardWidth">
                                         <value name="CARD">
-                                          <block type="variables_get" id="0H0]$_frPcheqVQy,aT8">
-                                            <field name="VAR" id="wJ/ty^c,qhhNU$1?I+m`" variabletype="">カード</field>
+                                          <block type="variables_get">
+                                            <field name="VAR">カード</field>
                                           </block>
                                         </value>
                                       </block>
                                     </value>
                                     <value name="B">
-                                      <block type="math_number" id="=InPE=:DBuFv*4?TD6w#">
+                                      <block type="math_number">
                                         <field name="NUM">2</field>
                                       </block>
                                     </value>
@@ -108,19 +108,19 @@
                                   <shadow type="math_number">
                                     <field name="NUM">0</field>
                                   </shadow>
-                                  <block type="math_arithmetic" id="F]Y;T0ttW$v[+y)AKg-X">
+                                  <block type="math_arithmetic">
                                     <field name="OP">DIVIDE</field>
                                     <value name="A">
-                                      <block type="bookcover_cardHeight" id="2Jq0SfX*pZ+/+,1Omymr">
+                                      <block type="bookcover_cardHeight">
                                         <value name="CARD">
-                                          <block type="variables_get" id="kfNLmN`^[WD1u{|fz8+D">
-                                            <field name="VAR" id="wJ/ty^c,qhhNU$1?I+m`" variabletype="">カード</field>
+                                          <block type="variables_get">
+                                            <field name="VAR">カード</field>
                                           </block>
                                         </value>
                                       </block>
                                     </value>
                                     <value name="B">
-                                      <block type="math_number" id="!^Y6d,8@!Lz[Uy)0WrOu">
+                                      <block type="math_number">
                                         <field name="NUM">2</field>
                                       </block>
                                     </value>
@@ -130,42 +130,42 @@
                                   <shadow type="math_number">
                                     <field name="NUM">3</field>
                                   </shadow>
-                                  <block type="variables_get" id="P4^jT|E%xuc||S)g6)3+">
-                                    <field name="VAR" id="g{%Xuk5X)FYxio!Q=n/x" variabletype="">i</field>
+                                  <block type="variables_get">
+                                    <field name="VAR">i</field>
                                   </block>
                                 </value>
                                 <value name="Y2">
                                   <shadow type="math_number">
                                     <field name="NUM">4</field>
                                   </shadow>
-                                  <block type="variables_get" id="G{1wvhh8@ZJ596/uSv`a">
-                                    <field name="VAR" id="8DffBUM7lcC?V.u_S:vn" variabletype="">j</field>
+                                  <block type="variables_get">
+                                    <field name="VAR">j</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
                             <next>
-                              <block type="variables_set" id="bxnzOa4%bcn2b+5:K5},">
-                                <field name="VAR" id="Rk)15-gleh;W~RM|=!HN" variabletype="">傾き</field>
+                              <block type="variables_set">
+                                <field name="VAR">傾き</field>
                                 <value name="VALUE">
-                                  <block type="bookcover_atan2" id="0=MwD#J[^W^*QIz[s5{n">
+                                  <block type="bookcover_atan2">
                                     <value name="X1">
                                       <shadow type="math_number">
                                         <field name="NUM">0</field>
                                       </shadow>
-                                      <block type="math_arithmetic" id="et[qgcgNGW/LYMc!,hL:">
+                                      <block type="math_arithmetic">
                                         <field name="OP">DIVIDE</field>
                                         <value name="A">
-                                          <block type="bookcover_cardWidth" id="Wt#kL]-h|u2;m-0zSi4$">
+                                          <block type="bookcover_cardWidth">
                                             <value name="CARD">
-                                              <block type="variables_get" id="iHb:{K-/.UJ:Y.0gpF2Q">
-                                                <field name="VAR" id="wJ/ty^c,qhhNU$1?I+m`" variabletype="">カード</field>
+                                              <block type="variables_get">
+                                                <field name="VAR">カード</field>
                                               </block>
                                             </value>
                                           </block>
                                         </value>
                                         <value name="B">
-                                          <block type="math_number" id="vGMOYj|~*]o]z5{9HdAO">
+                                          <block type="math_number">
                                             <field name="NUM">2</field>
                                           </block>
                                         </value>
@@ -175,19 +175,19 @@
                                       <shadow type="math_number">
                                         <field name="NUM">0</field>
                                       </shadow>
-                                      <block type="math_arithmetic" id="T@j@qF!zRm+TNLE{)2Yq">
+                                      <block type="math_arithmetic">
                                         <field name="OP">DIVIDE</field>
                                         <value name="A">
-                                          <block type="bookcover_cardHeight" id="nGj[dYvGxSLxa@jqc{7r">
+                                          <block type="bookcover_cardHeight">
                                             <value name="CARD">
-                                              <block type="variables_get" id="UQeKn~w7LDCWBZ2h7L0[">
-                                                <field name="VAR" id="wJ/ty^c,qhhNU$1?I+m`" variabletype="">カード</field>
+                                              <block type="variables_get">
+                                                <field name="VAR">カード</field>
                                               </block>
                                             </value>
                                           </block>
                                         </value>
                                         <value name="B">
-                                          <block type="math_number" id=")Ph(A.1~3#Mhd_{$(nL(">
+                                          <block type="math_number">
                                             <field name="NUM">2</field>
                                           </block>
                                         </value>
@@ -197,70 +197,70 @@
                                       <shadow type="math_number">
                                         <field name="NUM">3</field>
                                       </shadow>
-                                      <block type="variables_get" id="m|e1Pqd`,r^~Ym]a;[iH">
-                                        <field name="VAR" id="g{%Xuk5X)FYxio!Q=n/x" variabletype="">i</field>
+                                      <block type="variables_get">
+                                        <field name="VAR">i</field>
                                       </block>
                                     </value>
                                     <value name="Y2">
                                       <shadow type="math_number">
                                         <field name="NUM">4</field>
                                       </shadow>
-                                      <block type="variables_get" id="*cZ^NpaXXV1{+hv}FtY6">
-                                        <field name="VAR" id="8DffBUM7lcC?V.u_S:vn" variabletype="">j</field>
+                                      <block type="variables_get">
+                                        <field name="VAR">j</field>
                                       </block>
                                     </value>
                                   </block>
                                 </value>
                                 <next>
-                                  <block type="bookcover_fill" id="`!:ZPM}q|y#!{BO5_L?U">
+                                  <block type="bookcover_fill">
                                     <value name="COLOUR">
-                                      <block type="bookcover_hsl360" id="?SlH%C6~G4TV!cOr(o[T">
+                                      <block type="bookcover_hsl360">
                                         <value name="hue">
-                                          <block type="math_arithmetic" id="Jn?ns;l_#(!$fF;/L}eC">
+                                          <block type="math_arithmetic">
                                             <field name="OP">ADD</field>
                                             <value name="A">
-                                              <block type="math_arithmetic" id="8}~0v_[@y3$u.o[MC2cf">
+                                              <block type="math_arithmetic">
                                                 <field name="OP">MULTIPLY</field>
                                                 <value name="A">
-                                                  <block type="bookcover_angle" id="#t|7.ck|A;9bg9O1Go3r">
+                                                  <block type="bookcover_angle">
                                                     <field name="angle">45</field>
                                                   </block>
                                                 </value>
                                                 <value name="B">
-                                                  <block type="variables_get" id="$/}fz.!i2km,(![^.-)b">
-                                                    <field name="VAR" id="0SK$v=~%9}Fy8=gBGuS3" variabletype="">カウンター</field>
+                                                  <block type="variables_get">
+                                                    <field name="VAR">カウンター</field>
                                                   </block>
                                                 </value>
                                               </block>
                                             </value>
                                             <value name="B">
-                                              <block type="math_arithmetic" id="fkW+j%-@,6lEJ7~;fg`(">
+                                              <block type="math_arithmetic">
                                                 <field name="OP">ADD</field>
                                                 <value name="A">
-                                                  <block type="math_arithmetic" id="?],oeRNq|Q=t;4lkjO1%">
+                                                  <block type="math_arithmetic">
                                                     <field name="OP">MULTIPLY</field>
                                                     <value name="A">
-                                                      <block type="variables_get" id="uXog;^Dte@9ztR0Gz@#1">
-                                                        <field name="VAR" id="Rk)15-gleh;W~RM|=!HN" variabletype="">傾き</field>
+                                                      <block type="variables_get">
+                                                        <field name="VAR">傾き</field>
                                                       </block>
                                                     </value>
                                                     <value name="B">
-                                                      <block type="math_number" id="_Gqkc#tX*EbI4lEsSb-R">
+                                                      <block type="math_number">
                                                         <field name="NUM">2</field>
                                                       </block>
                                                     </value>
                                                   </block>
                                                 </value>
                                                 <value name="B">
-                                                  <block type="math_arithmetic" id="8$BBm]MOcHQIYgPbtm!Q">
+                                                  <block type="math_arithmetic">
                                                     <field name="OP">MULTIPLY</field>
                                                     <value name="A">
-                                                      <block type="variables_get" id="M,X!B3)D([yV%:vBcvJv">
-                                                        <field name="VAR" id="[[PAnR~t1#FxmzDDmEyJ" variabletype="">距離</field>
+                                                      <block type="variables_get">
+                                                        <field name="VAR">距離</field>
                                                       </block>
                                                     </value>
                                                     <value name="B">
-                                                      <block type="math_number" id="p1f*=nk}34^h:u,jqDBK">
+                                                      <block type="math_number">
                                                         <field name="NUM">3</field>
                                                       </block>
                                                     </value>
@@ -271,47 +271,47 @@
                                           </block>
                                         </value>
                                         <value name="saturation">
-                                          <block type="math_number" id="TIO@XSkR7Zh(S6:XZzFJ">
+                                          <block type="math_number">
                                             <field name="NUM">100</field>
                                           </block>
                                         </value>
                                         <value name="luminance">
-                                          <block type="math_number" id="qm}^wM:1?jYS$nq4XlGS">
+                                          <block type="math_number">
                                             <field name="NUM">50</field>
                                           </block>
                                         </value>
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="bookcover_text_font" id="Vj`k[OMJpB4~|DR2RR4H">
+                                      <block type="bookcover_text_font">
                                         <value name="name">
-                                          <block type="bookcover_font_name" id="rN5|2wvAtUtpnUbaP0*U">
+                                          <block type="bookcover_font_name">
                                             <field name="NAME">Segoe UI Symbol</field>
                                           </block>
                                         </value>
                                         <value name="size">
-                                          <block type="math_number" id="0h$@5-7UH5YYKIq0Y[V|">
+                                          <block type="math_number">
                                             <field name="NUM">5</field>
                                           </block>
                                         </value>
                                         <next>
-                                          <block type="bookcover_text" id="j+^#T*9|ly[DSL8)z|~%">
+                                          <block type="bookcover_text">
                                             <value name="x">
-                                              <block type="variables_get" id="yIV?$r#t0`MD6@MRyWm^">
-                                                <field name="VAR" id="g{%Xuk5X)FYxio!Q=n/x" variabletype="">i</field>
+                                              <block type="variables_get">
+                                                <field name="VAR">i</field>
                                               </block>
                                             </value>
                                             <value name="y">
-                                              <block type="variables_get" id="JL[w4A_T#5`n9_~L;Nvs">
-                                                <field name="VAR" id="8DffBUM7lcC?V.u_S:vn" variabletype="">j</field>
+                                              <block type="variables_get">
+                                                <field name="VAR">j</field>
                                               </block>
                                             </value>
                                             <value name="str">
-                                              <block type="text_charAt" id="`r}]MJTi;-n_$*9hmx#=">
+                                              <block type="text_charAt">
                                                 <mutation at="false"></mutation>
                                                 <field name="WHERE">RANDOM</field>
                                                 <value name="VALUE">
-                                                  <block type="text" id="VA%eH:V^r_h+i#(J9`6;">
+                                                  <block type="text">
                                                     <field name="TEXT">⯀⯁⯂⯃⯄</field>
                                                   </block>
                                                 </value>
@@ -330,26 +330,26 @@
                       </block>
                     </statement>
                     <next>
-                      <block type="variables_set" id="~Mdk+)I8=7%F;}hdt4ub">
-                        <field name="VAR" id="wN8H+HSMf9{8Q,/jn~|~" variabletype="">今の色</field>
+                      <block type="variables_set">
+                        <field name="VAR">今の色</field>
                         <value name="VALUE">
-                          <block type="bookcover_rotate_h" id="km|v{OcAF9OPy=fOZ:ae">
+                          <block type="bookcover_rotate_h">
                             <value name="colour">
-                              <block type="bookcover_colour" id="uC$iojnO=0e[1+-uguV[">
+                              <block type="bookcover_colour">
                                 <field name="COLOUR">#ff0000</field>
                               </block>
                             </value>
                             <value name="angle">
-                              <block type="math_arithmetic" id="G)*RASJj6n}O78j:dgxo">
+                              <block type="math_arithmetic">
                                 <field name="OP">MULTIPLY</field>
                                 <value name="A">
-                                  <block type="bookcover_angle" id="@f_fNc)_RtAwYo$+ER8Z">
+                                  <block type="bookcover_angle">
                                     <field name="angle">45</field>
                                   </block>
                                 </value>
                                 <value name="B">
-                                  <block type="variables_get" id="VL0rLsi_o`2$wTMJzjql">
-                                    <field name="VAR" id="0SK$v=~%9}Fy8=gBGuS3" variabletype="">カウンター</field>
+                                  <block type="variables_get">
+                                    <field name="VAR">カウンター</field>
                                   </block>
                                 </value>
                               </block>
@@ -357,149 +357,149 @@
                           </block>
                         </value>
                         <next>
-                          <block type="bookcover_fill" id="n6(i3DW`]reialx[wKs2">
+                          <block type="bookcover_fill">
                             <value name="COLOUR">
-                              <block type="variables_get" id="Nq*Gxabet5)MRPV(3/JZ">
-                                <field name="VAR" id="wN8H+HSMf9{8Q,/jn~|~" variabletype="">今の色</field>
+                              <block type="variables_get">
+                                <field name="VAR">今の色</field>
                               </block>
                             </value>
                             <next>
-                              <block type="bookcover_fill_opacity" id="i^#|D09(y)g;0BZr2g@y">
+                              <block type="bookcover_fill_opacity">
                                 <value name="opacity">
-                                  <block type="math_number" id="3nWulnq]o|U.B=3{-6Oc">
+                                  <block type="math_number">
                                     <field name="NUM">1</field>
                                   </block>
                                 </value>
                                 <next>
-                                  <block type="bookcover_text_font" id="Me{f@lK(8;=HJ^1-[(49">
+                                  <block type="bookcover_text_font">
                                     <value name="name">
-                                      <block type="bookcover_font_name" id="$o1hGO+MWUvZ]l4DZ;J.">
+                                      <block type="bookcover_font_name">
                                         <field name="NAME">ＭＳ 明朝</field>
                                       </block>
                                     </value>
                                     <value name="size">
-                                      <block type="math_number" id="Q9;sPOq0~I4GIeq%CmrX">
+                                      <block type="math_number">
                                         <field name="NUM">8</field>
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="bookcover_text" id="L.15G+H{RKkWPw(Bt!af">
+                                      <block type="bookcover_text">
                                         <value name="x">
-                                          <block type="math_number" id="GYmQL@NMFfio|DDOKePN">
+                                          <block type="math_number">
                                             <field name="NUM">10</field>
                                           </block>
                                         </value>
                                         <value name="y">
-                                          <block type="math_number" id="2j-zk`Eh312f-/,})xme">
-                                            <field name="NUM">10</field>
+                                          <block type="math_number">
+                                            <field name="NUM">20.4</field>
                                           </block>
                                         </value>
                                         <value name="str">
-                                          <block type="text" id="4AmYIvA$*OnL7Iq{h;bH">
+                                          <block type="text">
                                             <field name="TEXT">香川大学創造工学部</field>
                                           </block>
                                         </value>
                                         <next>
-                                          <block type="bookcover_text" id="?7R,0tFe=~o7RKn2W2pp">
+                                          <block type="bookcover_text">
                                             <value name="x">
-                                              <block type="math_number" id="XKsEE!UiAk8?6V~ZVBjz">
+                                              <block type="math_number">
                                                 <field name="NUM">10</field>
                                               </block>
                                             </value>
                                             <value name="y">
-                                              <block type="math_number" id="zY?EoUcc%FAaQ~SQwo.A">
-                                                <field name="NUM">20</field>
+                                              <block type="math_number">
+                                                <field name="NUM">30.4</field>
                                               </block>
                                             </value>
                                             <value name="str">
-                                              <block type="text" id="b=/):prmxvf30#E2=))y">
+                                              <block type="text">
                                                 <field name="TEXT">讃岐 太郎</field>
                                               </block>
                                             </value>
                                             <next>
-                                              <block type="bookcover_text_font" id="Y$mQx|fvI(W!o6h#ywe~">
+                                              <block type="bookcover_text_font">
                                                 <value name="name">
-                                                  <block type="bookcover_font_name" id="nwx_F?d]O79X5XQ%m]-F">
+                                                  <block type="bookcover_font_name">
                                                     <field name="NAME">Times New Roman</field>
                                                   </block>
                                                 </value>
                                                 <value name="size">
-                                                  <block type="math_number" id="zeW!1FxIh#-Rk/d-|01V">
+                                                  <block type="math_number">
                                                     <field name="NUM">8</field>
                                                   </block>
                                                 </value>
                                                 <next>
-                                                  <block type="bookcover_text" id="/l9G2PBnQEVSX+.T!+*}">
+                                                  <block type="bookcover_text">
                                                     <value name="x">
-                                                      <block type="math_number" id="?cE2JB(,@j4=l.FM*jtr">
+                                                      <block type="math_number">
                                                         <field name="NUM">10</field>
                                                       </block>
                                                     </value>
                                                     <value name="y">
-                                                      <block type="math_number" id="wb[3UK893k#CJzE#q/*p">
-                                                        <field name="NUM">30</field>
+                                                      <block type="math_number">
+                                                        <field name="NUM">40.4</field>
                                                       </block>
                                                     </value>
                                                     <value name="str">
-                                                      <block type="text" id="`now^/L1P5|M[83*#RWP">
+                                                      <block type="text">
                                                         <field name="TEXT">SANUKI, Taro</field>
                                                       </block>
                                                     </value>
                                                     <next>
-                                                      <block type="bookcover_text_font" id="Uj1rGbG;NJREh,5A^k5E">
+                                                      <block type="bookcover_text_font">
                                                         <value name="name">
-                                                          <block type="bookcover_font_name" id="#msx^yFt+:UFh$+U=^@5">
+                                                          <block type="bookcover_font_name">
                                                             <field name="NAME">Courier New</field>
                                                           </block>
                                                         </value>
                                                         <value name="size">
-                                                          <block type="math_number" id="M~:*yZKYSg2AW4WxjNQC">
+                                                          <block type="math_number">
                                                             <field name="NUM">5</field>
                                                           </block>
                                                         </value>
                                                         <next>
-                                                          <block type="bookcover_text" id="jD;q$lU:pCIhzu0S1lJr">
+                                                          <block type="bookcover_text">
                                                             <value name="x">
-                                                              <block type="math_number" id="ER)8B1L#q%0mp]$`KWdG">
+                                                              <block type="math_number">
                                                                 <field name="NUM">10</field>
                                                               </block>
                                                             </value>
                                                             <value name="y">
-                                                              <block type="math_number" id="}`9O|}_.sp6*St[Jt~::">
-                                                                <field name="NUM">43</field>
+                                                              <block type="math_number">
+                                                                <field name="NUM">49.5</field>
                                                               </block>
                                                             </value>
                                                             <value name="str">
-                                                              <block type="text" id="|209~boi-hXmj+%@j]cQ">
+                                                              <block type="text">
                                                                 <field name="TEXT">taro.sanuki@example.com</field>
                                                               </block>
                                                             </value>
                                                             <next>
-                                                              <block type="bookcover_text_font" id="BWYo+05^Wu4BOp#kHO*t">
+                                                              <block type="bookcover_text_font">
                                                                 <value name="name">
-                                                                  <block type="bookcover_font_name" id="!f$kRp6Ij{+QevQ;U9qx">
+                                                                  <block type="bookcover_font_name">
                                                                     <field name="NAME">Segoe UI Symbol</field>
                                                                   </block>
                                                                 </value>
                                                                 <value name="size">
-                                                                  <block type="math_number" id="_xw1B[G0fj$Jchp)d?ir">
+                                                                  <block type="math_number">
                                                                     <field name="NUM">20</field>
                                                                   </block>
                                                                 </value>
                                                                 <next>
-                                                                  <block type="bookcover_text" id="IEDe{D/j}h$7.L$zPJTk">
+                                                                  <block type="bookcover_text">
                                                                     <value name="x">
-                                                                      <block type="math_number" id="k8%Ug3c(:?@_=-0+`WaI">
+                                                                      <block type="math_number">
                                                                         <field name="NUM">70</field>
                                                                       </block>
                                                                     </value>
                                                                     <value name="y">
-                                                                      <block type="math_number" id="cOsKsm-Z4mTi@=0/^T^1">
-                                                                        <field name="NUM">10</field>
+                                                                      <block type="math_number">
+                                                                        <field name="NUM">36</field>
                                                                       </block>
                                                                     </value>
                                                                     <value name="str">
-                                                                      <block type="text" id="Sr[D!l^/6l3F8i+7h+Y@">
+                                                                      <block type="text">
                                                                         <field name="TEXT">🐧</field>
                                                                       </block>
                                                                     </value>

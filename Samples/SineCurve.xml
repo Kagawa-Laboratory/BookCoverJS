@@ -1,5 +1,14 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="bookcover_card_frame">
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable>回転数</variable>
+    <variable>回転角度</variable>
+    <variable>カード</variable>
+    <variable>カウンター</variable>
+    <variable>今の色</variable>
+    <variable>i</variable>
+    <variable>サインカーブ</variable>
+  </variables>
+  <block type="bookcover_card_frame" x="10" y="10">
     <value name="PAPER_SPEC">
       <block type="bookcover_cardspec">
         <field name="CARDSPEC">エーワン F8A4-5</field>
@@ -366,7 +375,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn">
+  <block type="procedures_defnoreturn" x="10" y="10">
     <field name="NAME">文字を書く</field>
     <comment pinned="false" h="80" w="160">この関数を説明する...</comment>
     <statement name="STACK">
@@ -390,7 +399,7 @@
             </value>
             <value name="y">
               <block type="math_number">
-                <field name="NUM">10</field>
+                <field name="NUM">20.4</field>
               </block>
             </value>
             <value name="str">
@@ -407,7 +416,7 @@
                 </value>
                 <value name="y">
                   <block type="math_number">
-                    <field name="NUM">20</field>
+                    <field name="NUM">30.4</field>
                   </block>
                 </value>
                 <value name="str">
@@ -436,7 +445,7 @@
                         </value>
                         <value name="y">
                           <block type="math_number">
-                            <field name="NUM">30</field>
+                            <field name="NUM">40.4</field>
                           </block>
                         </value>
                         <value name="str">
@@ -465,7 +474,7 @@
                                 </value>
                                 <value name="y">
                                   <block type="math_number">
-                                    <field name="NUM">43</field>
+                                    <field name="NUM">49.5</field>
                                   </block>
                                 </value>
                                 <value name="str">
