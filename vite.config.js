@@ -12,6 +12,8 @@ export default defineConfig({
         codemirror:    resolve(__dirname, 'codemirror.html'),
         bookCoverTest: resolve(__dirname, 'bookCoverTest.html'),
         samples:       resolve(__dirname, 'samples.html'),
+        tutorial_bookcover: resolve(__dirname, 'Tutorial/bookcover.html'),
+        tutorial_card: resolve(__dirname, 'Tutorial/card.html')
       },
     },
   },

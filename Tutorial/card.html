@@ -9,15 +9,8 @@
 <link rel="stylesheet" type="text/css" media="print"
       href="print.css">
 <link rel="stylesheet" type="text/css" media="screen"
-      href="mystyle.css">
+      href="../mystyle.css">
 
-<script src="../3rdParty/blockly/blockly_compressed.js"></script>
-<script src="../3rdParty/blockly/blocks_compressed.js"></script>
-<script src="../3rdParty/blockly/javascript_compressed.js"></script>
-<script src="../3rdParty/blockly/msg/js/ja.js"></script>
-<script src="../myblocks.js"></script>
-
-<!-- <script src="../3rdParty/jquery-2.2.4.min.js"></script> -->
 </head>
 <body>
 <!-- todo: 条件分岐は乱数の前へ -->
@@ -225,38 +218,6 @@
 <hr />
 <address>香川研究室</address>
 
-<script type="application/javascript">
-document.addEventListener("DOMContentLoaded", () => {
-  const params = [ { div: 'blocklyDiv1', xml: 'Card/Start.xml' }
-                , { div: 'blocklyDiv2', xml: 'Card/Sample0.xml' }
-                , { div: 'blocklyDiv3', xml: 'Card/Sample1.xml' }
-                , { div: 'blocklyDiv4', xml: 'Card/SimpleRand.xml' }
-                , { div: 'blocklyDiv5', xml: 'Card/RandomChar.xml' }
-                , { div: 'blocklyDiv6', xml: 'Card/Cond.xml' }
-                , { div: 'blocklyDiv7', xml: 'Card/NestedLoop.xml' }
-                , { div: 'blocklyDiv9', xml: 'Card/Polygons.xml' }
-                , { div: 'counterDiv', xml: 'Common/Counter.xml' }
-                , { div: 'loopDiv', xml: 'Common/Loop.xml' }
-                , { div: 'condDiv', xml: 'Common/IfElse.xml' }
-                , { div: 'imanoiroDiv', xml: 'Common/ImanoIro.xml' }
-                ];
-  var workspaces = [];
-  for (let i = 0; i < params.length; i++) {
-     (function () {
-    	let data = params[i]; 
-     	let workspace = Blockly.inject(data.div,{ readOnly: true, zoom: { startScale: 0.75 } });
-     	fetch({ url: data.xml
-     	       , dataType: "text"})
-     	  .then(response => response.text())
-          .then(txt => { 
-     	    const xml = Blockly.Xml.textToDom(txt);
-     	    Blockly.Xml.domToWorkspace(xml, workspace);
-     	  });
-     	workspaces.push(workspace);
-     }) ();
-  }
-});
-</script>
-<script src='myscript.js'></script>
+<script type="module" src='card_main.js'></script>
 </body>
 </html>
