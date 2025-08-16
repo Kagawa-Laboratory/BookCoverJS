@@ -6,7 +6,7 @@ function toggle(elm) {
   }
 }
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const kuwashiku = document.getElementById('kuwashiku');
   const butn      = document.getElementById('kuwashiku_toggle');
   const plus      = document.getElementById('kuwashiku_plus');

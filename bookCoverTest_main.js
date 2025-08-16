@@ -4,7 +4,7 @@ import {hsbGrad} from "./BookCoverJS/HSBGrad.js";
 import {randTest} from "./BookCoverJS/RandTest.js";
 
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const draw = SVG().addTo('#drawing').size('294mm', '210mm');
   if (Math.random() < 0.5) {  
       hsbGrad(draw);

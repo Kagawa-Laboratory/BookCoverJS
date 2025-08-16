@@ -37,7 +37,7 @@ const bookcovers = [
   , "RandomString2"
   ];
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(location.search);
   const lang   = params.get("lang");
 

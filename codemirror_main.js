@@ -118,7 +118,7 @@ function replaceI18nElement(id, lang) {
    if (content == null) content = i18nMap[id]["default"];
    return content;
 }
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(location.search);
     draw = SVG().addTo("#contentSVG").size('100%', '100%');
     tabClick(selected);

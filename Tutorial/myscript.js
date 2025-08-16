@@ -200,7 +200,7 @@ function replaceBlank(editor) {
     }); 
 }
 
-window.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
     // 最終更新時刻を表示
     let lastModified = new Date(document.lastModified).toLocaleString();
     let elem = document.getElementById('lastModified');
