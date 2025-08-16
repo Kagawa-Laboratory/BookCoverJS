@@ -4,7 +4,7 @@ import { javascriptGenerator } from 'blockly/javascript';
 import {installAllBlocks as installColourBlocks, registerFieldColour, FieldColour} from '@blockly/field-colour';
 import {registerFieldAngle, FieldAngle} from '@blockly/field-angle';
 
-// Installs all four blocks, the colour field, and all language generators.
+// Installs all four blocks, the colour field, and a language generator.
 installColourBlocks({
   javascript: javascriptGenerator,
 });

@@ -147,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
       zoom: { controls: true, wheel: true, startScale: 1.0, maxScale: 3, minScale: 0.3, scaleSpeed: 1.2 }
     });
 
-  // BlocklyStorage.backupOnUnload(workspace);
   window.addEventListener('pagehide', ev => {
     // Serialize the state.
     const state = Blockly.serialization.workspaces.save(workspace);
@@ -171,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
   } else {
     window.setTimeout(() => {
-      //            BlocklyStorage.restoreBlocks(workspace);
+
       const url = window.location.href.split('#')[0];
       if ('localStorage' in window) {
         const state = window.localStorage.getItem(url);
@@ -179,13 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log(`restored from localStorage[${url}]`);
           Blockly.serialization.workspaces.load(JSON.parse(state), workspace);
           return;
-          // const xml = Blockly.utils.xml.textToDom(memo);
-          // if (xml.hasChildNodes()) {
-          //   Blockly.Xml.domToWorkspace(xml, workspace);
-          //   return;
-          // }
-          // xml が空だったら続行する
-        } 
+        }
       }
       const xmlUrl = params.get("url");
       if (xmlUrl) {
