@@ -14,9 +14,9 @@
   "dependencies": {
     "@codemirror/lang-javascript": "^6.1.4",
     "@svgdotjs/svg.js": "^3.1.2",
-    "blockly": "^11.2.2",
-    "@blockly/field-colour": "^5.0.19",
-    "@blockly/field-angle": "^5.0.16",
+    "blockly": "^12.2.0",
+    "@blockly/field-colour": "^6.0.4",
+    "@blockly/field-angle": "^6.0.2",
     "code-prettify": "^0.1.0",
     "codemirror": "^6.0.1"
   },
