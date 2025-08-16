@@ -1,6 +1,9 @@
-﻿import Blockly from 'blockly';
+﻿import * as Blockly from 'blockly/core';
+import * as Ja from 'blockly/msg/ja';
 import "../myblocks.js";
 import "./myscript.js";
+
+Blockly.setLocale(Ja);
 
 document.addEventListener("DOMContentLoaded", () => {
   const params = [ { div: 'blocklyDiv1', xml: 'Card/Start.xml' }
