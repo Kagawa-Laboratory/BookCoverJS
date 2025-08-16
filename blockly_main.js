@@ -1,7 +1,8 @@
-import Blockly from 'blockly';
+import * as Blockly from 'blockly/core';
 import {SVG} from "@svgdotjs/svg.js";
 import {BlocklyStorage} from "./storage.js";
 import {javascriptGenerator} from 'blockly/javascript';
+import * as Ja from 'blockly/msg/ja';
 import 'code-prettify';
 import "./myblockly.js";
 import "./myblocks.js";
@@ -11,6 +12,8 @@ const tabs = ["Block", "JavaScript", "SVG", "Xml"];
 var selected = tabs[0];
 var draw;
 var workspace = null;
+
+Blockly.setLocale(Ja);
 
 function onResize() {
     const area = document.getElementById("blocklyArea");
@@ -137,7 +140,7 @@ function replaceI18nElement(id, lang) {
    return content;
 }
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(location.search);
     workspace = Blockly.inject('contentBlock',
        { toolbox: document.getElementById('toolbox'),

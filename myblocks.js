@@ -1,6 +1,16 @@
 import * as Blockly from 'blockly/core';
 import * as libraryBlocks from 'blockly/blocks';
 import { javascriptGenerator } from 'blockly/javascript';
+import {installAllBlocks as installColourBlocks, registerFieldColour, FieldColour} from '@blockly/field-colour';
+import {registerFieldAngle, FieldAngle} from '@blockly/field-angle';
+
+// Installs all four blocks, the colour field, and all language generators.
+installColourBlocks({
+  javascript: javascriptGenerator,
+});
+
+registerFieldColour();
+registerFieldAngle();
 
 Blockly.Blocks['bookcover_frame'] = {
   init: function() {
@@ -157,7 +167,7 @@ javascriptGenerator.forBlock['bookcover_stroke'] = function(block) {
 Blockly.Blocks['bookcover_colour'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldColour("#ff0000"), "COLOUR");
+        .appendField(new FieldColour("#ff0000"), "COLOUR");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(20);
@@ -318,7 +328,7 @@ javascriptGenerator.forBlock['bookcover_add_l'] = function(block) {
 Blockly.Blocks['bookcover_angle'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldAngle(90), "angle");
+        .appendField(new FieldAngle(90), "angle");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(230);

@@ -1,4 +1,4 @@
-import Blockly from 'blockly';
+import * as Blockly from 'blockly/core';
 
 Blockly.Msg.DISABLE_BLOCK = "ブロックを無効にする";
 Blockly.Msg.ENABLE_BLOCK = "ブロックを有効にする";
