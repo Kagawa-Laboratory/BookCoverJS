@@ -16,7 +16,7 @@ Blockly.Blocks['bookcover_frame'] = {
   }
 };
 
-javascriptGenerator['bookcover_frame'] = function(block) {
+javascriptGenerator.forBlock['bookcover_frame'] = function(block) {
   var checkbox_frame = block.getFieldValue('frame') == 'TRUE';
   var statements_statements = javascriptGenerator.statementToCode(block, 'statements');
   var code = "var BC = BookCover;\n"
@@ -45,7 +45,7 @@ Blockly.Blocks['bookcover_guide_bars'] = {
   }
 };
 
-javascriptGenerator['bookcover_guide_bars'] = function(block) {
+javascriptGenerator.forBlock['bookcover_guide_bars'] = function(block) {
   var value_width = javascriptGenerator.valueToCode(block, 'width', javascriptGenerator.ORDER_COMMA);
   var code = 'BC.guideBars(' + value_width + ');\n';
   return code;
@@ -65,7 +65,7 @@ Blockly.Blocks['bookcover_matrix'] = {
   }
 };
 
-javascriptGenerator['bookcover_matrix'] = function(block) {
+javascriptGenerator.forBlock['bookcover_matrix'] = function(block) {
   var statements_statements = javascriptGenerator.statementToCode(block, 'statements');
   var code = 'BC.pushMatrix()\n' + statements_statements + 'BC.popMatrix();\n';
   return code;
@@ -96,7 +96,7 @@ Blockly.Blocks['bookcover_line'] = {
   }
 };
 
-javascriptGenerator['bookcover_line'] = function(block) {
+javascriptGenerator.forBlock['bookcover_line'] = function(block) {
   var value_x1 = javascriptGenerator.valueToCode(block, 'x1', javascriptGenerator.ORDER_COMMA) || 0;
   var value_y1 = javascriptGenerator.valueToCode(block, 'y1', javascriptGenerator.ORDER_COMMA) || 0;
   var value_x2 = javascriptGenerator.valueToCode(block, 'x2', javascriptGenerator.ORDER_COMMA) || 0;
@@ -123,7 +123,7 @@ Blockly.Blocks['bookcover_fill'] = {
   }
 };
 
-javascriptGenerator['bookcover_fill'] = function(block) {
+javascriptGenerator.forBlock['bookcover_fill'] = function(block) {
   var value_colour = javascriptGenerator.valueToCode(block, 'COLOUR', javascriptGenerator.ORDER_COMMA) || 0;
 
   var code = 'BC.fill(' + value_colour + ');\n';
@@ -147,7 +147,7 @@ Blockly.Blocks['bookcover_stroke'] = {
   }
 };
 
-javascriptGenerator['bookcover_stroke'] = function(block) {
+javascriptGenerator.forBlock['bookcover_stroke'] = function(block) {
   var value_colour = javascriptGenerator.valueToCode(block, 'COLOUR', javascriptGenerator.ORDER_COMMA) || 0;
 
   var code = 'BC.stroke(' + value_colour + ');\n';
@@ -166,7 +166,7 @@ Blockly.Blocks['bookcover_colour'] = {
   }
 };
 
-javascriptGenerator['bookcover_colour'] = function(block) {
+javascriptGenerator.forBlock['bookcover_colour'] = function(block) {
   var colour_colour = block.getFieldValue('COLOUR');
   var code = "0x" + colour_colour.substring(1);
   return [code, javascriptGenerator.ORDER_ATOMIC];
@@ -197,7 +197,7 @@ Blockly.Blocks['bookcover_rect'] = {
   }
 };
 
-javascriptGenerator['bookcover_rect'] = function(block) {
+javascriptGenerator.forBlock['bookcover_rect'] = function(block) {
   var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0 ;
   var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
   var value_w = javascriptGenerator.valueToCode(block, 'w', javascriptGenerator.ORDER_COMMA) || 0;
@@ -231,7 +231,7 @@ Blockly.Blocks['bookcover_ellipse'] = {
   }
 };
 
-javascriptGenerator['bookcover_ellipse'] = function(block) {
+javascriptGenerator.forBlock['bookcover_ellipse'] = function(block) {
   var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0;
   var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
   var value_w = javascriptGenerator.valueToCode(block, 'w', javascriptGenerator.ORDER_COMMA) || 0;
@@ -258,7 +258,7 @@ Blockly.Blocks['bookcover_rotate_h'] = {
   }
 };
 
-javascriptGenerator['bookcover_rotate_h'] = function(block) {
+javascriptGenerator.forBlock['bookcover_rotate_h'] = function(block) {
   var value_colour = javascriptGenerator.valueToCode(block, 'colour', javascriptGenerator.ORDER_COMMA) || 0;
   var value_angle = javascriptGenerator.valueToCode(block, 'angle', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.rotateH360(' + value_colour + ', ' + value_angle + ')';
@@ -283,7 +283,7 @@ Blockly.Blocks['bookcover_add_s'] = {
   }
 };
 
-javascriptGenerator['bookcover_add_s'] = function(block) {
+javascriptGenerator.forBlock['bookcover_add_s'] = function(block) {
   var value_colour = javascriptGenerator.valueToCode(block, 'colour', javascriptGenerator.ORDER_COMMA) || 0;
   var value_delta = javascriptGenerator.valueToCode(block, 'delta', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.addS100L(' + value_colour + ', ' + value_delta + ')';
@@ -308,7 +308,7 @@ Blockly.Blocks['bookcover_add_l'] = {
   }
 };
 
-javascriptGenerator['bookcover_add_l'] = function(block) {
+javascriptGenerator.forBlock['bookcover_add_l'] = function(block) {
   var value_colour = javascriptGenerator.valueToCode(block, 'colour', javascriptGenerator.ORDER_COMMA) || 0;
   var value_delta = javascriptGenerator.valueToCode(block, 'delta', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.addL100(' + value_colour + ', ' + value_delta + ')';
@@ -327,7 +327,7 @@ Blockly.Blocks['bookcover_angle'] = {
   }
 };
 
-javascriptGenerator['bookcover_angle'] = function(block) {
+javascriptGenerator.forBlock['bookcover_angle'] = function(block) {
   var angle_angle = block.getFieldValue('angle');
   var code = angle_angle;
   return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
@@ -349,7 +349,7 @@ Blockly.Blocks['bookcover_stroke_weight'] = {
   }
 };
 
-javascriptGenerator['bookcover_stroke_weight'] = function(block) {
+javascriptGenerator.forBlock['bookcover_stroke_weight'] = function(block) {
   var value_width = javascriptGenerator.valueToCode(block, 'width', javascriptGenerator.ORDER_COMMA) || 1;
   var code = 'BC.strokeWeight(' + value_width + ');\n';
   return code;
@@ -371,7 +371,7 @@ Blockly.Blocks['bookcover_stroke_opacity'] = {
   }
 };
 
-javascriptGenerator['bookcover_stroke_opacity'] = function(block) {
+javascriptGenerator.forBlock['bookcover_stroke_opacity'] = function(block) {
   var value_opacity = javascriptGenerator.valueToCode(block, 'opacity', javascriptGenerator.ORDER_COMMA) || 1;
   var code = 'BC.strokeOpacity(' + value_opacity + ');\n';
   return code;
@@ -393,7 +393,7 @@ Blockly.Blocks['bookcover_fill_opacity'] = {
   }
 };
 
-javascriptGenerator['bookcover_fill_opacity'] = function(block) {
+javascriptGenerator.forBlock['bookcover_fill_opacity'] = function(block) {
   var value_opacity = javascriptGenerator.valueToCode(block, 'opacity', javascriptGenerator.ORDER_COMMA) || 1;
   var code = 'BC.fillOpacity(' + value_opacity + ');\n';
   return code;
@@ -412,7 +412,7 @@ Blockly.Blocks['bookcover_no_stroke'] = {
   }
 };
 
-javascriptGenerator['bookcover_no_stroke'] = function(block) {
+javascriptGenerator.forBlock['bookcover_no_stroke'] = function(block) {
   var code = 'BC.noStroke();\n';
   return code;
 };
@@ -430,7 +430,7 @@ Blockly.Blocks['bookcover_no_fill'] = {
   }
 };
 
-javascriptGenerator['bookcover_no_fill'] = function(block) {
+javascriptGenerator.forBlock['bookcover_no_fill'] = function(block) {
   var code = 'BC.noFill();\n';
   return code;
 };
@@ -454,7 +454,7 @@ Blockly.Blocks['bookcover_text_font'] = {
   }
 };
 
-javascriptGenerator['bookcover_text_font'] = function(block) {
+javascriptGenerator.forBlock['bookcover_text_font'] = function(block) {
   var value_name = javascriptGenerator.valueToCode(block, 'name', javascriptGenerator.ORDER_COMMA) || "\"\"";
   var value_size = javascriptGenerator.valueToCode(block, 'size', javascriptGenerator.ORDER_COMMA) || 10;
   var code = 'BC.textFont(' + value_name + ', ' + value_size + ');\n';
@@ -477,7 +477,7 @@ Blockly.Blocks['bookcover_random_seed'] = {
   }
 };
 
-javascriptGenerator['bookcover_random_seed'] = function(block) {
+javascriptGenerator.forBlock['bookcover_random_seed'] = function(block) {
   var value_seed = javascriptGenerator.valueToCode(block, 'seed', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.randomSeed(' + value_seed + ');\n';
   return code;
@@ -502,7 +502,7 @@ Blockly.Blocks['bookcover_translate'] = {
   }
 };
 
-javascriptGenerator['bookcover_translate'] = function(block) {
+javascriptGenerator.forBlock['bookcover_translate'] = function(block) {
   var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0;
   var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.translate(' + value_x + ', ' + value_y + ');\n';
@@ -528,7 +528,7 @@ Blockly.Blocks['bookcover_scale'] = {
   }
 };
 
-javascriptGenerator['bookcover_scale'] = function(block) {
+javascriptGenerator.forBlock['bookcover_scale'] = function(block) {
   var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 1 ;
   var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 1;
   var code = 'BC.scale(' + value_x + ', ' + value_y + ');\n';
@@ -551,7 +551,7 @@ Blockly.Blocks['bookcover_rotate'] = {
   }
 };
 
-javascriptGenerator['bookcover_rotate'] = function(block) {
+javascriptGenerator.forBlock['bookcover_rotate'] = function(block) {
   var value_angle = javascriptGenerator.valueToCode(block, 'angle', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.rotate360(' + value_angle + ');\n';
   return code;
@@ -571,7 +571,7 @@ Blockly.Blocks['bookcover_pen_up'] = {
   }
 };
 
-javascriptGenerator['bookcover_pen_up'] = function(block) {
+javascriptGenerator.forBlock['bookcover_pen_up'] = function(block) {
   var code = 'BC.penUp();\n';
   return code;
 };
@@ -589,7 +589,7 @@ Blockly.Blocks['bookcover_pen_down'] = {
   }
 };
 
-javascriptGenerator['bookcover_pen_down'] = function(block) {
+javascriptGenerator.forBlock['bookcover_pen_down'] = function(block) {
   var code = 'BC.penDown();\n';
   return code;
 };
@@ -610,7 +610,7 @@ Blockly.Blocks['bookcover_forward'] = {
   }
 };
 
-javascriptGenerator['bookcover_forward'] = function(block) {
+javascriptGenerator.forBlock['bookcover_forward'] = function(block) {
   var value_len = javascriptGenerator.valueToCode(block, 'len', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.forward(' + value_len + ');\n';
   return code;
@@ -632,7 +632,7 @@ Blockly.Blocks['bookcover_turn'] = {
   }
 };
 
-javascriptGenerator['bookcover_turn'] = function(block) {
+javascriptGenerator.forBlock['bookcover_turn'] = function(block) {
   var value_angle = javascriptGenerator.valueToCode(block, 'angle', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.turn(' + value_angle + ');\n';
   return code;
@@ -654,7 +654,7 @@ Blockly.Blocks['bookcover_direction'] = {
   }
 };
 
-javascriptGenerator['bookcover_direction'] = function(block) {
+javascriptGenerator.forBlock['bookcover_direction'] = function(block) {
   var value_angle = javascriptGenerator.valueToCode(block, 'angle', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.direction(' + value_angle + ');\n';
   return code;
@@ -679,7 +679,7 @@ Blockly.Blocks['bookcover_go'] = {
   }
 };
 
-javascriptGenerator['bookcover_go'] = function(block) {
+javascriptGenerator.forBlock['bookcover_go'] = function(block) {
   var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0;
   var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
   var code = 'BC.go(' + value_x + ', ' + value_y + ');\n';
@@ -705,7 +705,7 @@ Blockly.Blocks['bookcover_random_in_range'] = {
   }
 };
 
-javascriptGenerator['bookcover_random_in_range'] = function(block) {
+javascriptGenerator.forBlock['bookcover_random_in_range'] = function(block) {
   var value_min = javascriptGenerator.valueToCode(block, 'min', javascriptGenerator.ORDER_COMMA) || 0;
   var value_max = javascriptGenerator.valueToCode(block, 'max', javascriptGenerator.ORDER_COMMA) || 1;
   var code = 'BC.randomInRange(' + value_min + ', ' + value_max + ')';
@@ -733,7 +733,7 @@ Blockly.Blocks['bookcover_rgb255'] = {
   }
 };
 
-javascriptGenerator['bookcover_rgb255'] = function(block) {
+javascriptGenerator.forBlock['bookcover_rgb255'] = function(block) {
   var value_red = javascriptGenerator.valueToCode(block, 'red', javascriptGenerator.ORDER_COMMA) || 0;
   var value_green = javascriptGenerator.valueToCode(block, 'green', javascriptGenerator.ORDER_COMMA) || 0;
   var value_blue = javascriptGenerator.valueToCode(block, 'blue', javascriptGenerator.ORDER_COMMA) || 0;
@@ -762,7 +762,7 @@ Blockly.Blocks['bookcover_rgb100'] = {
   }
 };
 
-javascriptGenerator['bookcover_rgb100'] = function(block) {
+javascriptGenerator.forBlock['bookcover_rgb100'] = function(block) {
   var value_red = javascriptGenerator.valueToCode(block, 'red', javascriptGenerator.ORDER_COMMA) || 0;
   var value_green = javascriptGenerator.valueToCode(block, 'green', javascriptGenerator.ORDER_COMMA) || 0;
   var value_blue = javascriptGenerator.valueToCode(block, 'blue', javascriptGenerator.ORDER_COMMA) || 0;
@@ -791,7 +791,7 @@ Blockly.Blocks['bookcover_hsb360'] = {
   }
 };
 
-javascriptGenerator['bookcover_hsb360'] = function(block) {
+javascriptGenerator.forBlock['bookcover_hsb360'] = function(block) {
   var value_hue = javascriptGenerator.valueToCode(block, 'hue', javascriptGenerator.ORDER_COMMA) || 0;
   var value_saturation = javascriptGenerator.valueToCode(block, 'saturation', javascriptGenerator.ORDER_COMMA) || 100;
   var value_brightness = javascriptGenerator.valueToCode(block, 'brightness', javascriptGenerator.ORDER_COMMA) || 100;
@@ -820,7 +820,7 @@ Blockly.Blocks['bookcover_hsl360'] = {
   }
 };
 
-javascriptGenerator['bookcover_hsl360'] = function(block) {
+javascriptGenerator.forBlock['bookcover_hsl360'] = function(block) {
   var value_hue = javascriptGenerator.valueToCode(block, 'hue', javascriptGenerator.ORDER_COMMA) || 0 ;
   var value_saturation = javascriptGenerator.valueToCode(block, 'saturation', javascriptGenerator.ORDER_COMMA) || 100;
   var value_luminance = javascriptGenerator.valueToCode(block, 'luminance', javascriptGenerator.ORDER_COMMA) || 50;
@@ -839,7 +839,7 @@ Blockly.Blocks['bookcover_none'] = {
   }
 };
 
-javascriptGenerator['bookcover_none'] = function(block) {
+javascriptGenerator.forBlock['bookcover_none'] = function(block) {
   var code = 'null';
   return [code, javascriptGenerator.ORDER_ATOMIC];
 };
@@ -856,7 +856,7 @@ Blockly.Blocks['bookcover_newline'] = {
   }
 };
 
-javascriptGenerator['bookcover_newline'] = function(block) {
+javascriptGenerator.forBlock['bookcover_newline'] = function(block) {
   var code = '"\\n"';
   return [code, javascriptGenerator.ORDER_ATOMIC];
 };
@@ -873,7 +873,7 @@ Blockly.Blocks['bookcover_font_name'] = {
   }
 };
 
-javascriptGenerator['bookcover_font_name'] = function(block) {
+javascriptGenerator.forBlock['bookcover_font_name'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var code = "\"" + dropdown_name + "\"";
   return [code, javascriptGenerator.ORDER_ATOMIC];
@@ -901,7 +901,7 @@ Blockly.Blocks['bookcover_text'] = {
   }
 };
 
-javascriptGenerator['bookcover_text'] = function(block) {
+javascriptGenerator.forBlock['bookcover_text'] = function(block) {
   var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_ATOMIC) || 0;
   var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_ATOMIC) || 0;
   var value_str = javascriptGenerator.valueToCode(block, 'str', javascriptGenerator.ORDER_ATOMIC) || "\"\"";
@@ -941,7 +941,7 @@ Blockly.Blocks['bookcover_say'] = {
   }
 };
 
-javascriptGenerator['bookcover_say'] = function(block) {
+javascriptGenerator.forBlock['bookcover_say'] = function(block) {
   var value_str = javascriptGenerator.valueToCode(block, 'str', javascriptGenerator.ORDER_ATOMIC) || "\"\"";
   var code = 'BC.say(' + value_str + ');\n';
   return code;
@@ -959,7 +959,7 @@ Blockly.Blocks['bookcover_generic_statement'] = {
   }
 };
 
-javascriptGenerator['bookcover_generic_statement'] = function(block) {
+javascriptGenerator.forBlock['bookcover_generic_statement'] = function(block) {
   var text_statement = block.getFieldValue('STATEMENT') || "";
   var code = text_statement + '\n';
   return code;
@@ -977,7 +977,7 @@ Blockly.Blocks['bookcover_generic_expression'] = {
 };
 
 
-javascriptGenerator['bookcover_generic_expression'] = function(block) {
+javascriptGenerator.forBlock['bookcover_generic_expression'] = function(block) {
   var text_expression = block.getFieldValue('EXPRESSION') || 0;
   var code = text_expression;
   return [code, javascriptGenerator.ATOM];
@@ -1000,7 +1000,7 @@ Blockly.Blocks['bookcover_card_frame'] = {
   }
 };
 
-javascriptGenerator['bookcover_card_frame'] = function(block) {
+javascriptGenerator.forBlock['bookcover_card_frame'] = function(block) {
   var value_paper_spec = javascriptGenerator.valueToCode(block, 'PAPER_SPEC', javascriptGenerator.ORDER_ATOMIC);
   var statements_do = javascriptGenerator.statementToCode(block, 'DO');
   var code = 'var BC = BookCover;\n';
@@ -1041,7 +1041,7 @@ Blockly.Blocks['bookcover_foreachcard'] = {
   }
 };
 
-javascriptGenerator['bookcover_foreachcard'] = function(block) {
+javascriptGenerator.forBlock['bookcover_foreachcard'] = function(block) {
 //  var variable_card    = javascriptGenerator.variableDB_.getName(block.getFieldValue('CARD'), Blockly.Variables.NAME_TYPE);
  var variable_card = javascriptGenerator.nameDB_.getName(block.getFieldValue('CARD'), Blockly.Names.NameType.VARIABLE);
 //  var variable_counter = javascriptGenerator.variableDB_.getName(block.getFieldValue('COUNTER'), Blockly.Variables.NAME_TYPE);
@@ -1081,13 +1081,13 @@ Blockly.Blocks['bookcover_cardspec'] = {
   }
 };
 
-javascriptGenerator['bookcover_cardspec'] = function(block) {
+javascriptGenerator.forBlock['bookcover_cardspec'] = function(block) {
   var dropdown_cardspec = block.getFieldValue('CARDSPEC');
   var code = "'" + dropdown_cardspec + "'";
   return [code, javascriptGenerator.ORDER_ATOMIC];
 };
 
-javascriptGenerator['text_length'] = function(block) {
+javascriptGenerator.forBlock['text_length'] = function(block) {
   var value_value = javascriptGenerator.valueToCode(block, 'VALUE', javascriptGenerator.ORDER_COMMA);
   var code = 'BC.countSymbols(' + value_value + ')';
   return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
@@ -1108,14 +1108,14 @@ Blockly.Blocks['bookcover_fromCodePoint'] = {
   }
 };
 
-javascriptGenerator['bookcover_fromCodePoint'] = function(block) {
+javascriptGenerator.forBlock['bookcover_fromCodePoint'] = function(block) {
   var value_value = javascriptGenerator.valueToCode(block, 'VALUE', javascriptGenerator.ORDER_COMMA);
   var code = 'String.fromCodePoint(' + value_value + ')';
   return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
 
 
-javascriptGenerator['text_charAt'] = function(block) {
+javascriptGenerator.forBlock['text_charAt'] = function(block) {
   // Get letter at index.
   // Note: Until January 2013 this block did not have the WHERE input.
   var where = block.getFieldValue('WHERE') || 'FROM_START';
@@ -1164,7 +1164,7 @@ Blockly.Blocks['bookcover_pageWidth'] = {
   }
 };
 
-javascriptGenerator['bookcover_pageWidth'] = function(block) {
+javascriptGenerator.forBlock['bookcover_pageWidth'] = function(block) {
   var code = 'BC.pageWidth()';
   return [code, javascriptGenerator.ORDER_ATOMIC];
 };
@@ -1180,7 +1180,7 @@ Blockly.Blocks['bookcover_pageHeight'] = {
   }
 };
 
-javascriptGenerator['bookcover_pageHeight'] = function(block) {
+javascriptGenerator.forBlock['bookcover_pageHeight'] = function(block) {
   var code = 'BC.pageHeight()';
   return [code, javascriptGenerator.ORDER_ATOMIC];
 };
@@ -1200,7 +1200,7 @@ Blockly.Blocks['bookcover_cardWidth'] = {
   }
 };
 
-javascriptGenerator['bookcover_cardWidth'] = function(block) {
+javascriptGenerator.forBlock['bookcover_cardWidth'] = function(block) {
   var value_card = javascriptGenerator.valueToCode(block, 'CARD', javascriptGenerator.ORDER_MEMBER);
   var code = value_card + '["width"]';
   return [code, javascriptGenerator.ORDER_MEMBER];
@@ -1221,7 +1221,7 @@ Blockly.Blocks['bookcover_cardHeight'] = {
   }
 };
 
-javascriptGenerator['bookcover_cardHeight'] = function(block) {
+javascriptGenerator.forBlock['bookcover_cardHeight'] = function(block) {
   var value_card = javascriptGenerator.valueToCode(block, 'CARD', javascriptGenerator.ORDER_MEMBER);
   var code = value_card + '["height"]';
   return [code, javascriptGenerator.ORDER_MEMBER];
@@ -1244,7 +1244,7 @@ Blockly.Blocks['bookcover_console_log'] = {
   }
 };
 
-javascriptGenerator['bookcover_console_log'] = function(block) {
+javascriptGenerator.forBlock['bookcover_console_log'] = function(block) {
   var value_log = javascriptGenerator.valueToCode(block, 'LOG', javascriptGenerator.ORDER_COMMA) || "\"\"";
   var code = 'console.log(' + value_log + ');\n';
   return code;
@@ -1261,7 +1261,7 @@ Blockly.Blocks['bookcover_get_x'] = {
   }
 };
 
-javascriptGenerator['bookcover_get_x'] = function(block) {
+javascriptGenerator.forBlock['bookcover_get_x'] = function(block) {
   var code = 'BC.getX()';
   return [code, javascriptGenerator.ORDER_ATOMIC];
 };
@@ -1277,7 +1277,7 @@ Blockly.Blocks['bookcover_get_y'] = {
   }
 };
 
-javascriptGenerator['bookcover_get_y'] = function(block) {
+javascriptGenerator.forBlock['bookcover_get_y'] = function(block) {
   var code = 'BC.getY()';
   return [code, javascriptGenerator.ORDER_ATOMIC];
 };
@@ -1293,7 +1293,7 @@ Blockly.Blocks['bookcover_get_angle'] = {
   }
 };
 
-javascriptGenerator['bookcover_get_angle'] = function(block) {
+javascriptGenerator.forBlock['bookcover_get_angle'] = function(block) {
   var code = 'BC.getAngle()';
   return [code, javascriptGenerator.ORDER_ATOMIC];
 };
@@ -1329,7 +1329,7 @@ Blockly.Blocks['bookcover_triangle'] = {
   }
 };
 
-javascriptGenerator['bookcover_triangle'] = function(block) {
+javascriptGenerator.forBlock['bookcover_triangle'] = function(block) {
   var value_x1 = javascriptGenerator.valueToCode(block, 'x1', javascriptGenerator.ORDER_COMMA) || 0;
   var value_y1 = javascriptGenerator.valueToCode(block, 'y1', javascriptGenerator.ORDER_COMMA) || 0;
   var value_x2 = javascriptGenerator.valueToCode(block, 'x2', javascriptGenerator.ORDER_COMMA) || 0;
@@ -1379,7 +1379,7 @@ Blockly.Blocks['bookcover_quad'] = {
   }
 };
 
-javascriptGenerator['bookcover_quad'] = function(block) {
+javascriptGenerator.forBlock['bookcover_quad'] = function(block) {
   var value_x1 = javascriptGenerator.valueToCode(block, 'x1', javascriptGenerator.ORDER_COMMA) || 0;
   var value_y1 = javascriptGenerator.valueToCode(block, 'y1', javascriptGenerator.ORDER_COMMA) || 0;
   var value_x2 = javascriptGenerator.valueToCode(block, 'x2', javascriptGenerator.ORDER_COMMA) || 0;
@@ -1426,7 +1426,7 @@ Blockly.Blocks['bookcover_arc'] = {
   }
 };
 
-javascriptGenerator['bookcover_arc'] = function(block) {
+javascriptGenerator.forBlock['bookcover_arc'] = function(block) {
   var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0;
   var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
   var value_w = javascriptGenerator.valueToCode(block, 'w', javascriptGenerator.ORDER_COMMA) || 0;
@@ -1467,7 +1467,7 @@ Blockly.Blocks['bookcover_image'] = {
   }
 };
 
-javascriptGenerator['bookcover_image'] = function(block) {
+javascriptGenerator.forBlock['bookcover_image'] = function(block) {
   var value_x = javascriptGenerator.valueToCode(block, 'x', javascriptGenerator.ORDER_COMMA) || 0;
   var value_y = javascriptGenerator.valueToCode(block, 'y', javascriptGenerator.ORDER_COMMA) || 0;
   var value_w = javascriptGenerator.valueToCode(block, 'w', javascriptGenerator.ORDER_COMMA) || 0;
@@ -1492,7 +1492,7 @@ Blockly.Blocks['bookcover_rulers'] = {
   }
 };
 
-javascriptGenerator['bookcover_rulers'] = function(block) {
+javascriptGenerator.forBlock['bookcover_rulers'] = function(block) {
   var dropdown_size = block.getFieldValue('SIZE');
   var code;
   switch (dropdown_size) {
@@ -1540,7 +1540,7 @@ Blockly.Blocks['bookcover_bezier'] = {
   }
 };
 
-javascriptGenerator['bookcover_bezier'] = function(block) {
+javascriptGenerator.forBlock['bookcover_bezier'] = function(block) {
   var value_x1 = javascriptGenerator.valueToCode(block, 'x1', javascriptGenerator.ORDER_COMMA) || 0;
   var value_y1 = javascriptGenerator.valueToCode(block, 'y1', javascriptGenerator.ORDER_COMMA) || 0;
   var value_x2 = javascriptGenerator.valueToCode(block, 'x2', javascriptGenerator.ORDER_COMMA) || 0;
@@ -1580,7 +1580,7 @@ Blockly.Blocks['bookcover_distance'] = {
   }
 };
 
-javascriptGenerator['bookcover_distance'] = function(block) {
+javascriptGenerator.forBlock['bookcover_distance'] = function(block) {
   var value_x1 = javascriptGenerator.valueToCode(block, 'X1', javascriptGenerator.ORDER_SUBTRACTION) || 0;
   var value_y1 = javascriptGenerator.valueToCode(block, 'Y1', javascriptGenerator.ORDER_SUBTRACTION) || 0;
   var value_x2 = javascriptGenerator.valueToCode(block, 'X2', javascriptGenerator.ORDER_SUBTRACTION) || 0;
@@ -1614,7 +1614,7 @@ Blockly.Blocks['bookcover_atan2'] = {
   }
 };
 
-javascriptGenerator['bookcover_atan2'] = function(block) {
+javascriptGenerator.forBlock['bookcover_atan2'] = function(block) {
   var value_x1 = javascriptGenerator.valueToCode(block, 'X1', javascriptGenerator.ORDER_SUBTRACTION) || 0;
   var value_y1 = javascriptGenerator.valueToCode(block, 'Y1', javascriptGenerator.ORDER_SUBTRACTION) || 0;
   var value_x2 = javascriptGenerator.valueToCode(block, 'X2', javascriptGenerator.ORDER_SUBTRACTION) || 0;

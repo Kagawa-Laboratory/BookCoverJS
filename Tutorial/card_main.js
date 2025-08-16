@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
      	fetch(data.xml)
      	  .then(response => response.text())
           .then(txt => { 
-     	    const xml = Blockly.Xml.textToDom(txt);
+     	    const xml = Blockly.utils.xml.textToDom(txt);
      	    Blockly.Xml.domToWorkspace(xml, workspace);
      	  });
      	workspaces.push(workspace);

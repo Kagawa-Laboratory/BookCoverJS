@@ -65,7 +65,7 @@ function tabClick(clickedName) {
     const xmlText     = xmlTextarea.value;
     var xmlDom        = null;
     try {
-      xmlDom = Blockly.Xml.textToDom(xmlText);
+      xmlDom = Blockly.utils.xml.textToDom(xmlText);
     } catch (e) {
       var q = window.confirm(MSG['badXml'].replace('%1', e));
       if (!q) {
@@ -166,7 +166,7 @@ window.addEventListener('load', () => {
         if ('localStorage' in window) {
           const memo = window.localStorage[url];
           if (memo) {
-            const xml = Blockly.Xml.textToDom(memo);
+            const xml = Blockly.utils.xml.textToDom(memo);
             if (xml.hasChildNodes()) {
               Blockly.Xml.domToWorkspace(xml, workspace);
               return;
@@ -179,7 +179,7 @@ window.addEventListener('load', () => {
           fetch(xmlUrl)
             .then(response => response.text())
             .then(data => {
-        	const xml = Blockly.Xml.textToDom(data);
+        	const xml = Blockly.utils.xml.textToDom(data);
         	Blockly.Xml.domToWorkspace(xml, workspace);
            });
         } else {
@@ -259,7 +259,7 @@ window.addEventListener('load', () => {
         document.getElementById("contentXml").value = xmlText;
         if (!document.getElementById('tabXml').classList.contains('tabon')) {
           try {
-            xmlDom = Blockly.Xml.textToDom(xmlText);
+            xmlDom = Blockly.utils.xml.textToDom(xmlText);
           } catch (e) {
             const q = window.confirm(MSG['badXml'].replace('%1', e));
             if (!q) {
@@ -286,7 +286,7 @@ window.addEventListener('load', () => {
           .then(response => response.text())
           .then(data => {
             workspace.clear();
-            const xml = Blockly.Xml.textToDom(data);
+            const xml = Blockly.utils.xml.textToDom(data);
             Blockly.Xml.domToWorkspace(xml, workspace);
         });
       } else {
@@ -372,7 +372,7 @@ window.addEventListener('load', () => {
           .then(data => {
 //           console.log("success", data);
              workspace.clear();
-             const xml = Blockly.Xml.textToDom(data);
+             const xml = Blockly.utils.xml.textToDom(data);
              Blockly.Xml.domToWorkspace(xml, workspace);    
         }).catch(reason => {
 //             console.log("fail", reason);
