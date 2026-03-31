@@ -7,7 +7,7 @@ import "./myblockly.js";
 import "./myblocks.js";
 import { BookCover } from "./BookCoverJS/BookCover.js";
 
-const tabs = ["Block", "JavaScript", "SVG", "Xml"];
+const tabs = ["Block", "JavaScript", "SVG", "Xml", "JSON"];
 var selected = tabs[0];
 var draw;
 var workspace = null;
@@ -16,10 +16,13 @@ Blockly.setLocale(Ja);
 
 function onResize() {
   const area = document.getElementById("blocklyArea");
-  const divs = [document.getElementById("contentBlock"),
-  document.getElementById("contentJavaScript"),
-  document.getElementById("contentSVG"),
-  document.getElementById("contentXml")];
+  const divs = [
+    document.getElementById("contentBlock"),
+    document.getElementById("contentJavaScript"),
+    document.getElementById("contentSVG"),
+    document.getElementById("contentXml"),
+    document.getElementById("contentJSON"),
+  ];
 
   const width = area.offsetWidth;
   const height = area.offsetHeight;
@@ -51,6 +54,11 @@ function renderContent(clickedName) {
     const xmlDom = Blockly.Xml.workspaceToDom(workspace);
     const xmlText = Blockly.Xml.domToPrettyText(xmlDom);
     content.value = xmlText;
+  } else if (clickedName == "JSON") {
+    console.log("JSON");
+    const json = Blockly.serialization.workspaces.save(workspace);
+    content.value = JSON.stringify(json, null, 2);
+
   } else if (clickedName == "JavaScript") {
     var code = javascriptGenerator.workspaceToCode(workspace);
     code = PR.prettyPrintOne(code, 'js');
@@ -61,15 +69,16 @@ function renderContent(clickedName) {
 }
 
 function tabClick(clickedName) {
-  // If the XML tab was open, save and render the content.
-  if (document.getElementById('tabXml').classList.contains('tabon')) {
-    const xmlTextarea = document.getElementById('contentXml');
+  
+  if (document.getElementById("tabXml").classList.contains("tabon")) {
+    // If the XML tab was open, save and render the content.
+    const xmlTextarea = document.getElementById("contentXml");
     const xmlText = xmlTextarea.value;
-    var xmlDom = null;
+    let xmlDom = null;
     try {
       xmlDom = Blockly.utils.xml.textToDom(xmlText);
     } catch (e) {
-      var q = window.confirm(MSG['badXml'].replace('%1', e));
+      let q = window.confirm(MSG["badXml"].replace("%1", e));
       if (!q) {
         // Leave the user on the XML tab.
         return;
@@ -79,29 +88,46 @@ function tabClick(clickedName) {
       workspace.clear();
       Blockly.Xml.domToWorkspace(xmlDom, workspace);
     }
+  } else if (document.getElementById("tabJSON").classList.contains("tabon")) {
+    // if the JSON tab was open, ...
+    const jsonText = document.getElementById("contentJSON").value;
+    let json = null;
+    try {
+      json = JSON.parse(jsonText);
+    } catch (e) {
+      let q = window.confirm(MSG["badJSON"].replace("%1", e));
+      if (!q) {
+        // Leave the user on the XML tab.
+        return;
+      }
+    }
+    if (json) {
+      workspace.clear();
+      Blockly.serialization.workspaces.load(json, workspace);
+    }
   }
 
-  if (document.getElementById("tabBlock").classList.contains('tabon')) {
+  if (document.getElementById("tabBlock").classList.contains("tabon")) {
     workspace.setVisible(false);
   }
 
   // Deselect all tabs and hide all panes.
   for (var i = 0; i < tabs.length; i++) {
     const name = tabs[i];
-    document.getElementById(`tab${name}`).classList.remove('tabon');
-    document.getElementById(`tab${name}`).classList.add('taboff');
-    document.getElementById(`content${name}`).style.visibility = 'hidden';
+    document.getElementById(`tab${name}`).classList.remove("tabon");
+    document.getElementById(`tab${name}`).classList.add("taboff");
+    document.getElementById(`content${name}`).style.visibility = "hidden";
   }
 
   // Select the active tab.
   selected = clickedName;
-  document.getElementById(`tab${clickedName}`).classList.remove('taboff');
-  document.getElementById(`tab${clickedName}`).classList.add('tabon');
-  document.getElementById(`content${clickedName}`).style.visibility = 'visible';
+  document.getElementById(`tab${clickedName}`).classList.remove("taboff");
+  document.getElementById(`tab${clickedName}`).classList.add("tabon");
+  document.getElementById(`content${clickedName}`).style.visibility = "visible";
 
   renderContent(clickedName);
 
-  if (clickedName == 'Block') {
+  if (clickedName == "Block") {
     workspace.setVisible(true);
   }
   Blockly.svgResize(workspace);
@@ -120,7 +146,7 @@ function confirmLang(lang) {
 }
 
 var i18nMap = {
-  "undoButton": { "ja": "アンドゥー", "en": "Undo", "default": "&#x21b6;" }
+    "undoButton": { "ja": "アンドゥー", "en": "Undo", "default": "&#x21b6;" }
   , "redoButton": { "ja": "リドゥー", "en": "Redo", "default": "&#x21b7;" }
   , "intro": { "ja": "ヘルプ", "en": "Help", "default": "&#x2753;" }
   , "openButton": { "ja": "読込", "en": "Open", "default": "&#x1f4c2;" }
