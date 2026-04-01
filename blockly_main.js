@@ -31,7 +31,7 @@ function onResize() {
   const offset = area.getBoundingClientRect();
   const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  for (var i = 0; i < divs.length; i++) {
+  for (let i = 0; i < divs.length; i++) {
     const div = divs[i];
     div.style.height = `${height}px`;
     div.style.width = `${width}px`;
@@ -112,7 +112,7 @@ function tabClick(clickedName) {
   }
 
   // Deselect all tabs and hide all panes.
-  for (var i = 0; i < tabs.length; i++) {
+  for (let i = 0; i < tabs.length; i++) {
     const name = tabs[i];
     document.getElementById(`tab${name}`).classList.remove("tabon");
     document.getElementById(`tab${name}`).classList.add("taboff");
@@ -149,12 +149,13 @@ function confirmLang(lang) {
   }
 }
 
-var i18nMap = {
+const i18nMap = {
   undoButton: { ja: "アンドゥー", en: "Undo", default: "&#x21b6;" },
   redoButton: { ja: "リドゥー", en: "Redo", default: "&#x21b7;" },
   intro: { ja: "ヘルプ", en: "Help", default: "&#x2753;" },
   openButton: { ja: "読込", en: "Open", default: "&#x1f4c2;" },
   saveButton: { ja: "保存", en: "Save", default: "&#x1f4be;" },
+  saveJSONButton: { ja: "保存JSON", en: "Save JSON", default: "JSON" },
   printButton: { ja: "印刷", en: "Print", default: "&#x1f5a8;" },
   downloadXmlButton: {
     ja: "ブロックダウンロード",
@@ -176,7 +177,7 @@ var i18nMap = {
 
 function replaceI18nElement(id, lang) {
   //   console.log(id, lang);
-  var content = i18nMap[id][lang];
+  let content = i18nMap[id][lang];
   if (content == null) content = i18nMap[id]["default"];
   return content;
 }
@@ -241,8 +242,13 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(xmlUrl)
           .then((response) => response.text())
           .then((data) => {
-            const xml = Blockly.utils.xml.textToDom(data);
-            Blockly.Xml.domToWorkspace(xml, workspace);
+            if (url.endsWith(".json")) {
+              const json = JSON.parse(data);
+              Blockly.serialization.workspaces.load(json, workspace);
+            } else /* if (url.endsWith(".xml")) */ {
+              const xml = Blockly.utils.xml.textToDom(data);
+              Blockly.Xml.domToWorkspace(xml, workspace);
+            }
           });
       } else {
         // Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
@@ -296,8 +302,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("saveButton").addEventListener("click", (ev) => {
-    ev.preventDefault();
-    var xmlText;
+    // ev.preventDefault(); // a タグの href をクリックするので、ev.preventDefault() しない
+    let xmlText;
     if (document.getElementById("tabXml").classList.contains("tabon")) {
       xmlText = document.getElementById("contentXml").value;
     } else {
@@ -306,6 +312,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const blob = new Blob([xmlText], { type: "text/xml" });
     document.getElementById("saveButton").href =
+      window.URL.createObjectURL(blob);
+  });
+  document.getElementById("saveJSONButton").addEventListener("click", (ev) => {
+    // ev.preventDefault(); // a タグの href をクリックするので、ev.preventDefault() しない
+    let jsonText;
+    if (document.getElementById("tabJSON").classList.contains("tabon")) {
+      jsonText = document.getElementById("contentJSON").value;
+    } else {
+      const json = Blockly.serialization.workspaces.save(workspace);
+      jsonText = JSON.stringify(json, null, 2);
+    }
+    const blob = new Blob([jsonText], { type: "application/json" });
+    document.getElementById("saveJSONButton").href =
       window.URL.createObjectURL(blob);
   });
   document.getElementById("openButton").addEventListener("click", (ev) => {
@@ -318,26 +337,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const f = evt.target.files[0];
     const reader = new FileReader();
 
-    reader.onload = function (e) {
-      const xmlText = e.target.result;
-      document.getElementById("contentXml").value = xmlText;
-      if (!document.getElementById("tabXml").classList.contains("tabon")) {
-        try {
-          xmlDom = Blockly.utils.xml.textToDom(xmlText);
-        } catch (e) {
-          const q = window.confirm(MSG["badXml"].replace("%1", e));
-          if (!q) {
-            // Leave the user on the XML tab.
-            return;
+    if (f.endsWith(".xml")) {
+      reader.onload = function (e) {
+        const xmlText = e.target.result;
+        document.getElementById("contentXml").value = xmlText;
+        if (!document.getElementById("tabXml").classList.contains("tabon")) {
+          try {
+            xmlDom = Blockly.utils.xml.textToDom(xmlText);
+          } catch (e) {
+            const q = window.confirm(MSG["badXml"].replace("%1", e));
+            if (!q) {
+              // Leave the user on the XML tab.
+              return;
+            }
+          }
+          if (xmlDom) {
+            workspace.clear();
+            Blockly.Xml.domToWorkspace(xmlDom, workspace);
           }
         }
-        if (xmlDom) {
-          workspace.clear();
-          Blockly.Xml.domToWorkspace(xmlDom, workspace);
+      };
+      reader.readAsText(f);
+    } else if (f.endsWith(".json")) {
+      reader.onload = function (e) {
+        const jsonText = e.target.result;
+        document.getElementById("contentJSON").value = jsonText;
+        if (!document.getElementById("tabJSON").classList.contains("tabon")) {
+          try {
+            const json = JSON.parse(jsonText);
+            Blockly.serialization.workspaces.load(json, workspace);
+          } catch (e) {
+            const q = window.confirm(MSG["badJson"].replace("%1", e));
+            if (!q) {
+              // Leave the user on the JSON tab.
+              return;
+            }
+          }
         }
-      }
-    };
-    reader.readAsText(f);
+      };
+      reader.readAsText(f);
+    }
   });
 
   document.getElementById("resetButton").addEventListener("click", (ev) => {
@@ -352,8 +391,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((response) => response.text())
         .then((data) => {
           workspace.clear();
-          const xml = Blockly.utils.xml.textToDom(data);
-          Blockly.Xml.domToWorkspace(xml, workspace);
+          if (xmlUrl.endsWith(".json")) {
+            const json = JSON.parse(data);
+            Blockly.serialization.workspaces.load(json, workspace);
+            return;
+          } else /* if (xmlUrl.endsWith(".xml")) */ {
+            const xml = Blockly.utils.xml.textToDom(data);
+            Blockly.Xml.domToWorkspace(xml, workspace);
+          }
         });
     } else {
       workspace.clear();
@@ -456,8 +501,14 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((data) => {
             //           console.log("success", data);
             workspace.clear();
-            const xml = Blockly.utils.xml.textToDom(data);
-            Blockly.Xml.domToWorkspace(xml, workspace);
+            if (downloadUrl.endsWith(".json")) {
+              const json = JSON.parse(data);
+              Blockly.serialization.workspaces.load(json, workspace);
+              return;
+            } else /* if (downloadUrl.endsWith(".xml")) */ {
+              const xml = Blockly.utils.xml.textToDom(data);
+              Blockly.Xml.domToWorkspace(xml, workspace);
+            }
           })
           .catch((reason) => {
             //             console.log("fail", reason);
@@ -483,7 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
   cssNode.appendChild(cssTextNode);
 
   tabClick(selected);
-  for (var i = 0; i < tabs.length; i++) {
+  for (let i = 0; i < tabs.length; i++) {
     const name = tabs[i];
     document.getElementById(`tab${name}`).addEventListener(
       "click",
