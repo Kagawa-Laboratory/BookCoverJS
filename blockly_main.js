@@ -1,11 +1,13 @@
-import * as Blockly from 'blockly/core';
+import * as Blockly from "blockly";
 import { SVG } from "@svgdotjs/svg.js";
-import { javascriptGenerator } from 'blockly/javascript';
-import * as Ja from 'blockly/msg/ja';
-import 'code-prettify';
+import { javascriptGenerator } from "blockly/javascript";
+import * as Ja from "blockly/msg/ja";
+import "code-prettify";
 import "./myblockly.js";
 import "./myblocks.js";
 import { BookCover } from "./BookCoverJS/BookCover.js";
+import { toolbox } from "./toolbox";
+import { startBlocks } from "./startBlocks";
 
 const tabs = ["Block", "JavaScript", "SVG", "Xml", "JSON"];
 var selected = tabs[0];
@@ -38,8 +40,8 @@ function onResize() {
   }
 }
 
-window.addEventListener('load', onResize);
-window.addEventListener('resize', onResize);
+window.addEventListener("load", onResize);
+window.addEventListener("resize", onResize);
 
 function renderSVG() {
   const code = javascriptGenerator.workspaceToCode(workspace);
@@ -58,10 +60,9 @@ function renderContent(clickedName) {
     console.log("JSON");
     const json = Blockly.serialization.workspaces.save(workspace);
     content.value = JSON.stringify(json, null, 2);
-
   } else if (clickedName == "JavaScript") {
     var code = javascriptGenerator.workspaceToCode(workspace);
-    code = PR.prettyPrintOne(code, 'js');
+    code = PR.prettyPrintOne(code, "js");
     content.innerHTML = code;
   } else if (clickedName == "SVG") {
     renderSVG();
@@ -69,7 +70,6 @@ function renderContent(clickedName) {
 }
 
 function tabClick(clickedName) {
-  
   if (document.getElementById("tabXml").classList.contains("tabon")) {
     // If the XML tab was open, save and render the content.
     const xmlTextarea = document.getElementById("contentXml");
@@ -137,25 +137,41 @@ function confirmLang(lang) {
   if (lang == null) return "emoji";
   switch (lang) {
     case "ja":
-    case "日本語": return "ja";
+    case "日本語":
+      return "ja";
     case "simple_ja":
-    case "にほんご": return "simple_ja";
-    case "en": return "en";
-    default: return "emoji";
+    case "にほんご":
+      return "simple_ja";
+    case "en":
+      return "en";
+    default:
+      return "emoji";
   }
 }
 
 var i18nMap = {
-    "undoButton": { "ja": "アンドゥー", "en": "Undo", "default": "&#x21b6;" }
-  , "redoButton": { "ja": "リドゥー", "en": "Redo", "default": "&#x21b7;" }
-  , "intro": { "ja": "ヘルプ", "en": "Help", "default": "&#x2753;" }
-  , "openButton": { "ja": "読込", "en": "Open", "default": "&#x1f4c2;" }
-  , "saveButton": { "ja": "保存", "en": "Save", "default": "&#x1f4be;" }
-  , "printButton": { "ja": "印刷", "en": "Print", "default": "&#x1f5a8;" }
-  , "downloadXmlButton": { "ja": "ブロックダウンロード", "en": "Download Block", "default": "&#x1f4c4;&#x1f4e5;" }
-  , "uploadXmlButton": { "ja": "ブロックアップロード", "en": "Upload Block", "default": "&#x1f4c4;&#x1f4e4;" }
-  , "uploadSvgButton": { "ja": "画像アップロード", "en": "Upload Image", "default": "&#x1f5bc;&#x1f4e4;" }
-  , "resetButton": { "ja": "リセット", "en": "Reset", "default": "&#x21bb;" }
+  undoButton: { ja: "アンドゥー", en: "Undo", default: "&#x21b6;" },
+  redoButton: { ja: "リドゥー", en: "Redo", default: "&#x21b7;" },
+  intro: { ja: "ヘルプ", en: "Help", default: "&#x2753;" },
+  openButton: { ja: "読込", en: "Open", default: "&#x1f4c2;" },
+  saveButton: { ja: "保存", en: "Save", default: "&#x1f4be;" },
+  printButton: { ja: "印刷", en: "Print", default: "&#x1f5a8;" },
+  downloadXmlButton: {
+    ja: "ブロックダウンロード",
+    en: "Download Block",
+    default: "&#x1f4c4;&#x1f4e5;",
+  },
+  uploadXmlButton: {
+    ja: "ブロックアップロード",
+    en: "Upload Block",
+    default: "&#x1f4c4;&#x1f4e4;",
+  },
+  uploadSvgButton: {
+    ja: "画像アップロード",
+    en: "Upload Image",
+    default: "&#x1f5bc;&#x1f4e4;",
+  },
+  resetButton: { ja: "リセット", en: "Reset", default: "&#x21bb;" },
 };
 
 function replaceI18nElement(id, lang) {
@@ -165,18 +181,29 @@ function replaceI18nElement(id, lang) {
   return content;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(location.search);
-  workspace = Blockly.inject('contentBlock',
-    {
-      toolbox: document.getElementById('toolbox'),
-      zoom: { controls: true, wheel: true, startScale: 1.0, maxScale: 3, minScale: 0.3, scaleSpeed: 1.2 }
-    });
+  workspace = Blockly.inject("contentBlock", {
+    toolbox: toolbox /* document.getElementById('toolbox')*/,
+    zoom: {
+      controls: true,
+      wheel: true,
+      startScale: 1.0,
+      maxScale: 3,
+      minScale: 0.3,
+      scaleSpeed: 1.2,
+    },
+  });
 
-  window.addEventListener('pagehide', ev => {
+  // console.log(JSON.stringify(workspace.options.languageTree, (key, val) => {
+  //    if (key === 'blockxml') return val.outerHTML;
+  //    return val;
+  //  }));
+
+  window.addEventListener("pagehide", (ev) => {
     // Serialize the state.
     const state = Blockly.serialization.workspaces.save(workspace);
-    const url = window.location.href.split('#')[0];
+    const url = window.location.href.split("#")[0];
     // Then you save the state, e.g. to local storage.
     localStorage.setItem(url, JSON.stringify(state));
   });
@@ -187,18 +214,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const lang = confirmLang(params.get("lang"));
 
-  document.querySelectorAll(".i18n").forEach(elem => {
+  document.querySelectorAll(".i18n").forEach((elem) => {
     elem.innerHTML = replaceI18nElement(elem.getAttribute("id"), lang);
   });
 
   const clean = params.get("clean");
-  if (clean != null && (clean.toLowerCase() == "true" || clean.toLowerCase() == "yes")) {
-    Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
+  if (
+    clean != null &&
+    (clean.toLowerCase() == "true" || clean.toLowerCase() == "yes")
+  ) {
+    // Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
+    Blockly.serialization.workspaces.load(startBlocks, workspace);
   } else {
     window.setTimeout(() => {
-
-      const url = window.location.href.split('#')[0];
-      if ('localStorage' in window) {
+      const url = window.location.href.split("#")[0];
+      if ("localStorage" in window) {
         const state = window.localStorage.getItem(url);
         if (state) {
           console.log(`restored from localStorage[${url}]`);
@@ -209,13 +239,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const xmlUrl = params.get("url");
       if (xmlUrl) {
         fetch(xmlUrl)
-          .then(response => response.text())
-          .then(data => {
+          .then((response) => response.text())
+          .then((data) => {
             const xml = Blockly.utils.xml.textToDom(data);
             Blockly.Xml.domToWorkspace(xml, workspace);
           });
       } else {
-        Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
+        // Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
+        Blockly.serialization.workspaces.load(startBlocks, workspace);
       }
     }, 0);
   }
@@ -228,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //       var sub     = window.open(URL.createObjectURL(blob), 'SVG subwindow');
   //    });
 
-  document.getElementById("intro").addEventListener('click', ev => {
+  document.getElementById("intro").addEventListener("click", (ev) => {
     //      alert("intro");
     // ev.preventDefault();
     // const tour = introJs();
@@ -238,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function printSVG() {
-    //      console.log(draw);  
+    //      console.log(draw);
     const wid = draw.width;
     const hei = draw.height;
     draw.width = `${BookCover.pageWidth()}mm`;
@@ -246,42 +277,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const svgText = draw.svg();
     draw.width = wid;
     draw.height = hei;
-    const blob = new Blob([svgText], { type: 'image/svg+xml' });
+    const blob = new Blob([svgText], { type: "image/svg+xml" });
     if (window.navigator && window.navigator.msSaveOrOpenBlob) {
       window.navigator.msSaveOrOpenBlob(blob);
     } else {
-      const sub = window.open(URL.createObjectURL(blob), 'SVG subwindow');
+      const sub = window.open(URL.createObjectURL(blob), "SVG subwindow");
     }
     return false;
   }
 
-  document.getElementById("printButton").addEventListener('click', ev => {
+  document.getElementById("printButton").addEventListener("click", (ev) => {
     ev.preventDefault();
-    if (!document.getElementById('tabSVG').classList.contains('tabon')) {
+    if (!document.getElementById("tabSVG").classList.contains("tabon")) {
       renderSVG();
     }
     printSVG();
     return false;
   });
 
-  document.getElementById("saveButton").addEventListener('click', ev => {
+  document.getElementById("saveButton").addEventListener("click", (ev) => {
     ev.preventDefault();
     var xmlText;
-    if (document.getElementById('tabXml').classList.contains('tabon')) {
-      xmlText = document.getElementById('contentXml').value;
+    if (document.getElementById("tabXml").classList.contains("tabon")) {
+      xmlText = document.getElementById("contentXml").value;
     } else {
       const xmlDom = Blockly.Xml.workspaceToDom(workspace);
       xmlText = Blockly.Xml.domToPrettyText(xmlDom);
     }
-    const blob = new Blob([xmlText], { type: 'text/xml' });
-    document.getElementById("saveButton").href = window.URL.createObjectURL(blob);
+    const blob = new Blob([xmlText], { type: "text/xml" });
+    document.getElementById("saveButton").href =
+      window.URL.createObjectURL(blob);
   });
-  document.getElementById("openButton").addEventListener('click', ev => {
+  document.getElementById("openButton").addEventListener("click", (ev) => {
     ev.preventDefault();
     document.getElementById("openButtonAux").click();
     return false;
   });
-  document.getElementById("openButtonAux").addEventListener('change', evt => {
+  document.getElementById("openButtonAux").addEventListener("change", (evt) => {
     evt.preventDefault();
     const f = evt.target.files[0];
     const reader = new FileReader();
@@ -289,11 +321,11 @@ document.addEventListener('DOMContentLoaded', () => {
     reader.onload = function (e) {
       const xmlText = e.target.result;
       document.getElementById("contentXml").value = xmlText;
-      if (!document.getElementById('tabXml').classList.contains('tabon')) {
+      if (!document.getElementById("tabXml").classList.contains("tabon")) {
         try {
           xmlDom = Blockly.utils.xml.textToDom(xmlText);
         } catch (e) {
-          const q = window.confirm(MSG['badXml'].replace('%1', e));
+          const q = window.confirm(MSG["badXml"].replace("%1", e));
           if (!q) {
             // Leave the user on the XML tab.
             return;
@@ -308,31 +340,37 @@ document.addEventListener('DOMContentLoaded', () => {
     reader.readAsText(f);
   });
 
-  document.getElementById("resetButton").addEventListener('click', ev => {
+  document.getElementById("resetButton").addEventListener("click", (ev) => {
     ev.preventDefault();
-    const q = window.confirm("編集したブロックを捨てて、最初の内容に戻します。よろしいですか？");
+    const q = window.confirm(
+      "編集したブロックを捨てて、最初の内容に戻します。よろしいですか？",
+    );
     if (!q) return;
     const xmlUrl = params.get("url");
     if (xmlUrl) {
       fetch(xmlUrl)
-        .then(response => response.text())
-        .then(data => {
+        .then((response) => response.text())
+        .then((data) => {
           workspace.clear();
           const xml = Blockly.utils.xml.textToDom(data);
           Blockly.Xml.domToWorkspace(xml, workspace);
         });
     } else {
       workspace.clear();
-      Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
+      Blockly.serialization.workspaces.load(startBlocks, workspace);
+      // Blockly.Xml.domToWorkspace(
+      //   document.getElementById("startBlocks"),
+      //   workspace,
+      // );
     }
   });
 
-  document.getElementById("undoButton").addEventListener('click', ev => {
+  document.getElementById("undoButton").addEventListener("click", (ev) => {
     ev.preventDefault();
     Blockly.mainWorkspace.undo(false);
   });
 
-  document.getElementById("redoButton").addEventListener('click', ev => {
+  document.getElementById("redoButton").addEventListener("click", (ev) => {
     ev.preventDefault();
     Blockly.mainWorkspace.undo(true);
   });
@@ -340,84 +378,99 @@ document.addEventListener('DOMContentLoaded', () => {
   const uploadUrl = params.get("upload");
   // uploadUrl は name と data というパラメーターをとると仮定する
   if (uploadUrl == null || uploadUrl == "") {
-    document.getElementById("uploadXmlButton").style.display = 'none';
-    document.getElementById("uploadSvgButton").style.display = 'none';
+    document.getElementById("uploadXmlButton").style.display = "none";
+    document.getElementById("uploadSvgButton").style.display = "none";
   } else {
-    document.getElementById("uploadXmlButton").addEventListener('click', ev => {
-      ev.preventDefault();
-      var xmlText;
-      if (document.getElementById('tabXml').classList.contains('tabon')) {
-        xmlText = document.getElementById('contentXml').value;
-      } else {
-        const xmlDom = Blockly.Xml.workspaceToDom(workspace);
-        xmlText = Blockly.Xml.domToPrettyText(xmlDom);
-      }
-      fetch(uploadUrl, {
-        method: 'post'
-        //          , headers: { 'Content-Type': 'application/json' }
-        //          , body: JSON.stringify({ name: "blocks.xml", data: xmlText })
-        , headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        , body: new URLSearchParams({ name: "blocks.xml", data: xmlText })
-      }).then(response => response.text())
-        .then(message => {
-          console.log("success", message);
-          alert(message); // TODO alert ではなくて Chrome でもコピペできるようにする
-        }).catch(reason => {
-          console.log("fail", reason);
-          alert(reason);
-        });
-    });
-    document.getElementById("uploadSvgButton").addEventListener('click', ev => {
-      ev.preventDefault();
-      if (!document.getElementById('tabSVG').classList.contains('tabon')) {
-        renderSVG();
-      }
-      const svgText = draw.svg();
-      fetch(uploadUrl, {
-        method: 'post'
-        //          , headers: { 'Content-Type': 'application/json' }
-        //          , body: JSON.stringify({ name: "blocks.svg", data: svgText })
-        , headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        , body: new URLSearchParams({ name: "blocks.svg", data: svgText })
-      }).then(response => response.text())
-        .then(message => {
-          //           console.log("success", message);
-          alert(message); // TODO alert ではなくて Chrome でもコピペできるようにする
-        }).catch(reason => {
-          console.log("fail", reason);
-          alert(reason);
-        });
-    });
+    document
+      .getElementById("uploadXmlButton")
+      .addEventListener("click", (ev) => {
+        ev.preventDefault();
+        var xmlText;
+        if (document.getElementById("tabXml").classList.contains("tabon")) {
+          xmlText = document.getElementById("contentXml").value;
+        } else {
+          const xmlDom = Blockly.Xml.workspaceToDom(workspace);
+          xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+        }
+        fetch(uploadUrl, {
+          method: "post",
+          //          , headers: { 'Content-Type': 'application/json' }
+          //          , body: JSON.stringify({ name: "blocks.xml", data: xmlText })
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ name: "blocks.xml", data: xmlText }),
+        })
+          .then((response) => response.text())
+          .then((message) => {
+            console.log("success", message);
+            alert(message); // TODO alert ではなくて Chrome でもコピペできるようにする
+          })
+          .catch((reason) => {
+            console.log("fail", reason);
+            alert(reason);
+          });
+      });
+    document
+      .getElementById("uploadSvgButton")
+      .addEventListener("click", (ev) => {
+        ev.preventDefault();
+        if (!document.getElementById("tabSVG").classList.contains("tabon")) {
+          renderSVG();
+        }
+        const svgText = draw.svg();
+        fetch(uploadUrl, {
+          method: "post",
+          //          , headers: { 'Content-Type': 'application/json' }
+          //          , body: JSON.stringify({ name: "blocks.svg", data: svgText })
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ name: "blocks.svg", data: svgText }),
+        })
+          .then((response) => response.text())
+          .then((message) => {
+            //           console.log("success", message);
+            alert(message); // TODO alert ではなくて Chrome でもコピペできるようにする
+          })
+          .catch((reason) => {
+            console.log("fail", reason);
+            alert(reason);
+          });
+      });
   }
 
   const downloadUrl = params.get("download");
   if (downloadUrl == null || downloadUrl == "") {
-    document.getElementById("downloadXmlButton").style.display = 'none';
+    document.getElementById("downloadXmlButton").style.display = "none";
   } else {
-    document.getElementById("downloadXmlButton").addEventListener('click', ev => {
-      ev.preventDefault();
-      const q = window.confirm("現在編集中のブロックを捨ててよろしいですか？");
-      if (!q) return;
-      const number = window.prompt("アップロードしたときの非負の整数を入力して下さい:");
-      fetch(`${downloadUrl}?number=${number}`)
-        .then(response => response.text())
-        .then(data => {
-          //           console.log("success", data);
-          workspace.clear();
-          const xml = Blockly.utils.xml.textToDom(data);
-          Blockly.Xml.domToWorkspace(xml, workspace);
-        }).catch(reason => {
-          //             console.log("fail", reason);
-          alert("ダウンロードに失敗しました。" + reason);
-        });
-    });
+    document
+      .getElementById("downloadXmlButton")
+      .addEventListener("click", (ev) => {
+        ev.preventDefault();
+        const q = window.confirm(
+          "現在編集中のブロックを捨ててよろしいですか？",
+        );
+        if (!q) return;
+        const number = window.prompt(
+          "アップロードしたときの非負の整数を入力して下さい:",
+        );
+        fetch(`${downloadUrl}?number=${number}`)
+          .then((response) => response.text())
+          .then((data) => {
+            //           console.log("success", data);
+            workspace.clear();
+            const xml = Blockly.utils.xml.textToDom(data);
+            Blockly.Xml.domToWorkspace(xml, workspace);
+          })
+          .catch((reason) => {
+            //             console.log("fail", reason);
+            alert("ダウンロードに失敗しました。" + reason);
+          });
+      });
   }
 
   onResize();
   Blockly.svgResize(workspace);
 
   // 無理やりフォントを変更する。
-  const cssNode = document.createElement('style');
+  const cssNode = document.createElement("style");
   document.head.appendChild(cssNode);
   const text = `
         .blocklyText {"
@@ -425,13 +478,21 @@ document.addEventListener('DOMContentLoaded', () => {
       	  fill: #fff;"
       	  font-family: 'Segoe UI Symbol';"
       	  font-size: 11pt;"
-      	}`.replace(/\n        /g, '\n');
+      	}`.replace(/\n        /g, "\n");
   const cssTextNode = document.createTextNode(text);
   cssNode.appendChild(cssTextNode);
 
   tabClick(selected);
   for (var i = 0; i < tabs.length; i++) {
     const name = tabs[i];
-    document.getElementById(`tab${name}`).addEventListener('click', function (name_) { return ev => { ev.preventDefault(); tabClick(name_); }; }(name));
+    document.getElementById(`tab${name}`).addEventListener(
+      "click",
+      (function (name_) {
+        return (ev) => {
+          ev.preventDefault();
+          tabClick(name_);
+        };
+      })(name),
+    );
   }
 });
