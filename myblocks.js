@@ -16,7 +16,7 @@ Blockly.Blocks['bookcover_today'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("今日の日付")
-      .appendField(new Blockly.FieldDropdown([["🇯🇵", "JP"], ["🇺🇸", "US"], ["🇪🇺", "EU"]]), "STYLE");
+      .appendField(new Blockly.FieldDropdown([["🇯🇵", "JP"], ["🇺🇸", "US"], ["🇬🇧", "GB"]]), "STYLE");
     this.setOutput(true, null);
     this.setColour(160);
     this.setTooltip('');
@@ -37,7 +37,7 @@ javascriptGenerator.forBlock['bookcover_today'] = function (block) {
       return [code, javascriptGenerator.ORDER_ATOMIC];
     }
       break;
-    case "EU": {
+    case "GB": {
       const code = `new Intl.DateTimeFormat('en-GB', { year: 'numeric', month: 'long', day: '2-digit' }).format(new Date())`;
       return [code, javascriptGenerator.ORDER_ATOMIC];
     }
