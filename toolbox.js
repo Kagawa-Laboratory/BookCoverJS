@@ -442,6 +442,7 @@
 //      if (key === 'blockxml') return val.outerHTML;
 //      return val;
 //    }));
+// その後 blockxml を手動で inputs か fields に変換
 
 export const toolbox = {
   contents: [
@@ -569,8 +570,18 @@ export const toolbox = {
         },
         {
           kind: "BLOCK",
-          blockxml:
-            '<block type="bookcover_fill_opacity">\n    <value name="opacity">\n      <block type="math_number">\n        <field name="NUM">0.5</field>\n      </block>\n    </value>\n  </block>',
+        //   blockxml:
+        //     '<block type="bookcover_fill_opacity">\n    <value name="opacity">\n      <block type="math_number">\n        <field name="NUM">0.5</field>\n      </block>\n    </value>\n  </block>',
+          inputs: {
+            opacity: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0.5,
+                },
+              },
+            },
+          },
           type: "bookcover_fill_opacity",
         },
         {
