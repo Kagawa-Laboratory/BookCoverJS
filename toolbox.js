@@ -399,6 +399,10 @@ export const toolbox = {
         },
         {
           kind: "BLOCK",
+          type: "bookcover_today",
+        },
+        {
+          kind: "BLOCK",
           type: "bookcover_font_name",
         },
         {
