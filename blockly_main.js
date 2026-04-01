@@ -412,12 +412,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("undoButton").addEventListener("click", (ev) => {
     ev.preventDefault();
-    Blockly.mainWorkspace.undo(false);
+    workspace.undo(false);
   });
 
   document.getElementById("redoButton").addEventListener("click", (ev) => {
     ev.preventDefault();
-    Blockly.mainWorkspace.undo(true);
+    workspace.undo(true);
   });
 
   const uploadUrl = params.get("upload");
