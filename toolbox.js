@@ -170,10 +170,10 @@ export const toolbox = {
               shadow: {
                 type: "math_number",
                 fields: {
-                  "NUM": 1
-                }
-              }
-            }
+                  NUM: 1,
+                },
+              },
+            },
           },
           type: "bookcover_stroke_weight",
         },
@@ -210,18 +210,18 @@ export const toolbox = {
               shadow: {
                 type: "bookcover_colour",
                 fields: {
-                  COLOUR: "#ff0000"
-                }
-              }
+                  COLOUR: "#ff0000",
+                },
+              },
             },
             angle: {
               shadow: {
                 type: "bookcover_angle",
                 fields: {
-                  angle: 120
-                }
-              }
-            }
+                  angle: 120,
+                },
+              },
+            },
           },
           type: "bookcover_rotate_h",
         },
@@ -234,18 +234,18 @@ export const toolbox = {
               shadow: {
                 type: "bookcover_colour",
                 fields: {
-                  COLOUR: "#ff0000"
-                }
-              }
+                  COLOUR: "#ff0000",
+                },
+              },
             },
             delta: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: -10
-                }
-              }
-            }
+                  NUM: -10,
+                },
+              },
+            },
           },
           type: "bookcover_add_s",
         },
@@ -258,18 +258,18 @@ export const toolbox = {
               shadow: {
                 type: "bookcover_colour",
                 fields: {
-                  COLOUR: "#ff0000"
-                }
-              }
+                  COLOUR: "#ff0000",
+                },
+              },
             },
             delta: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: -10
-                }
-              }
-            }
+                  NUM: -10,
+                },
+              },
+            },
           },
           type: "bookcover_add_l",
         },
@@ -282,27 +282,27 @@ export const toolbox = {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 0
-                }
-              }
+                  NUM: 0,
+                },
+              },
             },
             green: {
               shadow: {
                 type: "math_number",
 
                 fields: {
-                  NUM: 100
-                }
-              }
+                  NUM: 100,
+                },
+              },
             },
             blue: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 100
-                }
-              }
-            }
+                  NUM: 100,
+                },
+              },
+            },
           },
           type: "bookcover_rgb100",
         },
@@ -315,26 +315,26 @@ export const toolbox = {
               shadow: {
                 type: "bookcover_angle",
                 fields: {
-                  angle: 180
-                }
-              }
+                  angle: 180,
+                },
+              },
             },
             saturation: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 100
-                }
-              }
+                  NUM: 100,
+                },
+              },
             },
             luminance: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 50
-                }
-              }
-            }
+                  NUM: 50,
+                },
+              },
+            },
           },
           type: "bookcover_hsl360",
         },
@@ -464,18 +464,18 @@ export const toolbox = {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 15
-                }
-              }
+                  NUM: 15,
+                },
+              },
             },
             y: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: -25
-                }
-              }
-            }
+                  NUM: -25,
+                },
+              },
+            },
           },
           type: "bookcover_translate",
         },
@@ -488,19 +488,20 @@ export const toolbox = {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 1.5
-                }
-              }
+                  NUM: 1.5,
+                },
+              },
             },
             y: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 2.9
-                }
-              }
-            }
-          }, type: "bookcover_scale",
+                  NUM: 2.9,
+                },
+              },
+            },
+          },
+          type: "bookcover_scale",
         },
         {
           kind: "BLOCK",
@@ -511,10 +512,10 @@ export const toolbox = {
               shadow: {
                 type: "bookcover_angle",
                 fields: {
-                  angle: 45
-                }
-              }
-            }
+                  angle: 45,
+                },
+              },
+            },
           },
           type: "bookcover_rotate",
         },
@@ -533,39 +534,39 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_line">\n    <value name="x1">\n      <block type="math_number">\n        <field name="NUM">0</field>\n      </block>\n    </value>\n    <value name="y1">\n      <block type="math_number">\n        <field name="NUM">0</field>\n      </block>\n    </value>\n    <value name="x2">\n      <block type="math_number">\n        <field name="NUM">50</field>\n      </block>\n    </value>\n    <value name="y2">\n      <block type="math_number">\n        <field name="NUM">100</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "x1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 0
-                }
-              }
+          inputs: {
+            x1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
             },
-            "y1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 0
-                }
-              }
+            y1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
             },
-            "x2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 50
-                }
-              }
+            x2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 50,
+                },
+              },
             },
-            "y2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 100
-                }
-              }
-            }
+            y2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 100,
+                },
+              },
+            },
           },
           type: "bookcover_line",
         },
@@ -573,39 +574,39 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_rect">\n    <value name="x">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="y">\n      <block type="math_number">\n        <field name="NUM">15</field>\n      </block>\n    </value>\n    <value name="w">\n      <block type="math_number">\n        <field name="NUM">120</field>\n      </block>\n    </value>\n    <value name="h">\n      <block type="math_number">\n        <field name="NUM">230</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "x": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+          inputs: {
+            x: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "y": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 15
-                }
-              }
+            y: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 15,
+                },
+              },
             },
-            "w": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 120
-                }
-              }
+            w: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 120,
+                },
+              },
             },
-            "h": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 230
-                }
-              }
-            }
+            h: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 230,
+                },
+              },
+            },
           },
           type: "bookcover_rect",
         },
@@ -613,39 +614,39 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_ellipse">\n    <value name="x">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="y">\n      <block type="math_number">\n        <field name="NUM">15</field>\n      </block>\n    </value>\n    <value name="w">\n      <block type="math_number">\n        <field name="NUM">120</field>\n      </block>\n    </value>\n    <value name="h">\n      <block type="math_number">\n        <field name="NUM">230</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "x": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+          inputs: {
+            x: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "y": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 15
-                }
-              }
+            y: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 15,
+                },
+              },
             },
-            "w": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 120
-                }
-              }
+            w: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 120,
+                },
+              },
             },
-            "h": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 230
-                }
-              }
-            }
+            h: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 230,
+                },
+              },
+            },
           },
           type: "bookcover_ellipse",
         },
@@ -653,55 +654,55 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_triangle">\n    <value name="x1">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="y1">\n      <block type="math_number">\n        <field name="NUM">15</field>\n      </block>\n    </value>\n    <value name="x2">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="y2">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="x3">\n      <block type="math_number">\n        <field name="NUM">25</field>\n      </block>\n    </value>\n    <value name="y3">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "x1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+          inputs: {
+            x1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "y1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 15
-                }
-              }
+            y1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 15,
+                },
+              },
             },
-            "x2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+            x2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "y2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+            y2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "x3": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 25
-                }
-              }
+            x3: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 25,
+                },
+              },
             },
-            "y3": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
-            }
+            y3: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
+            },
           },
           type: "bookcover_triangle",
         },
@@ -709,71 +710,71 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_quad">\n    <value name="x1">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="y1">\n      <block type="math_number">\n        <field name="NUM">15</field>\n      </block>\n    </value>\n    <value name="x2">\n      <block type="math_number">\n        <field name="NUM">25</field>\n      </block>\n    </value>\n    <value name="y2">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="x3">\n      <block type="math_number">\n        <field name="NUM">25</field>\n      </block>\n    </value>\n    <value name="y3">\n      <block type="math_number">\n        <field name="NUM">25</field>\n      </block>\n    </value>\n    <value name="x4">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="y4">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "x1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+          inputs: {
+            x1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "y1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 15
-                }
-              }
+            y1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 15,
+                },
+              },
             },
-            "x2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 25
-                }
-              }
+            x2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 25,
+                },
+              },
             },
-            "y2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+            y2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "x3": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 25
-                }
-              }
+            x3: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 25,
+                },
+              },
             },
-            "y3": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 25
-                }
-              }
+            y3: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 25,
+                },
+              },
             },
-            "x4": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+            x4: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "y4": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
-            }
+            y4: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
+            },
           },
           type: "bookcover_quad",
         },
@@ -781,55 +782,55 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_arc">\n    <value name="x">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="y">\n      <block type="math_number">\n        <field name="NUM">15</field>\n      </block>\n    </value>\n    <value name="w">\n      <block type="math_number">\n        <field name="NUM">120</field>\n      </block>\n    </value>\n    <value name="h">\n      <block type="math_number">\n        <field name="NUM">230</field>\n      </block>\n    </value>\n    <value name="start">\n      <block type="math_number">\n        <field name="NUM">0</field>\n      </block>\n    </value>\n    <value name="end">\n      <block type="math_number">\n        <field name="NUM">60</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "x": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+          inputs: {
+            x: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "y": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 15
-                }
-              }
+            y: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 15,
+                },
+              },
             },
-            "w": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 120
-                }
-              }
+            w: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 120,
+                },
+              },
             },
-            "h": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 230
-                }
-              }
+            h: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 230,
+                },
+              },
             },
-            "start": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 0
-                }
-              }
+            start: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
             },
-            "end": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 60
-                }
-              }
-            }
+            end: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 60,
+                },
+              },
+            },
           },
           type: "bookcover_arc",
         },
@@ -837,47 +838,47 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_image">\n    <value name="x">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="y">\n      <block type="math_number">\n        <field name="NUM">15</field>\n      </block>\n    </value>\n    <value name="w">\n      <block type="math_number">\n        <field name="NUM">16</field>\n      </block>\n    </value>\n    <value name="h">\n      <block type="math_number">\n        <field name="NUM">16</field>\n      </block>\n    </value>\n    <value name="url">\n      <block type="text">\n        <field name="TEXT">http://guppy.eng.kagawa-u.ac.jp/OpenCampus/favicon.png</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "x": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+          inputs: {
+            x: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "y": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 15
-                }
-              }
+            y: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 15,
+                },
+              },
             },
-            "w": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 16
-                }
-              }
+            w: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 16,
+                },
+              },
             },
-            "h": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 16
-                }
-              }
+            h: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 16,
+                },
+              },
             },
-            "url": {
-              "shadow": {
-                "type": "text",
-                "fields": {
-                  "TEXT": "https://guppy.eng.kagawa-u.ac.jp/OpenCampus/favicon.png"
-                }
-              }
-            }
+            url: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "https://guppy.eng.kagawa-u.ac.jp/OpenCampus/favicon.png",
+                },
+              },
+            },
           },
           type: "bookcover_image",
         },
@@ -885,71 +886,71 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_bezier">\n    <value name="x1">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="y1">\n      <block type="math_number">\n        <field name="NUM">15</field>\n      </block>\n    </value>\n    <value name="x2">\n      <block type="math_number">\n        <field name="NUM">25</field>\n      </block>\n    </value>\n    <value name="y2">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="x3">\n      <block type="math_number">\n        <field name="NUM">25</field>\n      </block>\n    </value>\n    <value name="y3">\n      <block type="math_number">\n        <field name="NUM">25</field>\n      </block>\n    </value>\n    <value name="x4">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n    <value name="y4">\n      <block type="math_number">\n        <field name="NUM">20</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "x1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+          inputs: {
+            x1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "y1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 15
-                }
-              }
+            y1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 15,
+                },
+              },
             },
-            "x2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 25
-                }
-              }
+            x2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 25,
+                },
+              },
             },
-            "y2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+            y2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "x3": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 25
-                }
-              }
+            x3: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 25,
+                },
+              },
             },
-            "y3": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 25
-                }
-              }
+            y3: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 25,
+                },
+              },
             },
-            "x4": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
+            x4: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
             },
-            "y4": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 20
-                }
-              }
-            }
+            y4: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 20,
+                },
+              },
+            },
           },
           type: "bookcover_bezier",
         },
@@ -969,10 +970,10 @@ export const toolbox = {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 123456
-                }
-              }
-            }
+                  NUM: 123456,
+                },
+              },
+            },
           },
           type: "bookcover_random_seed",
         },
@@ -985,18 +986,18 @@ export const toolbox = {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 0
-                }
-              }
+                  NUM: 0,
+                },
+              },
             },
             max: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 1
-                }
-              }
-            }
+                  NUM: 1,
+                },
+              },
+            },
           },
           type: "bookcover_random_in_range",
         },
@@ -1024,15 +1025,15 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="math_number_property">\n    <value name="NUMBER_TO_CHECK">\n      <shadow type="math_number">\n        <field name="NUM">0</field>\n      </shadow>\n    </value>\n  </block>',
-          "inputs": {
-            "NUMBER_TO_CHECK": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 0
-                }
-              }
-            }
+          inputs: {
+            NUMBER_TO_CHECK: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
+            },
           },
           type: "math_number_property",
         },
@@ -1040,15 +1041,15 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="math_round">\n    <value name="NUM">\n      <shadow type="math_number">\n        <field name="NUM">3.1</field>\n      </shadow>\n    </value>\n  </block>',
-          "inputs": {
-            "NUM": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 3.1
-                }
-              }
-            }
+          inputs: {
+            NUM: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 3.1,
+                },
+              },
+            },
           },
           type: "math_round",
         },
@@ -1056,93 +1057,95 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="math_modulo">\n    <value name="DIVIDEND">\n      <shadow type="math_number">\n        <field name="NUM">64</field>\n      </shadow>\n    </value>\n    <value name="DIVISOR">\n      <shadow type="math_number">\n        <field name="NUM">10</field>\n      </shadow>\n    </value>\n  </block>',
-          "inputs": {
-            "DIVIDEND": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 64
-                }
-              }
+          inputs: {
+            DIVIDEND: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 64,
+                },
+              },
             },
-            "DIVISOR": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 7
-                }
-              }
-            }
-          }, type: "math_modulo",
+            DIVISOR: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 7,
+                },
+              },
+            },
+          },
+          type: "math_modulo",
         },
         {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="math_constrain">\n    <value name="VALUE">\n      <shadow type="math_number">\n        <field name="NUM">50</field>\n      </shadow>\n    </value>\n    <value name="LOW">\n      <shadow type="math_number">\n        <field name="NUM">1</field>\n      </shadow>\n    </value>\n    <value name="HIGH">\n      <shadow type="math_number">\n        <field name="NUM">100</field>\n      </shadow>\n    </value>\n  </block>',
-          "inputs": {
-            "VALUE": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 50
-                }
-              }
+          inputs: {
+            VALUE: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 50,
+                },
+              },
             },
-            "LOW": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 1
-                }
-              }
+            LOW: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 1,
+                },
+              },
             },
-            "HIGH": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 100
-                }
-              }
-            }
-          }, type: "math_constrain",
+            HIGH: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 100,
+                },
+              },
+            },
+          },
+          type: "math_constrain",
         },
         {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_distance">\n    <value name="X1">\n      <shadow type="math_number">\n        <field name="NUM">0</field>\n      </shadow>\n    </value>\n    <value name="Y1">\n      <shadow type="math_number">\n        <field name="NUM">0</field>\n      </shadow>\n    </value>\n    <value name="X2">\n      <shadow type="math_number">\n        <field name="NUM">3</field>\n      </shadow>\n    </value>\n    <value name="Y2">\n      <shadow type="math_number">\n        <field name="NUM">4</field>\n      </shadow>\n    </value>\n  </block>',
-          "inputs": {
-            "X1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 0
-                }
-              }
+          inputs: {
+            X1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
             },
-            "Y1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 0
-                }
-              }
+            Y1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
             },
-            "X2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 3
-                }
-              }
+            X2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 3,
+                },
+              },
             },
-            "Y2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 4
-                }
-              }
-            }
+            Y2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 4,
+                },
+              },
+            },
           },
           type: "bookcover_distance",
         },
@@ -1150,39 +1153,39 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_atan2">\n    <value name="X1">\n      <shadow type="math_number">\n        <field name="NUM">0</field>\n      </shadow>\n    </value>\n    <value name="Y1">\n      <shadow type="math_number">\n        <field name="NUM">0</field>\n      </shadow>\n    </value>\n    <value name="X2">\n      <shadow type="math_number">\n        <field name="NUM">3</field>\n      </shadow>\n    </value>\n    <value name="Y2">\n      <shadow type="math_number">\n        <field name="NUM">4</field>\n      </shadow>\n    </value>\n  </block>',
-          "inputs": {
-            "X1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 0
-                }
-              }
+          inputs: {
+            X1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
             },
-            "Y1": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 0
-                }
-              }
+            Y1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
             },
-            "X2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 3
-                }
-              }
+            X2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 3,
+                },
+              },
             },
-            "Y2": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 4
-                }
-              }
-            }
+            Y2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 4,
+                },
+              },
+            },
           },
           type: "bookcover_atan2",
         },
@@ -1205,15 +1208,15 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_forward">\n    <value name="len">\n      <block type="math_number">\n        <field name="NUM">50</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "len": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 50
-                }
-              }
-            }
+          inputs: {
+            len: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 50,
+                },
+              },
+            },
           },
           type: "bookcover_forward",
         },
@@ -1221,15 +1224,15 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_turn">\n    <value name="angle">\n      <block type="bookcover_angle">\n        <field name="angle">72</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "angle": {
-              "shadow": {
-                "type": "bookcover_angle",
-                "fields": {
-                  "angle": 75
-                }
-              }
-            }
+          inputs: {
+            angle: {
+              shadow: {
+                type: "bookcover_angle",
+                fields: {
+                  angle: 75,
+                },
+              },
+            },
           },
           type: "bookcover_turn",
         },
@@ -1237,15 +1240,15 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_direction">\n    <value name="angle">\n      <block type="bookcover_angle">\n        <field name="angle">144</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "angle": {
-              "shadow": {
-                "type": "bookcover_angle",
-                "fields": {
-                  "angle": 150
-                }
-              }
-            }
+          inputs: {
+            angle: {
+              shadow: {
+                type: "bookcover_angle",
+                fields: {
+                  angle: 150,
+                },
+              },
+            },
           },
           type: "bookcover_direction",
         },
@@ -1253,23 +1256,23 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_go">\n    <value name="x">\n      <block type="math_number">\n        <field name="NUM">50</field>\n      </block>\n    </value>\n    <value name="y">\n      <block type="math_number">\n        <field name="NUM">75</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "x": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 50
-                }
-              }
+          inputs: {
+            x: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 50,
+                },
+              },
             },
-            "y": {
-              "shadow": {
-                "type": "math_number",
-                "fields": {
-                  "NUM": 75
-                }
-              }
-            }
+            y: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 75,
+                },
+              },
+            },
           },
           type: "bookcover_go",
         },
@@ -1277,15 +1280,15 @@ export const toolbox = {
           kind: "BLOCK",
           // blockxml:
           //   '<block type="bookcover_say">\n    <value name="str">\n      <block type="text">\n        <field name="TEXT">こんにちは</field>\n      </block>\n    </value>\n  </block>',
-          "inputs": {
-            "str": {
-              "shadow": {
-                "type": "text",
-                "fields": {
-                  "TEXT": "こんにちは"
-                }
-              }
-            }
+          inputs: {
+            str: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "こんにちは",
+                },
+              },
+            },
           },
           type: "bookcover_say",
         },
@@ -1547,6 +1550,14 @@ export const toolbox = {
     {
       kind: "CATEGORY",
       contents: [
+        {
+          kind: "BLOCK",
+          type: "bookcover_commented_statements",
+        },
+        {
+          kind: "BLOCK",
+          type: "bookcover_commented_expression",
+        },
         {
           kind: "BLOCK",
           type: "bookcover_generic_statement",

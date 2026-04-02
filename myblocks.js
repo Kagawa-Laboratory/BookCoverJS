@@ -12,6 +12,57 @@ installColourBlocks({
 registerFieldColour();
 registerFieldAngle();
 
+Blockly.Blocks['bookcover_commented_statements'] = {
+  init: function() {
+    this.appendDummyInput('dummy')
+      .appendField('✨')
+      .appendField(new Blockly.FieldTextInput(''), 'MESSAGE');
+    this.appendStatementInput('S');
+    this.setInputsInline(true)
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setColour(0);
+  }
+};
+
+javascriptGenerator.forBlock['bookcover_commented_statements'] = function(block) {
+  /* text_message は無視する */
+  const text_message = block.getFieldValue('MESSAGE');
+  // indent を一段階減らす
+  const indent = javascriptGenerator.INDENT;
+  const code = javascriptGenerator.statementToCode(block, 'S');
+  // code の各行から indent を取り除く
+  let lines = code.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].startsWith(indent)) {
+      lines[i] = lines[i].substring(indent.length);
+    }
+  }
+  return lines.join('\n');
+}
+
+Blockly.Blocks['bookcover_commented_expression'] = {
+  init: function() {
+    this.appendDummyInput('dummy')
+      .appendField(new Blockly.FieldTextInput(''), 'MESSAGE');
+    this.appendValueInput('EXP');
+    this.setInputsInline(true)
+    this.setOutput(true, null);
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setColour(0);
+  }
+};
+
+javascriptGenerator.forBlock['bookcover_commented_expression'] = function(block) {
+  /* text_message は無視する */
+  const text_message = block.getFieldValue('MESSAGE');
+  const code = javascriptGenerator.valueToCode(block, 'EXP', javascriptGenerator.ORDER_ATOMIC);
+  return [code, javascriptGenerator.ORDER_NONE];
+}
+
 Blockly.Blocks['bookcover_today'] = {
   init: function () {
     this.appendDummyInput()
