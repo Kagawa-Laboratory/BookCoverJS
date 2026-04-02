@@ -1,6 +1,6 @@
 export var BookCover = (function () {
   var BookCover = function () {
-    var self = this;
+    let self = this;
     self.__strokeWeight = 1;
     self.__stroke = "none";
     self.__strokeOpacity = 1;
@@ -459,7 +459,7 @@ export var BookCover = (function () {
     },
 
     init: function () {
-        var self = this;
+        let self = this;
     	self.__strokeWeight = 1;
     	self.__stroke = "none";
     	self.__strokeOpacity = 1;
@@ -496,13 +496,6 @@ export var BookCover = (function () {
     	self.__currentBottomMargin = self.__bottomMargin;
     	self.__firstVertex = true;
     	self.__shapePath = "";
-
-    	/* turtle graphics */
-    	self.__turtlePen = self.CLEAN;  /* up: 0, down: 1, dirty: 2 */
-    	self.__turtleX = 148.5;
-    	self.__turtleY = 105;
-    	self.__turtleHeading = 0;
-    	self.__turtleStack = [ ];
 
         self.__clipMargin = 1;
     },
@@ -1078,14 +1071,14 @@ export var BookCover = (function () {
     },
 
     backward: function(len) {
-        var dx = - len * this.cos360(this.__turtleHeading);
-        var dy = - len * this.sin360(this.__turtleHeading);
+        const dx = - len * this.cos360(this.__turtleHeading);
+        const dy = - len * this.sin360(this.__turtleHeading);
         this.__turtleX += dx;
         this.__turtleY += dy;
     },
 
     turn: function(angle) {
-        var tmp;
+        let tmp;
         this.__turtleHeading += angle;
 
         tmp = Math.floor(this.__turtleHeading);
@@ -1102,7 +1095,7 @@ export var BookCover = (function () {
     },
 
     direction: function(dir) {
-        var tmp;
+        let tmp;
         this.__turtleHeading = dir;
 
         tmp = Math.floor(this.__turtleHeading);
@@ -1150,11 +1143,11 @@ export var BookCover = (function () {
         this.pushMatrix();
         this.translate(this.__turtleX, this.__turtleY);
         this.rotate360(this.__turtleHeading);
-        var args = [];
+        let args = [];
         args.push("" + arguments[0]);  /* String に強制 */
         args.push(0);
         args.push(0);
-        for (var i = 1; i < arguments.length; i++) {
+        for (let i = 1; i < arguments.length; i++) {
             args.push(arguments(i));
         }
         this.text.apply(this, args);
