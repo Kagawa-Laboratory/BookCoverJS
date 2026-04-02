@@ -164,7 +164,7 @@ const i18nMap = {
     en: "Save JSON",
     default: "<sub>(JSON)</sub>&#x1f4be;",
   },
-  printButton: { ja: "印刷", en: "Print", default: "&#x1f5a8;" },
+  printButton: { ja: "印刷用ページを開く", en: "Open Print Page", default: "&#x1f5a8;" },
   downloadBlockButton: {
     ja: "ブロックをダウンロード",
     en: "Download Block",
