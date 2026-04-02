@@ -154,21 +154,21 @@ const i18nMap = {
   redoButton: { ja: "リドゥー", en: "Redo", default: "&#x21b7;" },
   intro: { ja: "ヘルプ", en: "Help", default: "&#x2753;" },
   openButton: { ja: "読込", en: "Open", default: "&#x1f4c2;" },
-  saveButton: { ja: "保存", en: "Save", default: "&#x1f4be;" },
-  saveJSONButton: { ja: "保存JSON", en: "Save JSON", default: "JSON" },
+  saveButton: { ja: "XML で保存", en: "Save", default: "<sub>(XML)</sub>&#x1f4be;" },
+  saveJSONButton: { ja: "JSON（推奨）で保存", en: "Save JSON", default: "<sub>(JSON)</sub>&#x1f4be;" },
   printButton: { ja: "印刷", en: "Print", default: "&#x1f5a8;" },
   downloadXmlButton: {
-    ja: "ブロックダウンロード",
+    ja: "ブロックをダウンロード",
     en: "Download Block",
     default: "&#x1f4c4;&#x1f4e5;",
   },
   uploadXmlButton: {
-    ja: "ブロックアップロード",
+    ja: "ブロックをアップロード",
     en: "Upload Block",
     default: "&#x1f4c4;&#x1f4e4;",
   },
   uploadSvgButton: {
-    ja: "画像アップロード",
+    ja: "画像をアップロード",
     en: "Upload Image",
     default: "&#x1f5bc;&#x1f4e4;",
   },
@@ -177,7 +177,7 @@ const i18nMap = {
 
 function replaceI18nElement(id, lang) {
   //   console.log(id, lang);
-  let content = i18nMap[id][lang];
+  let content = `${i18nMap[id]["default"]} ${i18nMap[id][lang]}`;
   if (content == null) content = i18nMap[id]["default"];
   return content;
 }
@@ -266,8 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //    });
 
   document.getElementById("intro").addEventListener("click", (ev) => {
-    //      alert("intro");
-    // ev.preventDefault();
+    ev.preventDefault();
     // const tour = introJs();
     // tour.setOption('tooltipPosition', 'auto');
     // tour.start();
@@ -546,4 +545,34 @@ document.addEventListener("DOMContentLoaded", () => {
       })(name),
     );
   }
-});
+
+  /* ハンバーガーメニュー関連 */
+  const hamburger = document.getElementById("js-hamburger");
+  const dialog = document.getElementById("js-nav-dialog");
+
+  // 開閉の切り替え
+  hamburger.addEventListener("click", () => {
+    if (dialog.open) {
+      dialog.close();
+    } else {
+      // ボタンの位置を取得
+      const rect = hamburger.getBoundingClientRect();
+      console.log(rect);
+
+      dialog.showModal(); // モーダルとして開く（背景が有効になる）
+      // ダイアログの位置をボタンの真下に設定
+      const dialogWidth = dialog.getBoundingClientRect().width;
+      dialog.style.top = `${rect.bottom + 5}px`;
+      dialog.style.left = `${rect.right - dialogWidth}px`;
+      //   dialog.style.right = `${window.innerWidth - rect.right}px`; // なぜかこれではうまく行かない
+      console.log(dialog.style);
+    }
+  });
+
+  // 外側をクリックしたら閉じる
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      dialog.close();
+    }
+  });
+}); // DOMContentLoaded

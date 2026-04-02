@@ -1,149 +1,300 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Blockly for BookCoverJS</title>
-<link rel="shortcut icon" href="favicon.png" type="image/png"/>
-<!--
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Blockly for BookCoverJS</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/png" />
+    <!--
 <script src="3rdParty/blockly/msg/js/ja.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/5.1.0/intro.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/5.1.0/introjs.min.css" />
 -->
-<style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    body {
-      font-family: sans-serif;
-      overflow: hidden;
-    }
-    table {
-      height: 100%;
-      width: 100%;
-      border-collapse: collapse;
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        font-family: sans-serif;
+        overflow: hidden;
+      }
+      table {
+        height: 100%;
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
 
-    /* Tabs */
-    #tabRow>td {
-      border: 1px solid #ccc;
-      border-bottom: none;
-    }
-    td.tabon {
-      border-bottom-color: #ddd !important;
-      background-color: #ddd;
-      padding: 5px 19px;
-    }
-    td.taboff {
-      cursor: pointer;
-      padding: 5px 19px;
-    }
-    td.taboff:hover {
-      background-color: #eee;
-    }
-    td.tabmin {
-      border-top-style: none !important;
-      border-left-style: none !important;
-      border-right-style: none !important;
-    }
-    td.tabmax {
-      border-top-style: none !important;
-      border-left-style: none !important;
-      border-right-style: none !important;
-      width: 99%;
-      padding-left: 10px;
-      padding-right: 10px;
-      text-align: right;
-    }
+      /* Tabs */
+      #tabRow > td {
+        border: 1px solid #ccc;
+        border-bottom: none;
+      }
+      td.tabon {
+        border-bottom-color: #ddd !important;
+        background-color: #ddd;
+        padding: 5px 19px;
+      }
+      td.taboff {
+        cursor: pointer;
+        padding: 5px 19px;
+      }
+      td.taboff:hover {
+        background-color: #eee;
+      }
+      td.tabmin {
+        border-top-style: none !important;
+        border-left-style: none !important;
+        border-right-style: none !important;
+      }
+      td.tabmax {
+        border-top-style: none !important;
+        border-left-style: none !important;
+        border-right-style: none !important;
+        width: 99%;
+        padding-left: 10px;
+        padding-right: 0;
+        text-align: right;
+      }
 
-    .content {
-      visibility: hidden;
-      margin: 0;
-      padding: 1ex;
-      position: absolute;
-      direction: ltr;
-    }
-    pre.content {
-      border: 1px solid #ccc;
-      overflow: scroll;
-    }
-    div.content {
-      border: 1px solid #ccc;
-      overflow: scroll;
-    }
+      .content {
+        visibility: hidden;
+        margin: 0;
+        padding: 1ex;
+        position: absolute;
+        direction: ltr;
+      }
+      pre.content {
+        border: 1px solid #ccc;
+        overflow: scroll;
+      }
+      div.content {
+        border: 1px solid #ccc;
+        overflow: scroll;
+      }
 
-    .button_like {
-      font-size: 70%;
-      font-family: 'Segoe UI Emoji';
-      padding: 3px 5px 3px 5px;
-      text-align: center;
-      text-decoration: none;
-      border: 2px solid;
-      border-color: #aaaaaa #444444 #444444 #aaaaaa;
-      background: #dddddd;
-    }
+      .button_like {
+        font-family: "Segoe UI Emoji";
+        padding: 3px 5px 3px 5px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 2px;
+        border: 1px solid;
+        border-color: #aaaaaa #444444 #444444 #aaaaaa;
+        background: #dddddd;
+      }
 
-    .button_like:hover{
-      background:#ccddff;
-      border-color: #aaaacc #444466 #444466 #aaaacc;
-    }
-</style>
-</head>
-<body>
-<table>
-<tr>
-    <td>
-       <table width='100%'>
-          <tr id="tabRow" height="1em">
-            <td id="tabBlock" class="tabon" style="white-space: nowrap;" data-step="1" data-intro="このタブをクリックして、編集をはじめます。">ブロック</td>
-            <td class="tabmin">&nbsp;</td>
-            <td id="tabJavaScript" class="taboff" style="white-space: nowrap;">JavaScript</td>
-            <td class="tabmin">&nbsp;</td>
-            <td id="tabSVG" class="taboff" style="white-space: nowrap;" data-step="2" data-intro="このタブをクリックして、絵を確認します。">絵</td>
-            <td class="tabmin">&nbsp;</td>
-            <td id="tabXml" class="taboff" style="font-family:'Segoe UI Emoji'; white-space: nowrap;">(管理者用)</td>
-            <td class="tabmin">&nbsp;</td>
-            <td id="tabJSON" class="taboff" style="font-family:'Segoe UI Emoji'; white-space: nowrap;">(管理者用 2)</td>
-            <td class="tabmax">
-              <a href="#" id="undoButton" title="アンドゥー" class="i18n button_like">&#x21b6;</a>
-              <a href="#" id="redoButton" title="リドゥー" class="i18n button_like">&#x21b7;</a>
-              &nbsp;&nbsp;&nbsp; 
-              <a href="#" id="intro" title="ヘルプ" class="i18n button_like">&#x2753;</a>
-              <a href="#" id="openButton" title="読込み" class="i18n button_like" data-step="5"
-                          data-intro="保存したプログラムを読み込みます。">&#x1f4c2;</a>
-              <input type="file" id="openButtonAux" name="openButtonAux"  style="display: none;" />
-              <a href="#" id="saveButton" download="blocks.xml" title="保存" class="i18n button_like" data-step="4"
-                          data-intro="プログラムを保存します。">&#x1f4be;</a>
-              <a href="#" id="saveJSONButton" download="blocks.json" title="保存JSON" class="i18n button_like" data-step="4"
-                          data-intro="プログラムを保存します。">&#x1f4be;</a>
-              <a href="#" id="printButton" title="印刷用ページ" class="i18n button_like" data-step="6"
-                          data-intro="印刷用ページを開きます。">&#x1f5a8;</a>
-              <a href="#" id="uploadSvgButton" title="絵をアップロード"
-                          class="i18n button_like" data-step="8">&#x1f5bc;&#x1f4e4;</a>
-              <a href="#" id="downloadXmlButton" title="ブロックをダウンロード"
-                          class="i18n button_like" data-step="8">&#x1f4c4;&#x1f4e5;</a>
-              <a href="#" id="uploadXmlButton" title="ブロックをアップロード"
-                          class="i18n button_like" data-step="8">&#x1f4c4;&#x1f4e4;</a>
-              <a href="#" id="resetButton" title="リセット" class="i18n button_like" data-step="7"
-                          data-intro="これまでの変更を捨てて、最初のプログラムに戻します。">&#x21bb;</a>
-            </td>
-          </tr>
-       </table>
-    </td>
-</tr>
-<tr>
-  <td id="blocklyArea" style='border: 0pt; height: 99%;'>
-  </td>
-</tr>
-</table>
-<div id="contentBlock" style="position: absolute;"></div>
-<pre id="contentJavaScript" class="content"></pre>
-<div id="contentSVG"  class="content" style="padding: 0ex;"></div>
-<textarea id="contentXml" class="content" wrap="off"></textarea>
-<textarea id="contentJSON" class="content" wrap="off"></textarea>
-<script type="module" src='blockly_main.js'></script>
-</body>
+      .button_like:hover {
+        background: #ccddff;
+        border-color: #aaaacc #444466 #444466 #aaaacc;
+      }
+
+      /* ハンバーガーメニュー関係 */
+      /* ボタンの基本スタイル */
+      .hamburger {
+        width: 32px;
+        height: 32px;
+        margin: 4px;
+        position: relative;
+        cursor: pointer;
+        border: none;
+        /* anchor-name: --menu-button; */
+      }
+
+      /* メニュー本体（最初は右側に隠す） */
+      .nav-dialog {
+        margin: 0;
+        border: none;
+        border-radius: 3px;
+        padding: 10px;
+        position: fixed;
+        /* position-anchor: --menu-button;
+        top: anchor(bottom);
+        right: anchor(right); */
+      }
+
+      /* 背景（オーバーレイ）の指定 */
+      .nav-dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <table width="100%">
+            <tr id="tabRow" height="1em">
+              <td
+                id="tabBlock"
+                class="tabon"
+                style="white-space: nowrap"
+                data-step="1"
+                data-intro="このタブをクリックして、編集をはじめます。"
+              >
+                ブロック
+              </td>
+              <td class="tabmin">&nbsp;</td>
+              <td id="tabJavaScript" class="taboff" style="white-space: nowrap">
+                JavaScript
+              </td>
+              <td class="tabmin">&nbsp;</td>
+              <td
+                id="tabSVG"
+                class="taboff"
+                style="white-space: nowrap"
+                data-step="2"
+                data-intro="このタブをクリックして、絵を確認します。"
+              >
+                絵
+              </td>
+              <td class="tabmin">&nbsp;</td>
+              <td
+                id="tabXml"
+                class="taboff"
+                style="
+                  font-family: &quot;Segoe UI Emoji&quot;;
+                  white-space: nowrap;
+                "
+              >
+                (管理者用)
+              </td>
+              <td class="tabmin">&nbsp;</td>
+              <td
+                id="tabJSON"
+                class="taboff"
+                style="
+                  font-family: &quot;Segoe UI Emoji&quot;;
+                  white-space: nowrap;
+                "
+              >
+                (管理者用 2)
+              </td>
+              <td class="tabmax">
+                <button class="hamburger" id="js-hamburger">
+                  <img
+                    src="Images/menu.svg"
+                    alt="Hamburger Menu Icon"
+                    style="width: 100%; height: 100%"
+                  />
+                </button>
+                <dialog class="nav-dialog" id="js-nav-dialog">
+                  <h4>編集</h4>
+                  <a
+                    href="#"
+                    id="undoButton"
+                    title="アンドゥー"
+                    class="i18n button_like"
+                    >&#x21b6;</a
+                  >
+                  <a
+                    href="#"
+                    id="redoButton"
+                    title="リドゥー"
+                    class="i18n button_like"
+                    >&#x21b7;</a
+                  >
+                  <a
+                    href="#"
+                    id="resetButton"
+                    title="リセット"
+                    class="i18n button_like"
+                    data-step="7"
+                    data-intro="これまでの変更を捨てて、最初のプログラムに戻します。"
+                    >&#x21bb;</a
+                  >
+                  <h4>ファイル</h4>
+                  <a
+                    href="#"
+                    id="openButton"
+                    title="読込み"
+                    class="i18n button_like"
+                    data-step="5"
+                    data-intro="保存したプログラムを読み込みます。"
+                    >&#x1f4c2;</a
+                  >
+                  <input
+                    type="file"
+                    id="openButtonAux"
+                    name="openButtonAux"
+                    style="display: none"
+                  />
+                  <a
+                    href="#"
+                    id="saveJSONButton"
+                    download="blocks.json"
+                    title="JSON で保存"
+                    class="i18n button_like"
+                    data-step="4"
+                    data-intro="プログラムを保存します。"
+                    >&#x1f4be;</a
+                  >
+                  <a
+                    href="#"
+                    id="saveButton"
+                    download="blocks.xml"
+                    title="XML で保存"
+                    class="i18n button_like"
+                    data-step="4"
+                    data-intro="プログラムを保存します。"
+                    >&#x1f4be;</a
+                  >
+                  <h4>ネットワーク</h4>
+                  <a
+                    href="#"
+                    id="uploadSvgButton"
+                    title="絵をアップロード"
+                    class="i18n button_like"
+                    data-step="8"
+                    >&#x1f5bc;&#x1f4e4;</a
+                  >
+                  <a
+                    href="#"
+                    id="downloadXmlButton"
+                    title="ブロックをダウンロード"
+                    class="i18n button_like"
+                    data-step="8"
+                    >&#x1f4c4;&#x1f4e5;</a
+                  >
+                  <a
+                    href="#"
+                    id="uploadXmlButton"
+                    title="ブロックをアップロード"
+                    class="i18n button_like"
+                    data-step="8"
+                    >&#x1f4c4;&#x1f4e4;</a
+                  >
+                  <h4>その他</h4>
+                  <a
+                    href="#"
+                    id="printButton"
+                    title="印刷用ページ"
+                    class="i18n button_like"
+                    data-step="6"
+                    data-intro="印刷用ページを開きます。"
+                    >&#x1f5a8;</a
+                  >
+                  <a href="#" id="intro" title="ヘルプ" class="i18n button_like" style="display: none;"
+                    >&#x2753;</a
+                  >
+                </dialog>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td id="blocklyArea" style="border: 0pt; height: 99%"></td>
+      </tr>
+    </table>
+    <div id="contentBlock" style="position: absolute"></div>
+    <pre id="contentJavaScript" class="content"></pre>
+    <div id="contentSVG" class="content" style="padding: 0ex"></div>
+    <textarea id="contentXml" class="content" wrap="off"></textarea>
+    <textarea id="contentJSON" class="content" wrap="off"></textarea>
+    <script type="module" src="blockly_main.js"></script>
+  </body>
 </html>
