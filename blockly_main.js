@@ -184,10 +184,13 @@ const i18nMap = {
 };
 
 function replaceI18nElement(id, lang) {
-  //   console.log(id, lang);
-  let content = `${i18nMap[id]["default"]} ${i18nMap[id][lang]}`;
-  if (content == null) content = i18nMap[id]["default"];
-  return content;
+  console.log(id, lang);
+  let content;
+  if (i18nMap[id][lang]) {
+    return `${i18nMap[id]["default"]} ${i18nMap[id][lang]}`;
+  } else {
+    return i18nMap[id]["default"];
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -344,7 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const f = evt.target.files[0];
     const reader = new FileReader();
 
-    if (f.endsWith(".xml")) {
+    if (f.name.endsWith(".xml")) {
       reader.onload = function (e) {
         const xmlText = e.target.result;
         document.getElementById("contentXml").value = xmlText;
@@ -365,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
       reader.readAsText(f);
-    } else if (f.endsWith(".json")) {
+    } else if (f.name.endsWith(".json")) {
       reader.onload = function (e) {
         const jsonText = e.target.result;
         document.getElementById("contentJSON").value = jsonText;
@@ -575,15 +578,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       // ボタンの位置を取得
       const rect = hamburger.getBoundingClientRect();
-      console.log(rect);
-
       dialog.showModal(); // モーダルとして開く（背景が有効になる）
       // ダイアログの位置をボタンの真下に設定
       const dialogWidth = dialog.getBoundingClientRect().width;
       dialog.style.top = `${rect.bottom + 5}px`;
       dialog.style.left = `${rect.right - dialogWidth}px`;
       //   dialog.style.right = `${window.innerWidth - rect.right}px`; // なぜかこれではうまく行かない
-      console.log(dialog.style);
     }
   });
 
