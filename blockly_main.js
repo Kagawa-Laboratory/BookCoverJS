@@ -154,15 +154,23 @@ const i18nMap = {
   redoButton: { ja: "リドゥー", en: "Redo", default: "&#x21b7;" },
   intro: { ja: "ヘルプ", en: "Help", default: "&#x2753;" },
   openButton: { ja: "読込", en: "Open", default: "&#x1f4c2;" },
-  saveButton: { ja: "XML で保存", en: "Save", default: "<sub>(XML)</sub>&#x1f4be;" },
-  saveJSONButton: { ja: "JSON（推奨）で保存", en: "Save JSON", default: "<sub>(JSON)</sub>&#x1f4be;" },
+  saveButton: {
+    ja: "XML で保存",
+    en: "Save",
+    default: "<sub>(XML)</sub>&#x1f4be;",
+  },
+  saveJSONButton: {
+    ja: "JSON（推奨）で保存",
+    en: "Save JSON",
+    default: "<sub>(JSON)</sub>&#x1f4be;",
+  },
   printButton: { ja: "印刷", en: "Print", default: "&#x1f5a8;" },
-  downloadXmlButton: {
+  downloadBlockButton: {
     ja: "ブロックをダウンロード",
     en: "Download Block",
     default: "&#x1f4c4;&#x1f4e5;",
   },
-  uploadXmlButton: {
+  uploadBlockButton: {
     ja: "ブロックをアップロード",
     en: "Upload Block",
     default: "&#x1f4c4;&#x1f4e4;",
@@ -422,26 +430,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const uploadUrl = params.get("upload");
   // uploadUrl は name と data というパラメーターをとると仮定する
   if (uploadUrl == null || uploadUrl == "") {
-    document.getElementById("uploadXmlButton").style.display = "none";
+    document.getElementById("uploadBlockButton").style.display = "none";
     document.getElementById("uploadSvgButton").style.display = "none";
   } else {
     document
-      .getElementById("uploadXmlButton")
+      .getElementById("uploadBlockButton")
       .addEventListener("click", (ev) => {
         ev.preventDefault();
-        var xmlText;
-        if (document.getElementById("tabXml").classList.contains("tabon")) {
-          xmlText = document.getElementById("contentXml").value;
+        // let xmlText;
+        // if (document.getElementById("tabXml").classList.contains("tabon")) {
+        //   xmlText = document.getElementById("contentXml").value;
+        // } else {
+        //   const xmlDom = Blockly.Xml.workspaceToDom(workspace);
+        //   xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+        // }
+        // fetch(uploadUrl, {
+        //   method: "post",
+        //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        //   body: new URLSearchParams({ name: "blocks.xml", data: xmlText }),
+        // })
+        let jsonText;
+        if (document.getElementById("tabJSON").classList.contains("tabon")) {
+          jsonText = document.getElementById("contentJSON").value;
         } else {
-          const xmlDom = Blockly.Xml.workspaceToDom(workspace);
-          xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+          const json = Blockly.serialization.workspaces.save(workspace);
+          jsonText = JSON.stringify(json, null, 2);
         }
         fetch(uploadUrl, {
           method: "post",
-          //          , headers: { 'Content-Type': 'application/json' }
-          //          , body: JSON.stringify({ name: "blocks.xml", data: xmlText })
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams({ name: "blocks.xml", data: xmlText }),
+          body: new URLSearchParams({ name: "blocks.json", data: jsonText }),
         })
           .then((response) => response.text())
           .then((message) => {
@@ -482,10 +500,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const downloadUrl = params.get("download");
   if (downloadUrl == null || downloadUrl == "") {
-    document.getElementById("downloadXmlButton").style.display = "none";
+    document.getElementById("downloadBlockButton").style.display = "none";
   } else {
     document
-      .getElementById("downloadXmlButton")
+      .getElementById("downloadBlockButton")
       .addEventListener("click", (ev) => {
         ev.preventDefault();
         const q = window.confirm(
