@@ -14,6 +14,35 @@ var selected = tabs[0];
 var draw;
 var workspace = null;
 
+function customEncode(str) {
+  let result = "";
+  for (const c of str) {
+    if (c.match(/[\p{ID_Continue}]/gu)) {
+      result += c;
+    } else {
+      // c を　UTF-8 のバイト列に変換
+      const bytes = new TextEncoder().encode(c);
+      for (const b of bytes) {
+        result += `_${b.toString(16).toUpperCase()}`;
+      }
+    }
+  }
+  return result;
+}
+
+function safeName(name) {
+  if (!name) {
+    name = 'unnamed';
+  } else {
+    name = customEncode(name.replace(/ /g, '_'));
+    // Most languages don't allow names with leading numbers.
+    if (name.match(/^[^\p{ID_Start}]/gu) && name[0] != '_') {
+      name = 'my_' + name;
+    }
+  }
+  return name;
+}
+
 Blockly.setLocale(Ja);
 
 function onResize() {
@@ -61,7 +90,7 @@ function renderContent(clickedName) {
     const json = Blockly.serialization.workspaces.save(workspace);
     content.value = JSON.stringify(json, null, 2);
   } else if (clickedName == "JavaScript") {
-    var code = javascriptGenerator.workspaceToCode(workspace);
+    let code = javascriptGenerator.workspaceToCode(workspace);
     code = PR.prettyPrintOne(code, "js");
     content.innerHTML = code;
   } else if (clickedName == "SVG") {
@@ -184,7 +213,7 @@ const i18nMap = {
 };
 
 function replaceI18nElement(id, lang) {
-  console.log(id, lang);
+  // console.log(id, lang);
   let content;
   if (i18nMap[id][lang]) {
     return `${i18nMap[id]["default"]} ${i18nMap[id][lang]}`;
@@ -206,6 +235,10 @@ document.addEventListener("DOMContentLoaded", () => {
       scaleSpeed: 1.2,
     },
   });
+
+  // 危険!! バージョンが変わると動かなくなる可能性があるので、Blockly のバージョンを変えたら要確認
+  javascriptGenerator.init(workspace);
+  javascriptGenerator.nameDB_.safeName = safeName;
 
   // console.log(JSON.stringify(workspace.options.languageTree, (key, val) => {
   //    if (key === 'blockxml') return val.outerHTML;
@@ -243,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if ("localStorage" in window) {
         const state = window.localStorage.getItem(url);
         if (state) {
-          console.log(`restored from localStorage[${url}]`);
+          // console.log(`restored from localStorage[${url}]`);
           Blockly.serialization.workspaces.load(JSON.parse(state), workspace);
           return;
         }
@@ -253,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(xmlUrl)
           .then((response) => response.text())
           .then((data) => {
-            if (url.endsWith(".json")) {
+            if (xmlUrl.endsWith(".json")) {
               const json = JSON.parse(data);
               Blockly.serialization.workspaces.load(json, workspace);
             } else /* if (url.endsWith(".xml")) */ {
