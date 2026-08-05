@@ -1,0 +1,545 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "bookcover_card_frame",
+        "id": "M~?/o#8[lr0||H|{Sj9X",
+        "x": 10,
+        "y": 10,
+        "inputs": {
+          "PAPER_SPEC": {
+            "block": {
+              "type": "bookcover_cardspec",
+              "id": "D;AA-g)gVI0+5n]yM9UT",
+              "fields": {
+                "CARDSPEC": "エーワン F8A4-5"
+              }
+            }
+          },
+          "DO": {
+            "block": {
+              "type": "bookcover_stroke",
+              "id": "KYPqUgvgt[Vr-l-hb^`E",
+              "inputs": {
+                "COLOUR": {
+                  "block": {
+                    "type": "bookcover_none",
+                    "id": "7-Jz@DWy[2lwY{M~Upnu"
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "bookcover_foreachcard",
+                  "id": "Z]#Dva,k}o0T]=qbU5g[",
+                  "icons": {
+                    "comment": {
+                      "text": "最後に枠表示の✓を消すのを忘れないで",
+                      "pinned": false,
+                      "height": 80,
+                      "width": 160
+                    }
+                  },
+                  "fields": {
+                    "CARD": {
+                      "id": "FN$i||Uq8@6NYaKY[[{V"
+                    },
+                    "COUNTER": {
+                      "id": "lZko{st-WP{[Y;KU16Fo"
+                    },
+                    "CLIP": true,
+                    "FRAME": true,
+                    "MARGIN": 1
+                  },
+                  "inputs": {
+                    "DO": {
+                      "block": {
+                        "type": "variables_set",
+                        "id": "6NdO@}4.duA~DQd#n07.",
+                        "fields": {
+                          "VAR": {
+                            "id": "T5s;u*zZ#5dI$}co6X]V"
+                          }
+                        },
+                        "inputs": {
+                          "VALUE": {
+                            "block": {
+                              "type": "bookcover_rotate_h",
+                              "id": "%%Qh|udLbxddo5[*VgDU",
+                              "inputs": {
+                                "colour": {
+                                  "block": {
+                                    "type": "bookcover_colour",
+                                    "id": "wu91IbG%}U!FZk?2^q(p",
+                                    "fields": {
+                                      "COLOUR": "#ff0000"
+                                    }
+                                  }
+                                },
+                                "angle": {
+                                  "block": {
+                                    "type": "math_arithmetic",
+                                    "id": "dsKdd,EX6e8[6F1A`11j",
+                                    "fields": {
+                                      "OP": "MULTIPLY"
+                                    },
+                                    "inputs": {
+                                      "A": {
+                                        "block": {
+                                          "type": "bookcover_angle",
+                                          "id": ".BD3Et[$*6]v@[#]/lAm",
+                                          "icons": {
+                                            "comment": {
+                                              "text": "ここを変えてみよう",
+                                              "pinned": false,
+                                              "height": 80,
+                                              "width": 160
+                                            }
+                                          },
+                                          "fields": {
+                                            "angle": 45
+                                          }
+                                        }
+                                      },
+                                      "B": {
+                                        "block": {
+                                          "type": "variables_get",
+                                          "id": "eq(FTDO]7U.7*_[.)`?/",
+                                          "fields": {
+                                            "VAR": {
+                                              "id": "lZko{st-WP{[Y;KU16Fo"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "bookcover_fill",
+                            "id": "_%_cQ,B9%b-_f*mGepI+",
+                            "inputs": {
+                              "COLOUR": {
+                                "block": {
+                                  "type": "variables_get",
+                                  "id": "H{7GcIRWI{_y.K?erHp/",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "T5s;u*zZ#5dI$}co6X]V"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "bookcover_text_font",
+                                "id": ":9[v_+yK$OWgB^PgN,:[",
+                                "inputs": {
+                                  "name": {
+                                    "block": {
+                                      "type": "bookcover_font_name",
+                                      "id": "!,P.AU$6J0m1O~-otwsb",
+                                      "fields": {
+                                        "NAME": "ＭＳ 明朝"
+                                      }
+                                    }
+                                  },
+                                  "size": {
+                                    "block": {
+                                      "type": "math_number",
+                                      "id": "]ps!P1H6}v=|0IYV6y%(",
+                                      "fields": {
+                                        "NUM": 8
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "bookcover_text",
+                                    "id": ":Dq++^/4DYED79~Q;Wo8",
+                                    "inputs": {
+                                      "x": {
+                                        "block": {
+                                          "type": "math_number",
+                                          "id": "E=kbXLKw*.=5}UIg7K`W",
+                                          "fields": {
+                                            "NUM": 10
+                                          }
+                                        }
+                                      },
+                                      "y": {
+                                        "block": {
+                                          "type": "math_number",
+                                          "id": "R/3RP}~,RyGXUzTCh~L:",
+                                          "fields": {
+                                            "NUM": 20.4
+                                          }
+                                        }
+                                      },
+                                      "str": {
+                                        "block": {
+                                          "type": "text",
+                                          "id": "APwUAP!WujLDoj[{JSzQ",
+                                          "fields": {
+                                            "TEXT": "香川大学創造工学部"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "bookcover_text",
+                                        "id": "shGKK]_THXDrkTkWW,ox",
+                                        "inputs": {
+                                          "x": {
+                                            "block": {
+                                              "type": "math_number",
+                                              "id": "AJ;Ujhh65|Tk;SeVao=!",
+                                              "fields": {
+                                                "NUM": 10
+                                              }
+                                            }
+                                          },
+                                          "y": {
+                                            "block": {
+                                              "type": "math_number",
+                                              "id": ",Tr^cK`;Xj!)t[yFk1!p",
+                                              "fields": {
+                                                "NUM": 30.4
+                                              }
+                                            }
+                                          },
+                                          "str": {
+                                            "block": {
+                                              "type": "text",
+                                              "id": "9~|E;qum4|!LFy[E78cF",
+                                              "fields": {
+                                                "TEXT": "讃岐 太郎"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "bookcover_text_font",
+                                            "id": "+@d3maG]:|[RID@XbrIp",
+                                            "inputs": {
+                                              "name": {
+                                                "block": {
+                                                  "type": "bookcover_font_name",
+                                                  "id": "K{}{A.#hhRe}^OWt#,Vc",
+                                                  "fields": {
+                                                    "NAME": "Times New Roman"
+                                                  }
+                                                }
+                                              },
+                                              "size": {
+                                                "block": {
+                                                  "type": "math_number",
+                                                  "id": "eP(Z%WpNkNm19{(`05b2",
+                                                  "fields": {
+                                                    "NUM": 8
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "next": {
+                                              "block": {
+                                                "type": "bookcover_text",
+                                                "id": "N?5;o)sKb]ZzpYVvzIvy",
+                                                "inputs": {
+                                                  "x": {
+                                                    "block": {
+                                                      "type": "math_number",
+                                                      "id": "~9QFs|B0A*sJOxh*QINR",
+                                                      "fields": {
+                                                        "NUM": 10
+                                                      }
+                                                    }
+                                                  },
+                                                  "y": {
+                                                    "block": {
+                                                      "type": "math_number",
+                                                      "id": "wAuAcLjT^oUN#}J^uOR3",
+                                                      "fields": {
+                                                        "NUM": 40.4
+                                                      }
+                                                    }
+                                                  },
+                                                  "str": {
+                                                    "block": {
+                                                      "type": "text",
+                                                      "id": "Xax$K=}(~A)G$7.Qr^i]",
+                                                      "fields": {
+                                                        "TEXT": "SANUKI, Taro"
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "next": {
+                                                  "block": {
+                                                    "type": "bookcover_text_font",
+                                                    "id": "_g|2E5/w[n./!eT^,y)N",
+                                                    "inputs": {
+                                                      "name": {
+                                                        "block": {
+                                                          "type": "bookcover_font_name",
+                                                          "id": "~/J4X0*c]DNJD4G14VCw",
+                                                          "fields": {
+                                                            "NAME": "Courier New"
+                                                          }
+                                                        }
+                                                      },
+                                                      "size": {
+                                                        "block": {
+                                                          "type": "math_number",
+                                                          "id": "9yj$N$}`YXk9eX0NGN7T",
+                                                          "fields": {
+                                                            "NUM": 5
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "next": {
+                                                      "block": {
+                                                        "type": "bookcover_text",
+                                                        "id": "HKQmF(jo/0;cQJ5sxvJQ",
+                                                        "inputs": {
+                                                          "x": {
+                                                            "block": {
+                                                              "type": "math_number",
+                                                              "id": "/e`B[?%qd,c~qg/ib*%7",
+                                                              "fields": {
+                                                                "NUM": 10
+                                                              }
+                                                            }
+                                                          },
+                                                          "y": {
+                                                            "block": {
+                                                              "type": "math_number",
+                                                              "id": "3`_z(O]YD`14jfo5?gG?",
+                                                              "fields": {
+                                                                "NUM": 49.5
+                                                              }
+                                                            }
+                                                          },
+                                                          "str": {
+                                                            "block": {
+                                                              "type": "text",
+                                                              "id": "/dCB+N+WqWHKp?:a3XR?",
+                                                              "fields": {
+                                                                "TEXT": "taro.sanuki@example.com"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "next": {
+                                                          "block": {
+                                                            "type": "bookcover_matrix",
+                                                            "id": "Qkw]2}};u#T%{X/U6!E2",
+                                                            "inputs": {
+                                                              "statements": {
+                                                                "block": {
+                                                                  "type": "bookcover_translate",
+                                                                  "id": "dCM)m9T,9;LrPJd~`dJo",
+                                                                  "inputs": {
+                                                                    "x": {
+                                                                      "block": {
+                                                                        "type": "math_number",
+                                                                        "id": "s|=Zq@qK^LMzN*z28xtP",
+                                                                        "fields": {
+                                                                          "NUM": 81
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "y": {
+                                                                      "block": {
+                                                                        "type": "math_number",
+                                                                        "id": "YQ3a6/|5LQT^nH^f()?-",
+                                                                        "fields": {
+                                                                          "NUM": 36
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "next": {
+                                                                    "block": {
+                                                                      "type": "bookcover_rotate",
+                                                                      "id": "A;7%XH*]@7O-dTntS0Uj",
+                                                                      "inputs": {
+                                                                        "angle": {
+                                                                          "block": {
+                                                                            "type": "math_arithmetic",
+                                                                            "id": "le4Z]Pq+Fqz:[jTvRAH[",
+                                                                            "fields": {
+                                                                              "OP": "MULTIPLY"
+                                                                            },
+                                                                            "inputs": {
+                                                                              "A": {
+                                                                                "block": {
+                                                                                  "type": "variables_get",
+                                                                                  "id": "[t.Tyd}lEp{RmHI`wjP2",
+                                                                                  "fields": {
+                                                                                    "VAR": {
+                                                                                      "id": "lZko{st-WP{[Y;KU16Fo"
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "B": {
+                                                                                "block": {
+                                                                                  "type": "bookcover_angle",
+                                                                                  "id": "[0BKA:iLc9)~40BlVC,j",
+                                                                                  "fields": {
+                                                                                    "angle": 45
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "next": {
+                                                                        "block": {
+                                                                          "type": "bookcover_translate",
+                                                                          "id": "u#q.^UCA?Mg%/I7,?P-n",
+                                                                          "inputs": {
+                                                                            "x": {
+                                                                              "block": {
+                                                                                "type": "math_number",
+                                                                                "id": "f+uHfv,W##w6lHSxhYm/",
+                                                                                "fields": {
+                                                                                  "NUM": -13
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "y": {
+                                                                              "block": {
+                                                                                "type": "math_number",
+                                                                                "id": "Q5)nLs85gaQpl^9^,#0g",
+                                                                                "fields": {
+                                                                                  "NUM": -30.5
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "next": {
+                                                                            "block": {
+                                                                              "type": "bookcover_text_font",
+                                                                              "id": "661y_kih(|/44G:hF^Ps",
+                                                                              "inputs": {
+                                                                                "name": {
+                                                                                  "block": {
+                                                                                    "type": "bookcover_font_name",
+                                                                                    "id": "usZA}{6WAh`/`EIoc!z~",
+                                                                                    "fields": {
+                                                                                      "NAME": "Segoe UI Symbol"
+                                                                                    }
+                                                                                  }
+                                                                                },
+                                                                                "size": {
+                                                                                  "block": {
+                                                                                    "type": "math_number",
+                                                                                    "id": "W~S%6iO@N9P1x;jcmHUi",
+                                                                                    "fields": {
+                                                                                      "NUM": 20
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "next": {
+                                                                                "block": {
+                                                                                  "type": "bookcover_text",
+                                                                                  "id": "Swau7p+sHI(o|HNOc,X?",
+                                                                                  "inputs": {
+                                                                                    "x": {
+                                                                                      "block": {
+                                                                                        "type": "math_number",
+                                                                                        "id": "T6%9%yY;K#ZWV((Xo$@a",
+                                                                                        "fields": {
+                                                                                          "NUM": 0
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "y": {
+                                                                                      "block": {
+                                                                                        "type": "math_number",
+                                                                                        "id": "R*q;v^9wAUWpp:xdzT=I",
+                                                                                        "fields": {
+                                                                                          "NUM": 36
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "str": {
+                                                                                      "block": {
+                                                                                        "type": "text",
+                                                                                        "id": "lpV]jj_nr=|mr[eDPk[u",
+                                                                                        "fields": {
+                                                                                          "TEXT": "🐧"
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "カード",
+      "id": "FN$i||Uq8@6NYaKY[[{V"
+    },
+    {
+      "name": "カウンター",
+      "id": "lZko{st-WP{[Y;KU16Fo"
+    },
+    {
+      "name": "今の色",
+      "id": "T5s;u*zZ#5dI$}co6X]V"
+    }
+  ]
+}

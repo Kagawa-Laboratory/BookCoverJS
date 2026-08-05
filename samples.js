@@ -13,7 +13,7 @@ function outputBlockly(buffer, name, lang) {
   const upurl   = "%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fupload";
   const downurl = "%2F%2Fguppy.eng.kagawa-u.ac.jp%2FVanillaUpload%2Fdownload";
   const langop  = (lang == null || lang == "") ? "" : `&lang=${lang}`;
-  buffer += `<a href='blockly.html?upload=${upurl}&download=${downurl}&url=Samples%2f${name}.xml${langop}'>Blockly ではじめる</a>`;
+  buffer += `<a href='blockly.html?upload=${upurl}&download=${downurl}&url=Samples%2f${name}.json${langop}'>Blockly ではじめる</a>`;
   buffer += "\n";
   return buffer;  
 }
