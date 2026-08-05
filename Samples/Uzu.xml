@@ -1,11 +1,11 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable type="" id="kT+7;[QC15m,.)odgUBX">横位置</variable>
-    <variable type="" id="]YeZ);?cFF;h=V*5n0S$">縦位置</variable>
-    <variable type="" id="S=`pzbrtJUx1@Zpnx@Br">傾き</variable>
-    <variable type="" id="kw_X%[!lT/Eh=kpVU$C0">距離</variable>
+    <variable id="kT+7;[QC15m,.)odgUBX">横位置</variable>
+    <variable id="]YeZ);?cFF;h=V*5n0S$">縦位置</variable>
+    <variable id="S=`pzbrtJUx1@Zpnx@Br">傾き</variable>
+    <variable id="kw_X%[!lT/Eh=kpVU$C0">距離</variable>
   </variables>
-  <block type="bookcover_frame" id="qeA^NC1`yvI/z6/mLH;f">
+  <block type="bookcover_frame" id="qeA^NC1`yvI/z6/mLH;f" x="10" y="10">
     <field name="frame">TRUE</field>
     <statement name="statements">
       <block type="bookcover_stroke" id="D0LRDsMD@S(RN?~KI[Mp">
@@ -33,7 +33,7 @@
                 </value>
                 <next>
                   <block type="controls_for" id="}XB!9sNaFQ48Cd+L1awn">
-                    <field name="VAR" id="kT+7;[QC15m,.)odgUBX" variabletype="">横位置</field>
+                    <field name="VAR" id="kT+7;[QC15m,.)odgUBX">横位置</field>
                     <value name="FROM">
                       <block type="math_number" id="tU-rKNM4yN]!EvS3b)+e">
                         <field name="NUM">30</field>
@@ -51,15 +51,15 @@
                     </value>
                     <statement name="DO">
                       <block type="controls_for" id="ub2Z_msm+~;?S*(IBbUC">
-                        <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$" variabletype="">縦位置</field>
+                        <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$">縦位置</field>
                         <value name="FROM">
                           <block type="math_number" id="T^0^cR}?fyB(a{vI.?=9">
-                            <field name="NUM">20</field>
+                            <field name="NUM">25</field>
                           </block>
                         </value>
                         <value name="TO">
                           <block type="math_number" id="Ce~qn[lED|^OQwaQmJ,|">
-                            <field name="NUM">170</field>
+                            <field name="NUM">185</field>
                           </block>
                         </value>
                         <value name="BY">
@@ -69,7 +69,7 @@
                         </value>
                         <statement name="DO">
                           <block type="variables_set" id="15=p8.BAtv:FO+OL(aNz">
-                            <field name="VAR" id="S=`pzbrtJUx1@Zpnx@Br" variabletype="">傾き</field>
+                            <field name="VAR" id="S=`pzbrtJUx1@Zpnx@Br">傾き</field>
                             <value name="VALUE">
                               <block type="bookcover_atan2" id="lqYP.x3]JL_XtiBGVr%D">
                                 <value name="X1">
@@ -93,7 +93,7 @@
                                     <field name="NUM">3</field>
                                   </shadow>
                                   <block type="variables_get" id="ky6rh/CYfN_y|f[_jT=6">
-                                    <field name="VAR" id="kT+7;[QC15m,.)odgUBX" variabletype="">横位置</field>
+                                    <field name="VAR" id="kT+7;[QC15m,.)odgUBX">横位置</field>
                                   </block>
                                 </value>
                                 <value name="Y2">
@@ -101,14 +101,14 @@
                                     <field name="NUM">4</field>
                                   </shadow>
                                   <block type="variables_get" id="O*d3Pw5@x-g(RJF=/lou">
-                                    <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$" variabletype="">縦位置</field>
+                                    <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$">縦位置</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
                             <next>
                               <block type="variables_set" id="v;O1;kbKM59icc_13UAB">
-                                <field name="VAR" id="kw_X%[!lT/Eh=kpVU$C0" variabletype="">距離</field>
+                                <field name="VAR" id="kw_X%[!lT/Eh=kpVU$C0">距離</field>
                                 <value name="VALUE">
                                   <block type="bookcover_distance" id="A:r++!fh1*}CF1K,|[xb">
                                     <value name="X1">
@@ -132,7 +132,7 @@
                                         <field name="NUM">3</field>
                                       </shadow>
                                       <block type="variables_get" id="Ce@3,[lG6Y0;#d8ax~.H">
-                                        <field name="VAR" id="kT+7;[QC15m,.)odgUBX" variabletype="">横位置</field>
+                                        <field name="VAR" id="kT+7;[QC15m,.)odgUBX">横位置</field>
                                       </block>
                                     </value>
                                     <value name="Y2">
@@ -140,7 +140,7 @@
                                         <field name="NUM">4</field>
                                       </shadow>
                                       <block type="variables_get" id=".@DuO}}mbBCE_{RF_+c[">
-                                        <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$" variabletype="">縦位置</field>
+                                        <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$">縦位置</field>
                                       </block>
                                     </value>
                                   </block>
@@ -157,12 +157,13 @@
                                                 <field name="OP">MULTIPLY</field>
                                                 <value name="A">
                                                   <block type="variables_get" id="tq6`^iHib~=LED`_cq4V">
-                                                    <field name="VAR" id="S=`pzbrtJUx1@Zpnx@Br" variabletype="">傾き</field>
+                                                    <field name="VAR" id="S=`pzbrtJUx1@Zpnx@Br">傾き</field>
                                                   </block>
                                                 </value>
                                                 <value name="B">
                                                   <block type="math_number" id="D%MlKzN2_(ow2ic~f;t!">
                                                     <field name="NUM">2</field>
+                                                    <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                                                   </block>
                                                 </value>
                                               </block>
@@ -172,12 +173,13 @@
                                                 <field name="OP">DIVIDE</field>
                                                 <value name="A">
                                                   <block type="variables_get" id="iz@`ekQp|Zh{S80dO`b1">
-                                                    <field name="VAR" id="kw_X%[!lT/Eh=kpVU$C0" variabletype="">距離</field>
+                                                    <field name="VAR" id="kw_X%[!lT/Eh=kpVU$C0">距離</field>
                                                   </block>
                                                 </value>
                                                 <value name="B">
                                                   <block type="math_number" id="E`2(SDUE7:h{rs4I)euf">
                                                     <field name="NUM">0.5</field>
+                                                    <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                                                   </block>
                                                 </value>
                                               </block>
@@ -202,12 +204,12 @@
                                           <block type="bookcover_translate" id="(*`=Eik)XPm(0jR8bs/9">
                                             <value name="x">
                                               <block type="variables_get" id="8?QkEyPln#9WQryj3%bQ">
-                                                <field name="VAR" id="kT+7;[QC15m,.)odgUBX" variabletype="">横位置</field>
+                                                <field name="VAR" id="kT+7;[QC15m,.)odgUBX">横位置</field>
                                               </block>
                                             </value>
                                             <value name="y">
                                               <block type="variables_get" id="(X8L]MEO`w5Hy|lf?pHr">
-                                                <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$" variabletype="">縦位置</field>
+                                                <field name="VAR" id="]YeZ);?cFF;h=V*5n0S$">縦位置</field>
                                               </block>
                                             </value>
                                             <next>
@@ -229,6 +231,7 @@
                                                     <value name="VALUE">
                                                       <block type="text" id="arHC6j07RHvw;}=(U:r~">
                                                         <field name="TEXT">◆●▼▲</field>
+                                                        <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                                                       </block>
                                                     </value>
                                                   </block>
@@ -251,7 +254,7 @@
                       <block type="bookcover_fill" id="5B)B2.S[kEErDWG~,4r}">
                         <value name="COLOUR">
                           <block type="bookcover_colour" id="/E_9BWY@vgA2~tKb!W#3">
-                            <field name="COLOUR">#00cccc</field>
+                            <field name="COLOUR">#33cc00</field>
                           </block>
                         </value>
                         <next>
@@ -275,12 +278,12 @@
                                 </value>
                                 <value name="y">
                                   <block type="math_number" id="Rdz4NbuQ8v-VuuaZCdCH">
-                                    <field name="NUM">120</field>
+                                    <field name="NUM">150</field>
                                   </block>
                                 </value>
                                 <value name="str">
                                   <block type="text_join" id=":Vi4RIOKFu+FWj5ne,!H">
-                                    <mutation items="3"></mutation>
+                                    <mutation items="4"></mutation>
                                     <value name="ADD0">
                                       <block type="text" id="k+G:]TdLYILSg]3h8iTu">
                                         <field name="TEXT">Kagawa University</field>
@@ -291,7 +294,12 @@
                                     </value>
                                     <value name="ADD2">
                                       <block type="text" id="sn~m0r@L7I;Ze4+gP/Zh">
-                                        <field name="TEXT">OpenCampus YYYY/MM/DD</field>
+                                        <field name="TEXT">OpenCampus </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD3">
+                                      <block type="bookcover_today" id=")@l3Y#Vw$FNPeew_Uu~R">
+                                        <field name="STYLE">JP</field>
                                       </block>
                                     </value>
                                   </block>

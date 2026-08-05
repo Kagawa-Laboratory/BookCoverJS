@@ -1,18 +1,19 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable type="" id="HcVXm1@!~4Fww`qE,iug">最大値</variable>
-    <variable type="" id="[r`nG)!yfHL$V#I3,=-5">サイズ</variable>
-    <variable type="" id="c`Ux6s?1$s.QJ].XbM:I">横位置</variable>
-    <variable type="" id="IcM,|?.w,aHm4$}]6]oO">縦位置</variable>
+    <variable id="HcVXm1@!~4Fww`qE,iug">最大値</variable>
+    <variable id="[r`nG)!yfHL$V#I3,=-5">サイズ</variable>
+    <variable id="c`Ux6s?1$s.QJ].XbM:I">横位置</variable>
+    <variable id="IcM,|?.w,aHm4$}]6]oO">縦位置</variable>
   </variables>
-  <block type="bookcover_frame" id="qeA^NC1`yvI/z6/mLH;f">
+  <block type="bookcover_frame" id="qeA^NC1`yvI/z6/mLH;f" x="10" y="10">
     <field name="frame">TRUE</field>
     <statement name="statements">
       <block type="variables_set" id="hf1Rbs7k?^R!skz),r[%">
-        <field name="VAR" id="HcVXm1@!~4Fww`qE,iug" variabletype="">最大値</field>
+        <field name="VAR" id="HcVXm1@!~4Fww`qE,iug">最大値</field>
         <value name="VALUE">
           <block type="math_number" id="Y*#iyfK6`(BO/9Sa^tmB">
             <field name="NUM">20</field>
+            <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
           </block>
         </value>
         <next>
@@ -48,7 +49,7 @@
                         </value>
                         <statement name="DO">
                           <block type="variables_set" id="*y,j|R.;^=3fO2O()?{X">
-                            <field name="VAR" id="[r`nG)!yfHL$V#I3,=-5" variabletype="">サイズ</field>
+                            <field name="VAR" id="[r`nG)!yfHL$V#I3,=-5">サイズ</field>
                             <value name="VALUE">
                               <block type="bookcover_random_in_range" id="mZfx2X[b;rJiQ)oL5L~d">
                                 <value name="min">
@@ -58,14 +59,14 @@
                                 </value>
                                 <value name="max">
                                   <block type="variables_get" id="KIP=^*(,L*qw(D/AEJj1">
-                                    <field name="VAR" id="HcVXm1@!~4Fww`qE,iug" variabletype="">最大値</field>
+                                    <field name="VAR" id="HcVXm1@!~4Fww`qE,iug">最大値</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
                             <next>
                               <block type="variables_set" id="6I^%4+iA4BAqWuszxUbg">
-                                <field name="VAR" id="c`Ux6s?1$s.QJ].XbM:I" variabletype="">横位置</field>
+                                <field name="VAR" id="c`Ux6s?1$s.QJ].XbM:I">横位置</field>
                                 <value name="VALUE">
                                   <block type="bookcover_random_in_range" id="dK7V)MpJfw^#-ln,*tH/">
                                     <value name="min">
@@ -81,7 +82,7 @@
                                             <field name="OP">DIVIDE</field>
                                             <value name="A">
                                               <block type="variables_get" id="q_AF3@5]2ju!qtS[^2d`">
-                                                <field name="VAR" id="HcVXm1@!~4Fww`qE,iug" variabletype="">最大値</field>
+                                                <field name="VAR" id="HcVXm1@!~4Fww`qE,iug">最大値</field>
                                               </block>
                                             </value>
                                             <value name="B">
@@ -112,7 +113,7 @@
                                                 <field name="OP">DIVIDE</field>
                                                 <value name="A">
                                                   <block type="variables_get" id="CeY[9ERu.2(wb;N^`kEL">
-                                                    <field name="VAR" id="HcVXm1@!~4Fww`qE,iug" variabletype="">最大値</field>
+                                                    <field name="VAR" id="HcVXm1@!~4Fww`qE,iug">最大値</field>
                                                   </block>
                                                 </value>
                                                 <value name="B">
@@ -130,7 +131,7 @@
                                 </value>
                                 <next>
                                   <block type="variables_set" id="186tUmu!Kn:?*pTrVK(c">
-                                    <field name="VAR" id="IcM,|?.w,aHm4$}]6]oO" variabletype="">縦位置</field>
+                                    <field name="VAR" id="IcM,|?.w,aHm4$}]6]oO">縦位置</field>
                                     <value name="VALUE">
                                       <block type="bookcover_random_in_range" id="*:%mnSpnkyk?z2j0!2JN">
                                         <value name="min">
@@ -146,7 +147,7 @@
                                                 <field name="OP">DIVIDE</field>
                                                 <value name="A">
                                                   <block type="variables_get" id="iMx/-YWe73=)#W=3BG,T">
-                                                    <field name="VAR" id="HcVXm1@!~4Fww`qE,iug" variabletype="">最大値</field>
+                                                    <field name="VAR" id="HcVXm1@!~4Fww`qE,iug">最大値</field>
                                                   </block>
                                                 </value>
                                                 <value name="B">
@@ -169,7 +170,7 @@
                                                 <field name="OP">ADD</field>
                                                 <value name="A">
                                                   <block type="math_number" id="ccisp]1cyW::n5lg8lL(">
-                                                    <field name="NUM">40</field>
+                                                    <field name="NUM">30</field>
                                                   </block>
                                                 </value>
                                                 <value name="B">
@@ -177,7 +178,7 @@
                                                     <field name="OP">DIVIDE</field>
                                                     <value name="A">
                                                       <block type="variables_get" id="}B2?eLPbeUA2#Yf4YD,}">
-                                                        <field name="VAR" id="HcVXm1@!~4Fww`qE,iug" variabletype="">最大値</field>
+                                                        <field name="VAR" id="HcVXm1@!~4Fww`qE,iug">最大値</field>
                                                       </block>
                                                     </value>
                                                     <value name="B">
@@ -229,12 +230,12 @@
                                               <block type="bookcover_translate" id="aUO|wL7fqvEz=8721k!B">
                                                 <value name="x">
                                                   <block type="variables_get" id="Mas;U`#z)ifW.JrzuW4%">
-                                                    <field name="VAR" id="c`Ux6s?1$s.QJ].XbM:I" variabletype="">横位置</field>
+                                                    <field name="VAR" id="c`Ux6s?1$s.QJ].XbM:I">横位置</field>
                                                   </block>
                                                 </value>
                                                 <value name="y">
                                                   <block type="variables_get" id="JD8A+@`G^!}`f#m=_7fU">
-                                                    <field name="VAR" id="IcM,|?.w,aHm4$}]6]oO" variabletype="">縦位置</field>
+                                                    <field name="VAR" id="IcM,|?.w,aHm4$}]6]oO">縦位置</field>
                                                   </block>
                                                 </value>
                                                 <next>
@@ -272,6 +273,7 @@
                                                             <value name="VALUE">
                                                               <block type="text" id="arHC6j07RHvw;}=(U:r~">
                                                                 <field name="TEXT">➨➩➜➠➽</field>
+                                                                <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                                                               </block>
                                                             </value>
                                                           </block>
@@ -325,7 +327,7 @@
                                     </value>
                                     <value name="str">
                                       <block type="text_join" id=":Vi4RIOKFu+FWj5ne,!H">
-                                        <mutation items="3"></mutation>
+                                        <mutation items="4"></mutation>
                                         <value name="ADD0">
                                           <block type="text" id="k+G:]TdLYILSg]3h8iTu">
                                             <field name="TEXT">Kagawa University</field>
@@ -336,7 +338,12 @@
                                         </value>
                                         <value name="ADD2">
                                           <block type="text" id="sn~m0r@L7I;Ze4+gP/Zh">
-                                            <field name="TEXT">OpenCampus YYYY/MM/DD</field>
+                                            <field name="TEXT">OpenCampus </field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD3">
+                                          <block type="bookcover_today" id="95^z}yu=bJ.ctOVJiC%F">
+                                            <field name="STYLE">JP</field>
                                           </block>
                                         </value>
                                       </block>

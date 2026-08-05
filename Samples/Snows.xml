@@ -1,159 +1,159 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable type="" >i</variable>
+    <variable id="2y3K!?vee2lZvclmr_QB">i</variable>
   </variables>
-  <block type="bookcover_frame" >
+  <block type="bookcover_frame" id="6TP01yPwY$ks.|bi/]fi" x="10" y="10">
     <field name="frame">TRUE</field>
     <statement name="statements">
-      <block type="bookcover_rulers" >
+      <block type="bookcover_rulers" id=")Evr[Y(R!PH2R^;Ej^?9">
         <field name="SIZE">BUNKO</field>
         <next>
-          <block type="bookcover_stroke" >
+          <block type="bookcover_stroke" id="0c4Xr;G)LD4nUXpz*t|{">
             <value name="COLOUR">
-              <block type="bookcover_add_s" >
+              <block type="bookcover_add_s" id="y@X1Qt$onfv[|K76kG.F">
                 <value name="colour">
-                  <block type="bookcover_colour" >
+                  <block type="bookcover_colour" id=",DuXP|9s#eZ%hR}WtP$t">
                     <field name="COLOUR">#3366ff</field>
                   </block>
                 </value>
                 <value name="delta">
-                  <block type="math_number" >
+                  <block type="math_number" id=":CN}b^*ItM-cv?q(#n=y">
                     <field name="NUM">-50</field>
                   </block>
                 </value>
               </block>
             </value>
             <next>
-              <block type="bookcover_stroke_opacity" >
+              <block type="bookcover_stroke_opacity" id="*2b+~iIvf^V))_u(UenH">
                 <value name="opacity">
-                  <block type="math_number" >
+                  <block type="math_number" id="qGSuE?so12iCLEKe0h{-">
                     <field name="NUM">0.5</field>
                   </block>
                 </value>
                 <next>
-                  <block type="bookcover_fill" >
+                  <block type="bookcover_fill" id="kpYj1j,.^x6Sj.:kK,7~">
                     <value name="COLOUR">
-                      <block type="bookcover_add_s" >
+                      <block type="bookcover_add_s" id="^gyaR]6ca$nq)CRk)O]{">
                         <value name="colour">
-                          <block type="bookcover_colour" >
+                          <block type="bookcover_colour" id="GJIx2z@di03?@G?Ww~$k">
                             <field name="COLOUR">#3366ff</field>
                           </block>
                         </value>
                         <value name="delta">
-                          <block type="math_number" >
+                          <block type="math_number" id="a*bE/2IYwY@)|qM,mI,W">
                             <field name="NUM">-50</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <next>
-                      <block type="bookcover_fill_opacity" >
+                      <block type="bookcover_fill_opacity" id=")D+^`hTB4s@|q.5I`_M#">
                         <value name="opacity">
-                          <block type="math_number" >
+                          <block type="math_number" id=");YlpWz.y*!_WqgLOP5,">
                             <field name="NUM">0.5</field>
                           </block>
                         </value>
                         <next>
-                          <block type="bookcover_rect" >
+                          <block type="bookcover_rect" id=";hNxr7y%Xg.z5B~re3a_">
                             <value name="x">
-                              <block type="math_number" >
+                              <block type="math_number" id="$R-X8DfKN57tIqD|%9DQ">
                                 <field name="NUM">20</field>
                               </block>
                             </value>
                             <value name="y">
-                              <block type="math_number" >
+                              <block type="math_number" id="]/p8WGseAknjo4!oI]8Q">
                                 <field name="NUM">30</field>
                               </block>
                             </value>
                             <value name="w">
-                              <block type="math_arithmetic" >
+                              <block type="math_arithmetic" id="ZtOf|%/-[+:4Xv#-imn?">
                                 <field name="OP">MINUS</field>
                                 <value name="A">
-                                  <block type="bookcover_pageWidth" ></block>
+                                  <block type="bookcover_pageWidth" id="i/c?:lmsh6=S$T0v;;#k"></block>
                                 </value>
                                 <value name="B">
-                                  <block type="math_number" >
+                                  <block type="math_number" id="*]HF=%?c,;E2GzfoCX?.">
                                     <field name="NUM">40</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
                             <value name="h">
-                              <block type="math_arithmetic" >
+                              <block type="math_arithmetic" id="eM4dy9gwb$q(~?JI$*5m">
                                 <field name="OP">MINUS</field>
                                 <value name="A">
-                                  <block type="bookcover_pageHeight" ></block>
+                                  <block type="bookcover_pageHeight" id="6_mc6~QvXp:=qjh$qzW4"></block>
                                 </value>
                                 <value name="B">
-                                  <block type="math_number" >
+                                  <block type="math_number" id="ILwKc~u3a8KsTUIuLA/6">
                                     <field name="NUM">60</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
                             <next>
-                              <block type="controls_repeat_ext" >
+                              <block type="controls_repeat_ext" id="{%7pmLU}1N0+9?mWi}7.">
                                 <value name="TIMES">
-                                  <block type="math_number" >
+                                  <block type="math_number" id="3=7%{4g3Vay4J_vZ1mCy">
                                     <field name="NUM">35</field>
                                   </block>
                                 </value>
                                 <statement name="DO">
-                                  <block type="bookcover_stroke" >
+                                  <block type="bookcover_stroke" id="iiXk|`iAX4XmyQa~m3?9">
                                     <value name="COLOUR">
-                                      <block type="bookcover_colour" >
+                                      <block type="bookcover_colour" id="uN/FBWaj1EfF7#p8D*|]">
                                         <field name="COLOUR">#ffffff</field>
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="bookcover_stroke_weight" >
+                                      <block type="bookcover_stroke_weight" id="4OT$PkRy9-%#,Q(BD:00">
                                         <value name="width">
-                                          <block type="bookcover_random_in_range" >
+                                          <block type="bookcover_random_in_range" id="!SffI4i+Q(OehBD1$pJN">
                                             <value name="min">
-                                              <block type="math_number" >
+                                              <block type="math_number" id="`TW8oeUzXFHN_r|.z8#r">
                                                 <field name="NUM">0.2</field>
                                               </block>
                                             </value>
                                             <value name="max">
-                                              <block type="math_number" >
+                                              <block type="math_number" id="x:t+f.6$hplCN9i,AXO.">
                                                 <field name="NUM">1</field>
                                               </block>
                                             </value>
                                           </block>
                                         </value>
                                         <next>
-                                          <block type="bookcover_stroke_opacity" >
+                                          <block type="bookcover_stroke_opacity" id="xalTTRI!]+X.%R0zNGN%">
                                             <value name="opacity">
-                                              <block type="bookcover_random_in_range" >
+                                              <block type="bookcover_random_in_range" id="1d7:jHUburU.O-^.5!K?">
                                                 <value name="min">
-                                                  <block type="math_number" >
+                                                  <block type="math_number" id="w:EgjZd4t55-W,,t{Q[o">
                                                     <field name="NUM">0.5</field>
                                                   </block>
                                                 </value>
                                                 <value name="max">
-                                                  <block type="math_number" >
+                                                  <block type="math_number" id="A|I_2`YS/GYC0qyUv/r.">
                                                     <field name="NUM">1</field>
                                                   </block>
                                                 </value>
                                               </block>
                                             </value>
                                             <next>
-                                              <block type="bookcover_go" >
+                                              <block type="bookcover_go" id="KHTA|l}hs}l$M,d63A2y">
                                                 <value name="x">
-                                                  <block type="bookcover_random_in_range" >
+                                                  <block type="bookcover_random_in_range" id="w5,L$f`7[QuVSfy=(Nok">
                                                     <value name="min">
-                                                      <block type="math_number" >
+                                                      <block type="math_number" id="9n`9{Sa[@`e:B~0FBY]Q">
                                                         <field name="NUM">30</field>
                                                       </block>
                                                     </value>
                                                     <value name="max">
-                                                      <block type="math_arithmetic" >
+                                                      <block type="math_arithmetic" id="18P)]*YC8myH0/|pr[z2">
                                                         <field name="OP">MINUS</field>
                                                         <value name="A">
-                                                          <block type="bookcover_pageWidth" ></block>
+                                                          <block type="bookcover_pageWidth" id="e+B%G|hYJf]i/Jr1;$cc"></block>
                                                         </value>
                                                         <value name="B">
-                                                          <block type="math_number" >
+                                                          <block type="math_number" id="gSswT[bgb9--/=f[)Bq6">
                                                             <field name="NUM">30</field>
                                                           </block>
                                                         </value>
@@ -162,20 +162,20 @@
                                                   </block>
                                                 </value>
                                                 <value name="y">
-                                                  <block type="bookcover_random_in_range" >
+                                                  <block type="bookcover_random_in_range" id="TRTGSl0@}t}yhROh9{,+">
                                                     <value name="min">
-                                                      <block type="math_number" >
+                                                      <block type="math_number" id="UV8a*kGB;GynwL:J`h0r">
                                                         <field name="NUM">40</field>
                                                       </block>
                                                     </value>
                                                     <value name="max">
-                                                      <block type="math_arithmetic" >
+                                                      <block type="math_arithmetic" id="?/8g}t1+6F*OEAh9Nm9|">
                                                         <field name="OP">MINUS</field>
                                                         <value name="A">
-                                                          <block type="bookcover_pageHeight" ></block>
+                                                          <block type="bookcover_pageHeight" id="CEJrC{T)7j|%`CAB?4G1"></block>
                                                         </value>
                                                         <value name="B">
-                                                          <block type="math_number" >
+                                                          <block type="math_number" id="SDYGL@h/bMaH,;YJ[`RM">
                                                             <field name="NUM">40</field>
                                                           </block>
                                                         </value>
@@ -184,102 +184,102 @@
                                                   </block>
                                                 </value>
                                                 <next>
-                                                  <block type="controls_repeat_ext" >
+                                                  <block type="controls_repeat_ext" id=";~[g:Z-lVEIc8[?hki(;">
                                                     <value name="TIMES">
-                                                      <block type="math_number" >
+                                                      <block type="math_number" id="%`X~o$]A^^Z4jTq?VfAc">
                                                         <field name="NUM">6</field>
                                                       </block>
                                                     </value>
                                                     <statement name="DO">
-                                                      <block type="variables_set" >
-                                                        <field name="VAR"  variabletype="">i</field>
+                                                      <block type="variables_set" id="yb[enzfB+CdSNXQTaylx">
+                                                        <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
                                                         <value name="VALUE">
-                                                          <block type="math_number" >
+                                                          <block type="math_number" id="0kjQ#mlOLi-8:vYeu/wd">
                                                             <field name="NUM">3</field>
                                                           </block>
                                                         </value>
                                                         <next>
-                                                          <block type="controls_repeat_ext" >
+                                                          <block type="controls_repeat_ext" id="bzzg0X7aDfI/;z2=Yc-1">
                                                             <value name="TIMES">
-                                                              <block type="math_number" >
+                                                              <block type="math_number" id="jl`YciB1eS;`tQUQOx08">
                                                                 <field name="NUM">3</field>
                                                               </block>
                                                             </value>
                                                             <statement name="DO">
-                                                              <block type="bookcover_pen_down" >
+                                                              <block type="bookcover_pen_down" id=".@5dM8IA0f]*6*r}PRH~">
                                                                 <next>
-                                                                  <block type="bookcover_forward" >
+                                                                  <block type="bookcover_forward" id="T{pStQndp;s{.9Wl),*G">
                                                                     <value name="len">
-                                                                      <block type="variables_get" >
-                                                                        <field name="VAR"  variabletype="">i</field>
+                                                                      <block type="variables_get" id="d7S)xCUS6t82Oh5?Y8L9">
+                                                                        <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
                                                                       </block>
                                                                     </value>
                                                                     <next>
-                                                                      <block type="bookcover_turn" >
+                                                                      <block type="bookcover_turn" id="xBF#(pHGd.6:%;lns2,;">
                                                                         <value name="angle">
-                                                                          <block type="bookcover_angle" >
+                                                                          <block type="bookcover_angle" id="X}+N6/NY#CdW3@xG*g#3">
                                                                             <field name="angle">60</field>
                                                                           </block>
                                                                         </value>
                                                                         <next>
-                                                                          <block type="bookcover_forward" >
+                                                                          <block type="bookcover_forward" id="@gU7NErCO,8yUYgLDDo:">
                                                                             <value name="len">
-                                                                              <block type="variables_get" >
-                                                                                <field name="VAR"  variabletype="">i</field>
+                                                                              <block type="variables_get" id="+:3ao(@R6`z^?+_]l,;i">
+                                                                                <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
                                                                               </block>
                                                                             </value>
                                                                             <next>
-                                                                              <block type="bookcover_pen_up" >
+                                                                              <block type="bookcover_pen_up" id="fFTVT`mcWlOEiurv|/(Y">
                                                                                 <next>
-                                                                                  <block type="bookcover_turn" >
+                                                                                  <block type="bookcover_turn" id="LF42tNzJVbma+@@gE0=l">
                                                                                     <value name="angle">
-                                                                                      <block type="bookcover_angle" >
+                                                                                      <block type="bookcover_angle" id="=Pu-a%)(J{Tv`skt^TXm">
                                                                                         <field name="angle">180</field>
                                                                                       </block>
                                                                                     </value>
                                                                                     <next>
-                                                                                      <block type="bookcover_forward" >
+                                                                                      <block type="bookcover_forward" id="})kRsmzP%LDfyOQbsOW(">
                                                                                         <value name="len">
-                                                                                          <block type="variables_get" >
-                                                                                            <field name="VAR"  variabletype="">i</field>
+                                                                                          <block type="variables_get" id="/7H.TL^{WC4zGk]~)*}:">
+                                                                                            <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
                                                                                           </block>
                                                                                         </value>
                                                                                         <next>
-                                                                                          <block type="bookcover_pen_down" >
+                                                                                          <block type="bookcover_pen_down" id=",.Kua/mu~q)bBtu+4~M*">
                                                                                             <next>
-                                                                                              <block type="bookcover_turn" >
+                                                                                              <block type="bookcover_turn" id="CX8GTzH0Ib#0^^)NiI@n">
                                                                                                 <value name="angle">
-                                                                                                  <block type="bookcover_angle" >
+                                                                                                  <block type="bookcover_angle" id="/SO~j7;byG#VuWyycHkP">
                                                                                                     <field name="angle">60</field>
                                                                                                   </block>
                                                                                                 </value>
                                                                                                 <next>
-                                                                                                  <block type="bookcover_forward" >
+                                                                                                  <block type="bookcover_forward" id="]kvyS.y!|9y=g)1~W|##">
                                                                                                     <value name="len">
-                                                                                                      <block type="variables_get" >
-                                                                                                        <field name="VAR"  variabletype="">i</field>
+                                                                                                      <block type="variables_get" id="b2B![q!b[}i=,h.j%FYM">
+                                                                                                        <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
                                                                                                       </block>
                                                                                                     </value>
                                                                                                     <next>
-                                                                                                      <block type="bookcover_pen_up" >
+                                                                                                      <block type="bookcover_pen_up" id="~/t;1w_l=]Aph,L{4NL?">
                                                                                                         <next>
-                                                                                                          <block type="bookcover_turn" >
+                                                                                                          <block type="bookcover_turn" id="_@AhWDC;m!}P#IWBCK35">
                                                                                                             <value name="angle">
-                                                                                                              <block type="bookcover_angle" >
+                                                                                                              <block type="bookcover_angle" id=",YEhUTbH-WMYszP3!?BH">
                                                                                                                 <field name="angle">180</field>
                                                                                                               </block>
                                                                                                             </value>
                                                                                                             <next>
-                                                                                                              <block type="bookcover_forward" >
+                                                                                                              <block type="bookcover_forward" id="JriBQ[wxjhQOn-1UlYXa">
                                                                                                                 <value name="len">
-                                                                                                                  <block type="variables_get" >
-                                                                                                                    <field name="VAR"  variabletype="">i</field>
+                                                                                                                  <block type="variables_get" id="%RNSnw-ar4`}M`+Zn,#[">
+                                                                                                                    <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
                                                                                                                   </block>
                                                                                                                 </value>
                                                                                                                 <next>
-                                                                                                                  <block type="bookcover_turn" >
+                                                                                                                  <block type="bookcover_turn" id="MItZE#-+T9m!zp5cq|bN">
                                                                                                                     <value name="angle">
-                                                                                                                      <block type="bookcover_angle" >
+                                                                                                                      <block type="bookcover_angle" id="ZmChi5s5_.;[kpndU$|w">
                                                                                                                         <field name="angle">240</field>
                                                                                                                       </block>
                                                                                                                     </value>
@@ -312,44 +312,44 @@
                                                               </block>
                                                             </statement>
                                                             <next>
-                                                              <block type="bookcover_pen_down" >
+                                                              <block type="bookcover_pen_down" id="8RV7Zyb-hjFu.FAEU?Pz">
                                                                 <next>
-                                                                  <block type="bookcover_forward" >
+                                                                  <block type="bookcover_forward" id="MU8v9EW6CeQucTCmuxc^">
                                                                     <value name="len">
-                                                                      <block type="variables_get" >
-                                                                        <field name="VAR"  variabletype="">i</field>
+                                                                      <block type="variables_get" id="{7H#Gg-ZLW$:(D,L,7IY">
+                                                                        <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
                                                                       </block>
                                                                     </value>
                                                                     <next>
-                                                                      <block type="bookcover_turn" >
+                                                                      <block type="bookcover_turn" id="G[AQj6~CCG*.L-5hi@c)">
                                                                         <value name="angle">
-                                                                          <block type="bookcover_angle" >
+                                                                          <block type="bookcover_angle" id="KZcJh|J71jQ(B=#q4{s8">
                                                                             <field name="angle">180</field>
                                                                           </block>
                                                                         </value>
                                                                         <next>
-                                                                          <block type="bookcover_pen_up" >
+                                                                          <block type="bookcover_pen_up" id="Mq)rA.quB@%Ku#XdiGbc">
                                                                             <next>
-                                                                              <block type="bookcover_forward" >
+                                                                              <block type="bookcover_forward" id="/DnWh[t`.o~LLjxORuTy">
                                                                                 <value name="len">
-                                                                                  <block type="math_arithmetic" >
+                                                                                  <block type="math_arithmetic" id="JiB3yc*;ij/+4-oCC8xt">
                                                                                     <field name="OP">MULTIPLY</field>
                                                                                     <value name="A">
-                                                                                      <block type="variables_get" >
-                                                                                        <field name="VAR"  variabletype="">i</field>
+                                                                                      <block type="variables_get" id="%(tQVp5H]7YS^F21*#HW">
+                                                                                        <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
                                                                                       </block>
                                                                                     </value>
                                                                                     <value name="B">
-                                                                                      <block type="math_number" >
+                                                                                      <block type="math_number" id="[P=AM2?v}7E4p2#;~@PN">
                                                                                         <field name="NUM">4</field>
                                                                                       </block>
                                                                                     </value>
                                                                                   </block>
                                                                                 </value>
                                                                                 <next>
-                                                                                  <block type="bookcover_turn" >
+                                                                                  <block type="bookcover_turn" id="MusLlfX.O|6~vRZ[|WIn">
                                                                                     <value name="angle">
-                                                                                      <block type="bookcover_angle" >
+                                                                                      <block type="bookcover_angle" id="CSXNvB(HEJZ3^o4_4GTV">
                                                                                         <field name="angle">240</field>
                                                                                       </block>
                                                                                     </value>
@@ -380,71 +380,76 @@
                                   </block>
                                 </statement>
                                 <next>
-                                  <block type="bookcover_stroke" >
+                                  <block type="bookcover_stroke" id="qbC$_!5HS_eoC59338j,">
                                     <value name="COLOUR">
-                                      <block type="bookcover_colour" >
+                                      <block type="bookcover_colour" id="%9errno,Wrm^zDBU6M(%">
                                         <field name="COLOUR">#3333ff</field>
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="bookcover_fill" >
+                                      <block type="bookcover_fill" id="[-kqy*m}eHT*;t~mt;[u">
                                         <value name="COLOUR">
-                                          <block type="bookcover_colour" >
+                                          <block type="bookcover_colour" id="Itz!T;EvSq]1v{E8jLZQ">
                                             <field name="COLOUR">#3366ff</field>
                                           </block>
                                         </value>
                                         <next>
-                                          <block type="bookcover_fill_opacity" >
+                                          <block type="bookcover_fill_opacity" id="3bYEY}Uq46khN*;}$=XC">
                                             <value name="opacity">
-                                              <block type="math_number" >
+                                              <block type="math_number" id="mwj,W9SDc4y+]O`E6AK[">
                                                 <field name="NUM">1</field>
                                               </block>
                                             </value>
                                             <next>
-                                              <block type="bookcover_stroke_opacity" >
+                                              <block type="bookcover_stroke_opacity" id="k*DZ%OS:18-I~Q$vHgob">
                                                 <value name="opacity">
-                                                  <block type="math_number" >
+                                                  <block type="math_number" id="!YJz~oXE$EeQqoB/jmFK">
                                                     <field name="NUM">1</field>
                                                   </block>
                                                 </value>
                                                 <next>
-                                                  <block type="bookcover_text_font" >
+                                                  <block type="bookcover_text_font" id="X)UaCzmIqejC}bDB2GG{">
                                                     <value name="name">
-                                                      <block type="bookcover_font_name" >
+                                                      <block type="bookcover_font_name" id="b5$G{m{eSjY[3zwj5`RG">
                                                         <field name="NAME">Times New Roman</field>
                                                       </block>
                                                     </value>
                                                     <value name="size">
-                                                      <block type="math_number" >
+                                                      <block type="math_number" id="n1Ap:e!:+2h$8ltqxu%C">
                                                         <field name="NUM">9</field>
                                                       </block>
                                                     </value>
                                                     <next>
-                                                      <block type="bookcover_text" >
+                                                      <block type="bookcover_text" id="w$@h-n-)(o;twJ~SB[aR">
                                                         <value name="x">
-                                                          <block type="math_number" >
+                                                          <block type="math_number" id="^Ku~.l{24tlK-1-,MkZk">
                                                             <field name="NUM">150</field>
                                                           </block>
                                                         </value>
                                                         <value name="y">
-                                                          <block type="math_number" >
+                                                          <block type="math_number" id="d^X87C;Re[BC0^w~afTN">
                                                             <field name="NUM">140</field>
                                                           </block>
                                                         </value>
                                                         <value name="str">
-                                                          <block type="text_join" >
-                                                            <mutation items="3"></mutation>
+                                                          <block type="text_join" id="i_{+U],NOU%*F#DdDVSX">
+                                                            <mutation items="4"></mutation>
                                                             <value name="ADD0">
-                                                              <block type="text" >
+                                                              <block type="text" id="nnqx2a~.`+t/KFuME-ki">
                                                                 <field name="TEXT">Kagawa University</field>
                                                               </block>
                                                             </value>
                                                             <value name="ADD1">
-                                                              <block type="bookcover_newline" ></block>
+                                                              <block type="bookcover_newline" id="bE04RDc6.-F25A^xP-,W"></block>
                                                             </value>
                                                             <value name="ADD2">
-                                                              <block type="text" >
-                                                                <field name="TEXT">OpenCampus YYYY/MM/DD</field>
+                                                              <block type="text" id="$cATn^EHv!gLEiv0w%U(">
+                                                                <field name="TEXT">OpenCampus </field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="ADD3">
+                                                              <block type="bookcover_today" id="F*iB86|G@_z/SIzP06]g">
+                                                                <field name="STYLE">JP</field>
                                                               </block>
                                                             </value>
                                                           </block>

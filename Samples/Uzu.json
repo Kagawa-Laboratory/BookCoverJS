@@ -1,0 +1,680 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "bookcover_frame",
+        "id": "qeA^NC1`yvI/z6/mLH;f",
+        "x": 10,
+        "y": 10,
+        "fields": {
+          "frame": true
+        },
+        "inputs": {
+          "statements": {
+            "block": {
+              "type": "bookcover_stroke",
+              "id": "D0LRDsMD@S(RN?~KI[Mp",
+              "inputs": {
+                "COLOUR": {
+                  "block": {
+                    "type": "bookcover_none",
+                    "id": "D8sAN=?6vo@9PGZoh0QC"
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "bookcover_fill_opacity",
+                  "id": ";MEf^nEq_oO4cn7ni0)i",
+                  "inputs": {
+                    "opacity": {
+                      "block": {
+                        "type": "math_number",
+                        "id": ":kA}R92A{YFQz.too1(9",
+                        "fields": {
+                          "NUM": 0.7
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "bookcover_text_font",
+                      "id": "0cG;R2s%w5tQOB=Rd*Ih",
+                      "inputs": {
+                        "name": {
+                          "block": {
+                            "type": "bookcover_font_name",
+                            "id": "%/PS7cSHkihj6U/PF2@4",
+                            "fields": {
+                              "NAME": "Segoe UI Symbol"
+                            }
+                          }
+                        },
+                        "size": {
+                          "block": {
+                            "type": "math_number",
+                            "id": "5z.!L+??E-w*!,@}B(EM",
+                            "fields": {
+                              "NUM": 8
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "controls_for",
+                          "id": "}XB!9sNaFQ48Cd+L1awn",
+                          "fields": {
+                            "VAR": {
+                              "id": "kT+7;[QC15m,.)odgUBX"
+                            }
+                          },
+                          "inputs": {
+                            "FROM": {
+                              "block": {
+                                "type": "math_number",
+                                "id": "tU-rKNM4yN]!EvS3b)+e",
+                                "fields": {
+                                  "NUM": 30
+                                }
+                              }
+                            },
+                            "TO": {
+                              "block": {
+                                "type": "math_number",
+                                "id": "9HM8Dw_5PH%7elsBpK;#",
+                                "fields": {
+                                  "NUM": 260
+                                }
+                              }
+                            },
+                            "BY": {
+                              "block": {
+                                "type": "math_number",
+                                "id": "K@-2-WH][%7e]1~Q=|o/",
+                                "fields": {
+                                  "NUM": 10
+                                }
+                              }
+                            },
+                            "DO": {
+                              "block": {
+                                "type": "controls_for",
+                                "id": "ub2Z_msm+~;?S*(IBbUC",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "]YeZ);?cFF;h=V*5n0S$"
+                                  }
+                                },
+                                "inputs": {
+                                  "FROM": {
+                                    "block": {
+                                      "type": "math_number",
+                                      "id": "T^0^cR}?fyB(a{vI.?=9",
+                                      "fields": {
+                                        "NUM": 25
+                                      }
+                                    }
+                                  },
+                                  "TO": {
+                                    "block": {
+                                      "type": "math_number",
+                                      "id": "Ce~qn[lED|^OQwaQmJ,|",
+                                      "fields": {
+                                        "NUM": 185
+                                      }
+                                    }
+                                  },
+                                  "BY": {
+                                    "block": {
+                                      "type": "math_number",
+                                      "id": "*%Iy9];5cn4UidJ-+v1l",
+                                      "fields": {
+                                        "NUM": 10
+                                      }
+                                    }
+                                  },
+                                  "DO": {
+                                    "block": {
+                                      "type": "variables_set",
+                                      "id": "15=p8.BAtv:FO+OL(aNz",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "S=`pzbrtJUx1@Zpnx@Br"
+                                        }
+                                      },
+                                      "inputs": {
+                                        "VALUE": {
+                                          "block": {
+                                            "type": "bookcover_atan2",
+                                            "id": "lqYP.x3]JL_XtiBGVr%D",
+                                            "inputs": {
+                                              "X1": {
+                                                "shadow": {
+                                                  "type": "math_number",
+                                                  "id": "X~V-*#z?:T9FHUtWYI6I",
+                                                  "fields": {
+                                                    "NUM": 0
+                                                  }
+                                                },
+                                                "block": {
+                                                  "type": "math_number",
+                                                  "id": "f73}IVx?oKfVG7u@WRy4",
+                                                  "fields": {
+                                                    "NUM": 145
+                                                  }
+                                                }
+                                              },
+                                              "Y1": {
+                                                "shadow": {
+                                                  "type": "math_number",
+                                                  "id": "8KL/I}UwbF+Z6w2Cc`1Q",
+                                                  "fields": {
+                                                    "NUM": 0
+                                                  }
+                                                },
+                                                "block": {
+                                                  "type": "math_number",
+                                                  "id": "jwGf/:Fqgzf((Lph.X)q",
+                                                  "fields": {
+                                                    "NUM": 105
+                                                  }
+                                                }
+                                              },
+                                              "X2": {
+                                                "shadow": {
+                                                  "type": "math_number",
+                                                  "id": "9w]u-H|s[9.{Y{dRA`TJ",
+                                                  "fields": {
+                                                    "NUM": 3
+                                                  }
+                                                },
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": "ky6rh/CYfN_y|f[_jT=6",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "kT+7;[QC15m,.)odgUBX"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "Y2": {
+                                                "shadow": {
+                                                  "type": "math_number",
+                                                  "id": "/=I3uD!#cqlTn*ZU(tWu",
+                                                  "fields": {
+                                                    "NUM": 4
+                                                  }
+                                                },
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": "O*d3Pw5@x-g(RJF=/lou",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "]YeZ);?cFF;h=V*5n0S$"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "variables_set",
+                                          "id": "v;O1;kbKM59icc_13UAB",
+                                          "fields": {
+                                            "VAR": {
+                                              "id": "kw_X%[!lT/Eh=kpVU$C0"
+                                            }
+                                          },
+                                          "inputs": {
+                                            "VALUE": {
+                                              "block": {
+                                                "type": "bookcover_distance",
+                                                "id": "A:r++!fh1*}CF1K,|[xb",
+                                                "inputs": {
+                                                  "X1": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "sk+(^[MZEtJ1F0mHiQGy",
+                                                      "fields": {
+                                                        "NUM": 0
+                                                      }
+                                                    },
+                                                    "block": {
+                                                      "type": "math_number",
+                                                      "id": "1KqB+zs+2J9Zr3bhZ,4a",
+                                                      "fields": {
+                                                        "NUM": 145
+                                                      }
+                                                    }
+                                                  },
+                                                  "Y1": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "5z)Q?Nj@1~vueqwy%JM3",
+                                                      "fields": {
+                                                        "NUM": 0
+                                                      }
+                                                    },
+                                                    "block": {
+                                                      "type": "math_number",
+                                                      "id": "QR7[:JgbkXlDjz:+.bxS",
+                                                      "fields": {
+                                                        "NUM": 105
+                                                      }
+                                                    }
+                                                  },
+                                                  "X2": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "xO9XMP17WIXY-_^(,4l8",
+                                                      "fields": {
+                                                        "NUM": 3
+                                                      }
+                                                    },
+                                                    "block": {
+                                                      "type": "variables_get",
+                                                      "id": "Ce@3,[lG6Y0;#d8ax~.H",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "kT+7;[QC15m,.)odgUBX"
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "Y2": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "id": "JwJivo@.llnohh!}iGkf",
+                                                      "fields": {
+                                                        "NUM": 4
+                                                      }
+                                                    },
+                                                    "block": {
+                                                      "type": "variables_get",
+                                                      "id": ".@DuO}}mbBCE_{RF_+c[",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "]YeZ);?cFF;h=V*5n0S$"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "bookcover_fill",
+                                              "id": ")10zc,(RuaFJ%3WHzVic",
+                                              "inputs": {
+                                                "COLOUR": {
+                                                  "block": {
+                                                    "type": "bookcover_hsl360",
+                                                    "id": "4PEkH?sfQH)|wa^8=8pf",
+                                                    "inputs": {
+                                                      "hue": {
+                                                        "block": {
+                                                          "type": "math_arithmetic",
+                                                          "id": "t=o@]waH}D6Wo8F~x/X/",
+                                                          "fields": {
+                                                            "OP": "ADD"
+                                                          },
+                                                          "inputs": {
+                                                            "A": {
+                                                              "block": {
+                                                                "type": "math_arithmetic",
+                                                                "id": "(F^j;?oP3Gi:v(d*ozc8",
+                                                                "fields": {
+                                                                  "OP": "MULTIPLY"
+                                                                },
+                                                                "inputs": {
+                                                                  "A": {
+                                                                    "block": {
+                                                                      "type": "variables_get",
+                                                                      "id": "tq6`^iHib~=LED`_cq4V",
+                                                                      "fields": {
+                                                                        "VAR": {
+                                                                          "id": "S=`pzbrtJUx1@Zpnx@Br"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "B": {
+                                                                    "block": {
+                                                                      "type": "math_number",
+                                                                      "id": "D%MlKzN2_(ow2ic~f;t!",
+                                                                      "icons": {
+                                                                        "comment": {
+                                                                          "text": "ここを変えてみよう",
+                                                                          "pinned": false,
+                                                                          "height": 80,
+                                                                          "width": 160
+                                                                        }
+                                                                      },
+                                                                      "fields": {
+                                                                        "NUM": 2
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "B": {
+                                                              "block": {
+                                                                "type": "math_arithmetic",
+                                                                "id": "|BiqM27cLZ?ywGNnliOA",
+                                                                "fields": {
+                                                                  "OP": "DIVIDE"
+                                                                },
+                                                                "inputs": {
+                                                                  "A": {
+                                                                    "block": {
+                                                                      "type": "variables_get",
+                                                                      "id": "iz@`ekQp|Zh{S80dO`b1",
+                                                                      "fields": {
+                                                                        "VAR": {
+                                                                          "id": "kw_X%[!lT/Eh=kpVU$C0"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "B": {
+                                                                    "block": {
+                                                                      "type": "math_number",
+                                                                      "id": "E`2(SDUE7:h{rs4I)euf",
+                                                                      "icons": {
+                                                                        "comment": {
+                                                                          "text": "ここを変えてみよう",
+                                                                          "pinned": false,
+                                                                          "height": 80,
+                                                                          "width": 160
+                                                                        }
+                                                                      },
+                                                                      "fields": {
+                                                                        "NUM": 0.5
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "saturation": {
+                                                        "block": {
+                                                          "type": "math_number",
+                                                          "id": "C{(+19UAHlY@+Cg7!j1/",
+                                                          "fields": {
+                                                            "NUM": 100
+                                                          }
+                                                        }
+                                                      },
+                                                      "luminance": {
+                                                        "block": {
+                                                          "type": "math_number",
+                                                          "id": "yFxL(b(vvln`9u[]46G7",
+                                                          "fields": {
+                                                            "NUM": 70
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "bookcover_matrix",
+                                                  "id": "?pr-1yt%I6`^q%(v51D7",
+                                                  "inputs": {
+                                                    "statements": {
+                                                      "block": {
+                                                        "type": "bookcover_translate",
+                                                        "id": "(*`=Eik)XPm(0jR8bs/9",
+                                                        "inputs": {
+                                                          "x": {
+                                                            "block": {
+                                                              "type": "variables_get",
+                                                              "id": "8?QkEyPln#9WQryj3%bQ",
+                                                              "fields": {
+                                                                "VAR": {
+                                                                  "id": "kT+7;[QC15m,.)odgUBX"
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "y": {
+                                                            "block": {
+                                                              "type": "variables_get",
+                                                              "id": "(X8L]MEO`w5Hy|lf?pHr",
+                                                              "fields": {
+                                                                "VAR": {
+                                                                  "id": "]YeZ);?cFF;h=V*5n0S$"
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "next": {
+                                                          "block": {
+                                                            "type": "bookcover_text",
+                                                            "id": "Qm[+Gmf.9I4!66eM+(26",
+                                                            "inputs": {
+                                                              "x": {
+                                                                "block": {
+                                                                  "type": "math_number",
+                                                                  "id": "LLKFz1FOlYwE7?r,cb^x",
+                                                                  "fields": {
+                                                                    "NUM": 0
+                                                                  }
+                                                                }
+                                                              },
+                                                              "y": {
+                                                                "block": {
+                                                                  "type": "math_number",
+                                                                  "id": "n;.?nR!LjrL,6P;?xH1/",
+                                                                  "fields": {
+                                                                    "NUM": 0
+                                                                  }
+                                                                }
+                                                              },
+                                                              "str": {
+                                                                "block": {
+                                                                  "type": "text_charAt",
+                                                                  "id": "K_kT5rd[?2~6`uy:y?K*",
+                                                                  "extraState": "<mutation at=\"false\"></mutation>",
+                                                                  "fields": {
+                                                                    "WHERE": "RANDOM"
+                                                                  },
+                                                                  "inputs": {
+                                                                    "VALUE": {
+                                                                      "block": {
+                                                                        "type": "text",
+                                                                        "id": "arHC6j07RHvw;}=(U:r~",
+                                                                        "icons": {
+                                                                          "comment": {
+                                                                            "text": "ここを変えてみよう",
+                                                                            "pinned": false,
+                                                                            "height": 80,
+                                                                            "width": 160
+                                                                          }
+                                                                        },
+                                                                        "fields": {
+                                                                          "TEXT": "◆●▼▲"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "bookcover_fill",
+                              "id": "5B)B2.S[kEErDWG~,4r}",
+                              "inputs": {
+                                "COLOUR": {
+                                  "block": {
+                                    "type": "bookcover_colour",
+                                    "id": "/E_9BWY@vgA2~tKb!W#3",
+                                    "fields": {
+                                      "COLOUR": "#33cc00"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "bookcover_text_font",
+                                  "id": "KxH@+J74ZrE8?[jC@hEp",
+                                  "inputs": {
+                                    "name": {
+                                      "block": {
+                                        "type": "bookcover_font_name",
+                                        "id": "PCvCg-;S~-)P}uXo5`_i",
+                                        "fields": {
+                                          "NAME": "Times New Roman"
+                                        }
+                                      }
+                                    },
+                                    "size": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "id": ";wU_qqloZfCIVAh2!qJb",
+                                        "fields": {
+                                          "NUM": 9
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "bookcover_text",
+                                      "id": "+:X+9:OrA[o#FHTN|6i4",
+                                      "inputs": {
+                                        "x": {
+                                          "block": {
+                                            "type": "math_number",
+                                            "id": "q^9^p:(h??/6;Ka8pW)H",
+                                            "fields": {
+                                              "NUM": 150
+                                            }
+                                          }
+                                        },
+                                        "y": {
+                                          "block": {
+                                            "type": "math_number",
+                                            "id": "Rdz4NbuQ8v-VuuaZCdCH",
+                                            "fields": {
+                                              "NUM": 150
+                                            }
+                                          }
+                                        },
+                                        "str": {
+                                          "block": {
+                                            "type": "text_join",
+                                            "id": ":Vi4RIOKFu+FWj5ne,!H",
+                                            "extraState": {
+                                              "itemCount": 4
+                                            },
+                                            "inputs": {
+                                              "ADD0": {
+                                                "block": {
+                                                  "type": "text",
+                                                  "id": "k+G:]TdLYILSg]3h8iTu",
+                                                  "fields": {
+                                                    "TEXT": "Kagawa University"
+                                                  }
+                                                }
+                                              },
+                                              "ADD1": {
+                                                "block": {
+                                                  "type": "bookcover_newline",
+                                                  "id": "W|FMi7N~r_}aJB`Q%{,n"
+                                                }
+                                              },
+                                              "ADD2": {
+                                                "block": {
+                                                  "type": "text",
+                                                  "id": "sn~m0r@L7I;Ze4+gP/Zh",
+                                                  "fields": {
+                                                    "TEXT": "OpenCampus "
+                                                  }
+                                                }
+                                              },
+                                              "ADD3": {
+                                                "block": {
+                                                  "type": "bookcover_today",
+                                                  "id": ")@l3Y#Vw$FNPeew_Uu~R",
+                                                  "fields": {
+                                                    "STYLE": "JP"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "横位置",
+      "id": "kT+7;[QC15m,.)odgUBX"
+    },
+    {
+      "name": "縦位置",
+      "id": "]YeZ);?cFF;h=V*5n0S$"
+    },
+    {
+      "name": "傾き",
+      "id": "S=`pzbrtJUx1@Zpnx@Br"
+    },
+    {
+      "name": "距離",
+      "id": "kw_X%[!lT/Eh=kpVU$C0"
+    }
+  ]
+}
