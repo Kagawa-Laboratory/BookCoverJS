@@ -15,15 +15,18 @@ var draw;
 var workspace = null;
 
 function customEncode(str) {
-  let result = "";
+  let result = '';
   for (const c of str) {
     if (c.match(/[\p{ID_Continue}]/gu)) {
       result += c;
-    } else {
+    }  /* else if (c.match(/[\-.!~*'();\/?:@&=+$,#]/)) {
+      // 従来の safeName との互換性を保つなら、これらの文字は '_' に変換する
+      result += '_';
+    } */ else {
       // c を　UTF-8 のバイト列に変換
       const bytes = new TextEncoder().encode(c);
       for (const b of bytes) {
-        result += `_${b.toString(16).toUpperCase()}`;
+        result += `_${b.toString(16).toUpperCase().padStart(2, '0')}`;
       }
     }
   }
@@ -236,7 +239,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // 危険!! バージョンが変わると動かなくなる可能性があるので、Blockly のバージョンを変えたら要確認
+  // 危険!! safeName は公開 API ではない。
+  // 動かなくなる可能性があるので、Blockly のバージョンを変えたら要確認
   javascriptGenerator.init(workspace);
   javascriptGenerator.nameDB_.safeName = safeName;
 
