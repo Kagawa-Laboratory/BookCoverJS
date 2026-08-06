@@ -280,7 +280,7 @@
                                             "icons": {
                                               "comment": {
                                                 "text": "ここを変えてみよう",
-                                                "pinned": true,
+                                                "pinned": false,
                                                 "height": 80,
                                                 "width": 160
                                               }
@@ -335,7 +335,7 @@
                                                   "icons": {
                                                     "comment": {
                                                       "text": "ここを変えてみよう",
-                                                      "pinned": true,
+                                                      "pinned": false,
                                                       "height": 80,
                                                       "width": 160
                                                     }

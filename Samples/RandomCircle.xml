@@ -11,7 +11,7 @@
     <variable id="ymxA#VdEu*/,s3mbkifg">i</variable>
     <variable id="`CpRQ}=BKt,A..F+*QLk">j</variable>
   </variables>
-  <block type="bookcover_frame" id="BMxq=+:#!x`BMR:ZB0S$" x="-1436" y="75">
+  <block type="bookcover_frame" id="BMxq=+:#!x`BMR:ZB0S$" x="10" y="10">
     <field name="frame">TRUE</field>
     <statement name="statements">
       <block type="bookcover_rulers" id="!eE|K/!rM1k4IApMcNcD">

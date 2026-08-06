@@ -13,7 +13,7 @@
     <variable id="?Aq$BB9tQQps7~kY@DtD">x</variable>
     <variable id="ldRu?`._t*jE1}P,FlO)">y</variable>
   </variables>
-  <block type="bookcover_frame" id="q}*q/g:nV%-~G`/kWav*" x="-49" y="-329">
+  <block type="bookcover_frame" id="q}*q/g:nV%-~G`/kWav*" x="10" y="10">
     <field name="frame">FALSE</field>
     <statement name="statements">
       <block type="bookcover_rulers" id=",Dr+swehBsYLl!dqte#l">

@@ -946,8 +946,8 @@
       {
         "type": "bookcover_card_frame",
         "id": "NCY*Nk,26-_4j#T|%Ffd",
-        "x": 17,
-        "y": 1093,
+        "x": 11,
+        "y": 1026,
         "inputs": {
           "PAPER_SPEC": {
             "block": {
@@ -1025,6 +1025,14 @@
                                       "block": {
                                         "type": "math_number",
                                         "id": "Q6)pvmT)m`BL(=ZuBVCa",
+                                        "icons": {
+                                          "comment": {
+                                            "text": "ここを変えてみよう",
+                                            "pinned": false,
+                                            "height": 80,
+                                            "width": 160
+                                          }
+                                        },
                                         "fields": {
                                           "NUM": 0.7
                                         }

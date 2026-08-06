@@ -5,8 +5,8 @@
       {
         "type": "bookcover_card_frame",
         "id": "WGw:Z|=uc((AEHsIS}u$",
-        "x": -223,
-        "y": -128,
+        "x": 10,
+        "y": 10,
         "inputs": {
           "PAPER_SPEC": {
             "block": {
@@ -279,8 +279,8 @@
       {
         "type": "procedures_defnoreturn",
         "id": "{a/ry]Vprd.ix@XhRBYU",
-        "x": -216,
-        "y": 378,
+        "x": 8,
+        "y": 416,
         "icons": {
           "comment": {
             "text": "この関数を説明する...",

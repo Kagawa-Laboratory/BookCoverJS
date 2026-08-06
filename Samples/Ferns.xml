@@ -1,123 +1,123 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable>残り</variable>
-    <variable>横</variable>
-    <variable>縦</variable>
-    <variable>長さ</variable>
-    <variable>角</variable>
-    <variable>次の横</variable>
-    <variable>次の縦</variable>
-    <variable>枝</variable>
-    <variable>カード</variable>
-    <variable>カウンター</variable>
-    <variable>各枝</variable>
-    <variable>今の色</variable>
-    <variable>比</variable>
+    <variable id="GRQ=$-S)^rteZCIy1C-x">残り</variable>
+    <variable id=";DOk=!e~?GqX@k28ZN8O">横</variable>
+    <variable id="+p@@@)}AYHeCVNL`x3mJ">縦</variable>
+    <variable id="TV1I)BK3,A.S:WI(01dX">長さ</variable>
+    <variable id="IMi:#c6+kC,1h(v~Xh34">角</variable>
+    <variable id="9EiZW0~Nq}s.#UBMaN+[">次の横</variable>
+    <variable id="85s18.8L1R:vmD.36fEE">次の縦</variable>
+    <variable id="P#OEfS9gnGIdfgWe$FxA">枝</variable>
+    <variable id="dU{e,@X8YOR-HlAO;/#K">カード</variable>
+    <variable id="XPOe%EO;aCl9J2Xp~?UO">カウンター</variable>
+    <variable id="Ej]c7Ce`RlrIWqpv,|EC">各枝</variable>
+    <variable id="+D.?6sgCJruOHF6b%wdL">今の色</variable>
+    <variable id="Y=?Ps$ybLp3mDFrw=#kU">比</variable>
   </variables>
-  <block type="procedures_defnoreturn" x="10" y="22">
+  <block type="procedures_defnoreturn" id="n7.ata}-M)Bnf^9J0^|P" x="10" y="22">
     <field name="NAME">名前を書く</field>
     <comment pinned="false" h="80" w="160">この関数を説明する...</comment>
     <statement name="STACK">
-      <block type="bookcover_text_font">
+      <block type="bookcover_text_font" id="6^z?`La]#?}fH$gE$ZDL">
         <value name="name">
-          <block type="bookcover_font_name">
+          <block type="bookcover_font_name" id="3L#[7OIK(Bdi|uB*|]D8">
             <field name="NAME">ＭＳ 明朝</field>
           </block>
         </value>
         <value name="size">
-          <block type="math_number">
+          <block type="math_number" id="wq*WX.Fr[]sp~{_t[)qe">
             <field name="NUM">8</field>
           </block>
         </value>
         <next>
-          <block type="bookcover_text">
+          <block type="bookcover_text" id="#Lka(bqJyk0=a~77=0{(">
             <value name="x">
-              <block type="math_number">
+              <block type="math_number" id="bj.:oWqh5)DDE{NpZqu8">
                 <field name="NUM">10</field>
               </block>
             </value>
             <value name="y">
-              <block type="math_number">
+              <block type="math_number" id="Z6)K~j*|RemL`L)ZTQ9F">
                 <field name="NUM">20.4</field>
               </block>
             </value>
             <value name="str">
-              <block type="text">
+              <block type="text" id="zTAW.LM/X1~./tCx2s~J">
                 <field name="TEXT">香川大学創造工学部</field>
               </block>
             </value>
             <next>
-              <block type="bookcover_text">
+              <block type="bookcover_text" id="*]3+@[$f-~(H8e}CO/ux">
                 <value name="x">
-                  <block type="math_number">
+                  <block type="math_number" id="eZM6zFTX|+s},)[B}[zs">
                     <field name="NUM">10</field>
                   </block>
                 </value>
                 <value name="y">
-                  <block type="math_number">
+                  <block type="math_number" id="`q!SQp|v-V4Z/#l5$pK$">
                     <field name="NUM">30.4</field>
                   </block>
                 </value>
                 <value name="str">
-                  <block type="text">
+                  <block type="text" id="Qj!|2zH!eTALwrx?xO6m">
                     <field name="TEXT">讃岐 太郎</field>
                   </block>
                 </value>
                 <next>
-                  <block type="bookcover_text_font">
+                  <block type="bookcover_text_font" id="`K3B87NjS+1v~*cn=|P_">
                     <value name="name">
-                      <block type="bookcover_font_name">
+                      <block type="bookcover_font_name" id="^oj:S;hS?561y,#X!bT@">
                         <field name="NAME">Times New Roman</field>
                       </block>
                     </value>
                     <value name="size">
-                      <block type="math_number">
+                      <block type="math_number" id="N:9w61-ruhlrUPr^?rhV">
                         <field name="NUM">8</field>
                       </block>
                     </value>
                     <next>
-                      <block type="bookcover_text">
+                      <block type="bookcover_text" id="d@XRhHDeJo3usl9=~V[B">
                         <value name="x">
-                          <block type="math_number">
+                          <block type="math_number" id="t!@DM(w)vayL,BfdCimo">
                             <field name="NUM">10</field>
                           </block>
                         </value>
                         <value name="y">
-                          <block type="math_number">
+                          <block type="math_number" id="D!!|nz_~iR#o@N%FSxh=">
                             <field name="NUM">40.4</field>
                           </block>
                         </value>
                         <value name="str">
-                          <block type="text">
+                          <block type="text" id="di6h.:Dle.3/0G?M(ZD?">
                             <field name="TEXT">SANUKI, Taro</field>
                           </block>
                         </value>
                         <next>
-                          <block type="bookcover_text_font">
+                          <block type="bookcover_text_font" id="[,F`AU.m}b%*s,1.CXA9">
                             <value name="name">
-                              <block type="bookcover_font_name">
+                              <block type="bookcover_font_name" id="ZHk2tpRHRKgUss=~9_$1">
                                 <field name="NAME">Courier New</field>
                               </block>
                             </value>
                             <value name="size">
-                              <block type="math_number">
+                              <block type="math_number" id="o@4dz[Cy6M`get91KE5/">
                                 <field name="NUM">5</field>
                               </block>
                             </value>
                             <next>
-                              <block type="bookcover_text">
+                              <block type="bookcover_text" id="/%rv!RHJnk%{)f(3+p]H">
                                 <value name="x">
-                                  <block type="math_number">
+                                  <block type="math_number" id="Rr[3%^d]4|#mFs]i/~F|">
                                     <field name="NUM">10</field>
                                   </block>
                                 </value>
                                 <value name="y">
-                                  <block type="math_number">
+                                  <block type="math_number" id="5UUYi4Pe;K[!lL3-$`VP">
                                     <field name="NUM">49.5</field>
                                   </block>
                                 </value>
                                 <value name="str">
-                                  <block type="text">
+                                  <block type="text" id="Mwneh/mE;-hL`C;|?/iV">
                                     <field name="TEXT">taro.sanuki@example.com</field>
                                   </block>
                                 </value>
@@ -136,58 +136,58 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" x="10" y="373">
+  <block type="procedures_defnoreturn" id="n?`tM6*%B#~=}yI7R#CV" x="10" y="373">
     <mutation>
-      <arg name="残り"></arg>
-      <arg name="横"></arg>
-      <arg name="縦"></arg>
-      <arg name="長さ"></arg>
-      <arg name="角"></arg>
+      <arg name="残り" varid="GRQ=$-S)^rteZCIy1C-x"></arg>
+      <arg name="横" varid=";DOk=!e~?GqX@k28ZN8O"></arg>
+      <arg name="縦" varid="+p@@@)}AYHeCVNL`x3mJ"></arg>
+      <arg name="長さ" varid="TV1I)BK3,A.S:WI(01dX"></arg>
+      <arg name="角" varid="IMi:#c6+kC,1h(v~Xh34"></arg>
     </mutation>
     <field name="NAME">木を描く</field>
     <comment pinned="false" h="80" w="160">この関数を説明する...</comment>
     <statement name="STACK">
-      <block type="controls_if">
+      <block type="controls_if" id="Ewv)u)P$k$bFv5P.%Y|s">
         <value name="IF0">
-          <block type="logic_compare">
+          <block type="logic_compare" id="QiH=SlE?_vB3.8!8R!!}">
             <field name="OP">GTE</field>
             <value name="A">
-              <block type="variables_get">
-                <field name="VAR">残り</field>
+              <block type="variables_get" id="+UlbLhLEUz6?T^N4f%gm">
+                <field name="VAR" id="GRQ=$-S)^rteZCIy1C-x">残り</field>
               </block>
             </value>
             <value name="B">
-              <block type="math_number">
+              <block type="math_number" id="2_w5==HDX--l[0^GR}nN">
                 <field name="NUM">0</field>
               </block>
             </value>
           </block>
         </value>
         <statement name="DO0">
-          <block type="variables_set">
-            <field name="VAR">次の横</field>
+          <block type="variables_set" id="}z*tt60ke}yXZoEp9::d">
+            <field name="VAR" id="9EiZW0~Nq}s.#UBMaN+[">次の横</field>
             <value name="VALUE">
-              <block type="math_arithmetic">
+              <block type="math_arithmetic" id="*cG(O;UFgzLUoewam4NE">
                 <field name="OP">ADD</field>
                 <value name="A">
-                  <block type="variables_get">
-                    <field name="VAR">横</field>
+                  <block type="variables_get" id="w7u{E!-FiQVCq4Dq!S~6">
+                    <field name="VAR" id=";DOk=!e~?GqX@k28ZN8O">横</field>
                   </block>
                 </value>
                 <value name="B">
-                  <block type="math_arithmetic">
+                  <block type="math_arithmetic" id="vY/|.N*.*NH[+N1Ih.Q+">
                     <field name="OP">MULTIPLY</field>
                     <value name="A">
-                      <block type="variables_get">
-                        <field name="VAR">長さ</field>
+                      <block type="variables_get" id="t}6?Mhz]_UP+u|{.iAF/">
+                        <field name="VAR" id="TV1I)BK3,A.S:WI(01dX">長さ</field>
                       </block>
                     </value>
                     <value name="B">
-                      <block type="math_trig">
+                      <block type="math_trig" id="wfwdgz6w@oy:/T#MV=9r">
                         <field name="OP">COS</field>
                         <value name="NUM">
-                          <block type="variables_get">
-                            <field name="VAR">角</field>
+                          <block type="variables_get" id="BwfyLu#*O=^Wj}.#{22h">
+                            <field name="VAR" id="IMi:#c6+kC,1h(v~Xh34">角</field>
                           </block>
                         </value>
                       </block>
@@ -197,30 +197,30 @@
               </block>
             </value>
             <next>
-              <block type="variables_set">
-                <field name="VAR">次の縦</field>
+              <block type="variables_set" id="rTYMpKPEwJNgQzfQby#U">
+                <field name="VAR" id="85s18.8L1R:vmD.36fEE">次の縦</field>
                 <value name="VALUE">
-                  <block type="math_arithmetic">
+                  <block type="math_arithmetic" id="]P[(GvW_n=qh1d;jBHW0">
                     <field name="OP">ADD</field>
                     <value name="A">
-                      <block type="variables_get">
-                        <field name="VAR">縦</field>
+                      <block type="variables_get" id="Qzx#J!sfxFHCosybO2lD">
+                        <field name="VAR" id="+p@@@)}AYHeCVNL`x3mJ">縦</field>
                       </block>
                     </value>
                     <value name="B">
-                      <block type="math_arithmetic">
+                      <block type="math_arithmetic" id="TAQ$ncY19`o(q^sa|dxi">
                         <field name="OP">MULTIPLY</field>
                         <value name="A">
-                          <block type="variables_get">
-                            <field name="VAR">長さ</field>
+                          <block type="variables_get" id="z8b.zMaU1Kut%~K(p2gy">
+                            <field name="VAR" id="TV1I)BK3,A.S:WI(01dX">長さ</field>
                           </block>
                         </value>
                         <value name="B">
-                          <block type="math_trig">
+                          <block type="math_trig" id="An8+0w8^#@QX*LA^AZ*)">
                             <field name="OP">SIN</field>
                             <value name="NUM">
-                              <block type="variables_get">
-                                <field name="VAR">角</field>
+                              <block type="variables_get" id="sgHw96P!cJq%)kPw2PTQ">
+                                <field name="VAR" id="IMi:#c6+kC,1h(v~Xh34">角</field>
                               </block>
                             </value>
                           </block>
@@ -230,52 +230,52 @@
                   </block>
                 </value>
                 <next>
-                  <block type="bookcover_line">
+                  <block type="bookcover_line" id="3_Cxm,bv^ID9aO#kj;uk">
                     <value name="x1">
-                      <block type="variables_get">
-                        <field name="VAR">横</field>
+                      <block type="variables_get" id="sujq-S;U@G;bX/%np[+9">
+                        <field name="VAR" id=";DOk=!e~?GqX@k28ZN8O">横</field>
                       </block>
                     </value>
                     <value name="y1">
-                      <block type="variables_get">
-                        <field name="VAR">縦</field>
+                      <block type="variables_get" id="F2!z=MK5+LaK;G{cGp%Y">
+                        <field name="VAR" id="+p@@@)}AYHeCVNL`x3mJ">縦</field>
                       </block>
                     </value>
                     <value name="x2">
-                      <block type="variables_get">
-                        <field name="VAR">次の横</field>
+                      <block type="variables_get" id="STOs!#TDGk3;nc~5U.hp">
+                        <field name="VAR" id="9EiZW0~Nq}s.#UBMaN+[">次の横</field>
                       </block>
                     </value>
                     <value name="y2">
-                      <block type="variables_get">
-                        <field name="VAR">次の縦</field>
+                      <block type="variables_get" id="ZcM]q+@lM](LElOMJih?">
+                        <field name="VAR" id="85s18.8L1R:vmD.36fEE">次の縦</field>
                       </block>
                     </value>
                     <next>
-                      <block type="controls_forEach">
-                        <field name="VAR">各枝</field>
+                      <block type="controls_forEach" id="`[AlR4nQo[`UfeZZl92]">
+                        <field name="VAR" id="Ej]c7Ce`RlrIWqpv,|EC">各枝</field>
                         <value name="LIST">
-                          <block type="variables_get">
-                            <field name="VAR">枝</field>
+                          <block type="variables_get" id="DdyK4:5?VE92~|hn5#0B">
+                            <field name="VAR" id="P#OEfS9gnGIdfgWe$FxA">枝</field>
                           </block>
                         </value>
                         <statement name="DO">
-                          <block type="variables_set">
-                            <field name="VAR">比</field>
+                          <block type="variables_set" id=")F{rF9TZxuVt`#aTbI!L">
+                            <field name="VAR" id="Y=?Ps$ybLp3mDFrw=#kU">比</field>
                             <value name="VALUE">
-                              <block type="lists_getIndex">
+                              <block type="lists_getIndex" id="~k[vTc-3sJVl/SqthJ6@">
                                 <mutation statement="false" at="false"></mutation>
                                 <field name="MODE">GET</field>
                                 <field name="WHERE">FIRST</field>
                                 <value name="VALUE">
-                                  <block type="variables_get">
-                                    <field name="VAR">各枝</field>
+                                  <block type="variables_get" id="P9{E*Y$%f?fuMA8sFClI">
+                                    <field name="VAR" id="Ej]c7Ce`RlrIWqpv,|EC">各枝</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
                             <next>
-                              <block type="procedures_callnoreturn" inline="false">
+                              <block type="procedures_callnoreturn" id="1d`l^UMlIYm}-gHOQe(k" inline="false">
                                 <mutation name="木を描く">
                                   <arg name="残り"></arg>
                                   <arg name="横"></arg>
@@ -284,42 +284,42 @@
                                   <arg name="角"></arg>
                                 </mutation>
                                 <value name="ARG0">
-                                  <block type="math_arithmetic">
+                                  <block type="math_arithmetic" id="*+3BHcxRI7N#ix4k}YsI">
                                     <field name="OP">MINUS</field>
                                     <value name="A">
-                                      <block type="variables_get">
-                                        <field name="VAR">残り</field>
+                                      <block type="variables_get" id="0[}GHdjj|k[)vH},C?b$">
+                                        <field name="VAR" id="GRQ=$-S)^rteZCIy1C-x">残り</field>
                                       </block>
                                     </value>
                                     <value name="B">
-                                      <block type="math_number">
+                                      <block type="math_number" id="Yjhh1g@U4k)8NF`.cv?Q">
                                         <field name="NUM">1</field>
                                       </block>
                                     </value>
                                   </block>
                                 </value>
                                 <value name="ARG1">
-                                  <block type="math_arithmetic">
+                                  <block type="math_arithmetic" id="igg(k5HS4`r%$AOB[uo6">
                                     <field name="OP">ADD</field>
                                     <value name="A">
-                                      <block type="math_arithmetic">
+                                      <block type="math_arithmetic" id="?[R7`#){yo,=V-ZzbR+G">
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
-                                          <block type="variables_get">
-                                            <field name="VAR">横</field>
+                                          <block type="variables_get" id=")%~#*r5]F)3ONGj,]rKj">
+                                            <field name="VAR" id=";DOk=!e~?GqX@k28ZN8O">横</field>
                                           </block>
                                         </value>
                                         <value name="B">
-                                          <block type="math_arithmetic">
+                                          <block type="math_arithmetic" id="2,aP??4/CE;Mz/08]yQc">
                                             <field name="OP">MINUS</field>
                                             <value name="A">
-                                              <block type="math_number">
+                                              <block type="math_number" id="lFAa9ZBNU1X(=4@ViUd.">
                                                 <field name="NUM">1</field>
                                               </block>
                                             </value>
                                             <value name="B">
-                                              <block type="variables_get">
-                                                <field name="VAR">比</field>
+                                              <block type="variables_get" id="KZk%?^Hz|smPbLT@G:2i">
+                                                <field name="VAR" id="Y=?Ps$ybLp3mDFrw=#kU">比</field>
                                               </block>
                                             </value>
                                           </block>
@@ -327,16 +327,16 @@
                                       </block>
                                     </value>
                                     <value name="B">
-                                      <block type="math_arithmetic">
+                                      <block type="math_arithmetic" id="n)/0wL#FaVqD`e!+*BCL">
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
-                                          <block type="variables_get">
-                                            <field name="VAR">次の横</field>
+                                          <block type="variables_get" id="CjtLZ4@3f.(OiT~LR:ss">
+                                            <field name="VAR" id="9EiZW0~Nq}s.#UBMaN+[">次の横</field>
                                           </block>
                                         </value>
                                         <value name="B">
-                                          <block type="variables_get">
-                                            <field name="VAR">比</field>
+                                          <block type="variables_get" id="4a/XBoxbbTMO`$r(U+{v">
+                                            <field name="VAR" id="Y=?Ps$ybLp3mDFrw=#kU">比</field>
                                           </block>
                                         </value>
                                       </block>
@@ -344,27 +344,27 @@
                                   </block>
                                 </value>
                                 <value name="ARG2">
-                                  <block type="math_arithmetic">
+                                  <block type="math_arithmetic" id="[8d(](__Uj!GRv0rbmAc">
                                     <field name="OP">ADD</field>
                                     <value name="A">
-                                      <block type="math_arithmetic">
+                                      <block type="math_arithmetic" id="p:|)4)fLdvig8x`RiZ?%">
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
-                                          <block type="variables_get">
-                                            <field name="VAR">縦</field>
+                                          <block type="variables_get" id="m5;I1k/HriNfAIj!.#eh">
+                                            <field name="VAR" id="+p@@@)}AYHeCVNL`x3mJ">縦</field>
                                           </block>
                                         </value>
                                         <value name="B">
-                                          <block type="math_arithmetic">
+                                          <block type="math_arithmetic" id="_A-IZM*D+Rp}_UZ1d$7o">
                                             <field name="OP">MINUS</field>
                                             <value name="A">
-                                              <block type="math_number">
+                                              <block type="math_number" id="8IWP]ZS1HFLRU|Wda9I`">
                                                 <field name="NUM">1</field>
                                               </block>
                                             </value>
                                             <value name="B">
-                                              <block type="variables_get">
-                                                <field name="VAR">比</field>
+                                              <block type="variables_get" id="S(((vVa{L6AO~a[*k}8R">
+                                                <field name="VAR" id="Y=?Ps$ybLp3mDFrw=#kU">比</field>
                                               </block>
                                             </value>
                                           </block>
@@ -372,16 +372,16 @@
                                       </block>
                                     </value>
                                     <value name="B">
-                                      <block type="math_arithmetic">
+                                      <block type="math_arithmetic" id="xHg]@@@$6`hSpqTuqbLX">
                                         <field name="OP">MULTIPLY</field>
                                         <value name="A">
-                                          <block type="variables_get">
-                                            <field name="VAR">次の縦</field>
+                                          <block type="variables_get" id="m]Cf+HBo%*{pJrvl2}Mt">
+                                            <field name="VAR" id="85s18.8L1R:vmD.36fEE">次の縦</field>
                                           </block>
                                         </value>
                                         <value name="B">
-                                          <block type="variables_get">
-                                            <field name="VAR">比</field>
+                                          <block type="variables_get" id="kDYfTJ#$*u|,M#0]|iWV">
+                                            <field name="VAR" id="Y=?Ps$ybLp3mDFrw=#kU">比</field>
                                           </block>
                                         </value>
                                       </block>
@@ -389,25 +389,25 @@
                                   </block>
                                 </value>
                                 <value name="ARG3">
-                                  <block type="math_arithmetic">
+                                  <block type="math_arithmetic" id="zfkzC.?hUkH3s5+`Ca9:">
                                     <field name="OP">MULTIPLY</field>
                                     <value name="A">
-                                      <block type="variables_get">
-                                        <field name="VAR">長さ</field>
+                                      <block type="variables_get" id="6.@1u;xbV`vNnfgN(O72">
+                                        <field name="VAR" id="TV1I)BK3,A.S:WI(01dX">長さ</field>
                                       </block>
                                     </value>
                                     <value name="B">
-                                      <block type="lists_getIndex">
+                                      <block type="lists_getIndex" id="Jhk(rqdB.uC4_Zpr=lsr">
                                         <mutation statement="false" at="true"></mutation>
                                         <field name="MODE">GET</field>
                                         <field name="WHERE">FROM_START</field>
                                         <value name="VALUE">
-                                          <block type="variables_get">
-                                            <field name="VAR">各枝</field>
+                                          <block type="variables_get" id=".HVqC%NEXQ^l|0{/q80K">
+                                            <field name="VAR" id="Ej]c7Ce`RlrIWqpv,|EC">各枝</field>
                                           </block>
                                         </value>
                                         <value name="AT">
-                                          <block type="math_number">
+                                          <block type="math_number" id="M]N2:6|Z)DfcN^u]!Ni.">
                                             <field name="NUM">2</field>
                                           </block>
                                         </value>
@@ -416,25 +416,25 @@
                                   </block>
                                 </value>
                                 <value name="ARG4">
-                                  <block type="math_arithmetic">
+                                  <block type="math_arithmetic" id="Nq.#@1]mbt}JaS5{m}KG">
                                     <field name="OP">ADD</field>
                                     <value name="A">
-                                      <block type="variables_get">
-                                        <field name="VAR">角</field>
+                                      <block type="variables_get" id="gD.#px(@~p:~?o(N28CD">
+                                        <field name="VAR" id="IMi:#c6+kC,1h(v~Xh34">角</field>
                                       </block>
                                     </value>
                                     <value name="B">
-                                      <block type="lists_getIndex">
+                                      <block type="lists_getIndex" id="./P`Fg2YiAAD#jbuCvbb">
                                         <mutation statement="false" at="true"></mutation>
                                         <field name="MODE">GET</field>
                                         <field name="WHERE">FROM_START</field>
                                         <value name="VALUE">
-                                          <block type="variables_get">
-                                            <field name="VAR">各枝</field>
+                                          <block type="variables_get" id="3cG+gqIU|FPw:m?=lKVy">
+                                            <field name="VAR" id="Ej]c7Ce`RlrIWqpv,|EC">各枝</field>
                                           </block>
                                         </value>
                                         <value name="AT">
-                                          <block type="math_number">
+                                          <block type="math_number" id="_}A|~pvS^,:SOp3Nja7G">
                                             <field name="NUM">3</field>
                                           </block>
                                         </value>
@@ -457,86 +457,94 @@
       </block>
     </statement>
   </block>
-  <block type="bookcover_card_frame" x="10" y="1024">
+  <block type="bookcover_card_frame" id="NCY*Nk,26-_4j#T|%Ffd" x="11" y="1026">
     <value name="PAPER_SPEC">
-      <block type="bookcover_cardspec">
+      <block type="bookcover_cardspec" id="Irt5{B6.Y?l6JR.Y/u)@">
         <field name="CARDSPEC">エーワン F8A4-5</field>
       </block>
     </value>
     <statement name="DO">
-      <block type="bookcover_stroke_opacity">
+      <block type="bookcover_stroke_opacity" id="Dh)PfwuHwIOP]~6rPsow">
         <value name="opacity">
-          <block type="math_number">
+          <block type="math_number" id="np6M6Kv6AQl!.]/*!rwk">
             <field name="NUM">0.5</field>
           </block>
         </value>
         <next>
-          <block type="bookcover_stroke">
+          <block type="bookcover_stroke" id="?cIR`(JP:{HIp4_P/sDI">
             <value name="COLOUR">
-              <block type="bookcover_none"></block>
+              <block type="bookcover_none" id="E3Y+c^hcW]xJ6_.(%RxN"></block>
             </value>
             <next>
-              <block type="variables_set">
-                <field name="VAR">枝</field>
+              <block type="variables_set" id="?|`|8T{tYV%mz@*}BFtD">
+                <field name="VAR" id="P#OEfS9gnGIdfgWe$FxA">枝</field>
                 <value name="VALUE">
-                  <block type="lists_create_with">
+                  <block type="lists_create_with" id="X9w*^0~Wh)wi)VdR|-(m">
                     <mutation items="3"></mutation>
                     <value name="ADD0">
-                      <block type="lists_create_with" inline="true">
+                      <block type="lists_create_with" id="eYkFT?]$P%Y9hi[X;9{s" inline="true">
                         <mutation items="3"></mutation>
                         <value name="ADD0">
-                          <block type="math_number">
+                          <block type="math_number" id="IM,#t]-`^m,0=kU}G*=h">
                             <field name="NUM">1</field>
                           </block>
                         </value>
                         <value name="ADD1">
-                          <block type="math_number">
+                          <block type="math_number" id="Q6)pvmT)m`BL(=ZuBVCa">
                             <field name="NUM">0.7</field>
+                            <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                           </block>
                         </value>
                         <value name="ADD2">
-                          <block type="math_number">
+                          <block type="math_number" id="]Zlw5X{PkGns;vo#3R}8">
                             <field name="NUM">0</field>
+                            <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                           </block>
                         </value>
                       </block>
                     </value>
                     <value name="ADD1">
-                      <block type="lists_create_with" inline="true">
+                      <block type="lists_create_with" id="{Aj-6[h4UL6EY.*Y5l;V" inline="true">
                         <mutation items="3"></mutation>
                         <value name="ADD0">
-                          <block type="math_number">
+                          <block type="math_number" id="`d_$z2c]UfL({?904FgM">
                             <field name="NUM">0.45</field>
+                            <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                           </block>
                         </value>
                         <value name="ADD1">
-                          <block type="math_number">
+                          <block type="math_number" id="b/N|V+xT]Nd/yga{XSZE">
                             <field name="NUM">0.5</field>
+                            <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                           </block>
                         </value>
                         <value name="ADD2">
-                          <block type="math_number">
+                          <block type="math_number" id="H0LT3AD2L(K0=Bji1rRd">
                             <field name="NUM">-80</field>
+                            <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                           </block>
                         </value>
                       </block>
                     </value>
                     <value name="ADD2">
-                      <block type="lists_create_with" inline="true">
+                      <block type="lists_create_with" id="D6U02u8fn=)^T=Wi~b|Z" inline="true">
                         <mutation items="3"></mutation>
                         <value name="ADD0">
-                          <block type="math_number">
+                          <block type="math_number" id="TTBp(npV^:/K#FQ0+Mm.">
                             <field name="NUM">0.55</field>
+                            <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                           </block>
                         </value>
                         <value name="ADD1">
-                          <block type="math_number">
+                          <block type="math_number" id="cgtN2kp$yx5J/7(2bd^N">
                             <field name="NUM">0.45</field>
+                            <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                           </block>
                         </value>
                         <value name="ADD2">
-                          <block type="math_number">
+                          <block type="math_number" id="i7bpe{8lbw/#60sRvW$S">
                             <field name="NUM">75</field>
+                            <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                           </block>
                         </value>
                       </block>
@@ -544,33 +552,35 @@
                   </block>
                 </value>
                 <next>
-                  <block type="bookcover_foreachcard">
-                    <field name="CARD">カード</field>
-                    <field name="COUNTER">カウンター</field>
+                  <block type="bookcover_foreachcard" id="SK^},jvHw;Noxg^J|U#s">
+                    <field name="CARD" id="dU{e,@X8YOR-HlAO;/#K">カード</field>
+                    <field name="COUNTER" id="XPOe%EO;aCl9J2Xp~?UO">カウンター</field>
                     <field name="CLIP">TRUE</field>
                     <field name="FRAME">TRUE</field>
                     <field name="MARGIN">1</field>
+                    <comment pinned="false" h="80" w="160">最後に枠表示の✓を消すのを忘れないで</comment>
                     <statement name="DO">
-                      <block type="variables_set">
-                        <field name="VAR">今の色</field>
+                      <block type="variables_set" id="H#jF1a0`4bxMsKW0:gs2">
+                        <field name="VAR" id="+D.?6sgCJruOHF6b%wdL">今の色</field>
                         <value name="VALUE">
-                          <block type="bookcover_rotate_h">
+                          <block type="bookcover_rotate_h" id="m^l8.SdMvt-X9bw-mP}t">
                             <value name="colour">
-                              <block type="bookcover_colour">
+                              <block type="bookcover_colour" id=")-]=-jpZy6Mg;b6dsHb2">
                                 <field name="COLOUR">#ff0000</field>
                               </block>
                             </value>
                             <value name="angle">
-                              <block type="math_arithmetic">
+                              <block type="math_arithmetic" id="L:S+-T=RC:TR38Xgo,{y">
                                 <field name="OP">MULTIPLY</field>
                                 <value name="A">
-                                  <block type="bookcover_angle">
+                                  <block type="bookcover_angle" id="|+!)DwRbxohm;Wl]9@3|">
                                     <field name="angle">45</field>
+                                    <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                                   </block>
                                 </value>
                                 <value name="B">
-                                  <block type="variables_get">
-                                    <field name="VAR">カウンター</field>
+                                  <block type="variables_get" id="Lt]28QBM#NeUb?R0WqaG">
+                                    <field name="VAR" id="XPOe%EO;aCl9J2Xp~?UO">カウンター</field>
                                   </block>
                                 </value>
                               </block>
@@ -578,56 +588,56 @@
                           </block>
                         </value>
                         <next>
-                          <block type="bookcover_fill">
+                          <block type="bookcover_fill" id="bUTY%6PoprtVPqy)hb/?">
                             <value name="COLOUR">
-                              <block type="variables_get">
-                                <field name="VAR">今の色</field>
+                              <block type="variables_get" id="_1,MhI:+?}s]9`$ar%rb">
+                                <field name="VAR" id="+D.?6sgCJruOHF6b%wdL">今の色</field>
                               </block>
                             </value>
                             <next>
-                              <block type="procedures_callnoreturn">
+                              <block type="procedures_callnoreturn" id="^3{[dMUo-ne1c.xy`ZY`">
                                 <mutation name="名前を書く"></mutation>
                                 <next>
-                                  <block type="lists_setIndex">
+                                  <block type="lists_setIndex" id="`_pTHFTrStGPwT=!{qHn">
                                     <mutation at="true"></mutation>
                                     <field name="MODE">SET</field>
                                     <field name="WHERE">FROM_START</field>
                                     <value name="LIST">
-                                      <block type="lists_getIndex">
+                                      <block type="lists_getIndex" id="IbDY`^fC`0bPr_6yuLe$">
                                         <mutation statement="false" at="false"></mutation>
                                         <field name="MODE">GET</field>
                                         <field name="WHERE">FIRST</field>
                                         <value name="VALUE">
-                                          <block type="variables_get">
-                                            <field name="VAR">枝</field>
+                                          <block type="variables_get" id="EIjW*-P#ZfOAWDzTkVip">
+                                            <field name="VAR" id="P#OEfS9gnGIdfgWe$FxA">枝</field>
                                           </block>
                                         </value>
                                       </block>
                                     </value>
                                     <value name="AT">
-                                      <block type="math_number">
+                                      <block type="math_number" id="ILJz?3#n,+#{*MY+3hU~">
                                         <field name="NUM">3</field>
                                       </block>
                                     </value>
                                     <value name="TO">
-                                      <block type="math_arithmetic">
+                                      <block type="math_arithmetic" id="*jAGQ;a5aOG#+;d|Ul8T">
                                         <field name="OP">ADD</field>
                                         <value name="A">
-                                          <block type="math_number">
+                                          <block type="math_number" id="0b9:;=L9:d![ICyYl#mo">
                                             <field name="NUM">-16</field>
                                           </block>
                                         </value>
                                         <value name="B">
-                                          <block type="math_arithmetic">
+                                          <block type="math_arithmetic" id="`}r]=djn0MWv`-q,G87}">
                                             <field name="OP">MULTIPLY</field>
                                             <value name="A">
-                                              <block type="math_number">
+                                              <block type="math_number" id="icbT.F.oF-O[EG9pBXq]">
                                                 <field name="NUM">3</field>
                                               </block>
                                             </value>
                                             <value name="B">
-                                              <block type="variables_get">
-                                                <field name="VAR">カウンター</field>
+                                              <block type="variables_get" id="DiJ`?|@X9MOG]vzY?riJ">
+                                                <field name="VAR" id="XPOe%EO;aCl9J2Xp~?UO">カウンター</field>
                                               </block>
                                             </value>
                                           </block>
@@ -635,23 +645,24 @@
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="bookcover_stroke">
+                                      <block type="bookcover_stroke" id="$L#%R8AA.3IE+{1{`#[L">
                                         <value name="COLOUR">
-                                          <block type="bookcover_rotate_h">
+                                          <block type="bookcover_rotate_h" id="-x@%FgbAPjQQRYK`]RgG">
                                             <value name="colour">
-                                              <block type="variables_get">
-                                                <field name="VAR">今の色</field>
+                                              <block type="variables_get" id="w~ywn`E=xr^Y;0M7{ln9">
+                                                <field name="VAR" id="+D.?6sgCJruOHF6b%wdL">今の色</field>
                                               </block>
                                             </value>
                                             <value name="angle">
-                                              <block type="bookcover_angle">
+                                              <block type="bookcover_angle" id="@l^SPfs.Fmv:Y7)QsN!s">
                                                 <field name="angle">180</field>
+                                                <comment pinned="false" h="80" w="160">ここを変えてみよう</comment>
                                               </block>
                                             </value>
                                           </block>
                                         </value>
                                         <next>
-                                          <block type="procedures_callnoreturn" inline="true">
+                                          <block type="procedures_callnoreturn" id="s|=ddUhjW0B(t~%iV5n[" inline="true">
                                             <mutation name="木を描く">
                                               <arg name="残り"></arg>
                                               <arg name="横"></arg>
@@ -660,34 +671,34 @@
                                               <arg name="角"></arg>
                                             </mutation>
                                             <value name="ARG0">
-                                              <block type="math_number">
+                                              <block type="math_number" id="=wkI7Z6/cM(N}oS4EqEd">
                                                 <field name="NUM">5</field>
                                               </block>
                                             </value>
                                             <value name="ARG1">
-                                              <block type="math_number">
+                                              <block type="math_number" id="osr1nm(6^mYh@vsru.i?">
                                                 <field name="NUM">70</field>
                                               </block>
                                             </value>
                                             <value name="ARG2">
-                                              <block type="math_number">
+                                              <block type="math_number" id="m5|e3(z.}@3xyi9U?j*!">
                                                 <field name="NUM">40</field>
                                               </block>
                                             </value>
                                             <value name="ARG3">
-                                              <block type="math_number">
+                                              <block type="math_number" id="|ggcTh~0qiBA`8g{09;?">
                                                 <field name="NUM">12</field>
                                               </block>
                                             </value>
                                             <value name="ARG4">
-                                              <block type="math_number">
+                                              <block type="math_number" id=",8M%Y]x5kr=B4#W7px@b">
                                                 <field name="NUM">-60</field>
                                               </block>
                                             </value>
                                             <next>
-                                              <block type="bookcover_stroke">
+                                              <block type="bookcover_stroke" id="NVjj)@X[k?)hR7k(m%[5">
                                                 <value name="COLOUR">
-                                                  <block type="bookcover_none"></block>
+                                                  <block type="bookcover_none" id="R{L!(Z:FMax?*!42jb(i"></block>
                                                 </value>
                                               </block>
                                             </next>
