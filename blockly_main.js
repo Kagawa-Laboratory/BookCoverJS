@@ -558,11 +558,11 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((data) => {
             //           console.log("success", data);
             workspace.clear();
-            if (downloadUrl.endsWith(".json")) {
+            try { // JSON 形式であると仮定する
               const json = JSON.parse(data);
               Blockly.serialization.workspaces.load(json, workspace);
               return;
-            } else /* if (downloadUrl.endsWith(".xml")) */ {
+            } catch (e) {
               const xml = Blockly.utils.xml.textToDom(data);
               Blockly.Xml.domToWorkspace(xml, workspace);
             }
