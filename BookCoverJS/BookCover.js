@@ -117,21 +117,24 @@ export var BookCover = (function () {
     },
 
     mySprintfX: function(w, num) {
-       var str = num.toString(16);
-       var len = str.length;
-       if (len < w) {
-          str = "0".repeat(w - len) + str;
-       }
-       return str;
+       return num.toString(16).toUpperCase().padStart(w, '0');
+    },
+
+    toColor: function(arg) {
+        if (Number.isFinite(arg)) {
+            arg = Math.floor(arg);
+            if (arg > 0xffffff) arg = 0xffffff;
+            else if (arg < 0) arg = 0;
+            return `#${this.mySprintfX(6, arg)}`;
+        }
+        return arg;
     },
 
     stroke: function(arg) {
         if (arg == null || arg == "none") {
             this.noStroke(); return;
         }
-        if (arg > 0xffffff) arg = 0xffffff;
-        else if (arg < 0) arg = 0;
-        this.__stroke = "#" + this.mySprintfX(6, arg);
+        this.__stroke = this.toColor(arg);
     },
 
     noStroke: function() {
@@ -146,9 +149,7 @@ export var BookCover = (function () {
         if (arg == null || arg == "none") {
             this.noFill(); return;
         }
-        if (arg > 0xffffff) arg = 0xffffff;
-        else if (arg < 0) arg = 0;
-        this.__fill = "#" + this.mySprintfX(6, arg);
+        this.__fill = this.toColor(arg);        
     },
 
     noFill: function() {
