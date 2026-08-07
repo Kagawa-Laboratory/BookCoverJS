@@ -1,174 +1,174 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable type="">横</variable>
-    <variable type="">縦</variable>
-    <variable type="">y</variable>
-    <variable type="">x</variable>
+    <variable id="{E7iiY9SE4gCvk`K[-ew">横</variable>
+    <variable id="c0|o:T,|)vhb*sG@Lq]P">縦</variable>
+    <variable id="oDjmqYt;OcAO)6TV$2A*">y</variable>
+    <variable id="MIK/k01?fvE~?WxeZ?/a">x</variable>
   </variables>
-  <block type="bookcover_frame">
+  <block type="bookcover_frame" id="VYT_(@$sWe={iSw3rAM:" x="10" y="10">
     <field name="frame">TRUE</field>
     <statement name="statements">
-      <block type="bookcover_guide_bars">
+      <block type="bookcover_guide_bars" id="mrx8}!#5ol~5(nww46:~">
         <value name="width">
-          <block type="math_number">
+          <block type="math_number" id=":oF[^jzQJ]%dniyV/0c;">
             <field name="NUM">0.5</field>
           </block>
         </value>
         <next>
-          <block type="bookcover_fill_opacity">
+          <block type="bookcover_fill_opacity" id="wUZ1BWx7u+Tp?Hk9g8qM">
             <value name="opacity">
-              <block type="math_number">
+              <block type="math_number" id="+@|khzK/VC/}?^1Hw+[,">
                 <field name="NUM">1</field>
               </block>
             </value>
             <next>
-              <block type="variables_set">
-                <field name="VAR" variabletype="">横</field>
+              <block type="variables_set" id="os:S:d(*,%=[|Ikjn}HM">
+                <field name="VAR" id="{E7iiY9SE4gCvk`K[-ew">横</field>
                 <value name="VALUE">
-                  <block type="math_number">
+                  <block type="math_number" id="*jsNFA_z8yu%dp5Tds]`">
                     <field name="NUM">10</field>
                   </block>
                 </value>
                 <next>
-                  <block type="variables_set">
-                    <field name="VAR" variabletype="">縦</field>
+                  <block type="variables_set" id="I|$l-@|qwp:3e=fY~$0)">
+                    <field name="VAR" id="c0|o:T,|)vhb*sG@Lq]P">縦</field>
                     <value name="VALUE">
-                      <block type="math_number">
+                      <block type="math_number" id="D8T0)Hy,s7LX$,AiDxb#">
                         <field name="NUM">10</field>
                       </block>
                     </value>
                     <next>
-                      <block type="controls_for">
-                        <field name="VAR" variabletype="">y</field>
+                      <block type="controls_for" id="@?T4dXsz;4?5[;WKtMCw">
+                        <field name="VAR" id="oDjmqYt;OcAO)6TV$2A*">y</field>
                         <value name="FROM">
-                          <block type="math_number">
+                          <block type="math_number" id="D{/)U1ZLa]_l3=f)SN*k">
                             <field name="NUM">30</field>
                           </block>
                         </value>
                         <value name="TO">
-                          <block type="math_arithmetic">
+                          <block type="math_arithmetic" id="MiD1CuZRf{u!01i8kB:a">
                             <field name="OP">MINUS</field>
                             <value name="A">
-                              <block type="math_number">
+                              <block type="math_number" id="86bIB2S1U.ZtPoI5b%$N">
                                 <field name="NUM">180</field>
                               </block>
                             </value>
                             <value name="B">
-                              <block type="variables_get">
-                                <field name="VAR" variabletype="">縦</field>
+                              <block type="variables_get" id="k5;HG??={YQ3pu~*XA[,">
+                                <field name="VAR" id="c0|o:T,|)vhb*sG@Lq]P">縦</field>
                               </block>
                             </value>
                           </block>
                         </value>
                         <value name="BY">
-                          <block type="variables_get">
-                            <field name="VAR" variabletype="">縦</field>
+                          <block type="variables_get" id="FGNwfXJ{?0V9dWuELPAf">
+                            <field name="VAR" id="c0|o:T,|)vhb*sG@Lq]P">縦</field>
                           </block>
                         </value>
                         <statement name="DO">
-                          <block type="controls_for">
-                            <field name="VAR" variabletype="">x</field>
+                          <block type="controls_for" id="nTXM$fC|bMUEY`7WTV@(">
+                            <field name="VAR" id="MIK/k01?fvE~?WxeZ?/a">x</field>
                             <value name="FROM">
-                              <block type="math_number">
+                              <block type="math_number" id="Ljj5zA@$awTyYvNUM/c`">
                                 <field name="NUM">20</field>
                               </block>
                             </value>
                             <value name="TO">
-                              <block type="math_arithmetic">
+                              <block type="math_arithmetic" id="8LjowG`uKZ!S`4yKtUOG">
                                 <field name="OP">MINUS</field>
                                 <value name="A">
-                                  <block type="math_number">
+                                  <block type="math_number" id="{7FzXQhgXTbmtb@vCqi#">
                                     <field name="NUM">274</field>
                                   </block>
                                 </value>
                                 <value name="B">
-                                  <block type="variables_get">
-                                    <field name="VAR" variabletype="">横</field>
+                                  <block type="variables_get" id="6YfXh,1!#sWW#eEo;*_S">
+                                    <field name="VAR" id="{E7iiY9SE4gCvk`K[-ew">横</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
                             <value name="BY">
-                              <block type="variables_get">
-                                <field name="VAR" variabletype="">横</field>
+                              <block type="variables_get" id="wQ6h-2%qQ0Udw:x%zZfh">
+                                <field name="VAR" id="{E7iiY9SE4gCvk`K[-ew">横</field>
                               </block>
                             </value>
                             <statement name="DO">
-                              <block type="controls_if">
+                              <block type="controls_if" id="/::}A1D*93A|(=4V4)|@">
                                 <value name="IF0">
-                                  <block type="logic_compare">
+                                  <block type="logic_compare" id="1M3;OJb)aMNg8#mvl{XR">
                                     <field name="OP">LTE</field>
                                     <value name="A">
-                                      <block type="bookcover_random_in_range">
+                                      <block type="bookcover_random_in_range" id="R[)Pw14k*zUGc9,2sKAd">
                                         <value name="min">
-                                          <block type="math_number">
+                                          <block type="math_number" id="wN4Jip(*z.~Rzx._QC}O">
                                             <field name="NUM">0</field>
                                           </block>
                                         </value>
                                         <value name="max">
-                                          <block type="math_number">
+                                          <block type="math_number" id="Y()eRYVMH:cN]HtXq|;_">
                                             <field name="NUM">1</field>
                                           </block>
                                         </value>
                                       </block>
                                     </value>
                                     <value name="B">
-                                      <block type="math_number">
+                                      <block type="math_number" id="!R|4LXNFZOy(iA^AmLs@">
                                         <field name="NUM">0.7</field>
                                       </block>
                                     </value>
                                   </block>
                                 </value>
                                 <statement name="DO0">
-                                  <block type="bookcover_fill">
+                                  <block type="bookcover_fill" id="1jhs5n^kW]x5MZAPb`oz">
                                     <value name="COLOUR">
-                                      <block type="bookcover_hsl360">
+                                      <block type="bookcover_hsl360" id="0zdidsSu1*}r4S1i*sbi">
                                         <value name="hue">
-                                          <block type="bookcover_random_in_range">
+                                          <block type="bookcover_random_in_range" id="_;QK(kWl/BEsxk|N#v]g">
                                             <value name="min">
-                                              <block type="bookcover_angle">
-                                                <field name="angle">0</field>
+                                              <block type="math_number" id=".E#JYAyYLz3[S4+j4O-#">
+                                                <field name="NUM">0</field>
                                               </block>
                                             </value>
                                             <value name="max">
-                                              <block type="bookcover_angle">
-                                                <field name="angle">359</field>
+                                              <block type="math_number" id="{{}4,zdN[7y,.l,$:,(6">
+                                                <field name="NUM">360</field>
                                               </block>
                                             </value>
                                           </block>
                                         </value>
                                         <value name="saturation">
-                                          <block type="math_number">
+                                          <block type="math_number" id="Jr.sEyb9/J^0.iC;VCkE">
                                             <field name="NUM">100</field>
                                           </block>
                                         </value>
                                         <value name="luminance">
-                                          <block type="math_number">
+                                          <block type="math_number" id="DfY`5~G~B?OSrmBO({iu">
                                             <field name="NUM">50</field>
                                           </block>
                                         </value>
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="bookcover_rect">
+                                      <block type="bookcover_rect" id="IboY(V7~WH`pg,j1|)8=">
                                         <value name="x">
-                                          <block type="variables_get">
-                                            <field name="VAR" variabletype="">x</field>
+                                          <block type="variables_get" id="c;l0jYz|X3WsNE.I~vLj">
+                                            <field name="VAR" id="MIK/k01?fvE~?WxeZ?/a">x</field>
                                           </block>
                                         </value>
                                         <value name="y">
-                                          <block type="variables_get">
-                                            <field name="VAR" variabletype="">y</field>
+                                          <block type="variables_get" id="oV+jvhT:_m$F!t9Y3/Xp">
+                                            <field name="VAR" id="oDjmqYt;OcAO)6TV$2A*">y</field>
                                           </block>
                                         </value>
                                         <value name="w">
-                                          <block type="variables_get">
-                                            <field name="VAR" variabletype="">横</field>
+                                          <block type="variables_get" id="!l9;b]r@}?yXu9E2kBr7">
+                                            <field name="VAR" id="{E7iiY9SE4gCvk`K[-ew">横</field>
                                           </block>
                                         </value>
                                         <value name="h">
-                                          <block type="variables_get">
-                                            <field name="VAR" variabletype="">縦</field>
+                                          <block type="variables_get" id="4H,.5%xz~(soP_/P$;mF">
+                                            <field name="VAR" id="c0|o:T,|)vhb*sG@Lq]P">縦</field>
                                           </block>
                                         </value>
                                       </block>

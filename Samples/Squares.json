@@ -271,19 +271,19 @@
                                                             "inputs": {
                                                               "min": {
                                                                 "block": {
-                                                                  "type": "bookcover_angle",
-                                                                  "id": "K4T_f@IcYr[/@$3VozuP",
+                                                                  "type": "math_number",
+                                                                  "id": ".E#JYAyYLz3[S4+j4O-#",
                                                                   "fields": {
-                                                                    "angle": 0
+                                                                    "NUM": 0
                                                                   }
                                                                 }
                                                               },
                                                               "max": {
                                                                 "block": {
-                                                                  "type": "bookcover_angle",
-                                                                  "id": "Au!co|2$QXsu?QqPJgX?",
+                                                                  "type": "math_number",
+                                                                  "id": "{{}4,zdN[7y,.l,$:,(6",
                                                                   "fields": {
-                                                                    "angle": 360
+                                                                    "NUM": 360
                                                                   }
                                                                 }
                                                               }
