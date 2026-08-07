@@ -1,9 +1,11 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable id="2y3K!?vee2lZvclmr_QB">i</variable>
+    <variable id="w7L.p!C0(|IN^A_vb$.K">x</variable>
+    <variable id="GG=KD;p.1G$p:hc5F+7U">y</variable>
+    <variable id="UqWutF0IX2Y.hKJ2`fha">長さ</variable>
   </variables>
-  <block type="bookcover_frame" id="6TP01yPwY$ks.|bi/]fi" x="10" y="10">
-    <field name="frame">TRUE</field>
+  <block type="bookcover_frame" id="6TP01yPwY$ks.|bi/]fi" x="0" y="0">
+    <field name="frame">FALSE</field>
     <statement name="statements">
       <block type="bookcover_rulers" id=")Evr[Y(R!PH2R^;Ej^?9">
         <field name="SIZE">BUNKO</field>
@@ -101,14 +103,40 @@
                                 <statement name="DO">
                                   <block type="bookcover_stroke" id="iiXk|`iAX4XmyQa~m3?9">
                                     <value name="COLOUR">
-                                      <block type="bookcover_colour" id="uN/FBWaj1EfF7#p8D*|]">
-                                        <field name="COLOUR">#ffffff</field>
+                                      <block type="bookcover_rotate_h" id="H1*]o{RFA/5IdK8_{4w@">
+                                        <value name="colour">
+                                          <shadow type="bookcover_colour" id="=n$m_0meT7(UwoZS_,{;">
+                                            <field name="COLOUR">#ff0000</field>
+                                          </shadow>
+                                          <block type="bookcover_colour" id="?id.m;])]KK^+eu+m6oR">
+                                            <field name="COLOUR">#ccccff</field>
+                                          </block>
+                                        </value>
+                                        <value name="angle">
+                                          <shadow type="bookcover_angle" id="-uhEK|7C?+hKnR]U*?WH">
+                                            <field name="angle">120</field>
+                                          </shadow>
+                                          <block type="bookcover_random_in_range" id=";wp8nxXMziKNwd)[aF!{">
+                                            <comment pinned="false" h="80" w="160">この辺りを変えてみよう</comment>
+                                            <value name="min">
+                                              <shadow type="math_number" id="KyfM19EAOurqy!D3g-RP">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="max">
+                                              <shadow type="math_number" id="):gla2S|[60J%}hc`}J?">
+                                                <field name="NUM">360</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
+                                        </value>
                                       </block>
                                     </value>
                                     <next>
                                       <block type="bookcover_stroke_weight" id="4OT$PkRy9-%#,Q(BD:00">
                                         <value name="width">
                                           <block type="bookcover_random_in_range" id="!SffI4i+Q(OehBD1$pJN">
+                                            <comment pinned="false" h="80" w="160">この辺りを変えてみよう</comment>
                                             <value name="min">
                                               <block type="math_number" id="`TW8oeUzXFHN_r|.z8#r">
                                                 <field name="NUM">0.2</field>
@@ -125,6 +153,7 @@
                                           <block type="bookcover_stroke_opacity" id="xalTTRI!]+X.%R0zNGN%">
                                             <value name="opacity">
                                               <block type="bookcover_random_in_range" id="1d7:jHUburU.O-^.5!K?">
+                                                <comment pinned="false" h="80" w="160">この辺りを変えてみよう</comment>
                                                 <value name="min">
                                                   <block type="math_number" id="w:EgjZd4t55-W,,t{Q[o">
                                                     <field name="NUM">0.5</field>
@@ -138,8 +167,13 @@
                                               </block>
                                             </value>
                                             <next>
-                                              <block type="bookcover_go" id="KHTA|l}hs}l$M,d63A2y">
-                                                <value name="x">
+                                              <block type="procedures_callnoreturn" id="w5o09k44Lb~IA3;au1o/" inline="true">
+                                                <mutation name="雪の結晶を描く">
+                                                  <arg name="x"></arg>
+                                                  <arg name="y"></arg>
+                                                  <arg name="長さ"></arg>
+                                                </mutation>
+                                                <value name="ARG0">
                                                   <block type="bookcover_random_in_range" id="w5,L$f`7[QuVSfy=(Nok">
                                                     <value name="min">
                                                       <block type="math_number" id="9n`9{Sa[@`e:B~0FBY]Q">
@@ -161,7 +195,7 @@
                                                     </value>
                                                   </block>
                                                 </value>
-                                                <value name="y">
+                                                <value name="ARG1">
                                                   <block type="bookcover_random_in_range" id="TRTGSl0@}t}yhROh9{,+">
                                                     <value name="min">
                                                       <block type="math_number" id="UV8a*kGB;GynwL:J`h0r">
@@ -183,194 +217,21 @@
                                                     </value>
                                                   </block>
                                                 </value>
-                                                <next>
-                                                  <block type="controls_repeat_ext" id=";~[g:Z-lVEIc8[?hki(;">
-                                                    <value name="TIMES">
-                                                      <block type="math_number" id="%`X~o$]A^^Z4jTq?VfAc">
-                                                        <field name="NUM">6</field>
-                                                      </block>
+                                                <value name="ARG2">
+                                                  <block type="bookcover_random_in_range" id="YzESvur~bMWA3x2L?k%M">
+                                                    <comment pinned="false" h="80" w="160">この辺りを変えてみよう</comment>
+                                                    <value name="min">
+                                                      <shadow type="math_number" id="LzYs0j|{G,$8ACQYtv#p">
+                                                        <field name="NUM">1</field>
+                                                      </shadow>
                                                     </value>
-                                                    <statement name="DO">
-                                                      <block type="variables_set" id="yb[enzfB+CdSNXQTaylx">
-                                                        <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
-                                                        <value name="VALUE">
-                                                          <block type="math_number" id="0kjQ#mlOLi-8:vYeu/wd">
-                                                            <field name="NUM">3</field>
-                                                          </block>
-                                                        </value>
-                                                        <next>
-                                                          <block type="controls_repeat_ext" id="bzzg0X7aDfI/;z2=Yc-1">
-                                                            <value name="TIMES">
-                                                              <block type="math_number" id="jl`YciB1eS;`tQUQOx08">
-                                                                <field name="NUM">3</field>
-                                                              </block>
-                                                            </value>
-                                                            <statement name="DO">
-                                                              <block type="bookcover_pen_down" id=".@5dM8IA0f]*6*r}PRH~">
-                                                                <next>
-                                                                  <block type="bookcover_forward" id="T{pStQndp;s{.9Wl),*G">
-                                                                    <value name="len">
-                                                                      <block type="variables_get" id="d7S)xCUS6t82Oh5?Y8L9">
-                                                                        <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
-                                                                      </block>
-                                                                    </value>
-                                                                    <next>
-                                                                      <block type="bookcover_turn" id="xBF#(pHGd.6:%;lns2,;">
-                                                                        <value name="angle">
-                                                                          <block type="bookcover_angle" id="X}+N6/NY#CdW3@xG*g#3">
-                                                                            <field name="angle">60</field>
-                                                                          </block>
-                                                                        </value>
-                                                                        <next>
-                                                                          <block type="bookcover_forward" id="@gU7NErCO,8yUYgLDDo:">
-                                                                            <value name="len">
-                                                                              <block type="variables_get" id="+:3ao(@R6`z^?+_]l,;i">
-                                                                                <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
-                                                                              </block>
-                                                                            </value>
-                                                                            <next>
-                                                                              <block type="bookcover_pen_up" id="fFTVT`mcWlOEiurv|/(Y">
-                                                                                <next>
-                                                                                  <block type="bookcover_turn" id="LF42tNzJVbma+@@gE0=l">
-                                                                                    <value name="angle">
-                                                                                      <block type="bookcover_angle" id="=Pu-a%)(J{Tv`skt^TXm">
-                                                                                        <field name="angle">180</field>
-                                                                                      </block>
-                                                                                    </value>
-                                                                                    <next>
-                                                                                      <block type="bookcover_forward" id="})kRsmzP%LDfyOQbsOW(">
-                                                                                        <value name="len">
-                                                                                          <block type="variables_get" id="/7H.TL^{WC4zGk]~)*}:">
-                                                                                            <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
-                                                                                          </block>
-                                                                                        </value>
-                                                                                        <next>
-                                                                                          <block type="bookcover_pen_down" id=",.Kua/mu~q)bBtu+4~M*">
-                                                                                            <next>
-                                                                                              <block type="bookcover_turn" id="CX8GTzH0Ib#0^^)NiI@n">
-                                                                                                <value name="angle">
-                                                                                                  <block type="bookcover_angle" id="/SO~j7;byG#VuWyycHkP">
-                                                                                                    <field name="angle">60</field>
-                                                                                                  </block>
-                                                                                                </value>
-                                                                                                <next>
-                                                                                                  <block type="bookcover_forward" id="]kvyS.y!|9y=g)1~W|##">
-                                                                                                    <value name="len">
-                                                                                                      <block type="variables_get" id="b2B![q!b[}i=,h.j%FYM">
-                                                                                                        <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
-                                                                                                      </block>
-                                                                                                    </value>
-                                                                                                    <next>
-                                                                                                      <block type="bookcover_pen_up" id="~/t;1w_l=]Aph,L{4NL?">
-                                                                                                        <next>
-                                                                                                          <block type="bookcover_turn" id="_@AhWDC;m!}P#IWBCK35">
-                                                                                                            <value name="angle">
-                                                                                                              <block type="bookcover_angle" id=",YEhUTbH-WMYszP3!?BH">
-                                                                                                                <field name="angle">180</field>
-                                                                                                              </block>
-                                                                                                            </value>
-                                                                                                            <next>
-                                                                                                              <block type="bookcover_forward" id="JriBQ[wxjhQOn-1UlYXa">
-                                                                                                                <value name="len">
-                                                                                                                  <block type="variables_get" id="%RNSnw-ar4`}M`+Zn,#[">
-                                                                                                                    <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
-                                                                                                                  </block>
-                                                                                                                </value>
-                                                                                                                <next>
-                                                                                                                  <block type="bookcover_turn" id="MItZE#-+T9m!zp5cq|bN">
-                                                                                                                    <value name="angle">
-                                                                                                                      <block type="bookcover_angle" id="ZmChi5s5_.;[kpndU$|w">
-                                                                                                                        <field name="angle">240</field>
-                                                                                                                      </block>
-                                                                                                                    </value>
-                                                                                                                  </block>
-                                                                                                                </next>
-                                                                                                              </block>
-                                                                                                            </next>
-                                                                                                          </block>
-                                                                                                        </next>
-                                                                                                      </block>
-                                                                                                    </next>
-                                                                                                  </block>
-                                                                                                </next>
-                                                                                              </block>
-                                                                                            </next>
-                                                                                          </block>
-                                                                                        </next>
-                                                                                      </block>
-                                                                                    </next>
-                                                                                  </block>
-                                                                                </next>
-                                                                              </block>
-                                                                            </next>
-                                                                          </block>
-                                                                        </next>
-                                                                      </block>
-                                                                    </next>
-                                                                  </block>
-                                                                </next>
-                                                              </block>
-                                                            </statement>
-                                                            <next>
-                                                              <block type="bookcover_pen_down" id="8RV7Zyb-hjFu.FAEU?Pz">
-                                                                <next>
-                                                                  <block type="bookcover_forward" id="MU8v9EW6CeQucTCmuxc^">
-                                                                    <value name="len">
-                                                                      <block type="variables_get" id="{7H#Gg-ZLW$:(D,L,7IY">
-                                                                        <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
-                                                                      </block>
-                                                                    </value>
-                                                                    <next>
-                                                                      <block type="bookcover_turn" id="G[AQj6~CCG*.L-5hi@c)">
-                                                                        <value name="angle">
-                                                                          <block type="bookcover_angle" id="KZcJh|J71jQ(B=#q4{s8">
-                                                                            <field name="angle">180</field>
-                                                                          </block>
-                                                                        </value>
-                                                                        <next>
-                                                                          <block type="bookcover_pen_up" id="Mq)rA.quB@%Ku#XdiGbc">
-                                                                            <next>
-                                                                              <block type="bookcover_forward" id="/DnWh[t`.o~LLjxORuTy">
-                                                                                <value name="len">
-                                                                                  <block type="math_arithmetic" id="JiB3yc*;ij/+4-oCC8xt">
-                                                                                    <field name="OP">MULTIPLY</field>
-                                                                                    <value name="A">
-                                                                                      <block type="variables_get" id="%(tQVp5H]7YS^F21*#HW">
-                                                                                        <field name="VAR" id="2y3K!?vee2lZvclmr_QB">i</field>
-                                                                                      </block>
-                                                                                    </value>
-                                                                                    <value name="B">
-                                                                                      <block type="math_number" id="[P=AM2?v}7E4p2#;~@PN">
-                                                                                        <field name="NUM">4</field>
-                                                                                      </block>
-                                                                                    </value>
-                                                                                  </block>
-                                                                                </value>
-                                                                                <next>
-                                                                                  <block type="bookcover_turn" id="MusLlfX.O|6~vRZ[|WIn">
-                                                                                    <value name="angle">
-                                                                                      <block type="bookcover_angle" id="CSXNvB(HEJZ3^o4_4GTV">
-                                                                                        <field name="angle">240</field>
-                                                                                      </block>
-                                                                                    </value>
-                                                                                  </block>
-                                                                                </next>
-                                                                              </block>
-                                                                            </next>
-                                                                          </block>
-                                                                        </next>
-                                                                      </block>
-                                                                    </next>
-                                                                  </block>
-                                                                </next>
-                                                              </block>
-                                                            </next>
-                                                          </block>
-                                                        </next>
-                                                      </block>
-                                                    </statement>
+                                                    <value name="max">
+                                                      <shadow type="math_number" id=",Z(RME!enYtO(gF5SF3b">
+                                                        <field name="NUM">3</field>
+                                                      </shadow>
+                                                    </value>
                                                   </block>
-                                                </next>
+                                                </value>
                                               </block>
                                             </next>
                                           </block>
@@ -476,6 +337,209 @@
                 </next>
               </block>
             </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="0Ep[m0Q~g%SicO=mePL/" x="0" y="887">
+    <mutation>
+      <arg name="x" varid="w7L.p!C0(|IN^A_vb$.K"></arg>
+      <arg name="y" varid="GG=KD;p.1G$p:hc5F+7U"></arg>
+      <arg name="長さ" varid="UqWutF0IX2Y.hKJ2`fha"></arg>
+    </mutation>
+    <field name="NAME">雪の結晶を描く</field>
+    <comment pinned="false" h="80" w="160">雪の結晶のかたちを描きます
+
+    </comment>
+    <statement name="STACK">
+      <block type="bookcover_go" id="KHTA|l}hs}l$M,d63A2y">
+        <value name="x">
+          <block type="variables_get" id="V}HjQb?={#=d~)$Xr:Kh">
+            <field name="VAR" id="w7L.p!C0(|IN^A_vb$.K">x</field>
+          </block>
+        </value>
+        <value name="y">
+          <block type="variables_get" id="W!`=2gGS[P]5vU4eXTeP">
+            <field name="VAR" id="GG=KD;p.1G$p:hc5F+7U">y</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_repeat_ext" id=";~[g:Z-lVEIc8[?hki(;">
+            <value name="TIMES">
+              <block type="math_number" id="%`X~o$]A^^Z4jTq?VfAc">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="controls_repeat_ext" id="bzzg0X7aDfI/;z2=Yc-1">
+                <value name="TIMES">
+                  <block type="math_number" id="jl`YciB1eS;`tQUQOx08">
+                    <field name="NUM">3</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="bookcover_pen_down" id=".@5dM8IA0f]*6*r}PRH~">
+                    <next>
+                      <block type="bookcover_forward" id="T{pStQndp;s{.9Wl),*G">
+                        <value name="len">
+                          <block type="variables_get" id="d7S)xCUS6t82Oh5?Y8L9">
+                            <field name="VAR" id="UqWutF0IX2Y.hKJ2`fha">長さ</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_turn" id="xBF#(pHGd.6:%;lns2,;">
+                            <value name="angle">
+                              <block type="bookcover_angle" id="X}+N6/NY#CdW3@xG*g#3">
+                                <field name="angle">60</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="bookcover_forward" id="@gU7NErCO,8yUYgLDDo:">
+                                <value name="len">
+                                  <block type="variables_get" id="+:3ao(@R6`z^?+_]l,;i">
+                                    <field name="VAR" id="UqWutF0IX2Y.hKJ2`fha">長さ</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="bookcover_pen_up" id="fFTVT`mcWlOEiurv|/(Y">
+                                    <next>
+                                      <block type="bookcover_turn" id="LF42tNzJVbma+@@gE0=l">
+                                        <value name="angle">
+                                          <block type="bookcover_angle" id="=Pu-a%)(J{Tv`skt^TXm">
+                                            <field name="angle">180</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="bookcover_forward" id="})kRsmzP%LDfyOQbsOW(">
+                                            <value name="len">
+                                              <block type="variables_get" id="/7H.TL^{WC4zGk]~)*}:">
+                                                <field name="VAR" id="UqWutF0IX2Y.hKJ2`fha">長さ</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="bookcover_pen_down" id=",.Kua/mu~q)bBtu+4~M*">
+                                                <next>
+                                                  <block type="bookcover_turn" id="CX8GTzH0Ib#0^^)NiI@n">
+                                                    <value name="angle">
+                                                      <block type="bookcover_angle" id="/SO~j7;byG#VuWyycHkP">
+                                                        <field name="angle">60</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="bookcover_forward" id="]kvyS.y!|9y=g)1~W|##">
+                                                        <value name="len">
+                                                          <block type="variables_get" id="b2B![q!b[}i=,h.j%FYM">
+                                                            <field name="VAR" id="UqWutF0IX2Y.hKJ2`fha">長さ</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="bookcover_pen_up" id="~/t;1w_l=]Aph,L{4NL?">
+                                                            <next>
+                                                              <block type="bookcover_turn" id="_@AhWDC;m!}P#IWBCK35">
+                                                                <value name="angle">
+                                                                  <block type="bookcover_angle" id=",YEhUTbH-WMYszP3!?BH">
+                                                                    <field name="angle">180</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="bookcover_forward" id="JriBQ[wxjhQOn-1UlYXa">
+                                                                    <value name="len">
+                                                                      <block type="variables_get" id="%RNSnw-ar4`}M`+Zn,#[">
+                                                                        <field name="VAR" id="UqWutF0IX2Y.hKJ2`fha">長さ</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="bookcover_turn" id="MItZE#-+T9m!zp5cq|bN">
+                                                                        <value name="angle">
+                                                                          <block type="bookcover_angle" id="ZmChi5s5_.;[kpndU$|w">
+                                                                            <field name="angle">240</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="bookcover_pen_down" id="8RV7Zyb-hjFu.FAEU?Pz">
+                    <next>
+                      <block type="bookcover_forward" id="MU8v9EW6CeQucTCmuxc^">
+                        <value name="len">
+                          <block type="variables_get" id="{7H#Gg-ZLW$:(D,L,7IY">
+                            <field name="VAR" id="UqWutF0IX2Y.hKJ2`fha">長さ</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="bookcover_turn" id="G[AQj6~CCG*.L-5hi@c)">
+                            <value name="angle">
+                              <block type="bookcover_angle" id="KZcJh|J71jQ(B=#q4{s8">
+                                <field name="angle">180</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="bookcover_pen_up" id="Mq)rA.quB@%Ku#XdiGbc">
+                                <next>
+                                  <block type="bookcover_forward" id="/DnWh[t`.o~LLjxORuTy">
+                                    <value name="len">
+                                      <block type="math_arithmetic" id="JiB3yc*;ij/+4-oCC8xt">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="%(tQVp5H]7YS^F21*#HW">
+                                            <field name="VAR" id="UqWutF0IX2Y.hKJ2`fha">長さ</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="[P=AM2?v}7E4p2#;~@PN">
+                                            <field name="NUM">4</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="bookcover_turn" id="MusLlfX.O|6~vRZ[|WIn">
+                                        <value name="angle">
+                                          <block type="bookcover_angle" id="CSXNvB(HEJZ3^o4_4GTV">
+                                            <field name="angle">240</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
           </block>
         </next>
       </block>
