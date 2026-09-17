@@ -342,7 +342,7 @@ export const BookCover = (function () {
             }
         }
  
-        ret = [0, 0, 0];
+        const ret = [0, 0, 0];
         ret[0] = 60 * (sub / (max - min)) + angle;
         if (ret[0] < 0) ret[0] += 360;
         ret[1] = max == min ? 0 : 100.0 * (max - min) / (255 - Math.abs(max + min - 255));
@@ -357,7 +357,7 @@ export const BookCover = (function () {
     },
 
     rotateH: function(color) {
-        return rotateH360(color, PHYLLOTAXIS360);
+        return this.rotateH360(color, PHYLLOTAXIS360);
     },
 
     addS100: function(color, a) {
@@ -1286,7 +1286,7 @@ if (!String.fromCodePoint) {
       }
       let result = '';
       while (++index < length) {
-        const codePoint = Number(arguments[index]);
+        let codePoint = Number(arguments[index]);
         if (
           !isFinite(codePoint) ||       // `NaN`, `+Infinity`, or `-Infinity`
           codePoint < 0 ||              // not a valid Unicode code point
