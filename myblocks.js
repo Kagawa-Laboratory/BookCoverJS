@@ -111,9 +111,9 @@ Blockly.Blocks['bookcover_frame'] = {
 };
 
 javascriptGenerator.forBlock['bookcover_frame'] = function (block) {
-  var checkbox_frame = block.getFieldValue('frame') == 'TRUE';
-  var statements_statements = javascriptGenerator.statementToCode(block, 'statements');
-  var code = "var BC = BookCover;\n"
+  const checkbox_frame = block.getFieldValue('frame') == 'TRUE';
+  const statements_statements = javascriptGenerator.statementToCode(block, 'statements');
+  let code = "const BC = BookCover;\n"
     + "BC.start(draw);\n";
   if (checkbox_frame) {
     code += "BC.pageFrame();\n"
@@ -122,6 +122,43 @@ javascriptGenerator.forBlock['bookcover_frame'] = function (block) {
   code += "BC.finish();\n";
   return code;
 };
+
+Blockly.Blocks['bookcover_frame_with_size'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("幅: ")
+      .appendField(new Blockly.FieldTextInput("210"), "width")
+      .appendField("mm")
+      .appendField("高さ: ")
+      .appendField(new Blockly.FieldTextInput("291"), "height")
+      .appendField("mm")
+      .appendField("のサイズで作成開始する。（枠表示")
+      .appendField(new Blockly.FieldCheckbox("TRUE"), "frame")
+      .appendField("）");
+    this.appendStatementInput("statements")
+      .setCheck(null);
+    this.setColour(100);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+javascriptGenerator.forBlock['bookcover_frame_with_size'] = function (block) {
+  const checkbox_frame = block.getFieldValue('frame') == 'TRUE';
+  const statements_statements = javascriptGenerator.statementToCode(block, 'statements');
+  const width = block.getFieldValue('width');
+  const height = block.getFieldValue('height');
+  let code = "const BC = BookCover;\n";
+  code += "BC.start(draw);\n";
+  code += `BC.setPageSize(${width}, ${height});\n`;
+  if (checkbox_frame) {
+    code += "BC.pageFrame();\n"
+  }
+  code += statements_statements
+  code += "BC.finish();\n";
+  return code;
+};
+
 
 Blockly.Blocks['bookcover_guide_bars'] = {
   init: function () {
@@ -1097,9 +1134,9 @@ Blockly.Blocks['bookcover_card_frame'] = {
 javascriptGenerator.forBlock['bookcover_card_frame'] = function (block) {
   var value_paper_spec = javascriptGenerator.valueToCode(block, 'PAPER_SPEC', javascriptGenerator.ORDER_ATOMIC);
   var statements_do = javascriptGenerator.statementToCode(block, 'DO');
-  var code = 'var BC = BookCover;\n';
+  var code = 'const BC = BookCover;\n';
   code += 'BC.start(draw);\n';
-  code += '  var __cardSpec = BC.__cardSpecs[' + value_paper_spec + '];\n';
+  code += '  const __cardSpec = BC.__cardSpecs[' + value_paper_spec + '];\n';
   code += '  BC.__width = __cardSpec["width"]; BC.__height = __cardSpec["height"];\n';
   code += '  BC.__cards = __cardSpec["cards"];\n';
   code += statements_do;
@@ -1207,7 +1244,6 @@ javascriptGenerator.forBlock['bookcover_fromCodePoint'] = function (block) {
   var code = 'String.fromCodePoint(' + value_value + ')';
   return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
 };
-
 
 javascriptGenerator.forBlock['text_charAt'] = function (block) {
   // Get letter at index.

@@ -44,6 +44,10 @@ export const toolbox = {
         },
         {
           kind: "BLOCK",
+          type: "bookcover_frame_with_size",
+        },
+        {
+          kind: "BLOCK",
           type: "bookcover_rulers",
         },
         {
