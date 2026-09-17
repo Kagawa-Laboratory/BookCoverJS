@@ -1248,37 +1248,37 @@ javascriptGenerator.forBlock['bookcover_fromCodePoint'] = function (block) {
 javascriptGenerator.forBlock['text_charAt'] = function (block) {
   // Get letter at index.
   // Note: Until January 2013 this block did not have the WHERE input.
-  var where = block.getFieldValue('WHERE') || 'FROM_START';
-  var textOrder = (where == 'RANDOM') ? javascriptGenerator.ORDER_NONE :
+  const where = block.getFieldValue('WHERE') || 'FROM_START';
+  const textOrder = (where == 'RANDOM') ? javascriptGenerator.ORDER_NONE :
     javascriptGenerator.ORDER_MEMBER;
-  var text = javascriptGenerator.valueToCode(block, 'VALUE',
+  const text = javascriptGenerator.valueToCode(block, 'VALUE',
     textOrder) || '\'\'';
   switch (where) {
     case 'FIRST':
-      var code = 'BC.fixedCharAt(' + text + ', ' + '0)';
-      return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
+      const code0 = 'BC.fixedCharAt(' + text + ', ' + '0)';
+      return [code0, javascriptGenerator.ORDER_FUNCTION_CALL];
     case 'LAST':
-      var code = 'BC.fixedCharAt(' + text + ', ' + 'BC.countSymbols(' + text + ') - 1)';
-      return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
+      const code1 = 'BC.fixedCharAt(' + text + ', ' + 'BC.countSymbols(' + text + ') - 1)';
+      return [code1, javascriptGenerator.ORDER_FUNCTION_CALL];
     case 'FROM_START':
-      var at = javascriptGenerator.getAdjusted(block, 'AT');
+      const at1 = javascriptGenerator.getAdjusted(block, 'AT');
       // Adjust index if using one-based indices.
-      var code = 'BC.fixedCharAt(' + text + ', ' + at + ')';
-      return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
+      const code2 = 'BC.fixedCharAt(' + text + ', ' + at1 + ')';
+      return [code2, javascriptGenerator.ORDER_FUNCTION_CALL];
     case 'FROM_END':
-      var at = javascriptGenerator.getAdjusted(block, 'AT', 1, true);
-      var code = 'BC.fixedCharAt(' + text + ', ' + 'BC.countSymbols(' + text + ') + (' + at + '))';
-      return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
+      const at2 = javascriptGenerator.getAdjusted(block, 'AT', 1, true);
+      const code3 = 'BC.fixedCharAt(' + text + ', ' + 'BC.countSymbols(' + text + ') + (' + at2 + '))';
+      return [code3, javascriptGenerator.ORDER_FUNCTION_CALL];
     case 'RANDOM':
-      var functionName = javascriptGenerator.provideFunction_(
+      const functionName = javascriptGenerator.provideFunction_(
         'textRandomLetter',
         ['function ' + javascriptGenerator.FUNCTION_NAME_PLACEHOLDER_ +
           '(text) {',
-          '  var x = Math.floor(Math.random() * BC.countSymbols(text));',
+          '  const x = Math.floor(Math.random() * BC.countSymbols(text));',
           '  return BC.fixedCharAt(text, x);',
           '}']);
-      var code = functionName + '(' + text + ')';
-      return [code, javascriptGenerator.ORDER_FUNCTION_CALL];
+      const code4 = functionName + '(' + text + ')';
+      return [code4, javascriptGenerator.ORDER_FUNCTION_CALL];
   }
   throw 'Unhandled option (text_charAt).';
 };

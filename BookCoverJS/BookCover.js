@@ -1214,41 +1214,51 @@ export const BookCover = (function () {
         return 1;   // カードなし
     },
 
-    // https://mathiasbynens.be/notes/javascript-unicode
-    countSymbols: function(string) {
-	return string
-		// Replace every surrogate pair with a BMP symbol.
-		.replace(this.__regexAstralSymbols, '_')
-		// _and *then* get the length.
-		.length;
+
+    countSymbols: function(str) {
+    // // https://mathiasbynens.be/notes/javascript-unicode
+	// return string
+	// 	// Replace every surrogate pair with a BMP symbol.
+	// 	.replace(this.__regexAstralSymbols, '_')
+	// 	// _and *then* get the length.
+	// 	.length;
+    // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/length
+        const segmenter = new Intl.Segmenter("ja-JP", { granularity: "grapheme" });
+
+        // ここで使用されている Segments オブジェクトのイテレーターは、文字を書記素で反復処理します。
+        // 文字は複数の Unicode 文字で構成されている場合があります。
+        return [...segmenter.segment(str)].length;
     },
 
     // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/charAt 
     fixedCharAt: function(str, idx) {
-	  let ret = '';
-	  str += '';
-	  const end = str.length;
+	//   let ret = '';
+	//   str += '';
+	//   const end = str.length;
 
-	  const surrogatePairs = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
-	  while ((surrogatePairs.exec(str)) != null) {
-	    const li = surrogatePairs.lastIndex;
-	    if (li - 2 < idx) {
-	      idx++;
-	    } else {
-	      break;
-	    }
-	  }
+	//   const surrogatePairs = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
+	//   while ((surrogatePairs.exec(str)) != null) {
+	//     const li = surrogatePairs.lastIndex;
+	//     if (li - 2 < idx) {
+	//       idx++;
+	//     } else {
+	//       break;
+	//     }
+	//   }
 
-	  if (idx >= end || idx < 0) {
-	    return '';
-	  }
+	//   if (idx >= end || idx < 0) {
+	//     return '';
+	//   }
 
-	  ret += str.charAt(idx);
+	//   ret += str.charAt(idx);
 
-	  if (/[\uD800-\uDBFF]/.test(ret) && /[\uDC00-\uDFFF]/.test(str.charAt(idx+1))) {
-	    ret += str.charAt(idx+1); // Go one further, since one of the "characters" is part of a surrogate pair
-	  }
-	  return ret;
+	//   if (/[\uD800-\uDBFF]/.test(ret) && /[\uDC00-\uDFFF]/.test(str.charAt(idx+1))) {
+	//     ret += str.charAt(idx+1); // Go one further, since one of the "characters" is part of a surrogate pair
+	//   }
+	//   return ret;
+        const segmenter = new Intl.Segmenter("ja-JP", { granularity: "grapheme" });
+        const graphemes = [...segmenter.segment(str)];
+        return graphemes[idx].segment;
     },
 
   };
@@ -1261,64 +1271,64 @@ export const BookCover = (function () {
 
 // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint
 /*! http://mths.be/fromcodepoint v0.1.0 by @mathias */
-if (!String.fromCodePoint) {
-  (function() {
-    const defineProperty = (function() {
-      // IE 8 only supports `Object.defineProperty` on DOM elements
-      try {
-        const object = {};
-        const $defineProperty = Object.defineProperty;
-        const result = $defineProperty(object, object, object) && $defineProperty;
-      } catch(error) {}
-      return result;
-    }());
-    const stringFromCharCode = String.fromCharCode;
-    const floor = Math.floor;
-    const fromCodePoint = function() {
-      const MAX_SIZE = 0x4000;
-      const codeUnits = [];
-      let highSurrogate;
-      let lowSurrogate;
-      let index = -1;
-      const length = arguments.length;
-      if (!length) {
-        return '';
-      }
-      let result = '';
-      while (++index < length) {
-        let codePoint = Number(arguments[index]);
-        if (
-          !isFinite(codePoint) ||       // `NaN`, `+Infinity`, or `-Infinity`
-          codePoint < 0 ||              // not a valid Unicode code point
-          codePoint > 0x10FFFF ||       // not a valid Unicode code point
-          floor(codePoint) != codePoint // not an integer
-        ) {
-          throw RangeError('Invalid code point: ' + codePoint);
-        }
-        if (codePoint <= 0xFFFF) { // BMP code point
-          codeUnits.push(codePoint);
-        } else { // Astral code point; split in surrogate halves
-          // http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
-          codePoint -= 0x10000;
-          highSurrogate = (codePoint >> 10) + 0xD800;
-          lowSurrogate = (codePoint % 0x400) + 0xDC00;
-          codeUnits.push(highSurrogate, lowSurrogate);
-        }
-        if (index + 1 == length || codeUnits.length > MAX_SIZE) {
-          result += stringFromCharCode.apply(null, codeUnits);
-          codeUnits.length = 0;
-        }
-      }
-      return result;
-    };
-    if (defineProperty) {
-      defineProperty(String, 'fromCodePoint', {
-        'value': fromCodePoint,
-        'configurable': true,
-        'writable': true
-      });
-    } else {
-      String.fromCodePoint = fromCodePoint;
-    }
-  }());
-}
+// if (!String.fromCodePoint) {
+//   (function() {
+//     const defineProperty = (function() {
+//       // IE 8 only supports `Object.defineProperty` on DOM elements
+//       try {
+//         const object = {};
+//         const $defineProperty = Object.defineProperty;
+//         const result = $defineProperty(object, object, object) && $defineProperty;
+//       } catch(error) {}
+//       return result;
+//     }());
+//     const stringFromCharCode = String.fromCharCode;
+//     const floor = Math.floor;
+//     const fromCodePoint = function() {
+//       const MAX_SIZE = 0x4000;
+//       const codeUnits = [];
+//       let highSurrogate;
+//       let lowSurrogate;
+//       let index = -1;
+//       const length = arguments.length;
+//       if (!length) {
+//         return '';
+//       }
+//       let result = '';
+//       while (++index < length) {
+//         let codePoint = Number(arguments[index]);
+//         if (
+//           !isFinite(codePoint) ||       // `NaN`, `+Infinity`, or `-Infinity`
+//           codePoint < 0 ||              // not a valid Unicode code point
+//           codePoint > 0x10FFFF ||       // not a valid Unicode code point
+//           floor(codePoint) != codePoint // not an integer
+//         ) {
+//           throw RangeError('Invalid code point: ' + codePoint);
+//         }
+//         if (codePoint <= 0xFFFF) { // BMP code point
+//           codeUnits.push(codePoint);
+//         } else { // Astral code point; split in surrogate halves
+//           // http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
+//           codePoint -= 0x10000;
+//           highSurrogate = (codePoint >> 10) + 0xD800;
+//           lowSurrogate = (codePoint % 0x400) + 0xDC00;
+//           codeUnits.push(highSurrogate, lowSurrogate);
+//         }
+//         if (index + 1 == length || codeUnits.length > MAX_SIZE) {
+//           result += stringFromCharCode.apply(null, codeUnits);
+//           codeUnits.length = 0;
+//         }
+//       }
+//       return result;
+//     };
+//     if (defineProperty) {
+//       defineProperty(String, 'fromCodePoint', {
+//         'value': fromCodePoint,
+//         'configurable': true,
+//         'writable': true
+//       });
+//     } else {
+//       String.fromCodePoint = fromCodePoint;
+//     }
+//   }());
+// }
